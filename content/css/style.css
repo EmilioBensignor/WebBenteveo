@@ -1,0 +1,224 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One|Poppins:300,400,600,800&subset=latin-ext");
+
+/* ESTILOS GENERALES */
+
+:root {
+  --color-primario: '#FCB716'
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-size: 16px;
+  background: #131313;
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* PRELOADER */
+.preloader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 13;
+  background: var(--color-primario);
+  -webkit-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -webkit-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+}
+
+.preloader .inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/preloader.gif) center no-repeat #000;
+  background-size: 80px 80px;
+  -webkit-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -webkit-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+}
+
+.preloader .holder {
+  width: 100%;
+  height: 26px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.preloader .typewriter {
+  height: 26px;
+  line-height: 26px;
+  display: inline-block;
+  color: #fff;
+}
+
+.preloader .typewriter #typewriter-text {
+  float: left;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: -2px;
+  margin-right: 3px;
+}
+
+.preloader .typewriter #typewriter-suffix {
+  width: 2px;
+  height: 16px;
+  display: inline-block;
+  background: var(--color-primario);
+  text-indent: -1000px;
+  overflow: hidden;
+}
+
+.preloader .loader {
+  width: 100%;
+  height: 3px;
+  border: none;
+  border-radius: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.preloader .loader:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.preloader .trackbar {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  background: #808080;
+  opacity: 0.99;
+}
+
+.preloader .loadbar {
+  width: 0%;
+  height: 100%;
+  background: var(--color-primario);
+  box-shadow: 0px 0px 10px var(--color-primario);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation: flicker 5s infinite;
+  overflow: hidden;
+}
+
+/* TRANSITION OVERLAY */
+.transition-overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 13;
+  visibility: hidden;
+}
+
+.transition-overlay .black-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 3;
+  background: #000;
+  -webkit-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -webkit-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+}
+
+.transition-overlay .green-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -100%;
+  top: 0;
+  z-index: 2;
+  background: var(--color-primario);
+  -webkit-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition: all 400ms cubic-bezier(0.595, 0.03, 0, 0.88);
+  -webkit-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -moz-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  -o-transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+  transition-timing-function: cubic-bezier(0.595, 0.03, 0, 0.88);
+}
+
+.transition-overlay.open {
+  visibility: visible;
+}
+
+.transition-overlay.open .green-layer {
+  left: 0;
+  transition-delay: 0s;
+}
+
+.transition-overlay.open .black-layer {
+  left: 0;
+  transition-delay: 0.4s;
+}
