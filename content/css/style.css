@@ -1227,6 +1227,7 @@ a:hover {
 
 .full-media-content .inner-content {
   width: 60%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1382,12 +1383,12 @@ a:hover {
   display: flex;
   color: #fff;
   background-image: url(/content/images/aura-amarilla.gif);
+  background-color: #090300;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   text-align: center;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  padding: 6.25rem 3.75rem 3.125rem 3.75rem;
   position: relative;
 }
 
@@ -1453,6 +1454,81 @@ a:hover {
 .footer .derechos {
   font-size: 11px;
   color: #989898;
+}
+
+
+@media only screen and (min-width: 1750px),
+only screen and (min-device-width: 1750px) {
+  body .header .hero h1 {
+    font-size: 4.5rem;
+  }
+
+  .navbar .email-us {
+    font-size: 1rem;
+  }
+
+  .navbar .sandwich-nav b {
+    font-size: 1rem;
+  }
+
+  .features-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 1600px),
+only screen and (min-device-width: 1600px) {
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .hero .heroBtn {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.8rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 1.2rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 0.875rem;
+  }
+
+  .addressFooter {
+    gap: 3rem;
+  }
+}
+
+/* RESPONSIVE X-LARGE DESKTOP */
+@media only screen and (min-width: 1440px),
+only screen and (min-device-width: 1440px) {
+  .header .hero h1 {
+    font-size: 4rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
+
+  .servicio {
+    padding: 0 1.5rem;
+  }
+}
+
+/* RESPONSIVE LARGE DESKTOP */
+@media only screen and (min-width: 1280px),
+only screen and (min-device-width: 1280px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
 }
 
 /* RESPONSIVE TABLET FIXES */
