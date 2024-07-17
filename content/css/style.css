@@ -7,21 +7,7 @@
 :root {
   --color-primario: #FCB716;
   --color-blanco: #fff;
-  --color-fondo: #131313;
-}
-
-.hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  padding-left: 5rem;
-}
-
-.hero p {
-  color: var(--color-blanco);
-  font-weight: bold;
-  font-size: 4rem
+  --color-fondo: #171819;
 }
 
 /* TEMPLATE */
@@ -34,14 +20,16 @@
 }
 
 body {
+  max-width: 1920px;
+  height: 100%;
   font-size: 16px;
-  background: #131313;
+  background: #171819;
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
   overflow: hidden;
+  margin: 0 auto;
 }
 
 html {
@@ -613,13 +601,50 @@ a:hover {
   top: 0;
 }
 
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 5rem;
+}
+
+.hero h1 {
+  color: var(--color-blanco);
+  font-weight: bold;
+  font-size: 3rem
+}
+
+.hero p {
+  color: var(--color-blanco);
+  font-size: 1.5rem;
+}
+
+.hero .heroBtn {
+  height: 58px;
+  line-height: 54px;
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0 50px;
+}
+
+.hero .heroBtn:hover {
+  background-color: var(--color-blanco);
+  color: black;
+  text-decoration: none;
+}
+
 /* SOCIAL MEDIA */
 .social-media {
   width: 38px;
   position: absolute;
   z-index: 7;
   right: 60px;
-  top: 200px;
+  top: 40%;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -743,34 +768,7 @@ a:hover {
 }
 
 .navbar .email-us a:hover {
-  color: #fff;
-}
-
-.navbar .email-us a span {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.navbar .languages {
-  margin-right: 50px;
-  font-family: "Fjalla One", sans-serif;
-}
-
-.navbar .languages a {
-  float: left;
-  margin-left: 10px;
-  color: #808080;
-  font-size: 14px;
-  color: #808080;
-}
-
-.navbar .languages a:hover {
   color: var(--color-primario);
-  text-decoration: none;
-}
-
-.navbar .languages a.active {
-  color: #fff;
 }
 
 .navbar .sandwich-nav {
@@ -1322,7 +1320,7 @@ a:hover {
 }
 
 .features-content p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #808080;
   line-height: 22px;
 }
@@ -1383,7 +1381,10 @@ a:hover {
   width: 100%;
   display: flex;
   color: #fff;
-  background: url(../images/anim-hero.gif) center no-repeat #131313;
+  background-image: url(/content/images/aura-amarilla.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   padding-top: 150px;
   padding-bottom: 50px;
@@ -1421,6 +1422,15 @@ a:hover {
 }
 
 .footer ul li a:hover {
+  color: var(--color-primario);
+}
+
+.email-us a {
+  color: white;
+  text-decoration: underline;
+}
+
+.email-us a:hover {
   color: var(--color-primario);
 }
 
@@ -1743,6 +1753,12 @@ only screen and (max-device-width: 767px) {
 
   .case-details h6 {
     padding-right: 0;
+  }
+
+  /* Footer */
+
+  .addressFooter {
+    flex-wrap: wrap;
   }
 
   .say-hello {
