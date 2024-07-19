@@ -610,7 +610,7 @@ a:hover {
   padding-left: 5rem;
 }
 
-.hero h1 {
+h1 {
   color: var(--color-blanco);
   font-weight: bold;
   font-size: 3rem
@@ -1456,105 +1456,63 @@ a:hover {
   color: #989898;
 }
 
+@media only screen and (max-width: 991px) {
 
-@media only screen and (min-width: 1750px),
-only screen and (min-device-width: 1750px) {
-  body .header .hero h1 {
-    font-size: 4.5rem;
+  /* Generales */
+
+  /* Header */
+
+  .header {
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: static;
   }
 
-  .navbar .email-us {
-    font-size: 1rem;
+  .header-spacing {
+    height: auto;
   }
 
-  .navbar .sandwich-nav b {
-    font-size: 1rem;
+  /* Nav */
+
+  .navbar {
+    padding: 1.25rem 1.875rem;
   }
 
-  .features-content p {
-    font-size: 1.2rem;
-  }
-}
+  /* Hero */
 
-@media only screen and (min-width: 1600px),
-only screen and (min-device-width: 1600px) {
+  .hero {
+    gap: 2rem;
+    padding-left: 1.875rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0;
+  }
+
   .hero p {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 0;
   }
 
   .hero .heroBtn {
-    font-size: 1rem;
-  }
-
-  .full-media-content .inner-content .inner .loPensamos {
-    font-size: 1.8rem;
-  }
-
-  .full-media-content .inner-content p {
-    font-size: 1.2rem;
-  }
-
-  .full-media-content .inner-content a {
     font-size: 0.875rem;
   }
 
-  .addressFooter {
-    gap: 3rem;
-  }
-}
-
-/* RESPONSIVE X-LARGE DESKTOP */
-@media only screen and (min-width: 1440px),
-only screen and (min-device-width: 1440px) {
-  .header .hero h1 {
-    font-size: 4rem;
+  .social-media {
+    display: flex;
+    gap: 1rem;
+    position: static;
+    padding-left: 1.875rem;
+    margin-top: 1rem;
   }
 
-  .features-content p {
-    font-size: 1rem;
-  }
+  /* Proyectos */
 
-  .servicio {
-    padding: 0 1.5rem;
-  }
-}
-
-/* RESPONSIVE LARGE DESKTOP */
-@media only screen and (min-width: 1280px),
-only screen and (min-device-width: 1280px) {
-  .hero h1 {
-    font-size: 3.5rem;
-  }
-
-  .features-content p {
-    font-size: 1rem;
-  }
-}
-
-/* RESPONSIVE TABLET FIXES */
-@media only screen and (max-width: 991px),
-only screen and (max-device-width: 991px) {
-
-  input[type=text],
-  input[type=search],
-  input[type=email],
-  input[type=password],
-  input[type=submit],
-  textarea {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-  .header .gallery-thumbs {
-    height: 60%;
-    top: 20%;
-  }
-
-  .header .gallery-thumbs .swiper-slide {
-    font-size: 70px;
+  .works {
+    padding-top: 0;
   }
 
   .works ul li {
@@ -1565,45 +1523,217 @@ only screen and (max-device-width: 991px) {
     width: 33.33333%;
   }
 
-  .features-content h6 {
-    margin-bottom: 50px;
-    margin-top: -30px;
+  /* Logos */
+  .logos .container {
+    max-width: 100%;
+    padding: 0 1.875rem;
   }
 
-  .full-media-content {
-    flex-direction: column;
+  .logos ul li figure img {
+    height: 7.5rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .sides {
+    padding: 0;
+  }
+
+  .full-media-content .inner-content .inner {
+    padding: 5rem 3.75rem 5rem 6.25rem;
+    right: 0;
+  }
+
+  .leftPensamosHacemos {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .full-media-content .sides figure {
-    float: none;
-    margin: 0 auto;
+    width: 220px;
+    position: absolute;
+    margin-right: -3.75rem;
   }
 
-  .full-media-content .inner-content {
-    flex: none;
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.3rem;
   }
 
-  .page-header .inner h2 {
-    font-size: 5em;
+  .full-media-content .inner-content h2 {
+    font-size: 2rem;
   }
 
-  .page-header .inner p {
-    padding-right: 20%;
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
   }
 
-  .say-hello form {
-    padding-right: 0;
-    width: auto;
+  .full-media-content .inner-content a {
+    font-size: 0.875rem;
   }
 
-  .say-hello form .form-group:last-child {
+  /* Servicios */
+
+  .features-content {
+    padding: 3.75rem 1.875rem;
+  }
+
+  .features-content .container {
+    max-width: 100%;
+  }
+
+  .features-content img {
+    height: 30px;
     margin-bottom: 0;
+  }
+
+  .features-content h2 {
+    font-size: 2rem;
+  }
+
+  .serviciosTitle p {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .serviciosContainer {
+    margin-top: 2rem;
+  }
+
+  .servicioContainerHijo {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .servicio {
+    max-width: 45%;
+    flex: none;
+    padding: 0;
+  }
+
+  .servicioHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .features-content .servicio p {
+    width: 95%;
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .features-content a {
+    margin-bottom: 0.8rem;
+  }
+
+  /* Footer */
+
+  .footer {
+    padding: 2.625rem 2rem 2rem 2rem;
+  }
+
+  .footer h2 {
+    font-size: 2rem;
+    line-height: 45px;
+    margin-bottom: 1rem;
+  }
+
+  .email-us {
+    font-size: 0.875rem;
+  }
+
+  .addressFooter {
+    margin: 3rem 0;
+  }
+
+  .addressFooter p {
+    font-size: 0.875rem;
   }
 }
 
+@media only screen and (max-width: 850px) {
+  h1 {
+    font-size: 2.125rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .heroBtn {
+    font-size: 0.75rem;
+  }
+
+  .full-media-content .inner-content .inner {
+    padding: 3.75rem 3.75rem 3.75rem 6.25rem;
+  }
+
+  .full-media-content .sides figure {
+    width: 75%;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.125rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+  }
+
+  .features-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.25rem;
+  }
+
+  .features-content .servicio p {
+    font-size: 0.75rem;
+  }
+
+  .footer h2 {
+    font-size: 1.875rem;
+    line-height: 45px;
+    margin-bottom: 1rem;
+  }
+
+  .email-us {
+    font-size: 0.875rem;
+  }
+
+  .addressFooter {
+    margin: 3rem 0;
+  }
+
+  .addressFooter p {
+    font-size: 0.75rem;
+  }
+}
+
+
 /* RESPONSIVE MOBILE FIXES */
-@media only screen and (max-width: 767px),
-only screen and (max-device-width: 767px) {
+/* 16px */
+@media only screen and (max-width: 767px) {
   .hide-mobile {
     display: none;
   }
@@ -1650,7 +1780,7 @@ only screen and (max-device-width: 767px) {
     padding: 0 30px;
   }
 
-  .particles-mask .inner .masker h1 {
+  h1 {
     font-size: 15vw;
   }
 
@@ -1658,11 +1788,11 @@ only screen and (max-device-width: 767px) {
     padding: 0;
   }
 
-  .video-hero .inner h1 {
+  h1 {
     font-size: 15vw;
   }
 
-  .motion-blur .inner h1 {
+  h1 {
     font-size: 14vw;
   }
 
@@ -1851,5 +1981,79 @@ only screen and (max-device-width: 767px) {
 
   .footer h2 {
     font-size: 40px;
+  }
+}
+
+/* RESPONSIVE TABLET FIXES */
+/* 30px */
+
+
+/* RESPONSIVE LARGE DESKTOP */
+@media only screen and (min-width: 1280px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
+}
+
+/* RESPONSIVE X-LARGE DESKTOP */
+@media only screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
+
+  .servicio {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .hero .heroBtn {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.8rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 1.2rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 0.875rem;
+  }
+
+  .addressFooter {
+    gap: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1750px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .navbar .email-us {
+    font-size: 1rem;
+  }
+
+  .navbar .sandwich-nav b {
+    font-size: 1rem;
+  }
+
+  .features-content p {
+    font-size: 1.2rem;
   }
 }
