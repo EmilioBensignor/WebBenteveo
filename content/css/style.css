@@ -272,11 +272,6 @@ a:hover {
   opacity: 1;
 }
 
-.page-loaded .header .slider .gallery-thumbs {
-  transform: translateX(0);
-  opacity: 1;
-}
-
 /* TRANSITION OVERLAY */
 .transition-overlay {
   width: 100%;
@@ -942,190 +937,6 @@ h1 {
   text-decoration: none;
 }
 
-/* PROYECTOS FILTER */
-.filter-bar {
-  width: 100%;
-  float: left;
-  margin-bottom: 60px;
-}
-
-.filter-bar .works-filter {
-  float: left;
-  line-height: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.filter-bar .works-filter li {
-  float: left;
-  margin: 0;
-  margin-right: 10px;
-  padding: 0;
-  list-style: none;
-  opacity: 0;
-  transform: translateY(10px);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -ms-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-
-.filter-bar .works-filter li:nth-child(1) {
-  transition-delay: 0s;
-}
-
-.filter-bar .works-filter li:nth-child(2) {
-  transition-delay: 0.05s;
-}
-
-.filter-bar .works-filter li:nth-child(3) {
-  transition-delay: 0.1s;
-}
-
-.filter-bar .works-filter li:nth-child(4) {
-  transition-delay: 0.15s;
-}
-
-.filter-bar .works-filter li:nth-child(5) {
-  transition-delay: 0.2s;
-}
-
-.filter-bar .works-filter li:nth-child(6) {
-  transition-delay: 0.25s;
-}
-
-.filter-bar .works-filter li:nth-child(7) {
-  transition-delay: 0.3s;
-}
-
-.filter-bar .works-filter li:nth-child(8) {
-  transition-delay: 0.35s;
-}
-
-.filter-bar .works-filter li:nth-child(9) {
-  transition-delay: 0.4s;
-}
-
-.filter-bar .works-filter li a {
-  float: left;
-  font-size: 13px;
-  color: #fff;
-  font-family: "Fjalla One", sans-serif;
-  border-bottom: 2px solid transparent;
-  padding: 0 2px;
-  padding-bottom: 2px;
-}
-
-.filter-bar .works-filter li a.current {
-  color: var(--color-primario);
-  border-bottom: 2px solid var(--color-primario);
-}
-
-.filter-bar .works-filter li a:hover {
-  color: var(--color-primario);
-  text-decoration: none;
-}
-
-.filter-bar .works-filter.active li {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.filter-btn {
-  float: right;
-}
-
-.filter-btn span {
-  float: right;
-  line-height: 22px;
-  font-weight: 600;
-  font-size: 13px;
-  margin-right: 20px;
-  color: #fff;
-}
-
-/* PROYECTO DETAIL */
-.case-details {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  background: #fff;
-}
-
-.case-details figure {
-  width: 100%;
-  float: left;
-  margin-bottom: 30px;
-}
-
-.case-details figure img {
-  width: 100%;
-  float: left;
-}
-
-.case-details h3 {
-  font-size: 80px;
-  font-weight: 800;
-  margin-bottom: 20px;
-  margin-top: 150px;
-}
-
-.case-details h6 {
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 34px;
-  padding-right: 40%;
-  margin-bottom: 20px;
-}
-
-.case-details p {
-  color: #808080;
-}
-
-.case-details p:last-child {
-  margin-bottom: 60px;
-}
-
-.case-details .case-navbar {
-  width: 100%;
-  float: left;
-  margin-bottom: 0;
-  background: #fff;
-  padding: 0;
-  text-align: center;
-  z-index: 2;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  top: 0;
-}
-
-.case-details .case-navbar ul {
-  width: 100%;
-  float: left;
-  padding: 30px 0;
-  margin: 0;
-}
-
-.case-details .case-navbar ul li {
-  display: inline-block;
-  margin: 0 30px;
-  padding: 0;
-  list-style: none;
-}
-
-.case-details .case-navbar ul li a {
-  font-weight: 600;
-}
-
-.case-details .case-navbar ul li a:hover {
-  color: var(--color-primario);
-  text-decoration: none;
-}
-
 /* LOGOS */
 .logos {
   width: 100%;
@@ -1456,6 +1267,8 @@ h1 {
   color: #989898;
 }
 
+/* Tablet */
+
 @media only screen and (max-width: 991px) {
 
   /* Generales */
@@ -1663,6 +1476,8 @@ h1 {
 }
 
 @media only screen and (max-width: 850px) {
+  /* Hero */
+
   h1 {
     font-size: 2.125rem;
   }
@@ -1674,6 +1489,8 @@ h1 {
   .hero .heroBtn {
     font-size: 0.75rem;
   }
+
+  /* Pensamos Hacemos */
 
   .full-media-content .inner-content .inner {
     padding: 3.75rem 3.75rem 3.75rem 6.25rem;
@@ -1695,12 +1512,10 @@ h1 {
     font-size: 0.875rem;
   }
 
+  /* Servicios */
+
   .features-content h2 {
     font-size: 1.75rem;
-  }
-
-  .full-media-content .inner-content p {
-    font-size: 0.875rem;
   }
 
   .servicio h3 {
@@ -1710,6 +1525,8 @@ h1 {
   .features-content .servicio p {
     font-size: 0.75rem;
   }
+
+  /* Footer */
 
   .footer h2 {
     font-size: 1.875rem;
@@ -1730,112 +1547,60 @@ h1 {
   }
 }
 
-
 /* RESPONSIVE MOBILE FIXES */
-/* 16px */
 @media only screen and (max-width: 767px) {
-  .hide-mobile {
-    display: none;
-  }
+  /* Navbar */
 
   .navbar {
-    padding: 20px 30px;
+    padding: 20px 16px;
   }
 
   .navbar .email-us {
     display: none;
   }
 
+  .navigation-menu .inner ul li {
+    margin: 1rem 0;
+  }
+
   .navigation-menu .inner ul li a {
-    font-size: 40px;
+    font-size: 2rem;
   }
 
-  .navigation-menu .inner ul li ul li {
-    margin: 0 15px;
+  .header {
+    height: 60%;
   }
 
-  .navigation-menu .inner address {
-    font-size: 16px;
-  }
+  /* Hero */
 
-  .header .swiper-pagination {
-    left: 30px;
-  }
-
-  .header .gallery-thumbs {
-    left: 30px;
-    height: 30%;
-    top: 35%;
-  }
-
-  .header .gallery-thumbs .swiper-slide {
-    font-size: 50px;
-  }
-
-  .header .gallery-thumbs .swiper-slide a {
-    margin-top: 0;
-  }
-
-  .particles-mask {
-    padding: 0 30px;
+  .hero {
+    gap: 1.25rem;
+    padding-left: 1rem;
   }
 
   h1 {
-    font-size: 15vw;
+    font-size: 2rem;
   }
 
-  .particles-mask .inner h5 {
-    padding: 0;
+  .hero p {
+    font-size: 0.875rem;
   }
 
-  h1 {
-    font-size: 15vw;
-  }
-
-  h1 {
-    font-size: 14vw;
-  }
-
-  .page-header .inner {
-    padding: 0 30px;
-  }
-
-  .page-header .inner h2 {
-    font-size: 3em;
-  }
-
-  .page-header .inner p {
-    font-size: 22px;
-    line-height: 34px;
-    padding-right: 0;
-  }
-
-  .introduction {
-    padding: 80px 0;
-  }
-
-  .listing-content {
-    padding: 80px 0;
-  }
-
-  .listing-content .mobile-spacing {
-    margin-bottom: 50px;
-  }
-
-  .social-media {
-    display: none;
+  .hero .heroBtn,
+  .full-media-content .inner-content a {
+    height: auto;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 1rem 2.2rem;
   }
 
   .scroll-down {
     display: none;
   }
 
-  .our-team {
-    padding-top: 80px;
-  }
+  /* Proyectos */
 
   .works {
-    padding-top: 80px;
     padding-bottom: 0;
   }
 
@@ -1862,63 +1627,20 @@ h1 {
     padding-bottom: 30px;
   }
 
-  .features-content {
-    text-align: center;
-    padding-top: 80px;
-    padding-bottom: 10px;
-  }
-
-  .features-content h2 {
-    font-size: 40px;
-  }
-
-  .features-content h6 {
-    padding-right: 0;
-  }
-
-  .full-media-content .sides {
-    padding: 80px 0;
-  }
-
-  .full-media-content .sides figure {
-    width: 70%;
-    position: static;
-    margin: 0 auto;
-  }
-
-  .full-media-content .inner-content .inner {
-    max-width: 100%;
-    padding: 0 30px;
-  }
-
-  .full-media-content .inner-content h2 {
-    font-size: 44px;
-  }
-
-  .news {
-    padding: 80px 0;
-  }
-
-  .news .post {
-    margin-bottom: 10px;
-  }
-
-  .news .post .post-content {
-    padding: 0;
-  }
-
-  .news .post .post-content .post-title {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .news .post.post-single .post-content .post-title {
-    font-size: 36px;
-    line-height: 46px;
-  }
+  /* Clientes */
 
   .logos {
+    overflow: hidden;
     padding: 30px 0;
+  }
+
+  .logos .container {
+    padding: 0 1rem;
+  }
+
+  .logos ul {
+    flex-wrap: nowrap;
+    gap: 1rem;
   }
 
   .logos ul li {
@@ -1926,69 +1648,242 @@ h1 {
     margin: 25px auto;
   }
 
-  .filter-bar {
-    text-align: center;
+  /* Pensamos Hacemos */
+
+  .full-media-content {
+    flex-wrap: nowrap;
+    flex-direction: column;
   }
 
-  .filter-bar .works-filter {
+  .full-media-content .sides {
     width: 100%;
-    float: left;
-    margin-top: 20px;
-    padding: 0 20px;
+    padding: 0;
   }
 
-  .filter-bar .works-filter li {
-    float: none;
-    display: inline-block;
-    margin: 0 10px;
+  .leftPensamosHacemos {
+    width: 100%;
+    height: auto;
   }
 
-  .filter-btn {
-    float: none;
+  .full-media-content .sides figure {
+    width: 100%;
+    position: static;
+    border: none;
     margin: 0 auto;
-    display: inline-block;
   }
 
-  .case-details .case-navbar ul li {
-    margin: 0 12px;
+  .full-media-content .inner-content .inner {
+    max-width: 100%;
+    padding: 1.875rem 1rem;
   }
 
-  .case-details h3 {
-    font-size: 60px;
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.5rem;
   }
 
-  .case-details h6 {
-    padding-right: 0;
+  .full-media-content .inner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Servicios */
+
+  .features-content {
+    padding: 1.875rem 1rem;
+  }
+
+  .features-content h2 {
+    font-size: 2rem;
+    line-height: 33px;
+    margin-bottom: 0;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.875rem;
+    line-height: 15px;
+  }
+
+  .servicioContainerHijo {
+    gap: 1.25rem;
+  }
+
+  .servicio {
+    max-width: 100%;
+  }
+
+  .servicio h3 {
+    font-size: 1.5rem;
+  }
+
+  .features-content a {
+    font-size: 0.875rem;
+    margin-bottom: 0;
   }
 
   /* Footer */
 
-  .addressFooter {
-    flex-wrap: wrap;
-  }
-
-  .say-hello {
-    padding: 80px 0;
-  }
-
-  .say-hello h3 {
-    font-size: 38px;
-  }
-
   .footer {
-    padding-top: 80px;
+    padding: 2.625rem 1rem 1.375rem 1rem;
   }
 
   .footer h2 {
-    font-size: 40px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 33px;
+    margin-bottom: 0.75rem;
+  }
+
+  .email-us {
+    font-size: 0.7rem;
+  }
+
+  .addressFooter {
+    flex-wrap: wrap;
+    row-gap: 0.625rem;
+    margin: 1.25rem 0 1.56rem 0;
+  }
+
+  .addressFooter div {
+    width: 40%;
+  }
+
+  .addressFooter p {
+    font-size: 0.7rem;
+  }
+
+  .footer ul {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer .derechos {
+    font-size: 0.625rem;
   }
 }
 
-/* RESPONSIVE TABLET FIXES */
-/* 30px */
+@media only screen and (max-width: 600px) {
 
+  /* Nav */
+  .navigation-menu .inner ul li a {
+    font-size: 1.8rem;
+  }
 
-/* RESPONSIVE LARGE DESKTOP */
+  /* Hero */
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero p {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.2rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.7rem;
+  }
+
+  /* Servicios */
+
+  .features-content h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.75rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Footer */
+  .addressFooter p {
+    font-size: 0.625rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Hero */
+
+  h1 {
+    font-size: 1.375rem;
+  }
+
+  .hero p {
+    font-size: 0.75rem;
+  }
+
+  .hero .heroBtn,
+  .full-media-content .inner-content a {
+    font-size: 0.625rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.75rem;
+  }
+
+  /* Servicios */
+
+  .features-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.625rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.125rem;
+  }
+
+  .features-content a {
+    font-size: 0.625rem;
+  }
+
+  /* Footer */
+
+  .footer h2 {
+    font-size: 1.375rem;
+  }
+
+  .email-us {
+    font-size: 0.625rem;
+  }
+
+  .addressFooter p {
+    font-size: 0.5rem;
+  }
+
+  .footer .derechos {
+    font-size: 0.5rem;
+  }
+}
+
+/* Large Desktop */
 @media only screen and (min-width: 1280px) {
   h1 {
     font-size: 3.5rem;
@@ -1999,7 +1894,6 @@ h1 {
   }
 }
 
-/* RESPONSIVE X-LARGE DESKTOP */
 @media only screen and (min-width: 1440px) {
   h1 {
     font-size: 4rem;
