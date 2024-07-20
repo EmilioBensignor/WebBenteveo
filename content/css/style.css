@@ -718,6 +718,7 @@ h1 {
   height: 78px;
   display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
   padding: 20px 60px;
   position: fixed;
   left: 0;
@@ -747,7 +748,7 @@ h1 {
 }
 
 .navbar .logo img {
-  height: 45px;
+  height: 1.5rem;
 }
 
 .navbar .email-us {
@@ -940,10 +941,8 @@ h1 {
 /* LOGOS */
 .logos {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 50px 0;
   background: #fff;
+  padding: 50px 60px;
 }
 
 .logos * {
@@ -954,50 +953,37 @@ h1 {
   transition: 0.25s ease-in-out;
 }
 
-.logos ul {
-  width: 100%;
+.logoSlider .logoSlide {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
-}
-
-.logos ul li {
-  width: 20%;
-  margin: 25px 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
+  margin: 0 1rem;
 }
 
-.logos ul li:hover img {
+.logoSlider .logoSlide:hover img {
   opacity: 0;
   transform: scale(1.1);
 }
 
-.logos ul li:hover h6 {
+.logoSlider .logoSlide:hover p {
   opacity: 1;
   margin-top: -10px;
 }
 
-.logos ul li figure {
-  margin: 0;
+.logoSlider img {
+  height: 5rem;
 }
 
-.logos ul li figure img {
-  height: 80px;
-}
-
-.logos ul li figure h6 {
+.logoSlider p {
   width: 100%;
   height: 20px;
-  line-height: 20px;
   position: absolute;
   top: 50%;
-  margin-top: 0;
-  font-size: 13px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
   font-weight: 600;
   opacity: 0;
 }
@@ -1009,6 +995,7 @@ h1 {
   flex-wrap: wrap;
   align-items: center;
   background-size: cover !important;
+  background-position: center -50px;
   position: relative;
 }
 
@@ -1203,9 +1190,8 @@ h1 {
   position: relative;
 }
 
-.footer img {
-  height: 55px;
-  display: inline-block;
+.footer .logo {
+  height: 1.5rem;
   margin-bottom: 20px;
 }
 
@@ -1272,6 +1258,10 @@ h1 {
 @media only screen and (max-width: 991px) {
 
   /* Generales */
+
+  .navbar .logo img {
+    height: 1.2rem;
+  }
 
   /* Header */
 
@@ -1456,6 +1446,10 @@ h1 {
     padding: 2.625rem 2rem 2rem 2rem;
   }
 
+  .footer .logo {
+    height: 1.2rem;
+  }
+
   .footer h2 {
     font-size: 2rem;
     line-height: 45px;
@@ -1565,6 +1559,10 @@ h1 {
 
   .navigation-menu .inner ul li a {
     font-size: 2rem;
+  }
+
+  .navbar .logo img {
+    height: 0.9rem;
   }
 
   .header {
@@ -1730,6 +1728,10 @@ h1 {
 
   .footer {
     padding: 2.625rem 1rem 1.375rem 1rem;
+  }
+
+  .footer .logo {
+    height: 0.9rem;
   }
 
   .footer h2 {
