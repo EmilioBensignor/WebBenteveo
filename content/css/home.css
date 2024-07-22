@@ -1,0 +1,1016 @@
+/* HERO */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-left: 5rem;
+}
+
+h1 {
+  color: var(--color-blanco);
+  font-weight: bold;
+  font-size: 3rem
+}
+
+.hero p {
+  color: var(--color-blanco);
+  font-size: 1.5rem;
+}
+
+.hero .heroBtn {
+  height: 58px;
+  line-height: 54px;
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0 50px;
+}
+
+.hero .heroBtn:hover {
+  background-color: var(--color-blanco);
+  color: black;
+  text-decoration: none;
+}
+
+/* SOCIAL MEDIA */
+.social-media {
+  width: 38px;
+  position: absolute;
+  z-index: 7;
+  right: 60px;
+  top: 40%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.social-media li {
+  width: 100%;
+  float: left;
+  display: block;
+  padding: 0;
+  list-style: none;
+}
+
+.social-media li a {
+  width: 100%;
+  float: left;
+  color: #fff;
+  font-size: 13px;
+  margin: 10px 0;
+}
+
+.social-media li a:hover {
+  color: var(--color-primario);
+}
+
+/* SCROLL DOWN */
+.scroll-down {
+  width: 1px;
+  height: 90px;
+  position: absolute;
+  right: 63px;
+  bottom: 30px;
+  z-index: 2;
+}
+
+.scroll-down b {
+  width: 100px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  transform-origin: left;
+  margin-left: -15px;
+  margin-top: 0;
+  transform: rotate(90deg);
+  float: left;
+}
+
+.scroll-down span {
+  display: block;
+  position: relative;
+  padding-top: 79px;
+  text-align: center;
+}
+
+.scroll-down span::before {
+  -webkit-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  -moz-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  -o-animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+  animation: elasticus 1.2s cubic-bezier(1, 0, 0, 1) infinite;
+}
+
+.scroll-down span::before {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  margin-left: -0.5px;
+  width: 1px;
+  height: 90px;
+  background: #fff;
+  content: "";
+}
+
+/* PROYECTOS */
+.works {
+  width: 100%;
+  max-width: 95%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+.works.two-cols ul li {
+  width: 50%;
+}
+
+.works.four-cols ul li {
+  width: 25%;
+}
+
+.works.four-cols ul li figure figcaption {
+  padding: 20px;
+}
+
+.works.four-cols ul li figure figcaption h3 {
+  font-size: 20px;
+  margin-left: -30px;
+}
+
+.works.four-cols ul li figure figcaption small {
+  margin-bottom: 20px;
+}
+
+.works ul {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.works ul li {
+  width: 33.33333%;
+  float: left;
+  margin: 0;
+  margin-bottom: 100px;
+  padding: 0 5%;
+  list-style: none;
+}
+
+.works ul li:nth-child(2n+2) {
+  margin-top: 100px;
+}
+
+.works ul li:nth-child(3n+3) {
+  margin-top: 50px;
+}
+
+.works ul li figure {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin: 0;
+  transform-style: preserve-3d;
+}
+
+.works ul li figure * {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.works ul li figure:hover {
+  margin: 0;
+}
+
+.works ul li figure:hover .thumb {
+  box-shadow: 4px 21px 44px -13px rgba(0, 0, 0, 0.75);
+}
+
+.works ul li figure:hover figcaption {
+  text-shadow: 2px 10px 10px rgba(0, 0, 0, 0.35);
+}
+
+.works ul li figure:hover figcaption a {
+  opacity: 1;
+}
+
+.works ul li figure:hover figcaption .brand {
+  opacity: 1;
+}
+
+.works ul li figure .thumb {
+  width: 100%;
+}
+
+.works ul li figure figcaption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 30px;
+  padding-bottom: 50px;
+  transform: translateZ(20px);
+}
+
+.works ul li figure figcaption .brand {
+  height: 30px;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.works ul li figure figcaption h3 {
+  font-weight: 800;
+  color: #fff;
+  margin-left: -50px;
+}
+
+.works ul li figure figcaption small {
+  font-size: 10px;
+  color: #fff;
+  display: block;
+  margin-bottom: 50px;
+  font-weight: 600;
+}
+
+.works ul li figure figcaption a {
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  font-family: "Fjalla One", sans-serif;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 2px;
+  opacity: 0;
+}
+
+.works ul li figure figcaption a:hover {
+  text-decoration: none;
+}
+
+/* LOGOS */
+.logos {
+  width: 100%;
+  background: #fff;
+  padding: 50px 60px;
+}
+
+.logos * {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.logoSlider .logoSlide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 0 1rem;
+}
+
+.logoSlider .logoSlide:hover img {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.logoSlider .logoSlide:hover p {
+  opacity: 1;
+  margin-top: -10px;
+}
+
+.logoSlider img {
+  height: 5rem;
+}
+
+.logoSlider p {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0;
+}
+
+/* PENSAMOS HACEMOS */
+.full-media-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-size: cover !important;
+  background-position: center -50px;
+  position: relative;
+}
+
+.full-media-content .video-bg video {
+  opacity: 1;
+}
+
+.full-media-content .sides {
+  width: 40%;
+  padding: 100px 0;
+  position: relative;
+}
+
+.full-media-content .sides figure {
+  width: 60%;
+  position: relative;
+  z-index: 2;
+  float: right;
+  margin-bottom: 0;
+  margin-right: -40px;
+  border: 10px solid #fff;
+}
+
+.full-media-content .sides figure img {
+  width: 100%;
+}
+
+.full-media-content .inner-content {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.full-media-content .inner-content .inner {
+  max-width: 700px;
+  padding: 0 60px 0 100px;
+}
+
+.full-media-content .inner-content .inner .loPensamos {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.full-media-content .inner-content h2 {
+  font-weight: 800;
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+.full-media-content .inner-content p {
+  color: #fff;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.full-media-content .inner-content a {
+  height: 58px;
+  line-height: 54px;
+  display: inline-block;
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 50px;
+}
+
+.full-media-content .inner-content a:hover {
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+}
+
+/* SERVICIOS */
+.features-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.serviciosTitle h2 span {
+  display: block;
+}
+
+.features-content .container {
+  padding: 0;
+}
+
+.features-content h2 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.serviciosTitle p {
+  width: 70%;
+}
+
+.serviciosContainer {
+  margin-top: 5rem;
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.features-content img {
+  height: 55px;
+  margin-bottom: 20px;
+}
+
+.features-content p {
+  font-size: 0.875rem;
+  color: #808080;
+  line-height: 22px;
+}
+
+.features-content ul {
+  width: 100%;
+  float: left;
+  margin: 0;
+  margin-top: -13px;
+  margin-bottom: 70px;
+  padding: 0;
+}
+
+.features-content ul li {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
+  font-size: 14px;
+  color: #808080;
+}
+
+.features-content a {
+  font-size: 16px;
+  color: var(--color-primario);
+  display: inline-block;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.features-content a:before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--color-primario);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.features-content a:hover {
+  text-decoration: none;
+}
+
+.features-content a:hover:before {
+  width: 100%;
+}
+
+/* Tablet */
+
+@media only screen and (max-width: 991px) {
+
+  /* Hero */
+
+  .hero {
+    gap: 2rem;
+    padding-left: 1.875rem;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .hero .heroBtn {
+    font-size: 0.875rem;
+  }
+
+  .social-media {
+    display: flex;
+    gap: 1rem;
+    position: static;
+    padding-left: 1.875rem;
+    margin-top: 1rem;
+  }
+
+  /* Proyectos */
+
+  .works {
+    padding-top: 0;
+  }
+
+  .works ul li {
+    width: 50%;
+  }
+
+  .works.four-cols ul li {
+    width: 33.33333%;
+  }
+
+  /* Logos */
+  .logos .container {
+    max-width: 100%;
+    padding: 0 1.875rem;
+  }
+
+  .logos ul li figure img {
+    height: 7.5rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .sides {
+    padding: 0;
+  }
+
+  .full-media-content .inner-content .inner {
+    padding: 5rem 3.75rem 5rem 6.25rem;
+    right: 0;
+  }
+
+  .leftPensamosHacemos {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .full-media-content .sides figure {
+    width: 220px;
+    position: absolute;
+    margin-right: -3.75rem;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.3rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 2rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 0.875rem;
+  }
+
+  /* Servicios */
+
+  .features-content {
+    padding: 3.75rem 1.875rem;
+  }
+
+  .features-content .container {
+    max-width: 100%;
+  }
+
+  .features-content img {
+    height: 30px;
+    margin-bottom: 0;
+  }
+
+  .features-content h2 {
+    font-size: 2rem;
+  }
+
+  .serviciosTitle p {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .serviciosContainer {
+    margin-top: 2rem;
+  }
+
+  .servicioContainerHijo {
+    width: 100%;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 0;
+  }
+
+  .servicio {
+    max-width: 45%;
+    flex: none;
+    padding: 0;
+  }
+
+  .servicioHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .features-content .servicio p {
+    width: 95%;
+    font-size: 0.875rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .features-content a {
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  /* Hero */
+
+  h1 {
+    font-size: 2.125rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero .heroBtn {
+    font-size: 0.75rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .inner-content .inner {
+    padding: 3.75rem 3.75rem 3.75rem 6.25rem;
+  }
+
+  .full-media-content .sides figure {
+    width: 75%;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.125rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+  }
+
+  /* Servicios */
+
+  .features-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.25rem;
+  }
+
+  .features-content .servicio p {
+    font-size: 0.75rem;
+  }
+}
+
+/* RESPONSIVE MOBILE FIXES */
+@media only screen and (max-width: 767px) {
+  /* Hero */
+
+  .hero {
+    gap: 1.25rem;
+    padding-left: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.875rem;
+  }
+
+  .hero .heroBtn,
+  .full-media-content .inner-content a {
+    height: auto;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 1rem 2.2rem;
+  }
+
+  .scroll-down {
+    display: none;
+  }
+
+  /* Proyectos */
+
+  .works {
+    padding-bottom: 0;
+  }
+
+  .works ul li {
+    width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 80px;
+    padding: 0 12%;
+  }
+
+  .works ul li figure figcaption {
+    padding-bottom: 30px;
+  }
+
+  .works.two-cols ul li {
+    width: 100%;
+  }
+
+  .works.four-cols ul li {
+    width: 100%;
+  }
+
+  .works.four-cols ul li figure figcaption {
+    padding-bottom: 30px;
+  }
+
+  /* Clientes */
+
+  .logos {
+    overflow: hidden;
+    padding: 30px 0;
+  }
+
+  .logos .container {
+    padding: 0 1rem;
+  }
+
+  .logos ul {
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .logos ul li {
+    width: 33.33333%;
+    margin: 25px auto;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+
+  .full-media-content .sides {
+    width: 100%;
+    padding: 0;
+  }
+
+  .leftPensamosHacemos {
+    width: 100%;
+    height: auto;
+  }
+
+  .full-media-content .sides figure {
+    width: 100%;
+    position: static;
+    border: none;
+    margin: 0 auto;
+  }
+
+  .full-media-content .inner-content .inner {
+    max-width: 100%;
+    padding: 1.875rem 1rem;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.5rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Servicios */
+
+  .features-content {
+    padding: 1.875rem 1rem;
+  }
+
+  .features-content h2 {
+    font-size: 2rem;
+    line-height: 33px;
+    margin-bottom: 0;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.875rem;
+    line-height: 15px;
+  }
+
+  .servicioContainerHijo {
+    gap: 1.25rem;
+  }
+
+  .servicio {
+    max-width: 100%;
+  }
+
+  .servicio h3 {
+    font-size: 1.5rem;
+  }
+
+  .features-content a {
+    font-size: 0.875rem;
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Hero */
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero p {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.2rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.7rem;
+  }
+
+  /* Servicios */
+
+  .features-content h2 {
+    font-size: 1.7rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.75rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  /* Hero */
+
+  h1 {
+    font-size: 1.375rem;
+  }
+
+  .hero p {
+    font-size: 0.75rem;
+  }
+
+  .hero .heroBtn,
+  .full-media-content .inner-content a {
+    font-size: 0.625rem;
+  }
+
+  /* Pensamos Hacemos */
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.75rem;
+  }
+
+  /* Servicios */
+
+  .features-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .serviciosTitle p,
+  .features-content .servicio p {
+    font-size: 0.625rem;
+  }
+
+  .servicio h3 {
+    font-size: 1.125rem;
+  }
+
+  .features-content a {
+    font-size: 0.625rem;
+  }
+}
+
+/* Large Desktop */
+@media only screen and (min-width: 1280px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .features-content p {
+    font-size: 1rem;
+  }
+
+  .servicio {
+    padding: 0 1.5rem;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .hero p {
+    font-size: 1.8rem;
+  }
+
+  .hero .heroBtn {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content .inner .loPensamos {
+    font-size: 1.8rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 1.2rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 0.875rem;
+  }
+}
+
+@media only screen and (min-width: 1750px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .navbar .email-us {
+    font-size: 1rem;
+  }
+
+  .navbar .sandwich-nav b {
+    font-size: 1rem;
+  }
+
+  .features-content p {
+    font-size: 1.2rem;
+  }
+}
