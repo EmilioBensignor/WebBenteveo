@@ -1,0 +1,11 @@
+<script src="/content/js/libs/jquery.min.js"></script>
+<script src="/content/js/libs/popper.min.js"></script>
+<script src="/content/js/libs/bootstrap.min.js"></script>
+<script src="/content/js/libs/swiper.min.js"></script>
+<script src="/content/js/libs/wow.min.js"></script>
+<script src="/content/js/libs/isotope.min.js"></script>
+<script src="/content/js/libs/tilt.jquery.js"></script>
+<script src="/content/js/libs/jquery.typewriter.js"></script>
+<script src='/content/js/libs/TweenMax.min.js'></script>
+<script src='/content/js/libs/imagesloaded.pkgd.min.js'></script>
+<script src='/content/js/libs/jquery.parallax.min.js'></script>

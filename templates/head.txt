@@ -1,0 +1,9 @@
+<meta name="author" content="Benteveo">
+<meta property="og:image" content="http://www.themezinho.net/unicord/preview.png">
+<meta property="og:site_name" content="Benteveo">
+<meta property="og:type" content="website">
+<link href="ico/favicon.png" rel="shortcut icon">
+<link rel="stylesheet" href="/content/css/font-awesome.min.css">
+<link rel="stylesheet" href="/content/css/libs/animate.min.css">
+<link rel="stylesheet" href="/content/css/libs/bootstrap.min.css">
+<link rel="stylesheet" href="/content/css/main.css">
