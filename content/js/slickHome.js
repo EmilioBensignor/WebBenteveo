@@ -102,7 +102,7 @@ const logosDuplicados = [...logosClientes, ...logosClientes, ...logosClientes];
 for (let logo = 0; logo < logosDuplicados.length; logo++) {
   logoSlider.innerHTML += `
     <div class="logoSlide wow fadeInUp">
-      <img src="/content/images/${logosDuplicados[logo].img}" alt="${logosDuplicados[logo].alt}" />
+      <img src="/content/img/${logosDuplicados[logo].img}" alt="${logosDuplicados[logo].alt}" />
       <p>${logosDuplicados[logo].nombre}</p>
     </div>
   `;
