@@ -28,7 +28,7 @@
 		// TYPEWRITER
 		$("#typewriter").typewriter({
 			prefix: "",
-			text: ["Please wait", "Still loading", "Almost done"],
+			text: ["Espere", "Seguimos cargando", "Ya casi estamos"],
 			typeDelay: 100,
 			waitingTime: 1500,
 			blinkSpeed: 800
