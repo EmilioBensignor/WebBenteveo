@@ -30,7 +30,7 @@
 			prefix: "",
 			text: ["Espere", "Seguimos cargando", "Ya casi estamos"],
 			typeDelay: 100,
-			waitingTime: 1500,
+			waitingTime: 2000,
 			blinkSpeed: 800
 		});
 
