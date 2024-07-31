@@ -9,3 +9,4 @@
 <script src='/content/js/libs/TweenMax.min.js'></script>
 <script src='/content/js/libs/imagesloaded.pkgd.min.js'></script>
 <script src='/content/js/libs/jquery.parallax.min.js'></script>
+<script src="/content/js/main.js"></script>
