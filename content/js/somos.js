@@ -1,7 +1,34 @@
+const nuestroEquipo = document.getElementById("nuestroEquipo");
 const listaPremios = document.getElementById("listaPremios");
 const listaSectores = document.getElementById("listaSectores");
 const capacidadesContent = document.getElementById("capacidadesContent");
 
+const equipo = [
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
+];
 const premios = [
   "2019 Hunger Boss - Awwwwards",
   "2019 Hunger Boss - Awwwwards",
@@ -59,6 +86,34 @@ const capacidades = [
     texto: "Elaboramos acciones innovadoras para acelerar el crecimiento y garantizar la evolución continua de los negocios.",
   },
 ];
+
+// Nuestro Equipo
+for (let e = 0; e < equipo.length; e++) {
+  nuestroEquipo.innerHTML += `
+    <div>
+      <figure class="equipoFigure">
+        <img src="${equipo[e].img}" alt="${equipo[e].alt}">
+        <figcaption>
+          <p>${equipo[e].nombre}</p>
+          <small>${equipo[e].rol}</small>
+        </figcaption>
+      </figure>
+    </div>
+  `;
+}
+
+$("#nuestroEquipo").slick({
+  infinite: true,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: false,
+  autoplay: true,
+  autoplaySpeed: 1000,
+  speed: 500,
+  swipeToSlide: false,
+  variableWidth: false,
+})
 
 // Premios
 for (let premio = 0; premio < premios.length; premio++) {
