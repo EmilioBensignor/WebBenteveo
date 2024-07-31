@@ -1,0 +1,261 @@
+/* INTRODCUTION */
+.introduction {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 150px 0;
+  background: #fff;
+}
+
+.introduction h2 {
+  display: flex;
+  flex-direction: column;
+  font-weight: 800;
+}
+
+.introduction p {
+  font-weight: 600;
+}
+
+.introductionContent {
+  margin-top: 1.25rem;
+}
+
+.introductionContent p {
+  margin: 0;
+}
+
+.introductionContent p:first-child {
+  font-weight: 400;
+  color: #131313;
+  margin-bottom: 5px;
+}
+
+.introductionContent p:last-child {
+  font-weight: 400;
+  color: #808080;
+}
+
+/* NUESTRO EQUIPO */
+.our-team {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 150px;
+  background: #f3f3f3;
+}
+
+.our-team * {
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -ms-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+.our-team figure {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+}
+
+.our-team figure img {
+  width: 100%;
+  float: left;
+  filter: grayscale(1);
+  mix-blend-mode: multiply;
+}
+
+.our-team figure figcaption {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  opacity: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.our-team figure figcaption p {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.our-team figure figcaption small {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* .our-team figure:hover {
+  background: url(../images/team-splash.png) center no-repeat;
+  background-size: cover;
+} */
+
+.our-team figure:hover img {
+  transform: translateY(20px);
+}
+
+.our-team figure:hover figcaption {
+  opacity: 1;
+}
+
+/* PREMIOS SECTORES */
+.listing-content {
+  width: 100%;
+  padding: 150px 0;
+  color: #fff;
+}
+
+.listing-content h3 {
+  font-family: "Fjalla One", sans-serif;
+  margin-bottom: 10px;
+}
+
+.listing-content ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.listing-content ul li {
+  width: 100%;
+  color: #CDCED0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 14.52px;
+  list-style: none;
+  margin: 0;
+}
+
+/* CAPACIDADES */
+
+.features-content {
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  background: #fff;
+}
+
+.features-content h2 {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+.features-content .capacidadesSubtitle {
+  color: #131313;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.capacidad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.capacidad img {
+  height: 55px;
+}
+
+.capacidad h3 {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.capacidad p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #808080;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .heroPSomos {
+    width: 80%;
+  }
+
+  /* Introduction */
+  .introduction {
+    padding: 2.5rem 1rem;
+  }
+
+  .introduction h2 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+
+  .introduction p {
+    font-size: 0.75rem;
+  }
+
+  .introductionContent {
+    margin-top: 1.25rem;
+  }
+
+  .introductionContent p:last-child {
+    font-size: 0.625rem;
+  }
+
+  /* Nuestro equipo */
+  .our-team {
+    padding-top: 80px;
+  }
+
+  /* Premios Sectores */
+
+  .listing-content {
+    padding: 2.5rem 1rem;
+  }
+
+  .premiosSectores {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+  }
+
+  .listing-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .premiosSectores ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.94rem;
+  }
+
+  /* Capacidades */
+  .features-content {
+    padding: 2.5rem 1rem;
+  }
+
+  .features-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .capacidadesContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.875rem;
+    margin-top: 2.5rem;
+  }
+
+  .capacidadesContent h3 {
+    font-size: 1.25rem;
+  }
+
+  .capacidadesContent p {
+    font-size: 0.875rem;
+  }
+}
