@@ -90,7 +90,7 @@ const capacidades = [
 // Nuestro Equipo
 for (let e = 0; e < equipo.length; e++) {
   nuestroEquipo.innerHTML += `
-    <div>
+    <div class="wow fadeInUp">
       <figure class="equipoFigure">
         <img src="${equipo[e].img}" alt="${equipo[e].alt}">
         <figcaption>
@@ -113,6 +113,14 @@ $("#nuestroEquipo").slick({
   speed: 500,
   swipeToSlide: false,
   variableWidth: false,
+  responsive: [
+    {
+      breakpoint: 760,
+      settings: {
+        slidesToShow: 2,
+      }
+    }
+  ]
 })
 
 // Premios

@@ -44,6 +44,10 @@
   background: #f3f3f3;
 }
 
+#nuestroEquipo {
+  width: 100%;
+}
+
 .our-team * {
   -webkit-transition: 0.25s ease-in-out;
   -moz-transition: 0.25s ease-in-out;
