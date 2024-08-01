@@ -1,9 +1,18 @@
+/* hero */
+h1 {
+  font-size: 4rem;
+}
+
+.hero p {
+  width: 55%;
+}
+
 /* INTRODCUTION */
 .introduction {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 3.75rem 5rem;
   background: #fff;
 }
 
@@ -11,14 +20,33 @@
   display: flex;
   flex-direction: column;
   font-weight: 800;
+  font-size: 1.75rem;
 }
 
 .introduction p {
   font-weight: 600;
+  font-size: 1rem;
+}
+
+.introductionRow {
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .introductionContent {
   margin-top: 1.25rem;
+}
+
+.introductionRow div {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.introductionContent {
+  margin-top: 0;
 }
 
 .introductionContent p {
@@ -26,13 +54,15 @@
 }
 
 .introductionContent p:first-child {
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 1.125rem;
   color: #131313;
   margin-bottom: 5px;
 }
 
 .introductionContent p:last-child {
   font-weight: 400;
+  font-size: 0.875rem;
   color: #808080;
 }
 
@@ -40,7 +70,7 @@
 .our-team {
   width: 100%;
   display: flex;
-  padding-top: 150px;
+  padding-top: 4rem;
   background: #f3f3f3;
 }
 
@@ -111,8 +141,31 @@
 /* PREMIOS SECTORES */
 .listing-content {
   width: 100%;
-  padding: 150px 0;
+  padding: 3.75rem 5rem;
   color: #fff;
+}
+
+.listing-content .row {
+  margin: 0;
+}
+
+.premiosSectores {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.premios,
+.sectores {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+
+#listaPremios,
+#listaSectores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
 }
 
 .listing-content h3 {
@@ -140,23 +193,31 @@
 
 .features-content {
   width: 100%;
-  padding-top: 150px;
-  padding-bottom: 80px;
   background: #fff;
+  padding: 3.75rem 5rem;
+}
+
+.capacidadesContent {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.438rem;
+  margin-top: 2rem;
 }
 
 .features-content h2 {
-  font-size: 50px;
+  font-size: 2.25rem;
   font-weight: 800;
 }
 
 .features-content .capacidadesSubtitle {
   color: #131313;
-  font-size: 0.75rem;
-  font-weight: 500;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .capacidad {
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,12 +230,12 @@
 
 .capacidad h3 {
   font-weight: 500;
-  font-size: 15px;
+  font-size: 1.25rem;
   margin-bottom: 0;
 }
 
 .capacidad p {
-  font-size: 17px;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 21px;
   color: #808080;
@@ -217,18 +278,21 @@
 
 .full-media-content .sides {
   flex: 1;
-  padding: 150px 0;
+  padding: 3.75rem 5rem;
   position: relative;
 }
 
 .full-media-content .sides figure {
-  width: 50%;
+  width: 40%;
   position: relative;
   z-index: 2;
   float: right;
-  margin-bottom: 0;
-  margin-right: -40px;
   border: 10px solid #fff;
+}
+
+.full-media-content .inner-content {
+  width: 60%;
+  flex: none;
 }
 
 .full-media-content .sides figure img {
@@ -246,19 +310,20 @@
 
 .full-media-content .inner-content .nuestroAdnSubtitle {
   font-family: "Fjalla One", sans-serif;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1;
   text-transform: uppercase;
 }
 
 .full-media-content .inner-content h2 {
   font-weight: 800;
-  font-size: 60px;
+  font-size: 2.25rem;
 }
 
 .full-media-content .inner-content p {
   color: #fff;
   font-weight: 400;
+  font-size: 1.1rem;
 }
 
 .full-media-content .inner-content p span {
@@ -270,7 +335,7 @@
   border: 2px solid #fff;
   color: #fff;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.875rem;
   padding: 0.938rem 2.5rem;
 }
 
@@ -280,11 +345,90 @@
   text-decoration: none;
 }
 
+/* Tablet */
 @media only screen and (max-width: 991px) {
+
+  /* Introduction */
+  .introduction {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .introduction h2 {
+    font-size: 1.25rem;
+  }
+
+  .introduction p {
+    font-size: 0.75rem;
+  }
+
+  .introductionContent p:first-child {
+    font-size: 0.875rem;
+  }
+
+  .introductionContent p:last-child {
+    font-size: 0.625rem;
+  }
+
+  /* Nuestro Equipo */
+  .our-team {
+    padding-top: 2.5rem;
+  }
+
+  .our-team figure figcaption p {
+    font-size: 0.875rem;
+  }
+
+  /* Premios Sectores */
+  .listing-content {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .premiosSectores {
+    justify-content: space-around;
+  }
+
+  .listing-content h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Capacidades */
+  .features-content {
+    padding: 2.5rem 1.75rem;
+  }
+
+  .features-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .features-content .capacidadesSubtitle {
+    font-size: 1rem;
+  }
+
+  .capacidadesContent {
+    gap: 1.875rem;
+    margin-top: 2rem;
+  }
+
+  .capacidad {
+    width: 40%;
+  }
+
+  .capacidad h3 {
+    font-size: 1.25rem;
+  }
+
+  .capacidad p {
+    font-size: 0.875rem;
+  }
 
   /* Nuestro ADN */
   .full-media-content {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .full-media-content .sides {
+    padding: 2.5rem 1.75rem;
   }
 
   .full-media-content .sides figure {
@@ -292,11 +436,26 @@
     margin: 0 auto;
   }
 
-  .full-media-content .inner-content {
-    flex: none;
+  .full-media-content .inner-content .nuestroAdnSubtitle {
+    font-size: 1rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 0.75rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 0.75rem;
   }
 }
 
+@media only screen and (max-width: 850px) {}
+
+/* Mobile */
 @media only screen and (max-width: 767px) {
 
   /* Hero Somos */
@@ -334,13 +493,22 @@
   /* Premios Sectores */
 
   .listing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 2.5rem 1rem;
   }
 
   .premiosSectores {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1.875rem;
+  }
+
+  .premios,
+  .sectores {
+    flex-direction: column;
   }
 
   .listing-content h3 {
@@ -420,3 +588,16 @@
     font-size: 0.625rem;
   }
 }
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (max-width: 480px) {}
+
+/* Large Desktop */
+@media only screen and (min-width: 1280px) {}
+
+@media only screen and (min-width: 1440px) {}
+
+@media only screen and (min-width: 1600px) {}
+
+@media only screen and (min-width: 1750px) {}
