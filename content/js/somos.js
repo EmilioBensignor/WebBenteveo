@@ -88,14 +88,15 @@ const capacidades = [
 ];
 
 // Nuestro Equipo
-for (let e = 0; e < equipo.length; e++) {
+const equipoDuplicado = [...equipo, ...equipo, ...equipo]
+for (let e = 0; e < equipoDuplicado.length; e++) {
   nuestroEquipo.innerHTML += `
     <div class="wow fadeInUp">
       <figure class="equipoFigure">
-        <img src="${equipo[e].img}" alt="${equipo[e].alt}">
+        <img src="${equipoDuplicado[e].img}" alt="${equipoDuplicado[e].alt}">
         <figcaption>
-          <p>${equipo[e].nombre}</p>
-          <small>${equipo[e].rol}</small>
+          <p>${equipoDuplicado[e].nombre}</p>
+          <small>${equipoDuplicado[e].rol}</small>
         </figcaption>
       </figure>
     </div>
