@@ -1,6 +1,6 @@
 /* hero */
 h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .hero p {
@@ -13,7 +13,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   padding: 3.75rem 5rem;
-  background: #fff;
+  background: #f3f3f3;
 }
 
 .introduction h2 {
@@ -30,8 +30,9 @@ h1 {
 
 .introductionRow {
   flex-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
+  margin: 0;
 }
 
 .introductionContent {
@@ -42,7 +43,6 @@ h1 {
   width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .introductionContent {
@@ -70,7 +70,6 @@ h1 {
 .our-team {
   width: 100%;
   display: flex;
-  padding-top: 4rem;
   background: #f3f3f3;
 }
 
@@ -158,7 +157,7 @@ h1 {
 .sectores {
   display: flex;
   flex-direction: row;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 #listaPremios,
@@ -182,7 +181,7 @@ h1 {
 .listing-content ul li {
   width: 100%;
   color: #CDCED0;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 14.52px;
   list-style: none;
@@ -278,7 +277,7 @@ h1 {
 
 .full-media-content .sides {
   flex: 1;
-  padding: 3.75rem 5rem;
+  padding: 5rem;
   position: relative;
 }
 
@@ -313,6 +312,7 @@ h1 {
   font-size: 1.25rem;
   line-height: 1;
   text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
 .full-media-content .inner-content h2 {
@@ -324,6 +324,7 @@ h1 {
   color: #fff;
   font-weight: 400;
   font-size: 1.1rem;
+  margin-bottom: 1.5rem;
 }
 
 .full-media-content .inner-content p span {
@@ -348,6 +349,11 @@ h1 {
 /* Tablet */
 @media only screen and (max-width: 991px) {
 
+  /* Hero */
+  h1 {
+    font-size: 2.4rem;
+  }
+
   /* Introduction */
   .introduction {
     padding: 2.5rem 1.75rem;
@@ -358,21 +364,18 @@ h1 {
   }
 
   .introduction p {
-    font-size: 0.75rem;
-  }
-
-  .introductionContent p:first-child {
     font-size: 0.875rem;
   }
 
+  .introductionContent p:first-child {
+    font-size: 1rem;
+  }
+
   .introductionContent p:last-child {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
   }
 
   /* Nuestro Equipo */
-  .our-team {
-    padding-top: 2.5rem;
-  }
 
   .our-team figure figcaption p {
     font-size: 0.875rem;
@@ -436,16 +439,8 @@ h1 {
     margin: 0 auto;
   }
 
-  .full-media-content .inner-content .nuestroAdnSubtitle {
-    font-size: 1rem;
-  }
-
-  .full-media-content .inner-content h2 {
-    font-size: 1.5rem;
-  }
-
   .full-media-content .inner-content p {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
   .full-media-content .inner-content a {
@@ -453,14 +448,33 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 850px) {}
+@media only screen and (max-width: 850px) {
+
+  /* Hero */
+  h1 {
+    font-size: 2.125rem;
+  }
+
+  .introduction p {
+    font-size: 0.75rem;
+  }
+}
 
 /* Mobile */
 @media only screen and (max-width: 767px) {
 
   /* Hero Somos */
+  h1 {
+    font-size: 1.6rem;
+  }
+
   .heroPSomos {
     width: 80%;
+  }
+
+  .hero p {
+    width: 70%;
+    font-size: 0.875rem;
   }
 
   /* Introduction */
@@ -468,26 +482,26 @@ h1 {
     padding: 2.5rem 1rem;
   }
 
+  .introductionRow {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .introductionRow div {
+    width: 100%;
+  }
+
   .introduction h2 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 5px;
   }
 
   .introduction p {
-    font-size: 0.75rem;
+    font-size: 0.875rem;
   }
 
   .introductionContent {
     margin-top: 1.25rem;
-  }
-
-  .introductionContent p:last-child {
-    font-size: 0.625rem;
-  }
-
-  /* Nuestro equipo */
-  .our-team {
-    padding-top: 2.5rem;
   }
 
   /* Premios Sectores */
@@ -502,7 +516,7 @@ h1 {
   .premiosSectores {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 1.875rem;
   }
 
@@ -512,7 +526,7 @@ h1 {
   }
 
   .listing-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
   .premiosSectores ul {
@@ -526,8 +540,8 @@ h1 {
     padding: 2.5rem 1rem;
   }
 
-  .features-content h2 {
-    font-size: 1.5rem;
+  .features-content .capacidadesSubtitle {
+    font-size: 0.875rem;
   }
 
   .capacidadesContent {
@@ -536,6 +550,10 @@ h1 {
     align-items: center;
     gap: 1.875rem;
     margin-top: 2.5rem;
+  }
+
+  .capacidad {
+    width: 100%;
   }
 
   .capacidadesContent h3 {
@@ -565,23 +583,28 @@ h1 {
     margin: 0 auto;
   }
 
+  .full-media-content .inner-content {
+    width: 100%;
+  }
+
   .full-media-content .inner-content .inner {
     max-width: 100%;
   }
 
   .full-media-content .inner-content .nuestroAdnSubtitle {
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin: 0;
   }
 
   .full-media-content .inner-content h2 {
-    font-size: 1.375rem;
+    font-size: 1.5rem;
     line-height: 33px;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.6rem;
   }
 
   .full-media-content .inner-content p {
-    font-size: 0.875rem;
+    width: 70%;
+    margin-bottom: 1.5rem;
   }
 
   .full-media-content .inner-content a {
@@ -589,14 +612,136 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
 
-@media only screen and (max-width: 480px) {}
+  /* Introduction */
+  .introduction h2 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+  }
+
+  .introductionContent p:first-child {
+    font-size: 0.875rem;
+  }
+
+  .full-media-content .inner-content p {
+    width: 90%;
+  }
+
+  .full-media-content .inner-content h2 {
+    margin-bottom: 0.25rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  /* Hero */
+  h1 {
+    font-size: 1.375rem;
+  }
+
+  .hero p {
+    width: 75%;
+    font-size: 0.75rem;
+  }
+
+  /* Introduction */
+
+  .introduction p {
+    font-size: 0.75rem;
+  }
+
+  .introductionContent p:last-child {
+    font-size: 0.625rem;
+  }
+
+  /* Premios Sectores */
+
+  .premiosSectores {
+    flex-direction: column;
+  }
+
+  .listing-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .listing-content ul li {
+    font-size: 0.75rem;
+  }
+
+  /* Capacidades */
+  .features-content .capacidadesSubtitle {
+    font-size: 0.75rem;
+  }
+
+  /* Nuestro ADN */
+  .full-media-content .inner-content .nuestroAdnSubtitle {
+    font-size: 0.875rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 1.375rem;
+  }
+}
 
 /* Large Desktop */
-@media only screen and (min-width: 1280px) {}
+@media only screen and (min-width: 1080px) {
+  h1 {
+    font-size: 4rem;
+  }
 
-@media only screen and (min-width: 1440px) {}
+  .introduction h2 {
+    font-size: 2rem;
+  }
+
+  .premiosSectores {
+    justify-content: flex-start;
+    gap: 7rem;
+  }
+
+  #listaPremios,
+  #listaSectores {
+    gap: 1.2rem;
+  }
+
+  .listing-content ul li {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .introductionContent p:first-child {
+    font-size: 1.2rem;
+  }
+
+  .introductionContent p:last-child {
+    font-size: 1rem;
+  }
+
+  .premiosSectores {
+    gap: 10rem;
+  }
+
+  .full-media-content .sides {
+    padding: 8rem 5rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .introduction p {
+    font-size: 1.2rem;
+  }
+
+  .premiosSectores {
+    gap: 14rem;
+  }
+
+  .capacidad h3 {
+    font-size: 1.35rem;
+  }
+}
+
+/* HASTA ACA */
 
 @media only screen and (min-width: 1600px) {}
 

@@ -110,8 +110,8 @@ $("#nuestroEquipo").slick({
   arrows: false,
   dots: false,
   autoplay: true,
-  autoplaySpeed: 1000,
-  speed: 500,
+  autoplaySpeed: 1500,
+  speed: 1000,
   swipeToSlide: false,
   variableWidth: false,
   responsive: [
