@@ -1,4 +1,11 @@
 /* hero */
+.headerSomos {
+  background-image: url("/content/img/somos/equipo-somos.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1 {
   font-size: 3.5rem;
 }
@@ -569,10 +576,6 @@ h1 {
     display: none;
   }
 
-  .nuestroAdn {
-    padding: 2.5rem 1rem;
-  }
-
   .full-media-content .sides {
     padding: 0;
   }
@@ -585,6 +588,7 @@ h1 {
 
   .full-media-content .inner-content {
     width: 100%;
+    padding: 2.5rem 1rem;
   }
 
   .full-media-content .inner-content .inner {
@@ -846,5 +850,23 @@ h1 {
 
   .introduction p {
     width: 80%;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  .headerSomos {
+    background-position: center -200px;
+  }
+}
+
+@media only screen and (min-width: 2400px) {
+  .headerSomos {
+    background-position: center -300px;
+  }
+}
+
+@media only screen and (min-width: 2750px) {
+  .headerSomos {
+    background-position: center -400px;
   }
 }
