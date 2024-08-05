@@ -183,7 +183,6 @@ h1 {
   color: #CDCED0;
   font-size: 0.875rem;
   font-weight: 600;
-  line-height: 14.52px;
   list-style: none;
   margin: 0;
 }
@@ -549,11 +548,12 @@ h1 {
     flex-direction: column;
     align-items: center;
     gap: 1.875rem;
+    padding: 0 1rem;
     margin-top: 2.5rem;
   }
 
   .capacidad {
-    width: 100%;
+    width: 70%;
   }
 
   .capacidadesContent h3 {
@@ -622,6 +622,10 @@ h1 {
 
   .introductionContent p:first-child {
     font-size: 0.875rem;
+  }
+
+  .capacidad {
+    width: 85%;
   }
 
   .full-media-content .inner-content p {
@@ -702,6 +706,7 @@ h1 {
   #listaPremios,
   #listaSectores {
     gap: 1.2rem;
+    margin-top: 0.3rem;
   }
 
   .listing-content ul li {
@@ -741,8 +746,105 @@ h1 {
   }
 }
 
-/* HASTA ACA */
+@media only screen and (min-width: 1600px) {
 
-@media only screen and (min-width: 1600px) {}
+  /* Hero */
+  h1 {
+    font-size: 4.5rem;
+  }
 
-@media only screen and (min-width: 1750px) {}
+  .hero p {
+    width: 100%;
+  }
+
+  /* Introduction */
+  .introduction h2 {
+    font-size: 3rem;
+  }
+
+  .introductionContent p:first-child {
+    font-size: 1.5rem;
+  }
+
+  .introductionContent p:last-child {
+    font-size: 1.1rem;
+  }
+
+  /* Premios Sectores */
+  .listing-content h3 {
+    font-size: 2rem;
+  }
+
+  .listing-content ul li {
+    font-size: 1.2rem;
+  }
+
+  /* Capacidades */
+  .features-content h2 {
+    font-size: 2.75rem;
+  }
+
+  .capacidadesContent {
+    gap: 3rem;
+  }
+
+  .capacidad h3 {
+    font-size: 1.5rem;
+  }
+
+  .capacidad p {
+    font-size: 1rem;
+  }
+
+  /* Nuestro ADN */
+  .full-media-content .sides {
+    padding: 10rem 5rem;
+  }
+
+  .full-media-content .inner-content .nuestroAdnSubtitle {
+    font-size: 1.5rem;
+  }
+
+  .full-media-content .inner-content h2 {
+    font-size: 2.75rem;
+  }
+
+  .full-media-content .inner-content p {
+    font-size: 1.25rem;
+  }
+
+  .full-media-content .inner-content a {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1750px) {
+
+  /* Introduction */
+  .introduction h2 {
+    font-size: 3.25rem;
+  }
+
+  /* Capacidades */
+  .features-content h2 {
+    font-size: 3rem;
+  }
+
+  .capacidadesContent {
+    gap: 5rem;
+  }
+
+  .capacidad {
+    width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .introductionRow div {
+    width: 50%;
+  }
+
+  .introduction p {
+    width: 80%;
+  }
+}
