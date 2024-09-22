@@ -28,6 +28,18 @@ const equipo = [
     nombre: "Maria Shevcensko",
     rol: "Front-End Ninja",
   },
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
+  {
+    img: "/content/img/somos/persona.png",
+    alt: "",
+    nombre: "Maria Shevcensko",
+    rol: "Front-End Ninja",
+  },
 ];
 const premios = [
   "2019 Hunger Boss - Awwwwards",
@@ -87,42 +99,50 @@ const capacidades = [
   },
 ];
 
-// Nuestro Equipo
-const equipoDuplicado = [...equipo, ...equipo, ...equipo]
-for (let e = 0; e < equipoDuplicado.length; e++) {
-  nuestroEquipo.innerHTML += `
-    <div class="wow fadeInUp">
-      <figure class="equipoFigure">
-        <img src="${equipoDuplicado[e].img}" alt="${equipoDuplicado[e].alt}">
-        <figcaption>
-          <p>${equipoDuplicado[e].nombre}</p>
-          <small>${equipoDuplicado[e].rol}</small>
-        </figcaption>
-      </figure>
-    </div>
-  `;
-}
+document.addEventListener('DOMContentLoaded', function () {
+  const nuestroEquipo = document.getElementById("nuestroEquipo");
 
-$("#nuestroEquipo").slick({
-  infinite: true,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: false,
-  autoplay: true,
-  autoplaySpeed: 1500,
-  speed: 1000,
-  swipeToSlide: false,
-  variableWidth: false,
-  responsive: [
-    {
-      breakpoint: 760,
-      settings: {
-        slidesToShow: 2,
-      }
+  if (nuestroEquipo && document.querySelector('.swiperEquipo')) {
+    const equipoDuplicado = [...equipo, ...equipo];
+
+    for (let e = 0; e < equipoDuplicado.length; e++) {
+      nuestroEquipo.innerHTML += `
+        <div class="swiper-slide">
+          <figure class="equipoFigure">
+            <img src="${equipoDuplicado[e].img}" alt="${equipoDuplicado[e].alt}">
+            <figcaption>
+              <p>${equipoDuplicado[e].nombre}</p>
+              <small>${equipoDuplicado[e].rol}</small>
+            </figcaption>
+          </figure>
+        </div>
+      `;
     }
-  ]
-})
+
+    const swiperEquipo = new Swiper('.swiperEquipo', {
+      slidesPerView: 2,
+      slidesPerGroup: 1,
+      loop: true,
+      loopAdditionalSlides: 1,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+      },
+      spaceBetween: 16,
+      breakpoints: {
+        600: {
+          slidesPerView: 3,
+        },
+        800: {
+          slidesPerView: 4,
+        },
+        992: {
+          slidesPerView: 5,
+        },
+      },
+    });
+  }
+});
 
 // Premios
 for (let premio = 0; premio < premios.length; premio++) {

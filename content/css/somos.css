@@ -78,10 +78,7 @@ h1 {
   width: 100%;
   display: flex;
   background: #f3f3f3;
-}
-
-#nuestroEquipo {
-  width: 100%;
+  padding: 0 1rem;
 }
 
 .our-team * {
@@ -90,6 +87,10 @@ h1 {
   -ms-transition: 0.25s ease-in-out;
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+}
+
+.swiperEquipo {
+  overflow: hidden;
 }
 
 .our-team figure {
@@ -104,9 +105,11 @@ h1 {
 
 .our-team figure img {
   width: 100%;
+  height: 13rem;
   float: left;
   filter: grayscale(1);
   mix-blend-mode: multiply;
+  object-fit: contain;
 }
 
 .our-team figure figcaption {
@@ -628,6 +631,10 @@ h1 {
     font-size: 0.875rem;
   }
 
+  .our-team figure img {
+    height: 12rem;
+  }
+
   .capacidad {
     width: 85%;
   }
@@ -702,6 +709,10 @@ h1 {
     font-size: 2rem;
   }
 
+  .our-team figure img {
+    height: 14rem;
+  }
+
   .premiosSectores {
     justify-content: flex-start;
     gap: 7rem;
@@ -727,6 +738,10 @@ h1 {
     font-size: 1rem;
   }
 
+  .our-team figure img {
+    height: 16rem;
+  }
+
   .premiosSectores {
     gap: 10rem;
   }
@@ -739,6 +754,10 @@ h1 {
 @media only screen and (min-width: 1440px) {
   .introduction p {
     font-size: 1.2rem;
+  }
+
+  .our-team figure img {
+    height: 18rem;
   }
 
   .premiosSectores {
@@ -772,6 +791,12 @@ h1 {
 
   .introductionContent p:last-child {
     font-size: 1.1rem;
+  }
+
+  /* Equipo */
+
+  .our-team figure img {
+    height: 20rem;
   }
 
   /* Premios Sectores */
@@ -829,6 +854,11 @@ h1 {
     font-size: 3.25rem;
   }
 
+  /* Equipo */
+  .our-team figure img {
+    height: 24rem;
+  }
+
   /* Capacidades */
   .features-content h2 {
     font-size: 3rem;
@@ -850,6 +880,10 @@ h1 {
 
   .introduction p {
     width: 80%;
+  }
+
+  .our-team figure img {
+    height: 26rem;
   }
 }
 
