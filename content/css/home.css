@@ -141,7 +141,7 @@
 .logos {
   width: 100%;
   background: #fff;
-  padding: 50px 60px;
+  padding: 3.125rem 3.75rem;
 }
 
 .logos * {
@@ -152,30 +152,29 @@
   transition: 0.25s ease-in-out;
 }
 
-.logoSlider .logoSlide {
+.swiperLogos {
+  overflow: hidden;
+}
+
+.swiperLogos .swiper-slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin: 0 1rem;
 }
 
-.logoSlider .logoSlide:hover img {
+.swiperLogos img {
+  height: 4.5rem;
+  object-fit: contain;
+}
+
+.swiperLogos .swiper-slide:hover img {
   opacity: 0;
   transform: scale(1.1);
 }
 
-.logoSlider .logoSlide:hover p {
-  opacity: 1;
-  margin-top: -10px;
-}
-
-.logoSlider img {
-  height: 5rem;
-}
-
-.logoSlider p {
+.swiperLogos p {
   width: 100%;
   height: 20px;
   position: absolute;
@@ -185,6 +184,11 @@
   font-size: 1rem;
   font-weight: 600;
   opacity: 0;
+}
+
+.swiperLogos .swiper-slide:hover p {
+  opacity: 1;
+  margin-top: -10px;
 }
 
 /* PENSAMOS HACEMOS */
@@ -391,16 +395,6 @@
     width: 33.33333%;
   }
 
-  /* Logos */
-  .logos .container {
-    max-width: 100%;
-    padding: 0 1.875rem;
-  }
-
-  .logos ul li figure img {
-    height: 7.5rem;
-  }
-
   /* Pensamos Hacemos */
 
   .full-media-content .sides {
@@ -579,21 +573,7 @@
 
   .logos {
     overflow: hidden;
-    padding: 30px 0;
-  }
-
-  .logos .container {
-    padding: 0 1rem;
-  }
-
-  .logos ul {
-    flex-wrap: nowrap;
-    gap: 1rem;
-  }
-
-  .logos ul li {
-    width: 33.33333%;
-    margin: 25px auto;
+    padding: 1.875rem 1rem;
   }
 
   /* Pensamos Hacemos */
@@ -754,11 +734,17 @@
   .servicio {
     padding: 0 1.5rem;
   }
+
+  .logos {
+    padding: 3.5rem 3.75rem;
+  }
+
+  .swiperLogos img {
+    height: 6rem;
+  }
 }
 
 @media only screen and (min-width: 1600px) {
-
-
   .full-media-content .inner-content .inner .loPensamos {
     font-size: 1.8rem;
   }
@@ -770,10 +756,24 @@
   .full-media-content .inner-content a {
     font-size: 0.875rem;
   }
+
+  .swiperLogos img {
+    height: 7rem;
+  }
 }
 
 @media only screen and (min-width: 1750px) {
   .features-content p {
     font-size: 1.2rem;
+  }
+
+  .logos {
+    padding: 4rem 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .logos {
+    padding: 5rem 3.75rem;
   }
 }
