@@ -709,10 +709,6 @@ h1 {
     font-size: 2rem;
   }
 
-  .our-team figure img {
-    height: 14rem;
-  }
-
   .premiosSectores {
     justify-content: flex-start;
     gap: 7rem;
@@ -738,10 +734,6 @@ h1 {
     font-size: 1rem;
   }
 
-  .our-team figure img {
-    height: 16rem;
-  }
-
   .premiosSectores {
     gap: 10rem;
   }
@@ -754,10 +746,6 @@ h1 {
 @media only screen and (min-width: 1440px) {
   .introduction p {
     font-size: 1.2rem;
-  }
-
-  .our-team figure img {
-    height: 18rem;
   }
 
   .premiosSectores {
@@ -791,12 +779,6 @@ h1 {
 
   .introductionContent p:last-child {
     font-size: 1.1rem;
-  }
-
-  /* Equipo */
-
-  .our-team figure img {
-    height: 20rem;
   }
 
   /* Premios Sectores */
@@ -854,11 +836,6 @@ h1 {
     font-size: 3.25rem;
   }
 
-  /* Equipo */
-  .our-team figure img {
-    height: 24rem;
-  }
-
   /* Capacidades */
   .features-content h2 {
     font-size: 3rem;
@@ -880,10 +857,6 @@ h1 {
 
   .introduction p {
     width: 80%;
-  }
-
-  .our-team figure img {
-    height: 26rem;
   }
 }
 
