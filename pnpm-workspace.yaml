@@ -1,0 +1,13 @@
+# Config pnpm. Builds permitidos explícitamente (seguridad supply-chain):
+# solo las dependencias que genuinamente necesitan correr scripts.
+strictDepBuilds: true
+onlyBuiltDependencies:
+  - sharp
+  - esbuild
+  - '@parcel/watcher'
+  - vue-demi
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
+  vue-demi: true

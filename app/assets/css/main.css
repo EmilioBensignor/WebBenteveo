@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-tab: 600px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1080px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1440px;
+
+  --color-negro: #131313;
+  --color-negro-puro: #000000;
+  --color-amarillo: #FCB716;
+  --color-blanco: #F8F8F8;
+  --color-gris: #808080;
+
+  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+  --shadow-amarilla: 0 0 18px 0 rgba(252, 183, 22, 0.33);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 8s linear infinite;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+}
