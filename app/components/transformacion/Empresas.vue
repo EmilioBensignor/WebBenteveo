@@ -1,15 +1,16 @@
 <template>
-  <Section>
+  <Section class="px-7">
     <HeadingH2 class="text-center text-amarillo">Confían en nosotros</HeadingH2>
 
     <div class="w-full relative h-12 overflow-hidden">
-      <div v-for="offset in [0, 1]" :key="offset"
-        class="absolute top-0 w-full h-full flex items-center justify-around animate-marquee"
-        :style="{ left: offset * 100 + '%' }">
-        <img v-for="(logo, i) in logos" :key="i" :src="logo" alt="" class="h-8 w-24 shrink-0 object-contain" width="96" height="32">
+      <div class="w-max flex items-center gap-10 md:gap-8 animate-marquee">
+        <img v-for="(logo, i) in track" :key="i" :src="logo" alt=""
+          class="w-24 md:w-40 lg:w-48 xxl:w-52 h-8 md:h-12 shrink-0 object-contain" width="96" height="32">
       </div>
-      <div class="absolute inset-y-0 left-0 w-16 lg:w-40 bg-linear-to-r from-negro to-transparent z-10" />
-      <div class="absolute inset-y-0 right-0 w-16 lg:w-40 bg-linear-to-l from-negro to-transparent z-10" />
+      <div
+        class="absolute inset-y-0 left-0 w-16 lg:w-40 bg-[linear-gradient(90deg,#000000_33%,rgba(0,0,0,0)_100%)] z-10" />
+      <div
+        class="absolute inset-y-0 right-0 w-16 lg:w-40 bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,#000000_67%)] z-10" />
     </div>
   </Section>
 </template>
@@ -20,4 +21,5 @@ const logos = [
   '/img/transformacion/empresa-2.png',
   '/img/transformacion/empresa-3.png'
 ]
+const track = [...logos, ...logos, ...logos, ...logos, ...logos, ...logos]
 </script>
