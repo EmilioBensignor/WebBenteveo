@@ -2,7 +2,7 @@
   <Section id="contacto" bg="bg-amarillo" class="md:flex-row md:gap-8 lg:gap-16 py-8 px-4 md:px-7 lg:px-16 xxl:px-30">
     <div
       class="max-w-72 sm:max-w-96 flex flex-col items-center md:items-start gap-3 md:gap-4 text-center md:text-left text-negro">
-      <HeadingH2 class="md:text-2xl lg:text-5xl!">¿Listo para el siguiente nivel?</HeadingH2>
+      <HeadingH2 class="md:text-2xl lg:text-5xl! font-bold!">¿Listo para el siguiente nivel?</HeadingH2>
       <p class="lg:text-xl font-medium">
         Agenda una sesión de asesoramiento. Sin compromisos, solo pensar juntos.
       </p>

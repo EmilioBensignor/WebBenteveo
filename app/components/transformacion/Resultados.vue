@@ -18,7 +18,7 @@
           <div
             class="w-72 h-px md:hidden absolute top-1/2 -translate-y-1/2 bg-[linear-gradient(90deg,rgba(128,128,128,0)_0%,#808080_15%,#808080_85%,rgba(128,128,128,0)_100%)]" />
           <span
-            class="relative flex items-center justify-center rounded-full bg-amarillo shadow-amarilla text-negro text-xl lg:text-[1.75rem] font-bold py-3 px-4">
+            class="relative flex items-center justify-center rounded-full bg-amarillo shadow-amarilla text-negro text-xl lg:text-[1.75rem] font-bold py-3 px-6">
             {{ m.value }}
           </span>
         </div>

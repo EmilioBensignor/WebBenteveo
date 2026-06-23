@@ -39,34 +39,24 @@ export const industrias = [
 
 export const opiniones = [
   {
-    text: 'Benteveo transformó nuestra logística. Redujimos costos operativos en un 25% en solo 6 meses',
-    autor: 'Director de Operaciones',
-    empresa: 'Distribuidora Regional'
+    text: 'Desde el primer momento entendieron cómo trabajábamos y armaron una solución que se adapta a nuestra operación. El bot ordenó toda la gestión de reservas y hoy nos saca muchas horas de trabajo de encima todos los días.',
+    autor: 'Gabriela',
+    empresa: 'Tour Experto'
   },
   {
-    text: 'La implementación fue simple y humana. El equipo adoptó las herramientas sin fricciones.',
-    autor: 'CEO',
-    empresa: 'Retail Group'
+    text: 'Transcribir la documentación y armar el catálogo nos llevaba muchísimo tiempo. Con la solución que desarrollaron lo resolvimos en una fracción de eso, y siempre estuvieron atentos a que funcionara como necesitábamos.',
+    autor: 'Agustín',
+    empresa: 'Vietur'
   },
   {
-    text: 'Ahora tenemos datos reales para tomar decisiones. Ya no apagamos incendios, escalamos el negocio',
-    autor: 'Fundador',
-    empresa: 'Fintech Solutions'
+    text: 'Lo que más valoro es que nos escucharon: entendieron lo que buscábamos y nos acompañaron en cada etapa. La web nueva nos dio una presencia mucho más profesional y hoy es la primera impresión que se llevan nuestros clientes.',
+    autor: 'Gisella',
+    empresa: 'Unike Group'
   },
   {
-    text: 'Benteveo transformó nuestra logística. Redujimos costos operativos en un 25% en solo 6 meses',
-    autor: 'Director de Operaciones',
-    empresa: 'Distribuidora Regional'
-  },
-  {
-    text: 'La implementación fue simple y humana. El equipo adoptó las herramientas sin fricciones.',
-    autor: 'CEO',
-    empresa: 'Retail Group'
-  },
-  {
-    text: 'Ahora tenemos datos reales para tomar decisiones. Ya no apagamos incendios, escalamos el negocio',
-    autor: 'Fundador',
-    empresa: 'Fintech Solutions'
+    text: 'La atención al cliente era un cuello de botella para nosotros. Ahora la IA responde al instante y nos clasifica los leads, y el acompañamiento durante la implementación hizo que la transición fuera mucho más simple de lo que esperábamos.',
+    autor: 'Esteban',
+    empresa: 'Moto Roma'
   }
 ]
 
@@ -93,19 +83,35 @@ export const proceso = [
 
 export const faqs = [
   {
-    question: '¿Necesito saber de tecnología o de IA para trabajar con ustedes?',
-    answer: 'Respuesta pendiente de contenido.'
+    question: '¿Qué es la transformación tecnológica y por qué le importa a mi empresa?',
+    answer: 'Es el proceso de incorporar tecnología para que tu empresa funcione mejor: más ordenada, más eficiente y con mejor información para tomar decisiones. No se trata de cambiar todo de una vez ni de entender cómo funciona la tecnología por dentro. Se trata de identificar dónde tu operación pierde tiempo y dinero, y resolverlo con las herramientas correctas.'
   },
   {
-    question: '¿Cuánto tiempo lleva ver resultados?',
-    answer: 'Respuesta pendiente de contenido.'
+    question: '¿Por dónde se empieza?',
+    answer: 'Por entender tu operación. Antes de proponer cualquier herramienta, nos sentamos con vos a diagnosticar qué está frenando el crecimiento, dónde se pierde tiempo y dinero, y qué tiene más impacto si se resuelve primero.'
   },
   {
-    question: '¿Qué pasa si mi equipo no adopta la herramienta?',
-    answer: 'Respuesta pendiente de contenido.'
+    question: '¿Tengo que cambiar todo de una vez?',
+    answer: 'No. La mayoría de los procesos se transforman por etapas, empezando por donde el impacto es mayor. No hace falta parar la operación ni hacer una inversión enorme desde el día uno.'
   },
   {
-    question: '¿Cuánto cuesta la implementación?',
-    answer: 'Respuesta pendiente de contenido.'
+    question: '¿Necesito tener conocimientos técnicos para trabajar con ustedes?',
+    answer: 'Para nada. Nuestro trabajo es traducir los problemas del negocio en soluciones concretas. Vos nos contás cómo funciona tu empresa, nosotros nos encargamos del resto. Y cuando la herramienta está lista, capacitamos a tu equipo para que la use con autonomía.'
+  },
+  {
+    question: '¿Qué herramientas o tecnologías usan?',
+    answer: 'No tenemos un catálogo. Cada solución se diseña desde cero según lo que necesita tu empresa: tu operación, tu equipo, tu presupuesto y lo que ya usás. La tecnología que elijamos es consecuencia de entender bien el problema, no al revés.'
+  },
+  {
+    question: '¿Qué pasa después de que se implementa la solución?',
+    answer: 'Acompañamos la adopción para que el equipo incorpore los cambios de verdad. Una herramienta bien implementada pero mal adoptada no sirve de nada, eso también es parte de nuestro trabajo.'
+  },
+  {
+    question: '¿Pueden integrarse las nuevas soluciones con los sistemas que ya uso?',
+    answer: 'Sí, en la mayoría de los casos. Parte del diagnóstico inicial es mapear qué tecnología ya tiene tu empresa para construir sobre lo que funciona, no reemplazarlo todo desde cero.'
+  },
+  {
+    question: '¿Trabajan con empresas de cualquier tamaño?',
+    answer: 'Sí. Trabajamos con empresas de todos los tamaños. El punto de partida y la escala de la solución cambian según cada caso, pero el proceso es el mismo: entender tu operación, identificar dónde se pierde tiempo y dinero, y resolverlo. No hay un mínimo para empezar.'
   }
 ]
