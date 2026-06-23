@@ -92,8 +92,20 @@ export const proceso = [
 ]
 
 export const faqs = [
-  '¿Necesito saber de tecnología o de IA para trabajar con ustedes?',
-  '¿Cuánto tiempo lleva ver resultados?',
-  '¿Qué pasa si mi equipo no adopta la herramienta?',
-  '¿Cuánto cuesta la implementación?'
+  {
+    question: '¿Necesito saber de tecnología o de IA para trabajar con ustedes?',
+    answer: 'Respuesta pendiente de contenido.'
+  },
+  {
+    question: '¿Cuánto tiempo lleva ver resultados?',
+    answer: 'Respuesta pendiente de contenido.'
+  },
+  {
+    question: '¿Qué pasa si mi equipo no adopta la herramienta?',
+    answer: 'Respuesta pendiente de contenido.'
+  },
+  {
+    question: '¿Cuánto cuesta la implementación?',
+    answer: 'Respuesta pendiente de contenido.'
+  }
 ]

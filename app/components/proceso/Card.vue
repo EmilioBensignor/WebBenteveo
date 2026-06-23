@@ -1,5 +1,5 @@
 <template>
-  <article class="h-75 flex flex-col justify-end gap-4 relative rounded-2xl border border-white/33 overflow-hidden p-4 md:p-6">
+  <article class="h-75 lg:h-96 flex flex-col justify-end gap-4 relative rounded-2xl border border-white/33 overflow-hidden p-4 md:p-6">
     <div class="absolute inset-0 -z-10">
       <NuxtImg :src="p.image" alt="" class="size-full object-cover" format="avif,webp"
         sizes="(min-width:1080px) 304px, 256px" loading="lazy" />

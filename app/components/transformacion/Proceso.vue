@@ -1,5 +1,5 @@
 <template>
-  <Section class="md:px-7 lg:px-16">
+  <Section class="md:px-7 lg:px-16 xxl:px-30">
     <div class="flex flex-col items-center gap-3 md:gap-2 text-center px-4">
       <HeadingH2 class="text-amarillo">
         No necesitas entender de IA para comenzar

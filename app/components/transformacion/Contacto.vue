@@ -1,15 +1,18 @@
 <template>
-  <Section id="contacto" bg="bg-amarillo" class="py-8 px-4">
-    <div class="max-w-72 flex flex-col items-center lg:items-start gap-3 text-center lg:text-left text-negro">
-      <HeadingH2>¿Listo para el siguiente nivel?</HeadingH2>
-      <p class="font-medium">
+  <Section id="contacto" bg="bg-amarillo" class="md:flex-row md:gap-8 lg:gap-16 py-8 px-4 md:px-7 lg:px-16 xxl:px-30">
+    <div
+      class="max-w-72 sm:max-w-96 flex flex-col items-center md:items-start gap-3 md:gap-4 text-center md:text-left text-negro">
+      <HeadingH2 class="md:text-2xl lg:text-5xl!">¿Listo para el siguiente nivel?</HeadingH2>
+      <p class="lg:text-xl font-medium">
         Agenda una sesión de asesoramiento. Sin compromisos, solo pensar juntos.
       </p>
     </div>
 
-    <form class="w-full flex flex-col gap-4 rounded-2xl bg-negro p-4 lg:p-12" @submit.prevent="submit">
-      <FormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre" @blur="validate('nombre')" />
-      <FormField v-model="form.correo" placeholder="Correo" type="email" autocomplete="email" :error="errors.correo" @blur="validate('correo')" />
+    <form class="w-full flex flex-col gap-4 rounded-2xl bg-negro p-4 md:p-6 lg:py-12" @submit.prevent="submit">
+      <FormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre"
+        @blur="validate('nombre')" />
+      <FormField v-model="form.correo" placeholder="Correo" type="email" autocomplete="email" :error="errors.correo"
+        @blur="validate('correo')" />
       <FormField v-model="form.empresa" placeholder="Empresa" />
       <FormField v-model="form.sector" placeholder="Sector" />
       <ButtonPrimary type="submit" class="w-full">Enviar mi consulta</ButtonPrimary>
