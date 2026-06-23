@@ -52,6 +52,21 @@ export const opiniones = [
     text: 'Ahora tenemos datos reales para tomar decisiones. Ya no apagamos incendios, escalamos el negocio',
     autor: 'Fundador',
     empresa: 'Fintech Solutions'
+  },
+  {
+    text: 'Benteveo transformó nuestra logística. Redujimos costos operativos en un 25% en solo 6 meses',
+    autor: 'Director de Operaciones',
+    empresa: 'Distribuidora Regional'
+  },
+  {
+    text: 'La implementación fue simple y humana. El equipo adoptó las herramientas sin fricciones.',
+    autor: 'CEO',
+    empresa: 'Retail Group'
+  },
+  {
+    text: 'Ahora tenemos datos reales para tomar decisiones. Ya no apagamos incendios, escalamos el negocio',
+    autor: 'Fundador',
+    empresa: 'Fintech Solutions'
   }
 ]
 
