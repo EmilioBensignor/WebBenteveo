@@ -9,7 +9,7 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Benteveo — Agencia de publicidad creativa',
+  title: 'Agencia de publicidad creativa',
   description: 'Innovación, estrategia y tecnología para tu empresa.'
 })
 </script>

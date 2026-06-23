@@ -13,7 +13,7 @@
 
 <script setup>
 useSeoMeta({
-  title: 'Transformación Tecnológica con IA | Benteveo',
+  title: 'Transformación Tecnológica con IA',
   description: 'Comenzá a utilizar la inteligencia artificial en los procesos de tu empresa.'
 })
 </script>
