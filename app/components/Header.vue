@@ -8,7 +8,7 @@
 
         <nav class="hidden lg:flex items-center">
           <NuxtLink v-for="link in links" :key="link.label" :to="link.to"
-            class="hover:bg-amarillo/10 rounded-full text-blanco hover:text-amarillo font-semibold transition-colors duration-300 py-3 px-6">
+            class="hover:bg-amarillo/10 [&.router-link-active]:bg-amarillo/10 rounded-full text-blanco hover:text-amarillo [&.router-link-active]:text-amarillo font-semibold transition-colors duration-300 py-3 px-6">
             {{ link.label }}
           </NuxtLink>
         </nav>
@@ -38,7 +38,7 @@
 
           <nav class="w-full flex flex-col items-start">
             <NuxtLink v-for="link in links" :key="link.label" :to="link.to"
-              class="w-full flex items-center text-blanco text-sm font-semibold px-3 py-4" @click="open = false">
+              class="w-full flex items-center [&.router-link-active]:bg-amarillo/10 rounded-full text-blanco [&.router-link-active]:text-amarillo text-sm font-semibold px-5 py-4" @click="open = false">
               {{ link.label }}
             </NuxtLink>
           </nav>
@@ -58,10 +58,10 @@
 import { ROUTE_NAMES } from '~/constants/routes'
 
 const links = [
-  { label: 'Servicios', to: '#' },
-  { label: 'Proyectos', to: '#' },
-  { label: 'Nosotros', to: '#' },
-  { label: 'Novedades', to: '#' }
+  { label: 'Agencia', to: '#' },
+  { label: 'Transformación', to: ROUTE_NAMES.transformacion },
+  { label: 'Eventos', to: '#' },
+  { label: 'Nosotros', to: '#' }
 ]
 const open = ref(false)
 </script>
