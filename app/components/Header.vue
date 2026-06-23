@@ -1,6 +1,6 @@
 <template>
-  <header class="w-full flex justify-center absolute top-8 left-0 z-50 px-4 md:px-7 lg:px-16 xxl:px-30">
-    <div class="w-full flex justify-between items-center">
+  <header class="w-full flex justify-center absolute top-8 left-0 z-50">
+    <div class="w-full max-w-344 flex justify-between items-center px-4 md:px-7 lg:px-16 xxl:px-30 mx-auto">
       <div class="w-full lg:w-auto flex justify-between items-center lg:gap-6">
         <NuxtLink :to="ROUTE_NAMES.home" aria-label="Benteveo">
           <img src="/img/transformacion/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8" width="128" height="32">
@@ -8,12 +8,12 @@
 
         <nav class="hidden lg:flex items-center">
           <NuxtLink v-for="link in links" :key="link.label" :to="link.to"
-            class="hover:bg-amarillo/10 [&.router-link-active]:bg-amarillo/10 rounded-full text-blanco hover:text-amarillo [&.router-link-active]:text-amarillo font-semibold transition-colors duration-300 py-3 px-6">
+            class="hover:bg-amarillo/10 rounded-full text-blanco hover:text-amarillo [&.router-link-active]:text-amarillo font-semibold transition-colors duration-300 py-3 px-6">
             {{ link.label }}
           </NuxtLink>
         </nav>
       </div>
-      <ButtonPrimary to="#contacto" class="hidden! lg:block!">Contacto</ButtonPrimary>
+      <ButtonPrimary to="#contacto" class="hidden! lg:inline-flex!">Contacto</ButtonPrimary>
 
       <button class="size-12 lg:hidden flex justify-center items-center text-amarillo cursor-pointer"
         aria-label="Abrir menú" @click="open = true">
@@ -38,7 +38,8 @@
 
           <nav class="w-full flex flex-col items-start">
             <NuxtLink v-for="link in links" :key="link.label" :to="link.to"
-              class="w-full flex items-center [&.router-link-active]:bg-amarillo/10 rounded-full text-blanco [&.router-link-active]:text-amarillo text-sm font-semibold px-5 py-4" @click="open = false">
+              class="w-full flex items-center [&.router-link-active]:bg-amarillo/10 rounded-full text-blanco [&.router-link-active]:text-amarillo text-sm font-semibold px-5 py-4"
+              @click="open = false">
               {{ link.label }}
             </NuxtLink>
           </nav>

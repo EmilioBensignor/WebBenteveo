@@ -28,7 +28,7 @@ export const beneficios = [
 export const industrias = [
   { icon: 'material-symbols:health-cross-outline-rounded', label: 'Salud' },
   { icon: 'material-symbols:school-outline-rounded', label: 'Educación' },
-  { icon: 'material-symbols:domain-rounded', label: 'Real State' },
+  { icon: 'material-symbols:domain-rounded', label: 'Real Estate' },
   { icon: 'material-symbols:wheat-outline-rounded', label: 'Agroindustria' },
   { icon: 'material-symbols:cardiology-outline-rounded', label: 'Fitness' },
   { icon: 'material-symbols:account-balance-outline-rounded', label: 'Fintech' },
