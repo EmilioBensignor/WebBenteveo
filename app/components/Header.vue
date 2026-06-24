@@ -3,7 +3,7 @@
     <div class="w-full max-w-344 flex justify-between items-center px-4 md:px-7 lg:px-16 xxl:px-30 mx-auto">
       <div class="w-full lg:w-auto flex justify-between items-center lg:gap-6">
         <NuxtLink :to="ROUTE_NAMES.home" aria-label="Benteveo">
-          <img src="/img/transformacion/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8" width="128" height="32">
+          <img src="/img/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8" width="128" height="32">
         </NuxtLink>
 
         <nav class="hidden lg:flex items-center">
@@ -48,7 +48,7 @@
         <div class="w-full flex flex-col items-center gap-6">
           <ButtonPrimary to="#contacto" @click="open = false">Contacto</ButtonPrimary>
 
-          <img src="/img/transformacion/logo-benteveo.svg" alt="Benteveo" class="h-12 w-auto" width="192" height="48">
+          <img src="/img/logo-benteveo.svg" alt="Benteveo" class="h-12 w-auto" width="192" height="48">
         </div>
       </div>
     </Transition>

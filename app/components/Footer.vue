@@ -2,7 +2,7 @@
   <footer class="w-full flex justify-center  bg-[linear-gradient(180deg,#000_0%,#131313_33%,#131313_66%,#000_100%)]">
     <div class="w-full max-w-344 flex flex-col gap-6 py-8 xxl:py-16 px-4 md:px-7 lg:px-16 xxl:px-30 mx-auto">
       <div class="flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-center">
-        <img src="/img/transformacion/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8 object-contain" width="128"
+        <img src="/img/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8 object-contain" width="128"
           height="32">
         <ButtonPrimary to="#contacto" class="self-start lg:self-auto">Contacto</ButtonPrimary>
       </div>

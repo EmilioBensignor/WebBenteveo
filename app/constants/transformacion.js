@@ -63,19 +63,19 @@ export const opiniones = [
 export const proceso = [
   {
     number: '01',
-    image: '/img/transformacion/proceso-1.png',
+    image: '/img/transformacion/paso_1_tareas.webp',
     title: 'Identificamos las tareas donde se pierde tiempo y dinero.',
     text: 'Analizamos cómo trabajas hoy e identificamos los procesos que más demoran tu crecimiento.'
   },
   {
     number: '02',
-    image: '/img/transformacion/proceso-2.png',
+    image: '/img/transformacion/paso_2_desarrollo.webp',
     title: 'Desarrollamos la herramienta que lo resuelve.',
     text: 'Diseñamos una solución de IA adaptada a tu empresa.'
   },
   {
     number: '03',
-    image: '/img/transformacion/proceso-3.png',
+    image: '/img/transformacion/paso_3_capacitacion.webp',
     title: 'Entrenamos y capacitamos a tu equipo.',
     text: 'Los acompañamos hasta que la herramienta sea parte natural de su trabajo.'
   }
