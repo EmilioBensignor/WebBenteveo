@@ -17,6 +17,7 @@ defineProps({
 const variants = {
   solid: 'bg-amarillo text-negro lg:hover:bg-amarillo/90',
   light: 'bg-blanco text-negro lg:hover:bg-blanco/90',
+  dark: 'bg-negro text-amarillo lg:hover:bg-negro/90',
   outline: 'border border-amarillo text-amarillo lg:hover:bg-amarillo lg:hover:text-negro'
 }
 </script>

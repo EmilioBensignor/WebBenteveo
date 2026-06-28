@@ -10,8 +10,7 @@
       :class="isDragging ? 'cursor-grabbing lg:cursor-auto' : ''" @scroll="updateArrows" @mousedown="startDrag"
       @mousemove="drag" @mouseup="endDrag" @mouseleave="endDrag" @touchstart="startDrag" @touchmove="drag"
       @touchend="endDrag">
-      <div class="carousel-wrapper flex items-stretch pb-2 px-4 md:px-0"
-        :class="wrapperClass" :style="wrapperStyles">
+      <div class="carousel-wrapper flex items-stretch pb-2 px-4 md:px-0" :class="wrapperClass" :style="wrapperStyles">
         <slot />
       </div>
     </div>
@@ -21,6 +20,13 @@
       :style="rightButtonStyle" :disabled="isAtEnd" aria-label="Siguiente">
       <Icon name="material-symbols:chevron-right-rounded" size="1.5rem" class="text-amarillo" />
     </button>
+
+    <template v-if="fade">
+      <div class="w-10 lg:w-28 hidden md:block absolute inset-y-0 left-0 z-5 pointer-events-none"
+        :style="{ backgroundImage: `linear-gradient(90deg, ${fadeColor} 0%, transparent 100%)` }" />
+      <div class="w-10 lg:w-28 hidden md:block absolute inset-y-0 right-0 z-5 pointer-events-none"
+        :style="{ backgroundImage: `linear-gradient(90deg, transparent 0%, ${fadeColor} 100%)` }" />
+    </template>
   </div>
 </template>
 
@@ -40,7 +46,9 @@ const props = defineProps({
       right: { base: '0.5rem', md: '-1.25rem' }
     })
   },
-  wrapperClass: { type: String, default: '' }
+  wrapperClass: { type: String, default: '' },
+  fade: { type: Boolean, default: false },
+  fadeColor: { type: String, default: '#000000' }
 })
 
 const container = ref(null)
@@ -80,12 +88,13 @@ const responsiveGap = computed(() =>
   typeof props.gap === 'number' ? props.gap : (props.gap[currentBreakpoint.value] ?? props.gap.base ?? 16)
 )
 
-const scrollAmount = computed(() => {
+const slideWidth = computed(() => {
   if (!containerWidth.value) return 280
   const totalGapsWidth = (slidesVisibleDecimal.value - 1) * responsiveGap.value
-  const slideWidth = (containerWidth.value - totalGapsWidth) / slidesVisibleDecimal.value
-  return slideWidth + responsiveGap.value
+  return (containerWidth.value - totalGapsWidth) / slidesVisibleDecimal.value
 })
+
+const scrollAmount = computed(() => slideWidth.value + responsiveGap.value)
 
 const wrapperStyles = computed(() => ({ gap: `${responsiveGap.value}px`, width: 'max-content' }))
 
@@ -124,13 +133,12 @@ const setupChildrenClasses = () => {
     if (!container.value || !containerWidth.value) return
     const wrapper = container.value.querySelector('.carousel-wrapper')
     if (!wrapper) return
-    const totalGapsWidth = (slidesVisibleDecimal.value - 1) * responsiveGap.value
-    const slideWidth = (containerWidth.value - totalGapsWidth) / slidesVisibleDecimal.value
+    const w = slideWidth.value
     requestAnimationFrame(() => {
       Array.from(wrapper.children).forEach(child => {
-        child.style.width = `${slideWidth}px`
+        child.style.width = `${w}px`
         child.style.flexShrink = '0'
-        child.style.minWidth = `${slideWidth}px`
+        child.style.minWidth = `${w}px`
       })
     })
   })
@@ -205,6 +213,12 @@ defineExpose({ scrollLeft, scrollRight, updateArrows, setupChildrenClasses })
 </script>
 
 <style scoped>
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 </style>

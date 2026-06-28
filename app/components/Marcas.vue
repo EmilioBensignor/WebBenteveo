@@ -5,9 +5,9 @@
         class="w-auto h-8 md:h-12 shrink-0 object-contain">
     </div>
     <div
-      class="absolute inset-y-0 left-0 w-16 lg:w-40 bg-[linear-gradient(90deg,#000000_33%,rgba(0,0,0,0)_100%)] z-10" />
+      class="w-16 lg:w-40 absolute inset-y-0 left-0 z-10 bg-linear-to-r from-negro-puro from-33% to-transparent" />
     <div
-      class="absolute inset-y-0 right-0 w-16 lg:w-40 bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,#000000_67%)] z-10" />
+      class="w-16 lg:w-40 absolute inset-y-0 right-0 z-10 bg-linear-to-l from-negro-puro from-33% to-transparent" />
   </div>
 </template>
 

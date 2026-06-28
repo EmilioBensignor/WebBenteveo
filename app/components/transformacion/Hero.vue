@@ -1,13 +1,13 @@
 <template>
-  <Section>
+  <Section class="px-4 md:px-7 lg:px-16 pt-30 md:pt-32 pb-8 lg:pt-45 lg:pb-20 xxl:pb-28">
     <template #background>
-      <NuxtImg src="/img/transformacion/hero-bg.png" alt="" class="size-full object-cover" format="avif,webp"
-        sizes="100vw" preload />
+      <video src="/video/hero-transfromacion-tecnologica.mp4" class="size-full object-cover" autoplay loop muted
+        playsinline />
       <div class="absolute inset-0 bg-black/75" />
     </template>
 
     <div
-      class="w-full flex flex-col items-center gap-4 md:gap-6 lg:gap-10 px-4 md:px-7 lg:px-16 pt-30 md:pt-32 pb-8 lg:pt-45 lg:pb-20 text-center">
+      class="w-full flex flex-col items-center gap-4 md:gap-6 lg:gap-10 text-center">
       <div class="flex flex-col items-center gap-2 lg:gap-3">
         <p class="text-blanco lg:text-xl font-medium leading-none">
           LA IA YA ESTÁ CAMBIANDO LOS NEGOCIOS.
@@ -17,7 +17,8 @@
         </HeadingH1>
       </div>
 
-      <div class="w-full md:max-w-115 lg:max-w-120 flex flex-col md:flex-row md:justify-center items-center gap-2 lg:gap-4">
+      <div
+        class="w-full md:max-w-115 lg:max-w-120 flex flex-col md:flex-row md:justify-center items-center gap-2 lg:gap-4">
         <ButtonPrimary class="w-72 lg:w-auto">
           <Icon name="material-symbols:calendar-month-outline-rounded" size="24" />
           Agendar una llamada

@@ -1,6 +1,6 @@
 <template>
-  <header class="w-full flex justify-center absolute top-8 left-0 z-50">
-    <div class="w-full max-w-344 flex justify-between items-center px-4 md:px-7 lg:px-16 xxl:px-30 mx-auto">
+  <header class="w-full flex justify-center absolute top-8 left-0 z-50 px-4 md:px-7 lg:px-16 xxl:px-30">
+    <div class="w-full max-w-344 flex justify-between items-center mx-auto">
       <div class="w-full lg:w-auto flex justify-between items-center lg:gap-6">
         <NuxtLink :to="ROUTE_NAMES.home" aria-label="Benteveo">
           <img src="/img/logo-benteveo.svg" alt="Benteveo" class="w-32 h-8" width="128" height="32">

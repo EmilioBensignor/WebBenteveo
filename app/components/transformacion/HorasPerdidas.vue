@@ -1,5 +1,10 @@
 <template>
-  <Section class="lg:min-h-154 md:gap-4 lg:gap-6 xxl:gap-12 py-14 px-4 md:px-7 lg:px-16">
+  <Section class="lg:min-h-154 flex py-14 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
+    <template #background>
+      <video src="/video/reloj.mp4" class="size-full object-cover" autoplay loop muted playsinline />
+      <div class="absolute inset-0 bg-black/75" />
+    </template>
+
     <HeadingH2 class="max-w-120 md:max-w-116 lg:max-w-156 text-center">
       ¿Cuántas horas pierdes por semana en cosas que
       <span class="text-amarillo">una herramienta podría hacer sola?</span>
