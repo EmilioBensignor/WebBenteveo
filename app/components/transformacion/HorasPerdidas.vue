@@ -1,8 +1,14 @@
 <template>
-  <Section class="lg:min-h-154 flex py-14 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
+  <Section class="md:min-h-[418px] lg:min-h-154 flex py-14 md:py-0 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
     <template #background>
       <video src="/video/reloj.mp4" class="size-full object-cover" autoplay loop muted playsinline />
       <div class="absolute inset-0 bg-black/75" />
+      <div
+        class="absolute inset-0 md:hidden bg-linear-to-b from-negro-puro via-transparent to-negro-puro" />
+      <div
+        class="w-full h-50 lg:h-75 hidden md:block absolute inset-x-0 top-0 bg-linear-to-b from-negro-puro to-transparent" />
+      <div
+        class="w-full h-50 lg:h-75 hidden md:block absolute inset-x-0 bottom-0 bg-linear-to-t from-negro-puro to-transparent" />
     </template>
 
     <HeadingH2 class="max-w-120 md:max-w-116 lg:max-w-156 text-center">

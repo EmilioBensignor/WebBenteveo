@@ -3,7 +3,7 @@
     <slot name="header" />
 
     <div
-      class="w-full md:max-w-220 flex flex-col items-center gap-8 md:gap-16 md:flex-row md:justify-center md:relative">
+      class="w-full md:max-w-220 flex flex-col items-center gap-8 md:gap-16 md:flex-row md:justify-center md:relative mt-6 md:mt-10 lg:mt-14">
       <div
         class="hidden md:block absolute inset-x-0 top-6 -translate-y-1/2 h-px bg-[linear-gradient(90deg,rgba(128,128,128,0)_0%,#808080_15%,#808080_85%,rgba(128,128,128,0)_100%)]" />
 
