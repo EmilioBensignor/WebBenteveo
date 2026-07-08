@@ -26,15 +26,15 @@ export const beneficios = [
 ]
 
 export const industrias = [
-  { icon: 'material-symbols:health-cross-outline-rounded', label: 'Salud' },
-  { icon: 'material-symbols:school-outline-rounded', label: 'Educación' },
-  { icon: 'material-symbols:domain-rounded', label: 'Real Estate' },
-  { icon: 'material-symbols:wheat-outline-rounded', label: 'Agroindustria' },
-  { icon: 'material-symbols:cardiology-outline-rounded', label: 'Fitness' },
-  { icon: 'material-symbols:account-balance-outline-rounded', label: 'Fintech' },
-  { icon: 'material-symbols:work-outline', label: 'Servicios profesionales' },
-  { icon: 'material-symbols:headset-mic-outline-rounded', label: 'Servicio al cliente' },
-  { icon: 'material-symbols:storefront-outline-rounded', label: 'E-Commerce' }
+  { icon: 'material-symbols:health-cross-outline-rounded', label: 'Salud', slug: 'salud' },
+  { icon: 'material-symbols:school-outline-rounded', label: 'Educación', slug: 'educacion' },
+  { icon: 'material-symbols:domain-rounded', label: 'Real Estate', slug: 'real-estate' },
+  { icon: 'material-symbols:wheat-outline-rounded', label: 'Agroindustria', slug: 'agroindustria' },
+  { icon: 'material-symbols:cardiology-outline-rounded', label: 'Fitness', slug: 'fitness' },
+  { icon: 'material-symbols:account-balance-outline-rounded', label: 'Fintech', slug: 'fintech' },
+  { icon: 'material-symbols:work-outline', label: 'Servicios profesionales', slug: 'servicios-profesionales' },
+  { icon: 'material-symbols:headset-mic-outline-rounded', label: 'Servicio al cliente', slug: 'servicio-al-cliente' },
+  { icon: 'material-symbols:storefront-outline-rounded', label: 'E-Commerce', slug: 'e-commerce' }
 ]
 
 export const opiniones = [
