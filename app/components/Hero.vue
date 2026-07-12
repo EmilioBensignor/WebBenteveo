@@ -14,8 +14,8 @@
         <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-124 lg:max-w-235 text-amarillo" :class="titleClass">
           {{ title }}
         </HeadingH1>
-        <p v-if="text" class="text-blanco lg:text-xl font-medium">
-          {{ text }}
+        <p v-if="text || $slots.text" class="text-blanco lg:text-xl font-medium">
+          <slot name="text">{{ text }}</slot>
         </p>
       </div>
 

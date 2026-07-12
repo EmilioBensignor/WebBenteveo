@@ -3,7 +3,7 @@
     <div class="w-full flex flex-col md:flex-row md:justify-between md:items-center gap-6 md:px-7 lg:px-16 xxl:px-32">
       <HeadingH2
         class="flex md:inline flex-col items-center md:items-start text-center md:text-left text-blanco mx-4 md:mx-0">
-        Proyectos reales. <span class="text-amarillo">Resultados concretos.</span>
+        {{ title }} <span class="text-amarillo">{{ accent }}</span>
       </HeadingH2>
 
       <div class="hidden md:flex gap-3">
@@ -28,11 +28,23 @@
       v-slot="{ item }">
       <ProyectoCard :p="item" />
     </CarouselLoop>
+
+    <ButtonPrimary v-if="cta" :to="ctaTo" class="shadow-amarilla">
+      {{ cta }}
+      <Icon name="material-symbols:arrow-forward-rounded" size="1.5rem" />
+    </ButtonPrimary>
   </Section>
 </template>
 
 <script setup>
 import { proyectos } from '~/constants/home'
+
+defineProps({
+  title: { type: String, default: 'Proyectos reales.' },
+  accent: { type: String, default: 'Resultados concretos.' },
+  cta: { type: String, default: '' },
+  ctaTo: { type: String, default: '' }
+})
 
 const carousel = ref(null)
 </script>

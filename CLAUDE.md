@@ -49,6 +49,7 @@ Definido en `app/assets/css/main.css` bajo `@theme`:
 | `HeadingH2` / `HeadingH3` | Tipografía de títulos |
 | `ButtonPrimary` | Botón principal amarillo |
 | `CarouselStatic` | Carrusel con drag, flechas en desktop, props `slidesPerView` (por breakpoint) y `gap`. El wrapper interno tiene `px-4 md:px-0` para padding lateral en mobile |
+| `CarouselAutoplay` | Carrusel con autoplay (prop `interval`), arranca al entrar al viewport, snap y drag. Slot `#dots` con `{ total, current, goTo, playing }` para navegación custom |
 | `UiAccordion` | Accordion animado con `grid-rows` transition. Prop `question`, contenido via slot |
 | `FormField` | Input genérico con `v-model`, `type`, `placeholder`, `error`, `autocomplete`. Muestra error debajo si se pasa |
 
@@ -57,6 +58,7 @@ Definido en `app/assets/css/main.css` bajo `@theme`:
 ```
 app/components/
   carousel/Static.vue       # CarouselStatic
+  carousel/Autoplay.vue     # CarouselAutoplay
   form/Field.vue            # FormField
   heading/H2.vue H3.vue
   button/Primary.vue        # ButtonPrimary
@@ -64,12 +66,14 @@ app/components/
   proceso/Card.vue          # ProcesoCard
   ui/Accordion.vue          # UiAccordion
   transformacion/           # Secciones de la landing /transformacion-tecnologica
+  agencia/                  # Secciones de la landing /agencia-creativa
 ```
 
 ## Constantes
 
 Datos de contenido en `app/constants/`:
 - `transformacion.js` — `opiniones`, `proceso`, `faqs`, `metrics`, etc.
+- `agencia.js` — `heroWords` (typewriter), `frases`, `servicios`, `pasos`
 - `routes.js` — `ROUTE_NAMES` para rutas tipadas
 
 ## Páginas
@@ -78,6 +82,30 @@ Datos de contenido en `app/constants/`:
 |---|---|
 | `/` | En progreso (home) |
 | `/transformacion-tecnologica` | Landing lista, pendiente revisión responsive |
+| `/agencia-creativa` | Landing lista. Placeholders: palabras del typewriter del hero, 3ª frase, CTA "Ver todos los trabajos" (`#`) |
+
+## Landing /agencia-creativa
+
+Secciones (en orden), todas en `app/components/agencia/`. Contenido en `constants/agencia.js`.
+
+| Sección | Qué es | Cómo tocarlo |
+|---|---|---|
+| `AgenciaHero` | Reusa el `Hero` global. El subtítulo va por slot `#text` con typewriter que escribe/borra palabras en amarillo | Palabras: `heroWords` en `agencia.js`. Timings (`HOLD`/`TYPE`/`ERASE`) arriba del `<script>` |
+| `AgenciaFrases` | `CarouselAutoplay` con las frases; dots = líneas que se rellenan de amarillo sincronizadas al intervalo | Frases: `frases[]`. Velocidad: `INTERVAL` (5s) — se pasa al carrusel **y** a la animación de la línea |
+| `AgenciaServicios` | 5 cards. En `lg+` se expanden con hover (flex animado); en mobile/md es accordion con clic. Gradientes tomados de `rubro/Pasos` | Cards: `servicios[]` (icon/image/title/text). Imgs en `public/img/agencia/servicios/` |
+| `AgenciaPasos` + `AgenciaPasoCard` | `CarouselStatic` en mobile, 3 columnas desde `md`. La activa cicla sola cada 4s; el clic reinicia el timer | Pasos: `pasos[]`. Intervalo: `setInterval(..., 4000)` en `Pasos.vue` |
+| `HomeProyectos` | El de la home, ahora con props `title`/`accent`/`cta`/`ctaTo` (defaults = home, no lo rompe). Usa los `proyectos` de `constants/home.js` | Props en `agencia-creativa.vue`. El CTA apunta a `#` (no hay página de trabajos) |
+| `HomeContacto` | El global, con textos de esta página y `submit-label` propio | Props en `agencia-creativa.vue` |
+
+**Decisiones tomadas:**
+- `Hero.vue` global ganó un slot `#text` opcional (cae a la prop `text` si no se pasa) — así el typewriter vive en `AgenciaHero` sin duplicar el Hero.
+- `home/Proyectos.vue` se parametrizó en vez de clonarlo; la home sigue igual porque los defaults son sus valores.
+- Assets del Figma venían en ~75MB (PNG). Comprimidos a JPG en `public/img/agencia/` → 1.4MB total.
+
+**Pendientes (placeholders):**
+- `heroWords` en `agencia.js` son de relleno (`campañas`, `piezas de comunicación`…).
+- La 3ª frase de `frases[]` es inventada — el Figma solo tenía 2.
+- CTA "Ver todos los trabajos" → `#`.
 
 ## Carrusel — patrón de slidesPerView
 

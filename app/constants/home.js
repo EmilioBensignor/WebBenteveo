@@ -6,7 +6,7 @@ export const servicios = [
     text: 'Para marcas que quieren dejar de pasar desapercibidas. Creamos campañas, contenido y experiencias que conectan de verdad con la gente.',
     tags: ['Campañas', 'Contenido', 'Producción'],
     cta: 'Ver agencia creativa',
-    to: '#'
+    to: '/agencia-creativa'
   },
   {
     number: '02',

@@ -36,7 +36,7 @@
 import { ROUTE_NAMES } from '~/constants/routes'
 
 const links = [
-  { label: 'Agencia', to: '#' },
+  { label: 'Agencia', to: ROUTE_NAMES.agencia },
   { label: 'Transformación', to: ROUTE_NAMES.transformacion },
   { label: 'Eventos', to: ROUTE_NAMES.eventos },
   { label: 'Nosotros', to: '#' }
