@@ -13,7 +13,7 @@
     <div class="w-full max-w-300 flex flex-col lg:flex-row lg:items-stretch">
       <button v-for="(servicio, i) in servicios" :key="servicio.title" type="button" :aria-expanded="active === i"
         @click="active = i" @mouseenter="onHover(i)"
-        class="lg:h-75 flex flex-col justify-between items-end gap-4 relative border-x border-b border-negro first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
+        class="servicio-card lg:h-75 flex flex-col justify-between items-end gap-4 relative first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
         :class="active === i ? 'lg:flex-2' : 'lg:flex-1'">
         <div class="absolute inset-0 bg-linear-to-b from-negro from-33% to-negro-puro">
           <NuxtImg :src="servicio.image" alt="" format="avif,webp" sizes="480px" loading="lazy"
@@ -57,3 +57,26 @@ function onHover(i) {
   if (window.matchMedia('(min-width: 1080px)').matches) active.value = i
 }
 </script>
+
+<style scoped>
+.servicio-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #131313, #f8f8f8);
+  pointer-events: none;
+}
+.servicio-card:first-child::after {
+  display: none;
+}
+@media (min-width: 1080px) {
+  .servicio-card::after {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #131313, #f8f8f8);
+  }
+}
+</style>
