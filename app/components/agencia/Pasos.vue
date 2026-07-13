@@ -30,7 +30,7 @@ let visible = false
 const startTimer = () => {
   clearInterval(timer)
   if (!visible) return
-  timer = setInterval(() => { active.value = (active.value + 1) % pasos.length }, 5000)
+  timer = setInterval(() => { active.value = (active.value + 1) % pasos.length }, 4000)
 }
 
 const select = (i) => {

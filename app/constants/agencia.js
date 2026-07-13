@@ -3,7 +3,7 @@ export const heroWords = ['campañas', 'piezas de comunicación', 'estrategias',
 export const frases = [
   'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
   'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.',
-  'Tenemos buenas ideas, pero nunca llegamos a ejecutarlas.'
+  'Sabemos que tenemos que comunicar mejor, pero no sabemos por dónde empezar.'
 ]
 
 export const servicios = [

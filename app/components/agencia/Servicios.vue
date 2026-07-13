@@ -17,7 +17,7 @@
         :class="active === i ? 'lg:flex-2' : 'lg:flex-1'">
         <div class="absolute inset-0 bg-linear-to-b from-negro from-33% to-negro-puro">
           <NuxtImg :src="servicio.image" alt="" format="avif,webp" sizes="480px" loading="lazy"
-            class="size-full object-cover transition-opacity duration-500" :class="active === i ? 'opacity-20' : 'opacity-0'" />
+            class="size-full object-cover transition-opacity duration-500" :class="active === i ? 'opacity-20' : 'opacity-10'" />
         </div>
 
         <span class="text-xl lg:text-[1.75rem] font-bold leading-none relative transition-colors duration-300"
@@ -39,7 +39,7 @@
           <div class="grid transition-[grid-template-rows] duration-500"
             :class="active === i ? 'grid-rows-[1fr] lg:delay-500' : 'grid-rows-[0fr]'">
             <div class="overflow-hidden">
-              <p class="text-xs lg:text-sm text-blanco font-medium pt-2 lg:pt-4">{{ servicio.text }}</p>
+              <p class="text-xs lg:text-sm text-blanco font-medium pt-2 pb-1 lg:pt-4">{{ servicio.text }}</p>
             </div>
           </div>
         </div>

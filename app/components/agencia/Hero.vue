@@ -1,22 +1,19 @@
 <template>
-  <Hero
-    image="/img/agencia/hero-bg.jpg"
+  <Hero image="/img/agencia/hero-bg.jpg"
     title="Tu marca tiene algo para decir. Nosotros hacemos que el mundo la escuche."
-    inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16"
-    content-class="max-w-md lg:max-w-158 xxl:max-w-full gap-2! xxl:gap-4!"
-    title-class="max-w-212!"
-    actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!"
-  >
+    content-class="max-w-154 lg:max-w-full lg:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-236!"
+    actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">
     <template #text>
-      <span class="block">Creamos <span class="text-amarillo">{{ typed }}<span class="animate-pulse">|</span></span></span>
+      <span class="block">Creamos <span class="text-amarillo">{{ typed }}<span
+            class="animate-pulse">|</span></span></span>
       <span class="block">que conectan con la gente y generan resultados concretos.</span>
     </template>
     <template #actions>
-      <ButtonPrimary to="#contacto" class="w-full sm:max-w-68 md:w-68 px-4!">
+      <ButtonPrimary to="#contacto" class="w-56 md:w-50">
         <Icon name="material-symbols:calendar-month-outline-rounded" size="1.5rem" />
         Hablemos
       </ButtonPrimary>
-      <ButtonPrimary to="#proyectos" variant="light" class="w-full sm:w-42 shrink-0 px-4!">
+      <ButtonPrimary to="#proyectos" variant="light" class="w-56 md:w-50">
         Ver trabajos
         <Icon name="material-symbols:arrow-forward-rounded" size="1.5rem" />
       </ButtonPrimary>
