@@ -16,10 +16,12 @@ const logos = [
   'ajinomoto_logo',
   'barbieri_logo',
   'bayer_logo',
+  'bosch_logo',
   'canal_fox_logo',
   'danica_logo',
   'fruttami_logo',
   'fundacion_argentina_de_mieloma_logo',
+  'incose_logo',
   'klaukol_logo',
   'mapei',
   'mercadopago_logo',
@@ -30,7 +32,9 @@ const logos = [
   'sadia_logo',
   'sika_logo',
   'sodimac_logo',
+  'tour_experto_logo',
   'un_minuto_de_vos_logo',
+  'unike_group_logo',
   'vasser_logo',
   'vietur_logo'
 ].map(name => `/img/marcas/${name}.webp`)

@@ -1,14 +1,14 @@
 export const rubros = {
   salud: {
-    h1: 'Salud',
+    h1: 'Salud y Bienestar',
     nombre: 'salud',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Más tiempo para tus pacientes, menos tiempo en papeles.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   educacion: {
-    h1: 'Educación',
+    h1: 'Educación y Capacitación',
     nombre: 'educación',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Que la tecnología potencie el aprendizaje, no lo complique.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   'real-estate': {
@@ -78,37 +78,37 @@ export const rubros = {
   agroindustria: {
     h1: 'Agroindustria',
     nombre: 'agroindustria',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Del campo a la mesa, con datos que acompañan cada paso.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   fitness: {
-    h1: 'Fitness',
+    h1: 'Fitness y Deportes',
     nombre: 'fitness',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Que gestionar tu gimnasio sea tan ágil como entrenar.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   fintech: {
-    h1: 'Fintech',
+    h1: 'Servicios Financieros y seguros',
     nombre: 'fintech',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Relaciones de largo plazo que se gestionan con inteligencia, no con memoria.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   'servicios-profesionales': {
     h1: 'Servicios profesionales',
     nombre: 'servicios profesionales',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Tecnología que libera al profesional de lo operativo para que haga lo que mejor sabe hacer.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   'servicio-al-cliente': {
     h1: 'Servicio al cliente',
     nombre: 'servicio al cliente',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Vendé más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
   'e-commerce': {
-    h1: 'E-Commerce',
+    h1: 'Retail y E-commerce',
     nombre: 'e-commerce',
-    subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
+    subtitulo: 'Vendé más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/hero-bg.png',
   },
 }
