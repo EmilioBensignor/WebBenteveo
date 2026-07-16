@@ -2,9 +2,9 @@
   <Section bg="bg-amarillo" class="py-16 md:py-24 lg:py-32 xxl:py-48 md:px-7 lg:px-16 xxl:px-32">
     <template #background>
       <div
-        class="w-full h-12 md:h-16 lg:h-24 xxl:h-32 absolute top-0 left-0 bg-linear-to-b from-negro to-transparent" />
+        class="w-full h-16 md:h-20 lg:h-24 xxl:h-48 absolute top-0 left-0 bg-linear-to-b from-negro to-amarillo" />
       <div
-        class="w-full h-12 md:h-16 lg:h-24 xxl:h-32 absolute bottom-0 left-0 bg-linear-to-t from-negro to-transparent" />
+        class="w-full h-16 md:h-20 lg:h-24 xxl:h-48 absolute bottom-0 left-0 bg-linear-to-t from-negro to-amarillo" />
     </template>
 
     <div class="max-w-150 lg:max-w-200 flex flex-col items-center gap-2 lg:gap-4 text-center text-negro-puro px-4">

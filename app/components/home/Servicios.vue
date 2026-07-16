@@ -1,6 +1,6 @@
 <template>
   <Section id="servicios"
-    class="bg-linear-to-b from-negro from-33% to-black py-6 md:py-8 lg:py-12 xxl:py-16 md:px-7 lg:px-16 xxl:px-30">
+    class="bg-negro py-6 md:py-8 lg:py-12 xxl:py-16 md:px-7 lg:px-16 xxl:px-30">
     <HeadingH2 class="text-center text-amarillo mx-4 md:mx-0">Todo lo que tu marca necesita. Bajo un mismo techo.
     </HeadingH2>
 

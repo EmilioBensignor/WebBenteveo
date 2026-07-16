@@ -4,7 +4,7 @@
     title="Ideas que mueven marcas. Estrategias que generan resultados."
     text="Tu marca tiene potencial. Nosotros lo convertimos en crecimiento, desde la campaña hasta el proceso."
     inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16"
-    content-class="max-w-md lg:max-w-158 xxl:max-w-full gap-2! xxl:gap-4!"
+    content-class="max-w-md lg:max-w-158 xxl:max-w-full gap-2 xxl:gap-16"
     title-class="max-w-212!"
     actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!"
   >

@@ -1,6 +1,6 @@
 <template>
   <article
-    class="h-87 md:h-92 lg:h-114 flex flex-col justify-end gap-4 relative border border-white/33 rounded-2xl overflow-hidden p-4 pt-25">
+    class="h-87 md:h-92 lg:h-114 flex flex-col justify-end gap-4 relative border border-white/33 rounded-2xl overflow-hidden p-4 pt-25 transition-all duration-500 hover:-translate-y-1 spin-border">
     <div class="absolute inset-0 -z-10">
       <NuxtImg :src="s.image" alt="" class="size-full object-cover" format="avif,webp"
         sizes="(min-width:1080px) 384px, 320px" loading="lazy" />
@@ -11,7 +11,7 @@
 
     <div class="flex flex-col gap-2 lg:gap-4">
       <HeadingH3 class="text-sm text-amarillo font-bold">{{ s.title }}</HeadingH3>
-      <p class="text-blanco text-xs lg:text-base font-medium">{{ s.text }}</p>
+      <p class="text-blanco text-xs lg:text-base font-light">{{ s.text }}</p>
     </div>
 
     <div class="flex flex-wrap gap-2">
@@ -32,3 +32,26 @@ defineProps({
   s: { type: Object, required: true }
 })
 </script>
+
+<style scoped>
+.spin-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  opacity: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(from var(--angle), transparent 55%, var(--color-amarillo));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity 0.5s;
+}
+
+.spin-border:hover::before {
+  opacity: 1;
+  animation: spin-border 4s linear infinite;
+}
+</style>

@@ -1,13 +1,13 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 pt-30 md:pt-32 pb-8 lg:pt-45 lg:pb-20 xxl:pb-28" :inner="inner">
+  <Section class="h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
     <template #background>
       <video v-if="video" :src="video" class="size-full object-cover" autoplay loop muted playsinline />
       <NuxtImg v-else-if="image" :src="image" alt="" class="size-full object-cover" />
       <div v-if="overlay" class="absolute inset-0 bg-black/75" />
     </template>
 
-    <div class="w-full flex flex-col items-center gap-4 md:gap-6 lg:gap-10 text-center" :class="contentClass">
-      <div class="flex flex-col items-center gap-2 lg:gap-3">
+    <div class="w-full flex flex-col items-center gap-6 md:gap-8 lg:gap-12 text-center" :class="contentClass">
+      <div class="flex flex-col items-center gap-2 md:gap-4 lg:gap-5 xxl:gap-8">
         <p v-if="eyebrow" class="text-blanco lg:text-xl font-medium leading-none">
           {{ eyebrow }}
         </p>

@@ -3,7 +3,7 @@
     inner="lg:justify-between md:flex-row gap-6 md:gap-0! lg:gap-16">
     <div
       class="max-w-136 flex flex-col items-center md:items-start gap-3 md:gap-4 text-center md:text-left text-negro md:pr-8 lg:pr-16">
-      <p v-if="eyebrow" class="text-xs lg:text-sm font-medium">{{ eyebrow }}</p>
+      <p v-if="eyebrow" class="text-xs lg:text-base xxl:text-lg font-medium">{{ eyebrow }}</p>
       <HeadingH2 :class="titleClass">{{ title }}</HeadingH2>
       <p class="lg:text-xl font-medium">{{ subtitle }}</p>
     </div>
