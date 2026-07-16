@@ -7,13 +7,11 @@
     </template>
 
     <div class="w-full flex flex-col items-center gap-6 md:gap-8 lg:gap-12 text-center" :class="contentClass">
-      <div class="flex flex-col items-center gap-2 md:gap-4 lg:gap-5 xxl:gap-8">
+      <div class="w-full flex flex-col items-center gap-2 md:gap-4 lg:gap-5 xxl:gap-8">
         <p v-if="eyebrow" class="text-blanco lg:text-xl font-medium leading-none">
           {{ eyebrow }}
         </p>
-        <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-124 lg:max-w-235 text-amarillo" :class="titleClass">
-          {{ title }}
-        </HeadingH1>
+        <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-3xl lg:max-w-7xl text-amarillo" :class="titleClass" v-html="title" />
         <p v-if="text || $slots.text" class="text-blanco lg:text-xl font-medium">
           <slot name="text">{{ text }}</slot>
         </p>

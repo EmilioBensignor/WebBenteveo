@@ -1,4 +1,4 @@
-export const heroWords = ['campañas', 'piezas de comunicación', 'estrategias', 'contenidos']
+export const heroWords = ['contenidos', 'campañas', 'eventos']
 
 export const frases = [
   'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
@@ -11,13 +11,13 @@ export const servicios = [
     icon: 'material-symbols:emoji-objects-outline-rounded',
     image: '/img/agencia/servicios/creacion-contenidos.jpg',
     title: 'Creación de contenidos',
-    text: 'Diseñadores, fotógrafos y editores que cuentan la historia de tu marca de forma atractiva y efectiva.'
+    text: 'Creativos, redactores, diseñadores y editores; equipos con experiencia detrás de nuevas herramientas generativas, para responder de forma rápida y efectiva.'
   },
   {
     icon: 'material-symbols:movie-outline-rounded',
     image: '/img/agencia/servicios/produccion-video.jpg',
     title: 'Producción de video',
-    text: 'Realizadores audiovisuales que convierten tus ideas en historias visualmente impactantes.'
+    text: 'Realizadores, editores y creadores con IA que convierten tus ideas en historias visualmente impactantes.'
   },
   {
     icon: 'material-symbols:thumb-up-outline-rounded',
@@ -28,13 +28,13 @@ export const servicios = [
   {
     icon: 'material-symbols:mood-heart-outline-rounded',
     image: '/img/agencia/servicios/activaciones.jpg',
-    title: 'Activaciones',
+    title: 'Activaciones y eventos',
     text: 'Experiencias creativas e innovadoras que conectan con la emoción y generan recordación real.'
   },
   {
     icon: 'material-symbols:code-xml-rounded',
     image: '/img/agencia/servicios/desarrollo.jpg',
-    title: 'Desarrollo',
+    title: 'Desarrollo web',
     text: 'Diseños que reflejan la identidad de tu marca, pensados desde la experiencia del usuario.'
   }
 ]

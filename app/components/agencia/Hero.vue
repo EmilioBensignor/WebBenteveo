@@ -1,11 +1,11 @@
 <template>
   <Hero image="/img/agencia/hero-bg.jpg"
-    title="Tu marca tiene algo para decir. Nosotros hacemos que el mundo la escuche."
-    content-class="max-w-154 lg:max-w-full lg:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-236!"
+    title="Tu marca tiene algo para decir.<br/>Nosotros hacemos que el mundo la escuche."
+    content-class="max-w-154 md:max-w-full md:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-6xl"
     actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">
     <template #text>
       <span class="block">Creamos <span class="text-amarillo">{{ typed }}<span
-            class="animate-pulse">|</span></span></span>
+            class="animate-pulse text-base">|</span></span></span>
       <span class="block">que conectan con la gente y generan resultados concretos.</span>
     </template>
     <template #actions>
