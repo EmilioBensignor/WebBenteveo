@@ -4,7 +4,7 @@
     <div class="absolute inset-0 -z-10">
       <NuxtImg :src="s.image" alt="" class="size-full object-cover" format="avif,webp"
         sizes="(min-width:1080px) 384px, 320px" loading="lazy" />
-      <div class="absolute inset-0 bg-linear-to-b from-transparent to-black to-50%" />
+      <div class="absolute inset-0 bg-linear-to-b from-transparent to-black to-60%" />
     </div>
 
     <span class="absolute -top-4 -right-2 text-8xl lg:text-9xl font-bold text-amarillo/50">{{ s.number }}</span>

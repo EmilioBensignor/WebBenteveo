@@ -1,6 +1,6 @@
 <template>
   <Hero
-    image="/img/home/hero-bg.png"
+    video="/video/home/Benteveo-Agencia-Publicitaria.mp4"
     title="Ideas que mueven marcas. Estrategias que generan resultados."
     text="Tu marca tiene potencial. Nosotros lo convertimos en crecimiento, desde la campaña hasta el proceso."
     inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16"

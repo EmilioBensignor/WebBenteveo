@@ -28,19 +28,15 @@
       </div>
     </div>
 
-    <div class="w-[calc(100%+2rem)] md:w-full relative -mx-4 md:mx-0 md:px-7 lg:px-0">
+    <div class="w-[calc(100%+2rem)] md:w-full relative bg-black rounded-2xl -mx-4 md:mx-0 md:px-7 lg:px-0">
       <NuxtImg :src="pasos.items[active].imagen" :alt="pasos.items[active].texto"
-        class="w-full h-72 md:h-87 object-cover md:border-3 border-negro-puro md:rounded-2xl" />
-      <span
-        class="size-12 flex items-center justify-center absolute top-3 left-3 md:left-10 lg:left-3 bg-negro-puro/33 rounded-full text-amarillo text-xl font-bold">
-        {{ active + 1 }}
-      </span>
+        class="w-[90vw] h-full object-cover md:border-3 border-negro-puro rounded-2xl mx-auto" />
       <button type="button" aria-label="Anterior" @click="prev"
-        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 left-3 md:left-2 lg:-left-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer">
+        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 left-3 md:left-2 lg:-left-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer shadow-[6px_0_18px_0_rgba(252,183,22,0.33)]">
         <Icon name="material-symbols:arrow-left-rounded" size="32" />
       </button>
       <button type="button" aria-label="Siguiente" @click="next"
-        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 right-3 md:right-2 lg:-right-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer">
+        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 right-3 md:right-2 lg:-right-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer shadow-[-6px_0_18px_0_rgba(252,183,22,0.33)]">
         <Icon name="material-symbols:arrow-right-rounded" size="32" />
       </button>
     </div>

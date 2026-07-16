@@ -1,7 +1,7 @@
 export const servicios = [
   {
     number: '01',
-    image: '/img/home/servicios/agencia-creativa.png',
+    image: '/img/home/servicios/servicios_agencia_creativa.webp',
     title: 'Agencia creativa',
     text: 'Para marcas que quieren dejar de pasar desapercibidas. Creamos campañas, contenido y experiencias que conectan de verdad con la gente.',
     tags: ['Campañas', 'Contenido', 'Producción'],
@@ -10,7 +10,7 @@ export const servicios = [
   },
   {
     number: '02',
-    image: '/img/home/servicios/transformacion-tecnologica.png',
+    image: '/img/home/servicios/servicios_transformacion_tecnologicas.webp',
     title: 'Transformación tecnológica',
     text: 'Para empresas que quieren operar más rápido, decidir mejor y adelantarse a la competencia. Integramos IA y rediseñamos procesos para que tu equipo se adapte más fácil al cambio.',
     tags: ['IA aplicada', 'GEO', 'Automatización', 'Procesos'],
@@ -19,7 +19,7 @@ export const servicios = [
   },
   {
     number: '03',
-    image: '/img/home/servicios/eventos-corporativos.png',
+    image: '/img/home/servicios/servicios_eventos_corporativos.webp',
     title: 'Eventos Corporativos',
     text: 'Para marcas que estén buscando más que un organizador del evento. Nos encargamos de todo: estrategia, creatividad y producción para que el evento sea inolvidable.',
     tags: ['Estrategia', 'Contenido', 'Producción'],

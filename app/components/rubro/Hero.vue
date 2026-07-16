@@ -1,5 +1,5 @@
 <template>
-  <Hero :image="image" :title="title" :text="subtitulo">
+  <Hero :image="image" :title="title" :text="subtitulo" :overlay="false">
     <template #actions>
       <ButtonPrimary class="w-72 lg:w-auto">
         <Icon name="material-symbols:calendar-month-outline-rounded" size="24" />
