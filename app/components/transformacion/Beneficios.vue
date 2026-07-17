@@ -2,10 +2,10 @@
   <Section class="px-4 md:px-7 lg:px-16 xxl:px-30">
     <div class="flex flex-col items-center gap-3 lg:gap-4 md:gap-2 text-center">
       <HeadingH2 class="max-w-64 md:max-w-full">
-        <span class="text-blanco">Deja de apagar incendios</span> <span class="text-amarillo">y empieza a crecer</span>
+        <span class="text-blanco">Cuatro cosas que cambian en tu empresa</span> <span class="text-amarillo">cuando integras IA a tus procesos</span>
       </HeadingH2>
       <p class="max-w-64 sm:max-w-80 md:max-w-full lg:text-xl text-blanco font-medium">
-        Cuatro cosas que cambian en tu empresa cuando integras IA a tus procesos:
+        Deja de apagar incendios y empieza a crecer
       </p>
     </div>
 

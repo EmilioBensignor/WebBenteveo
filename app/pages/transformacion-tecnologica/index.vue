@@ -1,6 +1,6 @@
 <template>
   <TransformacionHero />
-  <TransformacionEmpresas />
+  <TransformacionEmpresas class="pb-6 lg:pb-12" />
   <Resultados :metrics="transformacionMetrics">
     <template #header>
       <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
@@ -19,7 +19,7 @@
   <TransformacionProceso />
   <TransformacionFaqs />
   <HomeContacto title="¿Listo para el siguiente nivel?"
-    subtitle="Agenda una sesión de asesoramiento. Sin compromisos, solo pensar juntos."
+    subtitle="Agenda una sesión de asesoramiento. <br/> Sin compromisos, solo pensar juntos."
     title-class="md:text-2xl lg:text-5xl! font-bold!" />
 </template>
 

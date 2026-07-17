@@ -40,22 +40,22 @@ export const industrias = [
 export const opiniones = [
   {
     text: 'Desde el primer momento entendieron cómo trabajábamos y armaron una solución que se adapta a nuestra operación. El bot ordenó toda la gestión de reservas y hoy nos saca muchas horas de trabajo de encima todos los días.',
-    autor: 'Gabriela',
+    autor: 'Gabriela Faingold',
     empresa: 'Tour Experto'
   },
   {
     text: 'Transcribir la documentación y armar el catálogo nos llevaba muchísimo tiempo. Con la solución que desarrollaron lo resolvimos en una fracción de eso, y siempre estuvieron atentos a que funcionara como necesitábamos.',
-    autor: 'Agustín',
+    autor: 'Agustín Koatz',
     empresa: 'Vietur'
   },
   {
     text: 'Lo que más valoro es que nos escucharon: entendieron lo que buscábamos y nos acompañaron en cada etapa. La web nueva nos dio una presencia mucho más profesional y hoy es la primera impresión que se llevan nuestros clientes.',
-    autor: 'Gisella',
+    autor: 'Gisella Petracini',
     empresa: 'Unike Group'
   },
   {
     text: 'La atención al cliente era un cuello de botella para nosotros. Ahora la IA responde al instante y nos clasifica los leads, y el acompañamiento durante la implementación hizo que la transición fuera mucho más simple de lo que esperábamos.',
-    autor: 'Esteban',
+    autor: 'Esteban Della Maggiore',
     empresa: 'Moto Roma'
   }
 ]

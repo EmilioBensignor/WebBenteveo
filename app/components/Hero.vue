@@ -11,7 +11,9 @@
         <p v-if="eyebrow" class="text-blanco lg:text-xl font-medium leading-none">
           {{ eyebrow }}
         </p>
-        <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-3xl lg:max-w-7xl text-amarillo" :class="titleClass" v-html="title" />
+        <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-3xl lg:max-w-7xl text-amarillo" :class="titleClass">
+          <span v-html="title" />
+        </HeadingH1>
         <p v-if="text || $slots.text" class="text-blanco lg:text-xl font-medium">
           <slot name="text">{{ text }}</slot>
         </p>

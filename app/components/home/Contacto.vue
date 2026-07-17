@@ -5,7 +5,7 @@
       class="max-w-136 flex flex-col items-center md:items-start gap-3 md:gap-4 text-center md:text-left text-negro md:pr-8 lg:pr-16">
       <p v-if="eyebrow" class="text-xs lg:text-base xxl:text-lg font-medium">{{ eyebrow }}</p>
       <HeadingH2 :class="titleClass">{{ title }}</HeadingH2>
-      <p class="lg:text-xl font-medium">{{ subtitle }}</p>
+      <p class="lg:text-xl font-medium" v-html="subtitle"></p>
     </div>
 
     <FormContacto :submit-label="submitLabel" />

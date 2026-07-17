@@ -7,7 +7,7 @@
       <div class="absolute inset-0 bg-linear-to-b from-transparent to-black to-60%" />
     </div>
 
-    <span class="absolute -top-4 -right-2 text-8xl lg:text-9xl font-bold text-amarillo/50">{{ s.number }}</span>
+    <span class="absolute -top-7 lg:-top-8 -right-2 text-8xl lg:text-9xl font-bold text-amarillo/50">{{ s.number }}</span>
 
     <div class="flex flex-col gap-2 lg:gap-4">
       <HeadingH3 class="text-sm text-amarillo font-bold">{{ s.title }}</HeadingH3>

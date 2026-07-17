@@ -7,7 +7,7 @@
       <div class="absolute inset-0 bg-linear-to-b from-transparent to-black to-75%" />
     </div>
 
-    <span class="absolute -top-4 lg:-top-6 -right-2 lg:-right-3 text-8xl lg:text-9xl font-bold text-amarillo/50">{{
+    <span class="absolute -top-7 lg:-top-8 -right-2 lg:-right-3 text-8xl lg:text-9xl font-bold text-amarillo/50">{{
       p.number }}</span>
 
     <div class="flex flex-col gap-3 md:gap-4">
