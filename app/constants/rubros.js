@@ -37,19 +37,19 @@ export const rubros = {
       items: [
         {
           texto: 'El paciente agenda su turno por WhatsApp',
-          imagen: '/img/transformacion/rubros/salud/1-el-paciente-agenda-su-turno-por-whatsapp.png',
+          imagen: '/img/transformacion/rubros/salud/1-el-paciente-agenda-su-turno-por-whatsapp.webp',
         },
         {
           texto: 'La ficha médica se digitaliza',
-          imagen: '/img/transformacion/rubros/salud/2-la-ficha-medica-se-digitaliza.png',
+          imagen: '/img/transformacion/rubros/salud/2-la-ficha-medica-se-digitaliza.webp',
         },
         {
           texto: 'El seguimiento es automático',
-          imagen: '/img/transformacion/rubros/salud/3-el-seguimiento-es-automatico.png',
+          imagen: '/img/transformacion/rubros/salud/3-el-seguimiento-es-automatico.webp',
         },
         {
           texto: 'El alta se genera sola',
-          imagen: '/img/transformacion/rubros/salud/4-el-alta-se-genera-sola.png',
+          imagen: '/img/transformacion/rubros/salud/4-el-alta-se-genera-sola.webp',
         },
       ],
     },
@@ -113,19 +113,19 @@ export const rubros = {
       items: [
         {
           texto: 'El docente define qué sabe y qué no sabe el tutor',
-          imagen: '/img/transformacion/rubros/educacion/1-el-docente-define-que-sabe-y-que-no.png',
+          imagen: '/img/transformacion/rubros/educacion/1-el-docente-define-que-sabe-y-que-no.webp',
         },
         {
           texto: 'Creamos un personaje virtual como tutor',
-          imagen: '/img/transformacion/rubros/educacion/2-creamos-un-personaje-virtual.png',
+          imagen: '/img/transformacion/rubros/educacion/2-creamos-un-personaje-virtual.webp',
         },
         {
           texto: 'El alumno consulta sus dudas cuando quiere',
-          imagen: '/img/transformacion/rubros/educacion/3-alumno-consulta-sus-dudas-cuando-quiere.png',
+          imagen: '/img/transformacion/rubros/educacion/3-alumno-consulta-sus-dudas-cuando-quiere.webp',
         },
         {
           texto: 'El alumno recibe feedback inmediato',
-          imagen: '/img/transformacion/rubros/educacion/4-alumno-recibe-feedback-de-inmediato.png',
+          imagen: '/img/transformacion/rubros/educacion/4-alumno-recibe-feedback-de-inmediato.webp',
         },
       ],
     },
@@ -187,10 +187,10 @@ export const rubros = {
       subtitulo:
         'Un agente que busca propiedades en múltiples portales, arma la propuesta y hace el seguimiento. <strong>Sin que el asesor tenga que recordar nada.</strong>',
       items: [
-        { texto: 'El cliente define qué busca', imagen: '/img/transformacion/rubros/video-thumb.png' },
-        { texto: 'El agente escanea los portales', imagen: '/img/transformacion/rubros/video-thumb.png' },
-        { texto: 'La propuesta llega al cliente', imagen: '/img/transformacion/rubros/video-thumb.png' },
-        { texto: 'El seguimiento es automático', imagen: '/img/transformacion/rubros/video-thumb.png' },
+        { texto: 'El cliente define qué busca', imagen: '/img/transformacion/rubros/real-state/1-e-asesor-define-que-busca-el-cliente.webp' },
+        { texto: 'El agente escanea los portales', imagen: '/img/transformacion/rubros/real-state/2-el-sistema-organiza-y-cruza-la-informacion.webp' },
+        { texto: 'La propuesta llega al cliente', imagen: '/img/transformacion/rubros/real-state/3-la-propuesta-llega-por-mail-al-cliente.webp' },
+        { texto: 'El seguimiento es automático', imagen: '/img/transformacion/rubros/real-state/4-el-seguimiento-es-automatico.webp' },
       ],
     },
     automatizaciones: [
