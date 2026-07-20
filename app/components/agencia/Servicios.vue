@@ -15,9 +15,9 @@
         @click="active = i" @mouseenter="onHover(i)"
         class="servicio-card lg:h-75 flex flex-col justify-between items-end gap-4 relative first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
         :class="active === i ? 'lg:flex-2' : 'lg:flex-1'">
-        <div class="absolute inset-0 bg-linear-to-b from-negro from-33% to-negro-puro">
+        <div class="absolute bg-negro inset-0">
           <NuxtImg :src="servicio.image" alt="" format="avif,webp" sizes="480px" loading="lazy"
-            class="size-full object-cover transition-opacity duration-500" :class="active === i ? 'opacity-20' : 'opacity-10'" />
+            class="size-full object-cover transition-opacity duration-500" :class="active === i ? 'opacity-90' : 'opacity-40'" />
         </div>
 
         <span class="text-xl lg:text-[1.75rem] font-bold leading-none relative transition-colors duration-300"
