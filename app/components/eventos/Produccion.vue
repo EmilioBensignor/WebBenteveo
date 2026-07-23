@@ -10,7 +10,25 @@
       </p>
     </div>
 
-    <NuxtImg src="/img/eventos/produccion.jpg" alt=""
-      class="w-full h-60 md:h-80 lg:h-112 object-cover rounded-2xl lg:rounded-4xl" />
+    <div class="relative w-full">
+      <video ref="videoRef" src="/video/eventos/show-reel-eventos.mp4" autoplay loop muted playsinline
+        class="w-full h-full object-cover rounded-2xl lg:rounded-4xl" />
+      <button type="button" @click="toggleMute"
+        class="w-10 h-10 flex justify-center items-center absolute bottom-4 right-4 bg-negro border border-white/20 rounded-full cursor-pointer"
+        :aria-label="isMuted ? 'Activar sonido' : 'Silenciar'">
+        <Icon :name="isMuted ? 'material-symbols:volume-off-rounded' : 'material-symbols:volume-up-rounded'"
+          size="1.5rem" class="text-amarillo" />
+      </button>
+    </div>
   </Section>
 </template>
+
+<script setup>
+const videoRef = ref(null)
+const isMuted = ref(true)
+
+function toggleMute() {
+  isMuted.value = !isMuted.value
+  if (videoRef.value) videoRef.value.muted = isMuted.value
+}
+</script>

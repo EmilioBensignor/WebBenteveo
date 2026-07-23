@@ -1,6 +1,6 @@
 <template>
   <Hero
-    video="/video/hero-transfromacion-tecnologica.mp4"
+    video="/video/eventos/hero-eventos.mp4"
     eyebrow="LANZAMIENTOS, CONVENCIONES Y ACTIVACIONES DE MARCA"
     title="Experiencias que nacen desde la estrategia de marca"
   >
