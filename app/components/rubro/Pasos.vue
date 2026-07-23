@@ -10,10 +10,36 @@
         v-html="pasos.subtitulo" />
     </div>
 
-    <PasosTimeline class="mt-2 md:mt-8" :items="items" line-track="bg-negro-puro/15" line-fill="bg-negro-puro"
-      dot-halo="bg-negro-puro/20" dot-on="bg-negro-puro" dot-off="bg-negro-puro/30"
-      image-shadow="shadow-[0_0_18px_0_rgba(0,0,0,0.25)]" image-border="border-negro-puro/20"
-      number-class="text-negro-puro" title-class="text-negro-puro" />
+    <div class="w-full relative">
+      <div
+        class="h-px absolute top-1/2 -inset-x-4 md:inset-x-0 bg-linear-to-r from-transparent via-negro-puro via-50% to-transparent" />
+      <div
+        class="flex gap-3 lg:gap-4 relative overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-4 md:mx-0 px-4 md:px-0">
+        <button v-for="(paso, i) in pasos.items" :key="paso.texto" type="button" ref="tabRefs" @click="active = i"
+          class="min-w-56 md:min-w-0 md:flex-1 flex items-center gap-2 lg:gap-4 border rounded-2xl text-left shadow-amarilla transition-colors cursor-pointer p-4"
+          :class="active === i ? 'bg-negro border-negro-puro' : 'bg-blanco border-blanco/33'">
+          <span class="text-lg lg:text-xl font-bold" :class="active === i ? 'text-amarillo' : 'text-negro'">
+            {{ i + 1 }}.
+          </span>
+          <span class="text-sm lg:text-base font-medium" :class="active === i ? 'text-blanco' : 'text-negro'">
+            {{ paso.texto }}
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <div class="w-[calc(100%+2rem)] md:w-full relative bg-black rounded-2xl -mx-4 md:mx-0 md:px-7 lg:px-0">
+      <NuxtImg :src="pasos.items[active].imagen" :alt="pasos.items[active].texto"
+        class="w-[90vw] h-full object-cover md:border-3 border-negro-puro rounded-2xl mx-auto" />
+      <button type="button" aria-label="Anterior" @click="prev"
+        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 left-3 md:left-2 lg:-left-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer shadow-[6px_0_18px_0_rgba(252,183,22,0.33)]">
+        <Icon name="material-symbols:arrow-left-rounded" size="32" />
+      </button>
+      <button type="button" aria-label="Siguiente" @click="next"
+        class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 right-3 md:right-2 lg:-right-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer shadow-[-6px_0_18px_0_rgba(252,183,22,0.33)]">
+        <Icon name="material-symbols:arrow-right-rounded" size="32" />
+      </button>
+    </div>
 
     <p class="text-center lg:text-xl text-negro-puro font-medium">Otras automatizaciones para {{ nombre }}</p>
 
@@ -40,5 +66,12 @@ const props = defineProps({
   nombre: { type: String, required: true }
 })
 
-const items = computed(() => props.pasos.items.map((p) => ({ title: p.texto, image: p.imagen })))
+const active = ref(0)
+const tabRefs = ref([])
+const prev = () => { active.value = (active.value + props.pasos.items.length - 1) % props.pasos.items.length }
+const next = () => { active.value = (active.value + 1) % props.pasos.items.length }
+
+watch(active, (i) => {
+  tabRefs.value[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+})
 </script>
