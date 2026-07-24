@@ -7,25 +7,33 @@
         class="w-full h-16 md:h-20 lg:h-24 xxl:h-48 absolute bottom-0 left-0 bg-linear-to-t from-negro to-amarillo" />
     </template>
 
-    <div class="max-w-150 lg:max-w-200 flex flex-col items-center gap-2 lg:gap-4 text-center text-negro-puro px-4">
-      <HeadingH2 class="font-bold!">
-        Cuando creatividad, tecnología y producción trabajan juntos desde el día uno, los resultados son mejores.
-      </HeadingH2>
-      <p class="text-lg lg:text-xl font-medium">El mismo equipo, el mismo criterio y la misma visión de tu marca.</p>
-    </div>
+    <p class="text-xs md:text-sm text-negro-puro font-semibold tracking-[0.25em] uppercase">
+      Creatividad, tecnología y producción juntas
+    </p>
 
-    <CarouselStatic class="md:hidden" :slides-per-view="{ base: 1.2, sm: 1.8, tab: 2.4 }"
-      :gap="{ base: 8, md: 8, lg: 16, xl: 16, xxl: 16 }">
-      <BeneficioCard v-for="b in beneficios" :key="b.title" :b="b" />
-    </CarouselStatic>
+    <h2
+      class="max-w-260 text-center text-negro-puro text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.35] px-2">
+      <template v-for="(b, i) in beneficios" :key="b.title">
+        <span v-if="i > 0">{{ i === beneficios.length - 1 ? ' y ' : ', ' }}</span>
+        <span tabindex="0"
+          :class="i % 2 === 1 ? 'hover:rotate-2 focus-visible:rotate-2' : 'hover:-rotate-2 focus-visible:-rotate-2'"
+          class="group inline-block relative bg-negro rounded-2xl lg:rounded-3xl text-amarillo whitespace-nowrap cursor-default transition-transform duration-300 hover:scale-[1.03] outline-none px-3 lg:px-5 py-0.5 lg:py-1">
+          {{ b.title.toLowerCase() }}
+          <span
+            class="w-64 lg:w-72 absolute left-1/2 bottom-[calc(100%+0.75rem)] z-20 -translate-x-1/2 bg-negro-puro rounded-2xl text-blanco text-sm lg:text-base font-medium normal-case whitespace-normal shadow-amarilla opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0 group-focus-visible:translate-y-0 transition-all duration-300 pointer-events-none p-4 lg:p-5">
+            <Icon :name="b.icon" class="size-5! text-amarillo mb-2" />
+            <span class="block">{{ b.text }}</span>
+          </span>
+        </span>
+      </template>
+      <span>.</span>
+    </h2>
 
-    <div class="lg:max-w-300 hidden md:grid grid-cols-3 gap-2 lg:gap-4">
-      <BeneficioCard v-for="b in beneficios" :key="b.title" :b="b" />
-    </div>
+    <p class="text-lg lg:text-xl text-negro-puro font-medium text-center">
+      El mismo equipo, el mismo criterio y la misma visión de tu marca.
+    </p>
 
-    <ButtonPrimary to="#servicios" variant="dark">
-      Conoce como trabajamos
-    </ButtonPrimary>
+    <ButtonPrimary to="#servicios" variant="dark">Conoce como trabajamos</ButtonPrimary>
   </Section>
 </template>
 

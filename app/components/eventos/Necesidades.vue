@@ -4,8 +4,20 @@
       Todo lo que necesitás, <span class="text-amarillo">resuelto en un solo lugar</span>
     </HeadingH2>
 
-    <div class="w-full grid tab:grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4">
-      <EventosNecesidadCard v-for="n in necesidades" :key="n.title" :b="n" />
+    <div class="w-full max-w-280 grid tab:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
+      <article v-for="(n, i) in necesidades" :key="n.title"
+        class="flex flex-col gap-3 relative bg-negro border border-dashed border-amarillo/40 rounded-xl transition-all duration-300 hover:rotate-0! hover:-translate-y-2 hover:shadow-amarilla hover:border-solid hover:border-amarillo p-5 lg:p-6"
+        :style="`rotate: ${rotations[i % rotations.length]}deg`">
+        <div class="flex items-center justify-between gap-4">
+          <span class="text-amarillo/50 text-[10px] lg:text-xs font-bold tracking-[0.25em] uppercase tabular-nums">
+            Pedido N°0{{ i + 1 }}
+          </span>
+          <Icon :name="n.icon" size="20" class="text-amarillo" />
+        </div>
+        <div class="h-px w-full bg-blanco/10" />
+        <h3 class="text-amarillo text-base lg:text-lg font-bold">{{ n.title }}</h3>
+        <p class="text-xs lg:text-sm text-blanco font-medium">{{ n.text }}</p>
+      </article>
     </div>
 
     <div class="flex flex-col items-center gap-4">
@@ -17,4 +29,6 @@
 
 <script setup>
 import { necesidades } from '~/constants/eventos'
+
+const rotations = [-2, 1.5, -1, 2, -1.5, 1]
 </script>
