@@ -4,14 +4,16 @@
       <img v-for="(logo, i) in track" :key="i" :src="logo" alt=""
         class="w-auto h-8 md:h-12 shrink-0 object-contain">
     </div>
-    <div
-      class="w-16 lg:w-40 absolute inset-y-0 left-0 z-10 bg-linear-to-r from-negro-puro from-33% to-transparent" />
-    <div
-      class="w-16 lg:w-40 absolute inset-y-0 right-0 z-10 bg-linear-to-l from-negro-puro from-33% to-transparent" />
+    <div class="w-16 lg:w-40 absolute inset-y-0 left-0 z-10 bg-linear-to-r from-33% to-transparent" :class="from" />
+    <div class="w-16 lg:w-40 absolute inset-y-0 right-0 z-10 bg-linear-to-l from-33% to-transparent" :class="from" />
   </div>
 </template>
 
 <script setup>
+defineProps({
+  from: { type: String, default: 'from-negro' }
+})
+
 const logos = [
   'ajinomoto_logo',
   'barbieri_logo',
