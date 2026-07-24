@@ -83,6 +83,7 @@ Datos de contenido en `app/constants/`:
 | `/` | En progreso (home) |
 | `/transformacion-tecnologica` | Landing lista, pendiente revisión responsive |
 | `/agencia-creativa` | Landing lista. Placeholders: palabras del typewriter del hero, 3ª frase, CTA "Ver todos los trabajos" (`#`) |
+| `/variantes` | Página lab (noindex): 25 variantes creativas de 5 secciones, en `app/components/variantes/`. Borrar cuando se elijan |
 
 ## Landing /agencia-creativa
 

@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* El watcher de @tailwindcss/vite no siempre suma archivos creados con el server corriendo; registrarlos explícito evita CSS stale */
+@source "../../components/variantes";
 
 @theme {
   --breakpoint-sm: 480px;
