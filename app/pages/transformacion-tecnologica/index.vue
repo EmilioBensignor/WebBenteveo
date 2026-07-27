@@ -19,8 +19,7 @@
   <TransformacionProceso />
   <TransformacionFaqs />
   <HomeContacto title="¿Listo para el siguiente nivel?"
-    subtitle="Agenda una sesión de asesoramiento. <br/> Sin compromisos, solo pensar juntos."
-    title-class="md:text-2xl lg:text-5xl! font-bold!" />
+    subtitle="Agenda una sesión de asesoramiento. <br/> Sin compromisos, solo pensar juntos." />
 </template>
 
 <script setup>

@@ -19,13 +19,12 @@
   <Section class="md:px-8 lg:px-16 xxl:px-30">
     <CarouselStatic :slides-per-view="{ base: 1.3, sm: 1.8, tab: 2.4, md: 3, lg: 3, xl: 3, xxl: 4 }"
       :gap="{ base: 8, md: 16, lg: 16, xl: 16, xxl: 16 }"
-      :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '0.5rem', md: '1rem', lg: '2.75rem', xl: '2.75rem', xxl: '6.25rem' }, right: { base: '0.5rem', md: '1rem', lg: '2.75rem', xl: '2.75rem', xxl: '6.25rem' } }">
+      :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '0.5rem', md: '-1.5rem', lg: '-1.75rem', xl: '-1.75rem', xxl: '-1.75rem' }, right: { base: '0.5rem', md: '-1.5rem', lg: '-1.75rem', xl: '-1.75rem', xxl: '-1.75rem' } }">
       <OpinionCard v-for="op in opiniones" :key="op.autor + op.empresa" :op="op" />
     </CarouselStatic>
   </Section>
   <HomeContacto title="¿Listo para el siguiente nivel?"
-    subtitle="Agenda una sesión de asesoramiento. Sin compromisos, solo pensar juntos."
-    title-class="md:text-2xl lg:text-5xl! font-bold!" />
+    subtitle="Agenda una sesión de asesoramiento. Sin compromisos, solo pensar juntos." />
 </template>
 
 <script setup>

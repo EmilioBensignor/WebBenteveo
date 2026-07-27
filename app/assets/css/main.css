@@ -19,6 +19,17 @@
   --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 
   --shadow-amarilla: 0 0 18px 0 rgba(252, 183, 22, 0.33);
+
+  --gradient-amarillo: linear-gradient(180deg, #131313 0%, #FCB716 30%, #FCB716 70%, #131313 100%);
+  --gradient-amarillo-negro: linear-gradient(180deg, #000000 0%, #FCB716 30%, #FCB716 70%, #131313 100%);
+}
+
+@utility bg-gradient-amarillo {
+  background-image: var(--gradient-amarillo);
+}
+
+@utility bg-gradient-amarillo-negro {
+  background-image: var(--gradient-amarillo-negro);
 }
 
 @keyframes marquee {

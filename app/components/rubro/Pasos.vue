@@ -28,7 +28,7 @@
       </div>
     </div>
 
-    <div class="w-[calc(100%+2rem)] md:w-full relative bg-black rounded-2xl -mx-4 md:mx-0 md:px-7 lg:px-0">
+    <div class="w-full relative bg-black rounded-2xl -mx-4 md:mx-0 px-4 md:px-7 lg:px-0">
       <NuxtImg :src="pasos.items[active].imagen" :alt="pasos.items[active].texto"
         class="w-[90vw] h-full object-cover md:border-3 border-negro-puro rounded-2xl mx-auto" />
       <button type="button" aria-label="Anterior" @click="prev"
