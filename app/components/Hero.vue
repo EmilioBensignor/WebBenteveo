@@ -3,7 +3,7 @@
     <template #background>
       <video v-if="video" :src="video" class="size-full object-cover" autoplay loop muted playsinline />
       <NuxtImg v-else-if="image" :src="image" alt="" class="size-full object-cover" />
-      <div v-if="overlay" class="absolute inset-0 bg-black/75" />
+      <div v-if="overlay" class="absolute inset-0 bg-black/65" />
     </template>
 
     <div class="w-full flex flex-col items-center gap-6 md:gap-8 lg:gap-12 text-center" :class="contentClass">

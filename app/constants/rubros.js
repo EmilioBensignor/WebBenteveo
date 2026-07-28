@@ -253,19 +253,19 @@ export const rubros = {
       items: [
         {
           texto: 'El productor carga los registros en la plataforma',
-          imagen: '/img/transformacion/rubros/agroindustria/1-el-productor-carga-los-registros-en-la-plataforma.png',
+          imagen: '/img/transformacion/rubros/agroindustria/1-el-productor-carga-los-registros-en-la-plataforma.webp',
         },
         {
           texto: 'El sistema organiza y cruza la información',
-          imagen: '/img/transformacion/rubros/agroindustria/2-el-sistema-organiza-y-cruza-la-informacion.png',
+          imagen: '/img/transformacion/rubros/agroindustria/2-el-sistema-organiza-y-cruza-la-informacion.webp',
         },
         {
           texto: 'El reporte se genera en el formato requerido',
-          imagen: '/img/transformacion/rubros/agroindustria/3-el-reporte-se-genera-en-el-formato-requerido.png',
+          imagen: '/img/transformacion/rubros/agroindustria/3-el-reporte-se-genera-en-el-formato-requerido.webp',
         },
         {
           texto: 'Listo para presentar a la certificadora',
-          imagen: '/img/transformacion/rubros/agroindustria/4-listo-para-presentar-en-la-certidicadora.png',
+          imagen: '/img/transformacion/rubros/agroindustria/4-listo-para-presentar-en-la-certidicadora.webp',
         },
       ],
     },
@@ -329,19 +329,19 @@ export const rubros = {
       items: [
         {
           texto: 'El socio define sus objetivos al registrarse',
-          imagen: '/img/transformacion/rubros/fitness/1-el-socio-define-sus-objetivos-al-registrarse.png',
+          imagen: '/img/transformacion/rubros/fitness/1-el-socio-define-sus-objetivos-al-registrarse.webp',
         },
         {
           texto: 'Recibe su plan personalizado al instante',
-          imagen: '/img/transformacion/rubros/fitness/2-recibe-su-plan-personalizado-al-instante.png',
+          imagen: '/img/transformacion/rubros/fitness/2-recibe-su-plan-personalizado-al-instante.webp',
         },
         {
           texto: 'Sigue su progreso semana a semana',
-          imagen: '/img/transformacion/rubros/fitness/3-sigue-su-progreso-semana-a-semana.png',
+          imagen: '/img/transformacion/rubros/fitness/3-sigue-su-progreso-semana-a-semana.webp',
         },
         {
           texto: 'El gimnasio monitorea a cada cliente',
-          imagen: '/img/transformacion/rubros/fitness/4-el-gimnasio-monitorea-a-cada-cliente.png',
+          imagen: '/img/transformacion/rubros/fitness/4-el-gimnasio-monitorea-a-cada-cliente.webp',
         },
       ],
     },
@@ -405,19 +405,19 @@ export const rubros = {
       items: [
         {
           texto: 'Los leads entran de múltiples fuentes',
-          imagen: '/img/transformacion/rubros/fintech/1-los-leads-entran-de-multiples-fuentes.png',
+          imagen: '/img/transformacion/rubros/fintech/1-los-leads-entran-de-multiples-fuentes.webp',
         },
         {
           texto: 'El sistema califica cada prospecto automáticamente',
-          imagen: '/img/transformacion/rubros/fintech/2-el-sistema-califica-cada-prospecto-automaticamente.png',
+          imagen: '/img/transformacion/rubros/fintech/2-el-sistema-califica-cada-prospecto-automaticamente.webp',
         },
         {
           texto: 'El asesor recibe el briefing completo',
-          imagen: '/img/transformacion/rubros/fintech/3-el-asesor-recibe-el-briefing-completo.png',
+          imagen: '/img/transformacion/rubros/fintech/3-el-asesor-recibe-el-briefing-completo.webp',
         },
         {
           texto: 'Solo trabaja los prospectos que valen su tiempo',
-          imagen: '/img/transformacion/rubros/fintech/4-solo-trabaja-los-prospectos-que-valen-su-tiempo.png',
+          imagen: '/img/transformacion/rubros/fintech/4-solo-trabaja-los-prospectos-que-valen-su-tiempo.webp',
         },
       ],
     },
@@ -481,19 +481,19 @@ export const rubros = {
       items: [
         {
           texto: 'Sacás la foto del comprobante',
-          imagen: '/img/transformacion/rubros/servicios-profesionales/1-sacas-la-foto-del-comprobante.png',
+          imagen: '/img/transformacion/rubros/servicios-profesionales/1-sacas-la-foto-del-comprobante.webp',
         },
         {
           texto: 'La IA extrae los datos',
-          imagen: '/img/transformacion/rubros/servicios-profesionales/2-la-ia-etxrae-los-datos.png',
+          imagen: '/img/transformacion/rubros/servicios-profesionales/2-la-ia-etxrae-los-datos.webp',
         },
         {
           texto: 'Se carga solo en el Excel',
-          imagen: '/img/transformacion/rubros/servicios-profesionales/3-se-carga-solo-en-excel.png',
+          imagen: '/img/transformacion/rubros/servicios-profesionales/3-se-carga-solo-en-excel.webp',
         },
         {
           texto: 'El dashboard se actualiza',
-          imagen: '/img/transformacion/rubros/servicios-profesionales/4-el-dashboard-se-actualiza.png',
+          imagen: '/img/transformacion/rubros/servicios-profesionales/4-el-dashboard-se-actualiza.webp',
         },
       ],
     },
@@ -529,5 +529,75 @@ export const rubros = {
     nombre: 'e-commerce',
     subtitulo: 'Vendé más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/rubros/hero_ecommerce.webp',
+    parrafo:
+      'Trabajamos con <span class="text-amarillo">tiendas online</span>, <span class="text-amarillo">mayoristas</span>, <span class="text-amarillo">marcas propias</span> y <span class="text-amarillo">retailers</span> que venden en TiendaNube, Shopify o Mercado Libre. Si el catálogo, el stock y las consultas te comen el día, y cada canal es una planilla distinta, te ayudamos a que toda la operación funcione sincronizada y sin carga manual.',
+    problemas: [
+      {
+        icon: 'material-symbols:local-shipping-outline-rounded',
+        titulo: '¿Tu bandeja explota de "¿dónde está mi pedido?"?',
+        texto:
+          'Automatizamos el seguimiento post-venta: el cliente recibe el estado de su envío en cada etapa, sin escribirte. Tu equipo deja de responder lo mismo cien veces por día.',
+      },
+      {
+        icon: 'material-symbols:sync-rounded',
+        titulo: '¿Vendiste en Mercado Libre algo que ya no tenías en stock?',
+        texto:
+          'Sincronizamos el stock entre todos tus canales de venta en tiempo real: tienda, marketplaces y local físico. Nunca más una venta que no podés entregar.',
+      },
+      {
+        icon: 'material-symbols:sell-outline',
+        titulo: '¿Cambian los costos y actualizás los precios producto por producto?',
+        texto:
+          'Implementamos reglas de precios automáticas: cargás el nuevo costo y el sistema recalcula y publica en todos los canales. Tus márgenes quedan protegidos sin tocar nada a mano.',
+      },
+      {
+        icon: 'material-symbols:shopping-cart-outline-rounded',
+        titulo: '¿Cuántos carritos abandonados quedaron sin recuperar este mes?',
+        texto:
+          'Armamos secuencias automáticas de recuperación por mail y WhatsApp, adaptadas al producto y al momento del abandono. Ventas que dabas por perdidas vuelven solas.',
+      },
+    ],
+    pasos: {
+      subtitulo:
+        'Un agente que lee tu catálogo en PDF y carga todos los productos en TiendaNube, Shopify, etc.',
+      items: [
+        {
+          texto: 'Subís el catálogo en PDF',
+          imagen: '/img/transformacion/rubros/ecommerce/1-subis-el-catalogo-en-pdf.webp',
+        },
+        {
+          texto: 'La IA lee y extrae los productos con sus precios',
+          imagen: '/img/transformacion/rubros/ecommerce/2-la-ia-lee-y-extrae-los-productos-y-precios.webp',
+        },
+        {
+          texto: 'Se cargan solos en tu tienda web',
+          imagen: '/img/transformacion/rubros/ecommerce/3-se-cargan-solos-en-tu-tienda-nube.webp',
+        },
+        {
+          texto: 'Tu tienda está actualizada',
+          imagen: '/img/transformacion/rubros/ecommerce/4-tu-tienda-esta-actualizada.webp',
+        },
+      ],
+    },
+    automatizaciones: [
+      {
+        icon: 'material-symbols:support-agent-rounded',
+        titulo: 'Bot de IA automático para consultas pre-venta',
+        texto:
+          'El sistema lee tu catálogo y stock, y responde preguntas de talles, precios y disponibilidad por WhatsApp o chat al instante.',
+      },
+      {
+        icon: 'material-symbols:photo-camera-outline-rounded',
+        titulo: 'Generador de descripciones y fotos de producto',
+        texto:
+          'A partir de una foto y datos básicos, la IA redacta la descripción, arma variantes y optimiza la imagen para la tienda.',
+      },
+      {
+        icon: 'material-symbols:query-stats-rounded',
+        titulo: 'Reporte automático de ventas y rotación',
+        texto:
+          'Cruza ventas, stock y campañas para mostrarte qué productos rotan, cuáles reponer y dónde estás perdiendo margen.',
+      },
+    ],
   },
 }
