@@ -44,6 +44,11 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
+}
+
 * {
   line-height: 1.25;
 }
