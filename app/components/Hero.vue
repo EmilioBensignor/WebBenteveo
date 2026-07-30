@@ -1,5 +1,5 @@
 <template>
-  <Section class="h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
+  <Section class="sobre-media h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
     <template #background>
       <video v-if="video" :src="video" class="size-full object-cover" autoplay loop muted playsinline />
       <NuxtImg v-else-if="image" :src="image" alt="" class="size-full object-cover" />

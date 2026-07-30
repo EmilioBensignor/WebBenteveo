@@ -1,5 +1,5 @@
 <template>
-  <Section id="contacto" bg="bg-amarillo" class="py-6 md:py-12 lg:py-20 px-4 md:px-7 lg:px-16 xxl:px-30"
+  <Section id="contacto" bg="bg-amarillo" class="sobre-amarillo py-6 md:py-12 lg:py-20 px-4 md:px-7 lg:px-16 xxl:px-30"
     inner="lg:justify-between md:flex-row gap-6 md:gap-0! lg:gap-16">
     <div
       class="max-w-136 flex flex-col items-center md:items-start gap-3 md:gap-4 text-center md:text-left text-negro md:pr-8 lg:pr-16 xl:pr-0">

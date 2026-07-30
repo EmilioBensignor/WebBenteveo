@@ -69,3 +69,48 @@ body {
   background-color: var(--color-negro);
   color: var(--color-blanco);
 }
+
+/* TODO: tema light en evaluacion por el cliente. Si aprueban, esto pasa a :root y se borra el scope. Si no, se borra entero junto con la pagina -light */
+body.theme-light {
+  --color-negro: #F8F8F8;
+  --color-negro-puro: #FFFFFF;
+  --color-blanco: #131313;
+  --color-gris: #6B6B6B;
+
+  --shadow-amarilla: 0 0 18px 0 rgba(252, 183, 22, 0.45);
+
+  --gradient-amarillo: linear-gradient(180deg, #F8F8F8 0%, #FCB716 30%, #FCB716 70%, #F8F8F8 100%);
+  --gradient-amarillo-negro: linear-gradient(180deg, #FFFFFF 0%, #FCB716 30%, #FCB716 70%, #F8F8F8 100%);
+
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+}
+
+body.theme-light .bg-white\/18 {
+  background-color: rgb(19 19 19 / 0.08);
+}
+
+body.theme-light .bg-white {
+  background-color: var(--color-negro-puro);
+}
+
+/* Sobre imagen o video oscuro el texto sigue claro en los dos temas: invertirlo lo vuelve ilegible */
+body.theme-light header,
+body.theme-light footer,
+body.theme-light .sobre-media {
+  --color-blanco: #F8F8F8;
+  --color-negro: #131313;
+  --color-negro-puro: #000000;
+}
+
+/* Sobre amarillo el texto va negro en los dos temas */
+body.theme-light .sobre-amarillo {
+  --color-negro: #131313;
+  --color-negro-puro: #000000;
+  --color-blanco: #131313;
+}
+
+body.theme-light .sobre-amarillo form,
+body.theme-light .sobre-amarillo .bg-negro {
+  --color-blanco: #F8F8F8;
+}

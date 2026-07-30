@@ -1,5 +1,5 @@
 <template>
-  <Section bg="bg-gradient-amarillo-negro" class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
+  <Section bg="bg-gradient-amarillo-negro" class="sobre-amarillo px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
 
     <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
       <HeadingH2 class="text-negro">Todo lo que tu marca necesita para crecer.</HeadingH2>
@@ -9,7 +9,7 @@
     <div class="w-full max-w-300 flex flex-col lg:flex-row lg:items-stretch">
       <button v-for="(servicio, i) in servicios" :key="servicio.title" type="button" :aria-expanded="active === i"
         @click="active = i" @mouseenter="onHover(i)"
-        class="servicio-card lg:h-75 flex flex-col justify-between items-end gap-4 relative first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
+        class="servicio-card sobre-media lg:h-75 flex flex-col justify-between items-end gap-4 relative first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
         :class="active === i ? 'lg:flex-2' : 'lg:flex-1'">
         <div class="absolute bg-negro inset-0">
           <NuxtImg :src="servicio.image" alt="" format="avif,webp" sizes="480px" loading="lazy"
