@@ -1,5 +1,5 @@
 <template>
-  <Hero image="/img/agencia/hero-bg.jpg"
+  <Hero video="/video/hero-agencia-creativa.mp4"
     title="Tu marca tiene algo para decir.<br/>Nosotros hacemos que el mundo la escuche."
     content-class="max-w-154 md:max-w-full md:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-6xl"
     actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">

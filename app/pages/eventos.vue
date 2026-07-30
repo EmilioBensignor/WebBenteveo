@@ -6,7 +6,7 @@
   <HomeProyectos />
   <HomeContacto title="Tenés un evento en mente y no sabés por dónde empezar."
     subtitle="Contanos tu próximo desafío y lo convertimos en una experiencia con impacto."
-    submit-label="Enviar mi consulta" title-class="md:text-2xl lg:text-5xl! font-bold!" />
+    submit-label="Enviar mi consulta" />
 </template>
 
 <script setup>

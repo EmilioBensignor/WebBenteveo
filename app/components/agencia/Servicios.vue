@@ -1,9 +1,5 @@
 <template>
-  <Section bg="bg-amarillo" class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
-    <template #background>
-      <div class="w-full h-16 md:h-20 absolute top-0 left-0 bg-linear-to-b from-negro to-transparent" />
-      <div class="w-full h-16 md:h-20 absolute bottom-0 left-0 bg-linear-to-t from-negro to-transparent" />
-    </template>
+  <Section bg="bg-gradient-amarillo-negro" class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
 
     <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
       <HeadingH2 class="text-negro">Todo lo que tu marca necesita para crecer.</HeadingH2>

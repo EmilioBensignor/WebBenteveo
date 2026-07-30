@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg border border-white/33 bg-black backdrop-blur-[20px] py-3 px-4">
+  <div class="rounded-lg border border-white/33 bg-negro backdrop-blur-[20px] py-3 px-4">
     <button class="w-full flex justify-between items-center gap-2 cursor-pointer text-left" @click="open = !open"
       :aria-expanded="open">
       <span class="text-sm lg:text-base font-semibold transition-colors duration-300"

@@ -31,7 +31,7 @@ export const servicios = [
 export const beneficios = [
   {
     icon: 'material-symbols:handshake-outline-rounded',
-    title: 'Un solo brief',
+    title: 'Un único brief',
     text: 'Contás tu marca una vez. Todos trabajamos desde ahí.'
   },
   {

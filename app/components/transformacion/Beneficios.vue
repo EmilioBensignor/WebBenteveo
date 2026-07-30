@@ -12,14 +12,14 @@
       </div>
 
       <article v-for="(b, i) in beneficios" :key="b.number"
-        class="min-h-70 lg:min-h-80 flex flex-col justify-between gap-6 sticky bg-negro border border-blanco/20 rounded-3xl shadow-[0_-12px_40px_rgba(0,0,0,0.6)] p-6 lg:p-10"
+        class="overflow-hidden flex flex-col justify-between gap-6 lg:gap-10 sticky bg-negro border border-blanco/20 rounded-3xl shadow-[0_-12px_40px_rgba(0,0,0,0.6)] p-6 lg:p-10"
         :style="`top: calc(13rem + ${i * 1.75}rem); rotate: ${i % 2 === 0 ? -2 : 2}deg`">
-        <div class="flex items-start justify-between">
-          <span class="size-14 lg:size-18 flex items-center justify-center bg-amarillo/10 rounded-full text-amarillo">
-            <Icon :name="b.icon" class="size-8! lg:size-10!" />
-          </span>
-          <span class="text-6xl lg:text-8xl font-bold text-blanco/10 leading-none">{{ b.number }}</span>
-        </div>
+        <span
+          class="absolute -top-7 lg:-top-9 -right-2 text-8xl lg:text-9xl font-bold text-blanco/10 leading-none pointer-events-none">{{
+            b.number }}</span>
+        <span class="size-14 lg:size-18 flex items-center justify-center bg-amarillo/10 rounded-full text-amarillo">
+          <Icon :name="b.icon" class="size-8! lg:size-10!" />
+        </span>
         <div class="flex flex-col gap-3 lg:gap-4">
           <HeadingH3 class="max-w-150 text-amarillo font-bold">
             <span v-html="b.title" />
