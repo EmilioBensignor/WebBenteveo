@@ -1,9 +1,9 @@
 <template>
-  <Section bg="bg-gradient-amarillo-negro" class="sobre-amarillo px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
+  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
 
     <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
-      <HeadingH2 class="text-negro">Todo lo que tu marca necesita para crecer.</HeadingH2>
-      <p class="lg:text-xl text-negro font-medium">Un solo equipo. Más velocidad, más control y mejores resultados.</p>
+      <HeadingH2 class="text-blanco">Todo lo que tu marca necesita para crecer.</HeadingH2>
+      <p class="lg:text-xl text-blanco font-medium">Un solo equipo. Más velocidad, más control y mejores resultados.</p>
     </div>
 
     <div class="w-full max-w-300 flex flex-col lg:flex-row lg:items-stretch">
