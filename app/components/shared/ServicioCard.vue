@@ -10,7 +10,7 @@
     <span class="absolute -top-7 lg:-top-8 -right-2 text-8xl lg:text-9xl font-bold text-amarillo/50">{{ s.number }}</span>
 
     <div class="flex flex-col gap-2 lg:gap-4">
-      <HeadingH3 class="text-sm text-amarillo font-bold">{{ s.title }}</HeadingH3>
+      <UiHeadingH3 class="text-sm text-amarillo font-bold">{{ s.title }}</UiHeadingH3>
       <p class="text-blanco text-xs lg:text-base font-light">{{ s.text }}</p>
     </div>
 

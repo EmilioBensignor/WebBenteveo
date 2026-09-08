@@ -15,7 +15,10 @@ export default defineNuxtConfig({
   ],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    optimizeDeps: {
+      include: ['@unhead/schema-org/vue', 'embla-carousel-vue', 'gsap', 'lenis']
+    }
   },
 
   app: {

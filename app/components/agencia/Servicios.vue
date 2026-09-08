@@ -1,8 +1,8 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
+  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30 py-12 md:py-16 lg:py-24 xxl:py-32">
 
     <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
-      <HeadingH2 class="text-blanco">Todo lo que tu marca necesita para crecer.</HeadingH2>
+      <UiHeadingH2 class="text-blanco">Todo lo que tu marca necesita para crecer.</UiHeadingH2>
       <p class="lg:text-xl text-blanco font-medium">Un solo equipo. Más velocidad, más control y mejores resultados.</p>
     </div>
 
@@ -41,7 +41,7 @@
         </div>
       </button>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

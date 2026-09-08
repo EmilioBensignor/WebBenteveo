@@ -1,16 +1,16 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30">
+  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30">
     <div class="flex flex-col items-center gap-3 md:gap-2 text-center">
-      <HeadingH2 class="text-amarillo">
+      <UiHeadingH2 class="text-amarillo">
         No necesitas entender de IA para comenzar
-      </HeadingH2>
+      </UiHeadingH2>
       <p class="text-blanco font-medium">Es fácil, son solo 3 pasos.</p>
     </div>
 
-    <PasosTimeline class="mt-2 md:mt-8" :items="proceso" />
+    <SharedPasosTimeline class="mt-2 md:mt-8" :items="proceso" />
 
-    <ButtonPrimary>Quiero empezar</ButtonPrimary>
-  </Section>
+    <UiButtonPrimary>Quiero empezar</UiButtonPrimary>
+  </DefaultSection>
 </template>
 
 <script setup>

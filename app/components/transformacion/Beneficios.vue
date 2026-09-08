@@ -1,11 +1,11 @@
 <template>
-  <Section class="overflow-visible! px-4 md:px-7 lg:px-16 xxl:px-30">
+  <DefaultSection class="overflow-visible! px-4 md:px-7 lg:px-16 xxl:px-30">
     <div class="w-full max-w-220 flex flex-col gap-6 lg:gap-8 pb-10">
       <div class="flex flex-col items-center gap-3 lg:gap-4 sticky top-6 lg:top-10 text-center pb-6">
-        <HeadingH2 class="max-w-64 md:max-w-full">
+        <UiHeadingH2 class="max-w-64 md:max-w-full">
           <span class="text-blanco">Cuatro cosas que cambian en tu empresa</span>
           <span class="text-amarillo"> cuando integras IA a tus procesos</span>
-        </HeadingH2>
+        </UiHeadingH2>
         <p class="max-w-64 sm:max-w-80 md:max-w-full lg:text-xl text-blanco font-medium">
           Deja de apagar incendios y empieza a crecer
         </p>
@@ -21,16 +21,16 @@
           <Icon :name="b.icon" class="size-8! lg:size-10!" />
         </span>
         <div class="flex flex-col gap-3 lg:gap-4">
-          <HeadingH3 class="max-w-150 text-amarillo font-bold">
+          <UiHeadingH3 class="max-w-150 text-amarillo font-bold">
             <span v-html="b.title" />
-          </HeadingH3>
+          </UiHeadingH3>
           <p class="max-w-150 text-sm lg:text-base text-blanco font-medium">{{ b.text }}</p>
         </div>
       </article>
     </div>
 
-    <ButtonPrimary>Quiero aplicarlo a mi empresa</ButtonPrimary>
-  </Section>
+    <UiButtonPrimary>Quiero aplicarlo a mi empresa</UiButtonPrimary>
+  </DefaultSection>
 </template>
 
 <script setup>

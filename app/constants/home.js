@@ -3,30 +3,35 @@ export const servicios = [
     number: '01',
     image: '/img/home/servicios/servicios_agencia_creativa.webp',
     title: 'Agencia creativa',
-    text: 'Para marcas que quieren dejar de pasar desapercibidas. Creamos campañas, contenido y experiencias que conectan de verdad con la gente.',
-    tags: ['Campañas', 'Contenido', 'Producción'],
+    text: 'Creamos campañas y experiencias que hacen que tu marca destaque.',
     cta: 'Ver agencia creativa',
     to: '/agencia-creativa'
   },
   {
     number: '02',
     image: '/img/home/servicios/servicios_transformacion_tecnologicas.webp',
-    title: 'Transformación tecnológica',
-    text: 'Para empresas que quieren operar más rápido, decidir mejor y adelantarse a la competencia. Integramos IA y rediseñamos procesos para que tu equipo se adapte más fácil al cambio.',
-    tags: ['IA aplicada', 'GEO', 'Automatización', 'Procesos'],
-    cta: 'Ver transformación tecnológica',
+    title: 'Transformación con IA',
+    text: 'Integramos IA para que tu empresa ocupe su tiempo con lo que importa de verdad.',
+    cta: 'Ver transformación con IA',
     to: '/transformacion-tecnologica'
   },
   {
     number: '03',
     image: '/img/home/servicios/servicios_eventos_corporativos.webp',
-    title: 'Eventos Corporativos',
-    text: 'Para marcas que estén buscando más que un organizador del evento. Nos encargamos de todo: estrategia, creatividad y producción para que el evento sea inolvidable.',
-    tags: ['Estrategia', 'Contenido', 'Producción'],
-    cta: 'Ver eventos corporativos',
-    to: '#'
+    title: 'Eventos Empresariales',
+    text: 'Estrategia, creatividad y producción para eventos inolvidables.',
+    cta: 'Ver eventos empresariales',
+    to: '/eventos'
   }
 ]
+
+export const equipo = {
+  title: 'No coordinas tres proveedores.<br>Trabajas con un solo equipo.',
+  destacado: 'Creatividad, tecnología y producción bajo un mismo criterio: el de tu negocio.',
+  text: ' Miramos tu comunicación y tus procesos como partes del mismo problema, así el proyecto avanza sin perder tiempo entre etapas. Nos entregas el desafío completo y te devolvemos algo que funciona.',
+  cta: 'Contanos tu desafío',
+  to: '#contacto'
+}
 
 export const beneficios = [
   {
@@ -60,31 +65,27 @@ export const transformacionMetrics = [
 
 export const proyectos = [
   {
-    image: '/img/home/proyectos/colocador.png',
-    tag: 'Activación de marca',
-    logo: '/img/marcas/revear_logo.webp',
-    title: 'En busca del colocador',
-    text: 'Conectar con los instaladores que usan el producto todos los días — en su terreno, con su lenguaje. Un desafío real que generó un vínculo genuino entre la marca y su comunidad.'
-  },
-  {
     image: '/img/home/proyectos/mapei.png',
-    tag: 'Activación competitiva',
     logo: '/img/marcas/mapei.webp',
     title: 'Desafío Mapei',
     text: 'Demostrar el rendimiento del producto frente a profesionales que lo evalúan con criterio técnico. Una activación donde el producto habló por sí solo — y convirtió escépticos en embajadores.'
   },
   {
     image: '/img/home/proyectos/experto-revear.png',
-    tag: 'Programa de capacitación',
     logo: '/img/marcas/revear_logo.webp',
     title: 'Experto Revear',
     text: 'Convertir a distribuidores y aplicadores en expertos certificados — y hacer de ese conocimiento un diferencial competitivo. Hoy "ser Experto Revear" es un orgullo dentro del sector.'
   },
   {
     image: '/img/home/proyectos/klaukol.png',
-    tag: 'Lanzamiento de producto',
     logo: '/img/marcas/klaukol_logo.webp',
     title: 'Lanzamiento Klaukol Potenciado',
     text: 'Lanzar un producto nuevo con el impacto que merece — generando experiencia de marca desde el primer contacto con el mercado.'
+  },
+  {
+    image: '/img/home/proyectos/colocador.png',
+    logo: '/img/marcas/revear_logo.webp',
+    title: 'En busca del colocador',
+    text: 'Conectar con los instaladores que usan el producto todos los días — en su terreno, con su lenguaje. Un desafío real que generó un vínculo genuino entre la marca y su comunidad.'
   }
 ]

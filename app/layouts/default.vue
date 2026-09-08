@@ -1,10 +1,16 @@
 <template>
   <div class="min-h-screen flex flex-col bg-negro text-blanco">
-    <AppCursor />
-    <Header />
-    <main class="flex flex-col gap-6 md:gap-8 lg:gap-12 xxl:gap-16 grow">
+    <DefaultCursor />
+    <DefaultHeader />
+    <main class="flex flex-col grow">
       <slot />
     </main>
-    <Footer />
+    <DefaultFooter />
   </div>
 </template>
+
+<script setup>
+import { useSmoothScroll } from '~/composables/useSmoothScroll'
+
+useSmoothScroll()
+</script>

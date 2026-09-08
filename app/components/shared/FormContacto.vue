@@ -1,13 +1,13 @@
 <template>
   <div
-    class="w-full max-w-134 h-82 lg:h-104 flex flex-col justify-center items-center gap-4 border-2 border-amarillo rounded-2xl bg-negro text-center p-6"
+    class="w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-4 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] text-center p-6"
     v-if="status === 'loading'">
     <span class="loader" />
     <p class="text-amarillo text-lg font-bold">Estamos enviando tu consulta</p>
   </div>
 
   <div
-    class="w-full max-w-134 h-82 lg:h-104 flex flex-col justify-center items-center gap-6 rounded-2xl bg-negro text-center py-14 md:py-16 lg:py-24 xxl:py-28 px-6 lg:px-12"
+    class="w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-6 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] text-center py-14 md:py-16 lg:py-24 xxl:py-28 px-6 lg:px-12"
     v-else-if="status === 'success'">
     <Icon name="material-symbols:check-circle-outline-rounded" size="100" class="text-amarillo" />
     <div class="flex flex-col gap-4">
@@ -16,14 +16,18 @@
     </div>
   </div>
 
-  <form class="w-full max-w-134 flex flex-col gap-4 rounded-2xl bg-negro p-4 md:p-6 lg:py-12" @submit.prevent="submit" v-else>
-    <FormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre"
+  <form
+    class="w-full max-w-150 flex flex-col justify-center items-center gap-4 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] p-6 md:p-8"
+    @submit.prevent="submit" v-else>
+    <p class="w-full text-center text-hueso text-base lg:text-xl">Dejanos tus datos para ponernos en contacto</p>
+
+    <UiFormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre"
       @blur="validate('nombre')" />
-    <FormField v-model="form.correo" placeholder="Correo" type="email" autocomplete="email" :error="errors.correo"
+    <UiFormField v-model="form.correo" placeholder="Correo" type="email" autocomplete="email" :error="errors.correo"
       @blur="validate('correo')" />
-    <FormField v-model="form.empresa" placeholder="Empresa" />
-    <FormField v-model="form.sector" placeholder="Sector" />
-    <ButtonPrimary type="submit" class="w-full">{{ submitLabel }}</ButtonPrimary>
+    <UiFormField v-model="form.empresa" placeholder="Empresa" />
+    <UiFormField v-model="form.sector" placeholder="Sector" />
+    <UiButtonPrimary type="submit" class="w-full">{{ submitLabel }}</UiButtonPrimary>
   </form>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <Section class="md:min-h-105 lg:min-h-154 flex py-14 md:py-0 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
+  <DefaultSection class="md:min-h-105 lg:min-h-154 flex py-14 md:py-0 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
     <template #background>
       <video src="/video/reloj.mp4" class="size-full object-cover" autoplay loop muted playsinline />
       <div class="absolute inset-0 bg-black/75" />
@@ -11,10 +11,10 @@
         class="w-full h-50 lg:h-75 hidden md:block absolute inset-x-0 bottom-0 bg-linear-to-t from-negro to-transparent" />
     </template>
 
-    <HeadingH2 class="max-w-120 md:max-w-116 lg:max-w-156 text-center">
+    <UiHeadingH2 class="max-w-120 md:max-w-116 lg:max-w-156 text-center">
       ¿Cuántas horas pierdes por semana en cosas que
       <span class="text-amarillo">una herramienta podría hacer sola?</span>
-    </HeadingH2>
+    </UiHeadingH2>
 
     <div class="flex flex-col md:flex-row md:justify-center items-start gap-4 md:gap-8 lg:gap-12 xxl:gap-16 lg:mt-4">
       <div v-for="item in items" :key="item.text" class="flex items-center gap-2 lg:gap-4">
@@ -27,7 +27,7 @@
         </p>
       </div>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

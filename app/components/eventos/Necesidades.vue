@@ -1,8 +1,8 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30">
-    <HeadingH2 class="text-center text-blanco">
+  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30">
+    <UiHeadingH2 class="text-center text-blanco">
       Todo lo que necesitás, <span class="text-amarillo">resuelto en un solo lugar</span>
-    </HeadingH2>
+    </UiHeadingH2>
 
     <div class="w-full max-w-280 grid tab:grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6">
       <article v-for="(n, i) in necesidades" :key="n.title"
@@ -22,9 +22,9 @@
 
     <div class="flex flex-col items-center gap-4">
       <p class="lg:text-xl text-blanco font-medium">¿Ya tenés algo en mente?</p>
-      <ButtonPrimary to="#contacto">Hablemos de tu evento</ButtonPrimary>
+      <UiButtonPrimary to="#contacto">Hablemos de tu evento</UiButtonPrimary>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

@@ -1,8 +1,8 @@
 <template>
-  <Section bg="bg-linear-to-b from-negro from-33% to-negro-puro to-100%" class="px-4 md:px-7 lg:px-16 xxl:px-30 py-6 md:py-10 lg:py-16">
-    <HeadingH2 class="max-w-56 md:max-w-none text-center text-amarillo">¿Te suena alguna de estas frases?</HeadingH2>
+  <DefaultSection bg="bg-linear-to-b from-negro from-33% to-negro-puro to-100%" class="px-4 md:px-7 lg:px-16 xxl:px-30 py-6 md:py-10 lg:py-16">
+    <UiHeadingH2 class="max-w-56 md:max-w-none text-center text-amarillo">¿Te suena alguna de estas frases?</UiHeadingH2>
 
-    <CarouselAutoplay class="w-full" :interval="INTERVAL">
+    <UiCarouselAutoplay class="w-full" :interval="INTERVAL">
       <div v-for="frase in frases" :key="frase" class="flex justify-center items-center px-2 md:px-8">
         <p class="max-w-176 text-center text-base md:text-2xl lg:text-4xl text-blanco font-medium italic">
           “{{ frase }}”
@@ -20,10 +20,10 @@
           </button>
         </div>
       </template>
-    </CarouselAutoplay>
+    </UiCarouselAutoplay>
 
     <p class="text-center text-base lg:text-[1.75rem] text-amarillo font-medium">Para eso estamos.</p>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

@@ -11,9 +11,9 @@
     </span>
 
     <div class="flex flex-col gap-3 lg:gap-4">
-      <HeadingH3 class="max-w-150 text-amarillo font-bold">
+      <UiHeadingH3 class="max-w-150 text-amarillo font-bold">
         <span v-html="title" />
-      </HeadingH3>
+      </UiHeadingH3>
       <p class="max-w-150 text-sm lg:text-base text-blanco font-medium">{{ text }}</p>
     </div>
   </article>

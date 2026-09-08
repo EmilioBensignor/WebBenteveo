@@ -1,5 +1,5 @@
 <template>
-  <Hero video="/video/hero-agencia-creativa.mp4"
+  <SharedHero video="/video/hero-agencia-creativa.mp4"
     title="Tu marca tiene algo para decir.<br/>Nosotros hacemos que el mundo la escuche."
     content-class="max-w-154 md:max-w-full md:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-6xl"
     actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">
@@ -9,16 +9,16 @@
       <span class="block">que conectan con la gente y generan resultados concretos.</span>
     </template>
     <template #actions>
-      <ButtonPrimary to="#contacto" class="w-56 md:w-50">
+      <UiButtonPrimary to="#contacto" class="w-56 md:w-50">
         <Icon name="material-symbols:calendar-month-outline-rounded" size="1.5rem" />
         Hablemos
-      </ButtonPrimary>
-      <ButtonPrimary to="#proyectos" variant="light" class="w-56 md:w-50">
+      </UiButtonPrimary>
+      <UiButtonPrimary to="#proyectos" variant="light" class="w-56 md:w-50">
         Ver trabajos
         <Icon name="material-symbols:arrow-forward-rounded" size="1.5rem" />
-      </ButtonPrimary>
+      </UiButtonPrimary>
     </template>
-  </Hero>
+  </SharedHero>
 </template>
 
 <script setup>

@@ -1,18 +1,18 @@
 <template>
-  <Hero
+  <SharedHero
     video="/video/eventos/hero-eventos.mp4"
     eyebrow="LANZAMIENTOS, CONVENCIONES Y ACTIVACIONES DE MARCA"
     title="Experiencias que nacen desde la estrategia de marca"
   >
     <template #actions>
-      <ButtonPrimary class="w-72 lg:w-auto">
+      <UiButtonPrimary class="w-72 lg:w-auto">
         <Icon name="material-symbols:calendar-month-outline-rounded" size="24" />
         Agendarme
-      </ButtonPrimary>
-      <ButtonPrimary variant="light" class="w-72 lg:w-auto">
+      </UiButtonPrimary>
+      <UiButtonPrimary variant="light" class="w-72 lg:w-auto">
         Ver casos de éxito
         <Icon name="material-symbols:arrow-forward-rounded" size="24" />
-      </ButtonPrimary>
+      </UiButtonPrimary>
     </template>
-  </Hero>
+  </SharedHero>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30">
-    <HeadingH2 class="text-center text-amarillo">
+  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30">
+    <UiHeadingH2 class="text-center text-amarillo">
       Conoce las soluciones para tu industria
-    </HeadingH2>
+    </UiHeadingH2>
 
     <div class="w-full flex md:grid md:grid-cols-3 justify-center flex-wrap gap-2 lg:gap-4">
       <NuxtLink v-for="ind in industrias" :key="ind.label" :to="`/transformacion-tecnologica/${ind.slug}`"
@@ -13,7 +13,7 @@
         <p class="text-center md:text-left text-sm text-white font-semibold">{{ ind.label }}</p>
       </NuxtLink>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

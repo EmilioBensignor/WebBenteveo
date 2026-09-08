@@ -2,10 +2,13 @@
   <div
     v-if="enabled"
     ref="cursor"
-    class="w-4.5 h-4.5 fixed top-0 left-0 z-200 bg-blanco box-border rounded-full opacity-0 pointer-events-none -translate-x-1/2 -translate-y-1/2"
-    style="transition:width .18s,height .18s,background .18s"
+    class="w-4.5 h-4.5 flex justify-center items-center fixed top-0 left-0 z-200 box-border rounded-full text-hueso text-sm font-medium whitespace-nowrap opacity-0 overflow-hidden pointer-events-none"
+    style="background:#F8F8F8;transition:width .5s cubic-bezier(0.4,0,0.2,1),height .5s cubic-bezier(0.4,0,0.2,1)"
     aria-hidden="true"
-  />
+  >
+    <span ref="etiqueta"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-150" />
+  </div>
 </template>
 
 <script setup>
@@ -16,6 +19,7 @@ const BLANCO = '#F8F8F8'
 const NEGRO = '#131313'
 
 const cursor = ref(null)
+const etiqueta = ref(null)
 const enabled = ref(false)
 
 const hoverColor = (el) => {
@@ -33,6 +37,8 @@ onMounted(() => {
   const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 }
   const lag = { x: mouse.x, y: mouse.y }
   let isHover = false
+  let etiquetaActual = ''
+  let salida = null
   let visible = false
   let raf = null
   let lastX = lag.x
@@ -51,6 +57,41 @@ onMounted(() => {
       lag.y = lastY = mouse.y
       el.style.opacity = '1'
     }
+    const conEtiqueta = e.target.closest?.('[data-cursor-label]')
+    const texto = conEtiqueta?.dataset.cursorLabel || ''
+
+    if (texto !== etiquetaActual) {
+      etiquetaActual = texto
+      const caja = etiqueta.value
+
+      if (texto && caja) {
+        clearTimeout(salida)
+        caja.textContent = texto
+        const ancho = caja.offsetWidth + 48
+        el.classList.add('glass-boton', 'activo')
+        el.style.background = 'rgb(221 221 221 / 0.24)'
+        el.style.width = `${ancho}px`
+        el.style.height = '44px'
+        caja.style.opacity = '1'
+      } else if (caja) {
+        caja.style.opacity = '0'
+        el.style.width = '18px'
+        el.style.height = '18px'
+        clearTimeout(salida)
+        salida = setTimeout(() => {
+          if (etiquetaActual) return
+          el.classList.remove('glass-boton', 'activo')
+          el.style.background = BLANCO
+          caja.textContent = ''
+        }, 500)
+      }
+    }
+
+    if (texto) {
+      isHover = true
+      return
+    }
+
     const target = e.target.closest?.(HOVER_SELECTOR)
     const nextHover = !!target
 
@@ -81,14 +122,17 @@ onMounted(() => {
         lag.y += (mouse.y - lag.y) * 0.35
         el.style.left = lag.x + 'px'
         el.style.top = lag.y + 'px'
-        if (isHover) {
-          el.style.transform = 'translate(-50%,-50%)'
+        const mitadX = el.offsetWidth / 2
+        const mitadY = el.offsetHeight / 2
+
+        if (etiquetaActual || isHover || el.classList.contains('glass-boton')) {
+          el.style.transform = `translate(${-mitadX}px,${-mitadY}px)`
         } else {
           const dx = lag.x - lastX
           const dy = lag.y - lastY
           const v = Math.min(Math.hypot(dx, dy) / 14, 1)
           const ang = (Math.atan2(dy, dx) * 180) / Math.PI
-          el.style.transform = `translate(-50%,-50%) rotate(${ang}deg) scale(${1 + v * 0.9},${1 - v * 0.4})`
+          el.style.transform = `translate(${-mitadX}px,${-mitadY}px) rotate(${ang}deg) scale(${1 + v * 0.9},${1 - v * 0.4})`
         }
         lastX = lag.x
         lastY = lag.y

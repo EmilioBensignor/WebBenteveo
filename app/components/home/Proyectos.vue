@@ -1,50 +1,159 @@
 <template>
-  <Section id="proyectos">
-    <div class="w-full flex flex-col md:flex-row md:justify-between md:items-center gap-6 md:px-7 lg:px-16 xxl:px-32">
-      <HeadingH2
-        class="flex md:inline flex-col items-center md:items-start text-center md:text-left text-blanco mx-4 md:mx-0">
-        {{ title }} <span class="text-amarillo">{{ accent }}</span>
-      </HeadingH2>
+  <DefaultSection id="proyectos" bg="bg-negro"
+    class="lg:h-dvh flex flex-col justify-center overflow-visible! relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 lg:pt-36 lg:pb-16"
+    inner="lg:justify-center">
+    <div ref="root"
+      class="w-full max-w-362 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-6 lg:gap-12">
+      <div
+        class="w-full md:w-2/5 lg:w-74 xxl:w-md shrink-0 flex flex-col items-center md:items-start gap-6 md:gap-8 lg:gap-10">
+        <h2 class="text-center lg:text-left text-hueso text-xl lg:text-[1.75rem] font-medium">
+          Proyectos reales.<br>Resultados concretos.
+        </h2>
 
-      <div class="hidden md:flex gap-3">
-        <button @click="carousel?.scrollPrev()"
-          class="w-10 lg:w-12 h-10 lg:h-12 flex justify-center items-center bg-negro border border-white/20 rounded-full cursor-pointer"
-          aria-label="Anterior">
-          <Icon name="material-symbols:chevron-left-rounded" class="size-6! lg:size-8! text-amarillo" />
-        </button>
-        <button @click="carousel?.scrollNext()"
-          class="w-10 lg:w-12 h-10 lg:h-12 flex justify-center items-center bg-negro border border-white/20 rounded-full cursor-pointer"
-          aria-label="Siguiente">
-          <Icon name="material-symbols:chevron-right-rounded" class="size-6! lg:size-8! text-amarillo" />
-        </button>
+        <ul ref="lista" class="w-full flex flex-col relative">
+          <span class="w-px hidden md:block absolute inset-y-0 left-0 linea-vertical" />
+
+          <span class="w-px md:hidden absolute inset-y-0 left-0 linea-vertical" />
+
+          <span
+            class="size-2.5 absolute left-0 top-0 z-10 -translate-x-1/2 -translate-y-1/2 bg-amarillo rounded-full transition-[top] duration-500 ease-out md:transition-none"
+            :style="{ top: dotTop }" />
+
+          <li v-for="(proyecto, i) in proyectos" :key="proyecto.title" class="w-full relative">
+            <button type="button"
+              class="w-full flex items-center text-left text-base lg:text-xl font-medium transition-colors duration-300 cursor-pointer py-4 md:py-5 lg:py-6 px-6"
+              :class="activo === i ? 'text-amarillo' : 'text-hueso'" @click="irA(i)">
+              {{ proyecto.title }}
+            </button>
+
+            <div class="md:hidden grid transition-[grid-template-rows] duration-500 ease-out"
+              :class="activo === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
+              <div class="min-h-0 overflow-hidden">
+                <div class="w-full flex flex-col gap-4 pb-6 px-6">
+                  <div class="w-full h-70">
+                    <HomeProyectoCard :proyecto="proyecto" />
+                  </div>
+
+                  <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
+                    class="w-full justify-between! pl-6 pr-4">
+                    Conocer más de {{ proyecto.title }}
+                    <Icon name="material-symbols:arrow-forward-rounded" class="size-4 shrink-0" />
+                  </UiButtonPrimary>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <UiButtonPrimary to="#" variant="glass" size="glass" class="pl-6 pr-4">
+          Ver todos los trabajos
+          <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6" />
+        </UiButtonPrimary>
+      </div>
+
+      <div ref="pila" class="w-full md:flex-1 md:min-w-0 h-94 lg:h-127 mac:h-100 hidden md:block relative isolate">
+        <div v-for="(proyecto, i) in proyectos" :key="proyecto.title"
+          class="size-full absolute inset-0 will-change-transform transition-opacity duration-500 lg:transition-none lg:opacity-100!"
+          :class="activo === i ? 'opacity-100' : 'opacity-0'" :style="{ zIndex: i + 1 }">
+          <HomeProyectoCard :proyecto="proyecto" />
+        </div>
       </div>
     </div>
-
-    <CarouselStatic fade class="md:hidden" :slides-per-view="{ base: 1.2, sm: 1.8, tab: 2.4 }" :gap="{ base: 8 }">
-      <ProyectoCard v-for="p in proyectos" :key="p.title" :p="p" />
-    </CarouselStatic>
-
-    <CarouselLoop ref="carousel" class="hidden md:block" :items="proyectos" :slides-per-view="2.6" :gap="16"
-      v-slot="{ item }">
-      <ProyectoCard :p="item" />
-    </CarouselLoop>
-
-    <ButtonPrimary v-if="cta" :to="ctaTo" class="shadow-amarilla">
-      {{ cta }}
-      <Icon name="material-symbols:arrow-forward-rounded" size="1.5rem" />
-    </ButtonPrimary>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>
 import { proyectos } from '~/constants/home'
+import { useGsapContext } from '~/composables/useGsapContext'
 
-defineProps({
-  title: { type: String, default: 'Proyectos reales.' },
-  accent: { type: String, default: 'Resultados concretos.' },
-  cta: { type: String, default: '' },
-  ctaTo: { type: String, default: '' }
+const root = useTemplateRef('root')
+const pila = useTemplateRef('pila')
+
+const activo = ref(0)
+const progreso = ref(0)
+
+const lista = useTemplateRef('lista')
+const dotPx = ref(0)
+
+const dotTop = computed(() => {
+  if (dotPx.value) return `${dotPx.value}px`
+  const paso = 100 / proyectos.length
+  return `${paso / 2 + progreso.value * paso * (proyectos.length - 1)}%`
 })
 
-const carousel = ref(null)
+function medirDot(indice = activo.value) {
+  if (!lista.value) return
+  if (!window.matchMedia('(max-width: 767px)').matches) {
+    dotPx.value = 0
+    return
+  }
+
+  const botones = [...lista.value.querySelectorAll(':scope > li > button')]
+  const alto = botones[0]?.offsetHeight ?? 0
+
+  dotPx.value = indice * alto + alto / 2
+}
+
+let scrollTo = null
+
+function irA(i) {
+  activo.value = i
+  scrollTo?.(i)
+  medirDot(i)
+}
+
+function alRedimensionar() {
+  medirDot()
+}
+
+onMounted(() => {
+  medirDot()
+  window.addEventListener('resize', alRedimensionar)
+})
+
+onBeforeUnmount(() => window.removeEventListener('resize', alRedimensionar))
+
+useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
+  if (!pila.value || window.matchMedia('(max-width: 1079px)').matches) return
+
+  const capas = [...pila.value.children]
+  if (capas.length < 2) return
+
+  const seccion = root.value.closest('section')
+
+  const desdeAbajo = () => (window.innerHeight + pila.value.offsetHeight) / 2
+
+  gsap.set(capas.slice(1), { y: desdeAbajo })
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: seccion,
+      start: 'top top',
+      end: `+=${(capas.length - 1) * 700}`,
+      pin: true,
+      pinSpacing: true,
+      scrub: 1,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        progreso.value = self.progress
+        const i = Math.round(self.progress * (capas.length - 1))
+        if (i !== activo.value) activo.value = i
+      }
+    }
+  })
+
+  capas.slice(1).forEach((capa) => {
+    tl.to(capa, { y: 0, ease: 'none', duration: 1 })
+  })
+
+  requestAnimationFrame(() => ScrollTrigger.refresh())
+
+  scrollTo = (i) => {
+    const st = tl.scrollTrigger
+    if (!st) return
+    const destino = st.start + (st.end - st.start) * (i / (capas.length - 1))
+    if (window.__lenis) window.__lenis.scrollTo(destino, { duration: 1 })
+    else window.scrollTo({ top: destino, behavior: 'smooth' })
+  }
+})
 </script>

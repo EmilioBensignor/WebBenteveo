@@ -1,5 +1,5 @@
 <template>
-  <Section class="sobre-media h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
+  <DefaultSection class="sobre-media h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
     <template #background>
       <video v-if="video" :src="video" class="size-full object-cover" autoplay loop muted playsinline />
       <NuxtImg v-else-if="image" :src="image" alt="" class="size-full object-cover" />
@@ -11,9 +11,9 @@
         <p v-if="eyebrow" class="text-blanco lg:text-xl font-medium leading-none">
           {{ eyebrow }}
         </p>
-        <HeadingH1 class="max-w-72 sm:max-w-80 md:max-w-3xl lg:max-w-7xl text-amarillo" :class="titleClass">
+        <UiHeadingH1 class="max-w-72 sm:max-w-80 md:max-w-3xl lg:max-w-7xl text-amarillo" :class="titleClass">
           <span v-html="title" />
-        </HeadingH1>
+        </UiHeadingH1>
         <p v-if="text || $slots.text" class="text-blanco lg:text-xl font-medium">
           <slot name="text">{{ text }}</slot>
         </p>
@@ -23,7 +23,7 @@
         <slot name="actions" />
       </div>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>

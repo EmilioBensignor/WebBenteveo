@@ -11,7 +11,7 @@
 
     <div class="flex flex-col gap-4">
       <img :src="p.logo" :alt="p.title" class="w-35 h-10 object-contain object-left">
-      <HeadingH3 class="text-amarillo font-bold">{{ p.title }}</HeadingH3>
+      <UiHeadingH3 class="text-amarillo font-bold">{{ p.title }}</UiHeadingH3>
       <p class="text-sm lg:text-base text-blanco font-medium">{{ p.text }}</p>
     </div>
   </article>

@@ -1,5 +1,5 @@
 <template>
-  <Section class="px-4 md:px-7 lg:px-16 xxl:px-30" inner="gap-6 md:gap-8 lg:gap-12">
+  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30" inner="gap-6 md:gap-8 lg:gap-12">
     <slot name="header" />
 
     <div ref="rootRef"
@@ -20,7 +20,7 @@
         <p class="max-w-42 sm:max-w-62 text-center text-blanco text-base font-medium leading-snug">{{ m.label }}</p>
       </div>
     </div>
-  </Section>
+  </DefaultSection>
 </template>
 
 <script setup>
