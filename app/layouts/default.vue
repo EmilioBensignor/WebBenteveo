@@ -11,6 +11,17 @@
 
 <script setup>
 import { useSmoothScroll } from '~/composables/useSmoothScroll'
+import { useOrganizationSchema } from '~/composables/useOrganizationSchema'
 
 useSmoothScroll()
+
+useHead({
+  script: [
+    {
+      key: 'sd-organization',
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(useOrganizationSchema())
+    }
+  ]
+})
 </script>

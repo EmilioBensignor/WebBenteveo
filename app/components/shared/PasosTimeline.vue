@@ -21,7 +21,7 @@
       ]">
         <div class="relative rounded-2xl transition-all duration-500 overflow-hidden"
           :class="reached(i) ? imageShadow : ''">
-          <NuxtImg :src="item.image" :alt="item.title" format="avif,webp" sizes="600px" loading="lazy"
+          <NuxtImg :src="item.image" :alt="item.title" format="avif" sizes="600px" loading="lazy"
             class="w-full aspect-8/7 sm:aspect-16/10 object-cover transition-transform duration-700 ease-out"
             :class="reached(i) ? 'scale-100' : 'scale-110'" />
           <div class="absolute inset-0 rounded-2xl border" :class="imageBorder" />

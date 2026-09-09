@@ -1,7 +1,7 @@
 <template>
   <DefaultSection class="md:min-h-105 lg:min-h-154 flex py-14 md:py-0 px-4 md:px-7 lg:px-16 xxl:px-30" inner="md:gap-4 lg:gap-6 xxl:gap-12">
     <template #background>
-      <video src="/video/reloj.mp4" class="size-full object-cover" autoplay loop muted playsinline />
+      <video src="/video/reloj.mp4" poster="/img/posters/reloj.jpg" class="size-full object-cover" autoplay loop muted playsinline preload="metadata" />
       <div class="absolute inset-0 bg-black/75" />
       <div
         class="absolute inset-0 md:hidden bg-linear-to-b from-negro via-transparent to-negro-puro" />

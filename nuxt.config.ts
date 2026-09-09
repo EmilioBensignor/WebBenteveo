@@ -1,5 +1,19 @@
 import tailwindcss from '@tailwindcss/vite'
 
+const siteUrl = process.env.SITE_URL || 'https://benteveo.com'
+const isProductionDomain = siteUrl.replace(/\/+$/, '') === 'https://benteveo.com'
+const indexable = isProductionDomain && process.env.INDEXABLE === 'true'
+
+const securityHeaders = {
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains; preload',
+  'X-Frame-Options': 'SAMEORIGIN',
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+  'Cross-Origin-Opener-Policy': 'same-origin-allow-popups',
+  'Cross-Origin-Resource-Policy': 'same-site'
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -37,7 +51,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: process.env.SITE_URL || 'https://benteveo.com',
+    url: siteUrl,
     name: 'Benteveo',
     description: 'Agencia de publicidad creativa. Innovación, estrategia y tecnología para tu empresa.',
     defaultLocale: 'es'
@@ -47,15 +61,27 @@ export default defineNuxtConfig({
     enabled: false
   },
 
+  sitemap: {
+    exclude: ['/agencia-creativa-light'],
+    urls: ['salud', 'educacion', 'agroindustria', 'fitness', 'fintech']
+      .map(nombre => ({ loc: `/transformacion-tecnologica/${nombre}` }))
+  },
+
   robots: {
     enabled: true,
-    ...(process.env.INDEXABLE === 'true'
-      ? {}
+    ...(indexable
+      ? {
+          groups: [
+            { userAgent: ['*'], allow: ['/'] },
+            { userAgent: ['GPTBot', 'ChatGPT-User', 'OAI-SearchBot', 'ClaudeBot', 'Claude-User', 'PerplexityBot', 'Google-Extended'], allow: ['/'] },
+            { userAgent: ['CCBot', 'Bytespider'], disallow: ['/'] }
+          ]
+        }
       : { disallow: ['/'] })
   },
 
   image: {
-    format: ['avif', 'webp'],
+    format: ['avif'],
     quality: 70,
     densities: [1, 2],
     screens: {
@@ -94,12 +120,15 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
+    '/**': { headers: securityHeaders },
     '/': { prerender: true },
     '/transformacion-tecnologica': { prerender: true },
-    '/rubros/**': { swr: 86400 },
+    '/transformacion-tecnologica/**': { swr: 86400 },
     '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
     '/_fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
-    '/_ipx/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } }
+    '/_ipx/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
+    '/img/**': { headers: { 'cache-control': 'public, max-age=86400' } },
+    '/video/**': { headers: { 'cache-control': 'public, max-age=86400' } }
   },
 
   nitro: {

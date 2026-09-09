@@ -13,7 +13,7 @@
           <div
             class="w-full h-46.5 md:h-60 lg:h-80 flex flex-col justify-end relative border border-blanco/33 rounded-2xl overflow-hidden p-px">
             <NuxtImg :src="servicio.image" :alt="servicio.title" class="size-full absolute inset-0 object-cover"
-              loading="lazy" />
+              format="avif" sizes="xs:100vw sm:100vw tab:50vw md:340px lg:460px" loading="lazy" />
             <div class="absolute inset-0 bg-linear-to-b from-black/25 to-black" />
 
             <span

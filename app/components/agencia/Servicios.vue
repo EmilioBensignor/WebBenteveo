@@ -12,7 +12,7 @@
         class="servicio-card sobre-media lg:h-75 flex flex-col justify-between items-end gap-4 relative first:rounded-t-2xl last:rounded-b-2xl lg:first:rounded-tr-none lg:last:rounded-bl-none lg:first:rounded-l-2xl lg:last:rounded-r-2xl text-left transition-all duration-500 cursor-pointer overflow-hidden p-4 lg:p-6"
         :class="active === i ? 'lg:flex-2' : 'lg:flex-1'">
         <div class="absolute bg-negro inset-0">
-          <NuxtImg :src="servicio.image" alt="" format="avif,webp" sizes="480px" loading="lazy"
+          <NuxtImg :src="servicio.image" alt="" format="avif" sizes="480px" loading="lazy"
             class="size-full object-cover transition-opacity duration-500" :class="active === i ? 'opacity-90' : 'opacity-40'" />
         </div>
 

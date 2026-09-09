@@ -1,8 +1,8 @@
 <template>
   <DefaultSection class="sobre-media h-[90vh] flex items-center px-4 md:px-7 lg:px-16" :inner="inner">
     <template #background>
-      <video v-if="video" :src="video" class="size-full object-cover" autoplay loop muted playsinline />
-      <NuxtImg v-else-if="image" :src="image" alt="" class="size-full object-cover" />
+      <video v-if="video" :src="video" :poster="poster" class="size-full object-cover" autoplay loop muted playsinline preload="metadata" />
+      <NuxtImg v-else-if="image" :src="image" alt="" format="avif" sizes="xs:100vw sm:100vw md:100vw lg:100vw xxl:100vw" class="size-full object-cover" />
       <div v-if="overlay" class="absolute inset-0 bg-black/65" />
     </template>
 
@@ -29,6 +29,7 @@
 <script setup>
 defineProps({
   video: { type: String, default: '' },
+  poster: { type: String, default: '' },
   image: { type: String, default: '' },
   overlay: { type: Boolean, default: true },
   eyebrow: { type: String, default: '' },

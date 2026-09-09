@@ -11,7 +11,7 @@
     </div>
 
     <div class="relative w-full">
-      <video ref="videoRef" src="/video/eventos/show-reel-eventos.mp4" autoplay loop muted playsinline
+      <video ref="videoRef" src="/video/eventos/show-reel-eventos.mp4" poster="/img/posters/show-reel-eventos.jpg" autoplay loop muted playsinline preload="metadata"
         class="w-full h-full object-cover rounded-2xl lg:rounded-4xl" />
       <button type="button" @click="toggleMute"
         class="w-10 h-10 flex justify-center items-center absolute bottom-4 right-4 bg-negro border border-white/20 rounded-full cursor-pointer"

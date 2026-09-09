@@ -15,7 +15,7 @@
 
         <div class="flex items-center gap-4">
           <NuxtLink v-for="red in redes" :key="red" to="#" :aria-label="red">
-            <img :src="`/img/redes/${red}.svg`" :alt="red" class="size-8">
+            <img :src="`/img/redes/${red}.svg`" :alt="red" class="size-8" width="32" height="32" loading="lazy" decoding="async">
           </NuxtLink>
         </div>
       </div>

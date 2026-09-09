@@ -10,40 +10,42 @@
           Proyectos reales.<br>Resultados concretos.
         </h2>
 
-        <ul ref="lista" class="w-full flex flex-col relative">
-          <span class="w-px hidden md:block absolute inset-y-0 left-0 linea-vertical" />
+        <div class="w-full relative">
+          <span class="w-px hidden md:block absolute inset-y-0 left-0 linea-vertical" aria-hidden="true" />
 
-          <span class="w-px md:hidden absolute inset-y-0 left-0 linea-vertical" />
+          <span class="w-px md:hidden absolute inset-y-0 left-0 linea-vertical" aria-hidden="true" />
 
-          <span
+          <span aria-hidden="true"
             class="size-2.5 absolute left-0 top-0 z-10 -translate-x-1/2 -translate-y-1/2 bg-amarillo rounded-full transition-[top] duration-500 ease-out md:transition-none"
             :style="{ top: dotTop }" />
 
-          <li v-for="(proyecto, i) in proyectos" :key="proyecto.title" class="w-full relative">
-            <button type="button"
-              class="w-full flex items-center text-left text-base lg:text-xl font-medium transition-colors duration-300 cursor-pointer py-4 md:py-5 lg:py-6 px-6"
-              :class="activo === i ? 'text-amarillo' : 'text-hueso'" @click="irA(i)">
-              {{ proyecto.title }}
-            </button>
+          <ul ref="lista" class="w-full flex flex-col">
+            <li v-for="(proyecto, i) in proyectos" :key="proyecto.title" class="w-full relative">
+              <button type="button"
+                class="w-full flex items-center text-left text-base lg:text-xl font-medium transition-colors duration-300 cursor-pointer py-4 md:py-5 lg:py-6 px-6"
+                :class="activo === i ? 'text-amarillo' : 'text-hueso'" @click="irA(i)">
+                {{ proyecto.title }}
+              </button>
 
-            <div class="md:hidden grid transition-[grid-template-rows] duration-500 ease-out"
-              :class="activo === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
-              <div class="min-h-0 overflow-hidden">
-                <div class="w-full flex flex-col gap-4 pb-6 px-6">
-                  <div class="w-full h-70">
-                    <HomeProyectoCard :proyecto="proyecto" />
+              <div class="md:hidden grid transition-[grid-template-rows] duration-500 ease-out"
+                :class="activo === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'">
+                <div class="min-h-0 overflow-hidden">
+                  <div class="w-full flex flex-col gap-4 pb-6 px-6">
+                    <div class="w-full h-70">
+                      <HomeProyectoCard :proyecto="proyecto" />
+                    </div>
+
+                    <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
+                      class="w-full justify-between! pl-6 pr-4">
+                      Conocer más de {{ proyecto.title }}
+                      <Icon name="material-symbols:arrow-forward-rounded" class="size-4 shrink-0" />
+                    </UiButtonPrimary>
                   </div>
-
-                  <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
-                    class="w-full justify-between! pl-6 pr-4">
-                    Conocer más de {{ proyecto.title }}
-                    <Icon name="material-symbols:arrow-forward-rounded" class="size-4 shrink-0" />
-                  </UiButtonPrimary>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
 
         <UiButtonPrimary to="#" variant="glass" size="glass" class="pl-6 pr-4">
           Ver todos los trabajos

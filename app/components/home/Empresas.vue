@@ -11,7 +11,7 @@
         <div class="w-max flex items-center gap-4 animate-marquee">
           <span v-for="(logo, i) in track" :key="i"
             class="size-23 md:size-30 xxl:size-32 shrink-0 border border-hueso/40 rounded-3xl shadow-[-4px_6px_32px_0_#171b21] overflow-hidden">
-            <img :src="logo" alt="" class="size-full object-cover" loading="lazy">
+            <img :src="logo" alt="" class="size-full object-cover" loading="lazy" decoding="async" width="128" height="128">
           </span>
         </div>
 

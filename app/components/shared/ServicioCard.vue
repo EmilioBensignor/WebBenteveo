@@ -2,8 +2,8 @@
   <article
     class="h-87 md:h-92 lg:h-114 flex flex-col justify-end gap-4 relative border border-white/33 rounded-2xl overflow-hidden p-4 pt-25 transition-all duration-500 hover:-translate-y-1 spin-border">
     <div class="absolute inset-0 -z-10">
-      <NuxtImg :src="s.image" alt="" class="size-full object-cover" format="avif,webp"
-        sizes="(min-width:1080px) 384px, 320px" loading="lazy" />
+      <NuxtImg :src="s.image" alt="" class="size-full object-cover" format="avif"
+        sizes="xs:100vw sm:100vw tab:50vw md:320px lg:384px" loading="lazy" />
       <div class="absolute inset-0 bg-linear-to-b from-transparent to-black to-60%" />
     </div>
 

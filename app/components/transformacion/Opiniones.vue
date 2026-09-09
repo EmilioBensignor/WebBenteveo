@@ -12,8 +12,8 @@
       :gap="{ base: 8, md: 16, lg: 16, xl: 16, xxl: 16 }">
       <button v-for="n in 2" :key="n" class="group relative overflow-hidden rounded-2xl aspect-video"
         aria-label="Reproducir video">
-        <NuxtImg src="/img/transformacion/video-thumb.png" alt="" class="size-full object-cover" format="avif,webp"
-          sizes="(min-width: 1080px) 680px, 288px" />
+        <NuxtImg src="/img/transformacion/video-thumb.png" alt="" class="size-full object-cover" format="avif"
+          sizes="288px lg:680px" />
         <span class="flex items-center justify-center absolute inset-0">
           <span class="flex items-center justify-center rounded-full bg-amarillo size-12 lg:size-16">
             <Icon name="material-symbols:play-arrow-rounded" class="size-9! lg:size-12! text-negro" />

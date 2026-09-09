@@ -29,7 +29,7 @@
     </div>
 
     <div class="w-full relative bg-black rounded-2xl -mx-4 md:mx-0 px-4 md:px-7 lg:px-0">
-      <NuxtImg :src="pasos.items[active].imagen" :alt="pasos.items[active].texto"
+      <NuxtImg :src="pasos.items[active].imagen" :alt="pasos.items[active].texto" format="avif" sizes="xs:90vw sm:90vw md:90vw lg:90vw"
         class="w-[90vw] h-full object-cover md:border-3 border-negro-puro rounded-2xl mx-auto" />
       <button type="button" aria-label="Anterior" @click="prev"
         class="size-10 lg:size-12 flex items-center justify-center absolute top-1/2 left-3 md:left-2 lg:-left-6 -translate-y-1/2 bg-negro-puro rounded-full text-blanco cursor-pointer shadow-[6px_0_18px_0_rgba(252,183,22,0.33)]">
