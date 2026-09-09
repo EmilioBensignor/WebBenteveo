@@ -7,7 +7,10 @@
     aria-hidden="true"
   >
     <span ref="etiqueta"
-      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-150" />
+      class="flex items-center gap-1.5 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 transition-opacity duration-150">
+      <span ref="texto" />
+      <Icon v-show="flecha" name="material-symbols:arrow-forward-rounded" size="1.5rem" class="shrink-0" />
+    </span>
   </div>
 </template>
 
@@ -20,6 +23,8 @@ const NEGRO = '#131313'
 
 const cursor = ref(null)
 const etiqueta = ref(null)
+const texto = ref(null)
+const flecha = ref(false)
 const enabled = ref(false)
 
 const hoverColor = (el) => {
@@ -29,7 +34,7 @@ const hoverColor = (el) => {
 }
 
 onMounted(() => {
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  if (!window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 768px)').matches) return
   enabled.value = true
 
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -58,21 +63,26 @@ onMounted(() => {
       el.style.opacity = '1'
     }
     const conEtiqueta = e.target.closest?.('[data-cursor-label]')
-    const texto = conEtiqueta?.dataset.cursorLabel || ''
+    const label = conEtiqueta?.dataset.cursorLabel || ''
+    const conFlecha = label ? conEtiqueta.dataset.cursorArrow !== undefined : false
 
-    if (texto !== etiquetaActual) {
-      etiquetaActual = texto
+    if (label !== etiquetaActual) {
+      etiquetaActual = label
       const caja = etiqueta.value
 
-      if (texto && caja) {
+      if (label && caja) {
         clearTimeout(salida)
-        caja.textContent = texto
-        const ancho = caja.offsetWidth + 48
+        texto.value.textContent = label
+        flecha.value = conFlecha
+        caja.style.color = conFlecha ? AMARILLO : BLANCO
         el.classList.add('glass-boton', 'activo')
         el.style.background = 'rgb(221 221 221 / 0.24)'
-        el.style.width = `${ancho}px`
         el.style.height = '44px'
         caja.style.opacity = '1'
+        nextTick(() => {
+          if (etiquetaActual !== label) return
+          el.style.width = `${caja.offsetWidth + 48}px`
+        })
       } else if (caja) {
         caja.style.opacity = '0'
         el.style.width = '18px'
@@ -82,12 +92,14 @@ onMounted(() => {
           if (etiquetaActual) return
           el.classList.remove('glass-boton', 'activo')
           el.style.background = BLANCO
-          caja.textContent = ''
+          texto.value.textContent = ''
+          flecha.value = false
+          caja.style.color = ''
         }, 500)
       }
     }
 
-    if (texto) {
+    if (label) {
       isHover = true
       return
     }

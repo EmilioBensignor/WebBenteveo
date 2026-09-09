@@ -1,10 +1,10 @@
 <template>
   <div class="w-full flex flex-col gap-1">
     <input :type="type" :value="modelValue" :placeholder="placeholder" :autocomplete="autocomplete" :required="required"
-      class="w-full h-12 bg-blanco/18 rounded-lg text-sm lg:text-base text-hueso placeholder:text-hueso/70 outline-none focus:ring-1 focus:ring-amarillo p-4 transition-shadow"
+      class="w-full h-12 bg-blanco/18 rounded-lg text-sm lg:text-base text-hueso placeholder:text-hueso/70 font-light outline-none focus:ring-1 focus:ring-amarillo p-4 transition-shadow"
       :class="error ? 'ring-1 ring-red-400' : ''" @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')" />
-    <p v-if="error" class="text-xs text-red-400 font-medium px-1">{{ error }}</p>
+    <p v-if="error" class="text-xs text-red-400 px-1">{{ error }}</p>
   </div>
 </template>
 

@@ -1,24 +1,20 @@
 <template>
-  <div
-    class="w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-4 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] text-center p-6"
-    v-if="status === 'loading'">
-    <span class="loader" />
-    <p class="text-amarillo text-lg font-bold">Estamos enviando tu consulta</p>
+  <div v-if="status !== 'idle'"
+    :class="['w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-4 text-center p-3 md:p-5 lg:p-8', TARJETA]">
+    <template v-if="status === 'loading'">
+      <span class="loader" />
+      <p class="text-amarillo text-lg font-bold">Estamos enviando tu consulta</p>
+    </template>
+
+    <template v-else>
+      <Icon name="material-symbols:check-circle-outline-rounded" size="100" class="text-amarillo" />
+      <p class="text-amarillo text-lg lg:text-xl font-bold">¡Enviamos tu consulta con éxito!</p>
+      <p class="text-blanco text-sm lg:text-base">Nuestro equipo se contactará contigo a la brevedad.</p>
+    </template>
   </div>
 
-  <div
-    class="w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-6 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] text-center py-14 md:py-16 lg:py-24 xxl:py-28 px-6 lg:px-12"
-    v-else-if="status === 'success'">
-    <Icon name="material-symbols:check-circle-outline-rounded" size="100" class="text-amarillo" />
-    <div class="flex flex-col gap-4">
-      <p class="lg:text-xl text-amarillo font-bold">¡Enviamos tu consulta con éxito!</p>
-      <p class="text-sm lg:text-base text-blanco">Nuestro equipo se contactará contigo a la brevedad.</p>
-    </div>
-  </div>
-
-  <form
-    class="w-full max-w-150 flex flex-col justify-center items-center gap-4 border border-[#dddddd3d] rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))] p-6 md:p-8"
-    @submit.prevent="submit" v-else>
+  <form v-else @submit.prevent="submit"
+    :class="['w-full max-w-150 flex flex-col justify-center items-center gap-2 md:gap-4 p-3 md:p-5 lg:p-8', TARJETA]">
     <p class="w-full text-center text-hueso text-base lg:text-xl">Dejanos tus datos para ponernos en contacto</p>
 
     <UiFormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre"
@@ -32,6 +28,9 @@
 </template>
 
 <script setup>
+const TARJETA =
+  'border border-[#dddddd3d] rounded-2xl lg:rounded-[3rem] bg-[linear-gradient(90deg,rgba(19,19,19,0.6),rgba(19,19,19,0.6)),linear-gradient(90deg,rgba(221,221,221,0.24),rgba(221,221,221,0.24))]'
+
 defineProps({
   submitLabel: { type: String, default: 'Enviar mi consulta' }
 })

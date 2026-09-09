@@ -1,6 +1,6 @@
 <template>
   <component :is="to ? NuxtLink : 'button'" :to="to" :type="to ? undefined : type" :disabled="!to && disabled"
-    class="inline-flex justify-center items-center gap-2 rounded-full text-sm lg:text-base font-medium transition-colors duration-200 cursor-pointer"
+    class="inline-flex justify-center items-center gap-2 rounded-full text-sm lg:text-base transition-colors duration-200 cursor-pointer"
     :class="[sizes[size], disabled ? 'opacity-50 cursor-not-allowed' : variants[variant]]">
     <slot />
   </component>

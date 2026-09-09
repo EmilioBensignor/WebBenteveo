@@ -100,7 +100,7 @@ export default defineNuxtConfig({
       {
         name: 'Inter',
         provider: 'google',
-        weights: [400, 500, 600, 700],
+        weights: [300, 400, 500, 600, 700],
         display: 'swap',
         preload: true
       }

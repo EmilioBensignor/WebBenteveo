@@ -6,9 +6,9 @@
       class="w-full max-w-362 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-6 lg:gap-12">
       <div
         class="w-full md:w-2/5 lg:w-74 xxl:w-md shrink-0 flex flex-col items-center md:items-start gap-6 md:gap-8 lg:gap-10">
-        <h2 class="text-center lg:text-left text-hueso text-xl lg:text-[1.75rem] font-medium">
+        <UiHeadingH2 class="text-center md:text-left">
           Proyectos reales.<br>Resultados concretos.
-        </h2>
+        </UiHeadingH2>
 
         <div class="w-full relative">
           <span class="w-px hidden md:block absolute inset-y-0 left-0 linea-vertical" aria-hidden="true" />
@@ -16,13 +16,13 @@
           <span class="w-px md:hidden absolute inset-y-0 left-0 linea-vertical" aria-hidden="true" />
 
           <span aria-hidden="true"
-            class="size-2.5 absolute left-0 top-0 z-10 -translate-x-1/2 -translate-y-1/2 bg-amarillo rounded-full transition-[top] duration-500 ease-out md:transition-none"
+            class="size-2.5 absolute left-0 top-0 z-10 -translate-x-1/2 -translate-y-1/2 bg-amarillo rounded-full transition-[top] duration-500 ease-out lg:transition-none"
             :style="{ top: dotTop }" />
 
           <ul ref="lista" class="w-full flex flex-col">
             <li v-for="(proyecto, i) in proyectos" :key="proyecto.title" class="w-full relative">
               <button type="button"
-                class="w-full flex items-center text-left text-base lg:text-xl font-medium transition-colors duration-300 cursor-pointer py-4 md:py-5 lg:py-6 px-6"
+                class="w-full flex items-center text-left text-base lg:text-xl transition-colors duration-300 cursor-pointer py-4 md:py-5 lg:py-6 px-6"
                 :class="activo === i ? 'text-amarillo' : 'text-hueso'" @click="irA(i)">
                 {{ proyecto.title }}
               </button>
@@ -36,9 +36,9 @@
                     </div>
 
                     <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
-                      class="w-full justify-between! pl-6 pr-4">
+                      class="w-max gap-3 pl-6 pr-4">
                       Conocer más de {{ proyecto.title }}
-                      <Icon name="material-symbols:arrow-forward-rounded" class="size-4 shrink-0" />
+                      <Icon name="material-symbols:arrow-forward-rounded" size="16" class=" shrink-0" />
                     </UiButtonPrimary>
                   </div>
                 </div>
@@ -85,15 +85,17 @@ const dotTop = computed(() => {
 
 function medirDot(indice = activo.value) {
   if (!lista.value) return
-  if (!window.matchMedia('(max-width: 767px)').matches) {
+  if (!window.matchMedia('(max-width: 1079px)').matches) {
     dotPx.value = 0
     return
   }
 
   const botones = [...lista.value.querySelectorAll(':scope > li > button')]
-  const alto = botones[0]?.offsetHeight ?? 0
+  if (!botones[indice]) return
 
-  dotPx.value = indice * alto + alto / 2
+  const previos = botones.slice(0, indice).reduce((suma, b) => suma + b.offsetHeight, 0)
+
+  dotPx.value = previos + botones[indice].offsetHeight / 2
 }
 
 let scrollTo = null
