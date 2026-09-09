@@ -65,9 +65,13 @@
   border-radius: inherit;
   padding: 1.33px;
   background: conic-gradient(from var(--angle),
-    #FCB716 0deg, #FCB716 34deg, #7a5608 46deg,
-    #7a5608 180deg,
-    #7a5608 254deg, #FCB716 266deg, #FCB716 360deg);
+    var(--color-amarillo) 0deg,
+    color-mix(in srgb, var(--color-amarillo) 55%, transparent) 46deg,
+    transparent 96deg,
+    transparent 264deg,
+    color-mix(in srgb, var(--color-amarillo) 55%, transparent) 314deg,
+    var(--color-amarillo) 360deg);
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--color-amarillo) 90%, transparent)) drop-shadow(0 0 14px color-mix(in srgb, var(--color-amarillo) 55%, transparent));
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
@@ -86,7 +90,7 @@
   .glass-boton:hover::before,
   .group:hover .glass-boton::before {
     opacity: 1;
-    animation: spin-border 2.5s linear infinite;
+    animation: spin-border 1.6s linear infinite;
   }
 }
 
@@ -96,12 +100,13 @@
 
 .glass-boton.activo::before {
   opacity: 1;
-  animation: spin-border 2.5s linear infinite;
+  animation: spin-border 1.6s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .glass-boton:hover::before,
-  .group:hover .glass-boton::before {
+  .group:hover .glass-boton::before,
+  .glass-boton.activo::before {
     animation: none;
   }
 }

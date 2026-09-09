@@ -2,7 +2,7 @@
   <div
     v-if="enabled"
     ref="cursor"
-    class="w-4.5 h-4.5 flex justify-center items-center fixed top-0 left-0 z-200 box-border rounded-full text-hueso text-sm font-medium whitespace-nowrap opacity-0 overflow-hidden pointer-events-none"
+    class="w-4.5 h-4.5 flex justify-center items-center fixed top-0 left-0 z-200 box-border rounded-full text-hueso text-sm font-medium whitespace-nowrap opacity-0 pointer-events-none"
     style="background:#F8F8F8;transition:width .5s cubic-bezier(0.4,0,0.2,1),height .5s cubic-bezier(0.4,0,0.2,1)"
     aria-hidden="true"
   >

@@ -115,9 +115,11 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 
 `.glass-boton` en `main.css`. **Cerrado. No modificar salvo pedido explícito de Lio.**
 
-El hover es un fragmento amarillo que recorre el borde sobre un anillo ámbar (`#7a5608`), con el glass (`backdrop-filter`) siempre visible.
+El hover es un tramo amarillo que recorre el borde con glow, sobre el resto del anillo transparente, con el glass (`backdrop-filter`) siempre visible.
 
-Valores actuales, ya elegidos: arco `34deg`, fundido a `46deg`, animación `spin-border 2.5s linear infinite`.
+Portado del slider de "Quiénes somos" de `Motix/web` (`app/components/home/Somos.vue`, `.somos__slider-glow`), que hace lo mismo en violeta y en loop. Acá corre sólo en hover.
+
+Claves de ese gradiente: el amarillo va **sólido en `0deg` y `360deg`** — es el mismo punto del anillo, así el tramo queda continuo en vez de partirse en dos líneas. Los desvanecidos usan `color-mix`, y los dos `drop-shadow` dan el glow. Animación `spin-border 1.6s linear infinite`.
 
 **El fragmento se estira y se comprime al girar, y es irreparable con `conic-gradient`.** Medido: el botón es 262×46 (5.7:1) y el conic reparte el arco en *ángulo*, no en píxeles. Un mismo arco de 70° mide entre 33px y 240px según dónde esté (7x de variación); por cada 10° recorre 4.1px en las puntas y 67.2px en los lados. Ningún valor de gradiente ni easing lo arregla: es geometría.
 
