@@ -4,8 +4,8 @@
 
     <div class="absolute inset-0 grid place-items-center pointer-events-none">
       <div class="flex flex-col items-center gap-0.5">
-        <span class="text-hueso text-[10px] tracking-[0.2em] uppercase font-normal">Tu</span>
-        <span class="text-hueso text-base lg:text-lg font-normal">negocio</span>
+        <span class="text-hueso text-base lg:text-lg font-normal">TU</span>
+        <span class="text-hueso text-base lg:text-lg font-normal">NEGOCIO</span>
       </div>
     </div>
 
