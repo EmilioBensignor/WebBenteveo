@@ -1,6 +1,6 @@
 <template>
   <SharedHero
-    video="/video/hero-transfromacion-tecnologica.mp4" poster="/img/posters/hero-transformacion.jpg"
+    video="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/hero-transfromacion-tecnologica.mp4" poster="/img/posters/hero-transformacion.jpg"
     eyebrow="LA IA YA ESTÁ CAMBIANDO LOS NEGOCIOS."
     title="Comienza a utilizar la inteligencia artificial en los procesos de tu empresa."
   >

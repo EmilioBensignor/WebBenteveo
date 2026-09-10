@@ -52,7 +52,7 @@
 
     <div ref="marco" class="fixed z-2 bg-negro overflow-hidden pointer-events-none transition-opacity duration-300"
       :class="visible ? 'opacity-100' : 'opacity-0'">
-      <video ref="video" src="/video/home/Benteveo-Agencia-Publicitaria.mp4" preload="metadata"
+      <video ref="video" src="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/home/Benteveo-Agencia-Publicitaria.mp4" preload="metadata"
         class="w-dvw h-dvh absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 object-cover" autoplay
         loop muted playsinline />
     </div>

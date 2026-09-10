@@ -1,6 +1,6 @@
 <template>
   <SharedHero
-    video="/video/eventos/hero-eventos.mp4" poster="/img/posters/hero-eventos.jpg"
+    video="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/eventos/hero-eventos.mp4" poster="/img/posters/hero-eventos.jpg"
     eyebrow="LANZAMIENTOS, CONVENCIONES Y ACTIVACIONES DE MARCA"
     title="Experiencias que nacen desde la estrategia de marca"
   >

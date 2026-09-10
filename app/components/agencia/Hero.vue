@@ -1,5 +1,5 @@
 <template>
-  <SharedHero video="/video/hero-agencia-creativa.mp4" poster="/img/posters/hero-agencia-creativa.jpg"
+  <SharedHero video="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/hero-agencia-creativa.mp4" poster="/img/posters/hero-agencia-creativa.jpg"
     title="Tu marca tiene algo para decir.<br/>Nosotros hacemos que el mundo la escuche."
     content-class="max-w-154 md:max-w-full md:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-6xl"
     actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">
