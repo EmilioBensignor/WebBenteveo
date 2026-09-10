@@ -1,143 +1,184 @@
 <template>
-  <div ref="rootRef" class="w-full aspect-square max-w-90 md:max-w-none md:aspect-4/3 lg:aspect-16/10 relative">
-    <svg viewBox="0 0 400 300" class="w-full h-full absolute inset-0" aria-hidden="true">
-      <defs>
-        <radialGradient id="orbita-halo" cx="0.5" cy="0.5">
-          <stop offset="0%" stop-color="#FCB716" stop-opacity="0.28" />
-          <stop offset="100%" stop-color="#FCB716" stop-opacity="0" />
-        </radialGradient>
-        <linearGradient v-for="(d, i) in disciplinas" :id="`orbita-trazo-${i}`" :key="d.nombre" x1="0" y1="0" x2="1"
-          y2="0" gradientUnits="objectBoundingBox">
-          <stop offset="0%" stop-color="#FCB716" stop-opacity="0.05" />
-          <stop offset="100%" stop-color="#FCB716" stop-opacity="0.55" />
-        </linearGradient>
-      </defs>
+  <div ref="rootRef" class="w-full aspect-square md:aspect-4/3 lg:aspect-5/4 relative">
+    <canvas ref="canvasRef" class="w-full h-full block" />
 
-      <circle cx="200" cy="150" r="120" fill="url(#orbita-halo)" />
-
-      <g ref="trazosRef" fill="none" stroke-width="1" stroke-linecap="round">
-        <path v-for="(d, i) in disciplinas" :key="d.nombre" :d="d.path" :stroke="`url(#orbita-trazo-${i})`" />
-      </g>
-
-      <circle ref="pulsoRef" cx="200" cy="150" r="46" fill="none" stroke="#FCB716" stroke-opacity="0.35"
-        stroke-width="1" />
-
-      <g ref="chispasRef">
-        <circle v-for="d in disciplinas" :key="d.nombre" r="2.5" fill="#FCB716" />
-      </g>
-    </svg>
-
-    <div class="absolute inset-0 grid place-items-center">
-      <div
-        class="flex flex-col items-center gap-0.5 rounded-full bg-negro border border-amarillo/40 shadow-amarilla px-6 py-4">
-        <span class="text-gris text-[10px] tracking-[0.18em] uppercase">Tu</span>
-        <span class="text-hueso text-sm lg:text-base font-semibold">negocio</span>
-      </div>
-    </div>
-
-    <div ref="chipsRef" class="absolute inset-0">
-      <span v-for="d in disciplinas" :key="d.nombre"
-        class="flex items-center gap-2 absolute glass glass-solido rounded-full text-hueso text-xs lg:text-sm whitespace-nowrap px-3 py-1.5 lg:px-4 lg:py-2"
-        :style="d.pos">
-        <Icon :name="d.icon" class="size-4 text-amarillo" />
-        {{ d.nombre }}
-      </span>
-    </div>
+    <span class="sr-only">{{ disciplinas.map((d) => d.nombre).join(', ') }}</span>
   </div>
 </template>
 
 <script setup>
 const disciplinas = [
-  {
-    nombre: 'Tecnología',
-    icon: 'material-symbols:terminal-rounded',
-    path: 'M330 62 C 300 92, 268 108, 232 128',
-    pos: { top: '12%', right: '2%' }
-  },
-  {
-    nombre: 'Producción',
-    icon: 'material-symbols:videocam-outline-rounded',
-    path: 'M330 246 C 296 220, 268 196, 232 174',
-    pos: { bottom: '14%', right: '6%' }
-  },
-  {
-    nombre: 'Creatividad',
-    icon: 'material-symbols:brush-outline-rounded',
-    path: 'M62 154 C 104 154, 132 152, 168 151',
-    pos: { top: '46%', left: '0%' }
-  }
-]
+  'Creatividad',
+  'Tecnología',
+  'Producción',
+  'Estrategia',
+  'Datos',
+  'Contenido'
+].map((nombre, i, todas) => ({
+  nombre,
+  fase: (i / todas.length) * Math.PI * 2
+}))
 
 const rootRef = ref(null)
-const trazosRef = ref(null)
-const chispasRef = ref(null)
-const chipsRef = ref(null)
-const pulsoRef = ref(null)
+const canvasRef = ref(null)
 
-let ctx = null
+let raf = null
+let ro = null
+let io = null
 
-onMounted(async () => {
+onMounted(() => {
   if (typeof window === 'undefined') return
 
-  const { gsap } = await import('gsap')
-  const { ScrollTrigger } = await import('gsap/ScrollTrigger')
-  gsap.registerPlugin(ScrollTrigger)
+  const canvas = canvasRef.value
+  const gl = canvas.getContext('2d')
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-  const trazos = [...trazosRef.value.children]
-  const chispas = [...chispasRef.value.children]
-  const chips = [...chipsRef.value.children]
+  let w = 0
+  let h = 0
+  let t = 0
+  let visible = true
 
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    chispas.forEach((chispa, i) => colocar(chispa, trazos[i], 1))
-    return
+  const FILAS = 14
+  const COLS = 26
+  const vertices = []
+
+  for (let i = 0; i <= FILAS; i++) {
+    const phi = (i / FILAS) * Math.PI
+    for (let j = 0; j < COLS; j++) {
+      const theta = (j / COLS) * Math.PI * 2
+      vertices.push({
+        x: Math.sin(phi) * Math.cos(theta),
+        y: Math.cos(phi),
+        z: Math.sin(phi) * Math.sin(theta)
+      })
+    }
   }
 
-  ctx = gsap.context(() => {
-    trazos.forEach((trazo) => {
-      const largo = trazo.getTotalLength()
-      gsap.set(trazo, { strokeDasharray: largo, strokeDashoffset: largo })
-    })
+  function medir() {
+    const rect = rootRef.value.getBoundingClientRect()
+    const dpr = Math.min(window.devicePixelRatio || 1, 2)
+    w = rect.width
+    h = rect.height
+    canvas.width = w * dpr
+    canvas.height = h * dpr
+    gl.setTransform(dpr, 0, 0, dpr, 0, 0)
+  }
 
-    const entrada = gsap.timeline({
-      scrollTrigger: { trigger: rootRef.value, start: 'top 75%' }
-    })
+  function proyectar(p, ry, rx, radio) {
+    const cy = Math.cos(ry)
+    const sy = Math.sin(ry)
+    const x1 = p.x * cy - p.z * sy
+    const z1 = p.x * sy + p.z * cy
 
-    entrada
-      .to(trazos, { strokeDashoffset: 0, duration: 1.1, ease: 'power3.out', stagger: 0.14 })
-      .from(chips, { opacity: 0, scale: 0.88, duration: 0.6, ease: 'power3.out', stagger: 0.14 }, '-=0.8')
+    const cx = Math.cos(rx)
+    const sx = Math.sin(rx)
+    const y2 = p.y * cx - z1 * sx
+    const z2 = p.y * sx + z1 * cx
 
-    chispas.forEach((chispa, i) => {
-      gsap.to({ t: 0 }, {
-        t: 1,
-        duration: 3.2,
-        repeat: -1,
-        ease: 'power1.inOut',
-        delay: i * 0.9,
-        onUpdate() {
-          colocar(chispa, trazos[i], this.targets()[0].t)
+    const persp = 2.6 / (2.6 + z2)
+    return { x: w / 2 + x1 * radio * persp, y: h / 2 + y2 * radio * persp, z: z2, persp }
+  }
+
+  function frame(ahora) {
+    if (!reduce) t = ahora * 0.00022
+
+    gl.clearRect(0, 0, w, h)
+
+    const escala = Math.min(w, h)
+    const radio = escala * 0.21
+    const fuente = Math.max(10, Math.min(13, escala * 0.032))
+    const rx = Math.sin(t * 0.7) * 0.28 + 0.24
+    const respira = 1 + Math.sin(t * 3.4) * 0.015
+
+    const halo = gl.createRadialGradient(w / 2, h / 2, radio * 0.4, w / 2, h / 2, radio * 2.4)
+    halo.addColorStop(0, 'rgba(252,183,22,0.13)')
+    halo.addColorStop(0.5, 'rgba(252,183,22,0.03)')
+    halo.addColorStop(1, 'rgba(252,183,22,0)')
+    gl.fillStyle = halo
+    gl.fillRect(0, 0, w, h)
+
+    const pts = vertices.map((p) => proyectar(p, t, rx, radio * respira))
+
+    gl.lineWidth = 0.7
+    for (let i = 0; i <= FILAS; i++) {
+      for (let j = 0; j < COLS; j++) {
+        const a = pts[i * COLS + j]
+        const b = pts[i * COLS + ((j + 1) % COLS)]
+        gl.strokeStyle = `rgba(252,183,22,${0.05 + ((2 - (a.z + b.z)) / 4) * 0.28})`
+        gl.beginPath()
+        gl.moveTo(a.x, a.y)
+        gl.lineTo(b.x, b.y)
+        gl.stroke()
+
+        if (i < FILAS) {
+          const c = pts[(i + 1) * COLS + j]
+          gl.strokeStyle = `rgba(252,183,22,${0.03 + ((2 - (a.z + c.z)) / 4) * 0.16})`
+          gl.beginPath()
+          gl.moveTo(a.x, a.y)
+          gl.lineTo(c.x, c.y)
+          gl.stroke()
         }
-      })
+      }
+    }
+
+    gl.font = `500 ${fuente}px Inter, system-ui, sans-serif`
+    gl.textBaseline = 'middle'
+
+    const anchoMax = Math.max(...disciplinas.map((d) => gl.measureText(d.nombre).width))
+    const rx2 = Math.min(escala * 0.42, w / 2 - anchoMax - 14)
+    const ry2 = Math.min(escala * 0.38, h / 2 - fuente - 6)
+
+    disciplinas.forEach((d) => {
+      const ang = t * 0.35 + d.fase
+      const ca = Math.cos(ang)
+      const x = w / 2 + ca * rx2
+      const y = h / 2 + Math.sin(ang) * ry2
+      const alpha = 0.42 + ((ca + 1) / 2) * 0.58
+
+      gl.beginPath()
+      gl.moveTo(w / 2, h / 2)
+      gl.lineTo(x, y)
+      gl.strokeStyle = `rgba(252,183,22,${alpha * 0.22})`
+      gl.lineWidth = 1
+      gl.stroke()
+
+      const brillo = gl.createRadialGradient(x, y, 0, x, y, 13)
+      brillo.addColorStop(0, `rgba(252,183,22,${alpha * 0.5})`)
+      brillo.addColorStop(1, 'rgba(252,183,22,0)')
+      gl.fillStyle = brillo
+      gl.beginPath()
+      gl.arc(x, y, 13, 0, Math.PI * 2)
+      gl.fill()
+
+      gl.beginPath()
+      gl.arc(x, y, 2.6, 0, Math.PI * 2)
+      gl.fillStyle = `rgba(252,183,22,${alpha})`
+      gl.fill()
+
+      const ancho = gl.measureText(d.nombre).width
+      gl.fillStyle = '#EAEAEA'
+      gl.fillText(d.nombre, ca < 0 ? x - ancho - 10 : x + 10, y)
     })
 
-    gsap.to(pulsoRef.value, {
-      attr: { r: 58 },
-      opacity: 0,
-      duration: 2.8,
-      repeat: -1,
-      ease: 'power2.out'
-    })
-  }, rootRef.value)
+    raf = visible ? requestAnimationFrame(frame) : null
+  }
+
+  medir()
+  ro = new ResizeObserver(medir)
+  ro.observe(rootRef.value)
+
+  io = new IntersectionObserver(([e]) => {
+    visible = e.isIntersecting
+    if (visible && !raf) raf = requestAnimationFrame(frame)
+  })
+  io.observe(rootRef.value)
+
+  raf = requestAnimationFrame(frame)
 })
 
 onBeforeUnmount(() => {
-  ctx?.revert()
-  ctx = null
+  cancelAnimationFrame(raf)
+  ro?.disconnect()
+  io?.disconnect()
 })
-
-function colocar(chispa, trazo, t) {
-  const punto = trazo.getPointAtLength(trazo.getTotalLength() * (1 - t))
-  chispa.setAttribute('cx', punto.x)
-  chispa.setAttribute('cy', punto.y)
-  chispa.setAttribute('opacity', Math.sin(t * Math.PI))
-}
 </script>
