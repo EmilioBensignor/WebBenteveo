@@ -1,5 +1,5 @@
 <template>
-  <article :data-cursor-label="`Conocer más de ${proyecto.title}`"
+  <article :data-cursor-label="`Conocer más de ${proyecto.title}`" data-cursor-arrow
     class="size-full flex flex-col justify-end relative bg-negro border border-blanco/33 rounded-2xl overflow-hidden p-3 md:p-6 lg:p-8">
     <NuxtImg :src="proyecto.image" :alt="proyecto.title" class="size-full absolute inset-0 object-cover" format="avif"
       sizes="xs:100vw sm:100vw tab:100vw md:520px lg:800px" loading="lazy" />

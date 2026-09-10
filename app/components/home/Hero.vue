@@ -14,7 +14,7 @@
     </div>
 
     <div
-      class="w-full min-h-dvh flex justify-center items-center relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-28 md:py-32 lg:py-36">
+      class="w-full min-h-dvh flex justify-center items-center relative z-1 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-28 md:py-32 lg:py-36">
       <div
         class="w-full max-w-362 flex flex-col items-center gap-6 md:gap-8 lg:flex-row lg:justify-between lg:items-center lg:gap-8 xl:gap-12">
         <div
@@ -148,7 +148,7 @@ useGsapContext(root, (ctx, gsap) => {
       scrollTrigger: {
         trigger: root.value,
         start: 'top top',
-        end: () => `+=${window.innerHeight}`,
+        end: () => `+=${window.innerHeight * 0.6}`,
         scrub: 0.5,
         invalidateOnRefresh: true,
         onRefresh: () => {
