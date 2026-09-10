@@ -91,6 +91,7 @@ onMounted(() => {
         salida = setTimeout(() => {
           if (etiquetaActual) return
           el.classList.remove('glass-boton', 'activo')
+          isHover = false
           el.style.background = BLANCO
           texto.value.textContent = ''
           flecha.value = false
@@ -103,6 +104,8 @@ onMounted(() => {
       isHover = true
       return
     }
+
+    if (el.classList.contains('glass-boton')) return
 
     const target = e.target.closest?.(HOVER_SELECTOR)
     const nextHover = !!target
