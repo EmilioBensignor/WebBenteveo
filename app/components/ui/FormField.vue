@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col gap-1">
-    <input :type="type" :value="modelValue" :placeholder="placeholder" :autocomplete="autocomplete" :required="required"
+    <input :id="id" :type="type" :value="modelValue" :placeholder="placeholder" :autocomplete="autocomplete" :required="required"
       class="w-full h-12 bg-blanco/18 rounded-lg text-sm lg:text-base text-hueso placeholder:text-hueso/70 font-light outline-none focus:ring-1 focus:ring-amarillo p-4 transition-shadow"
       :class="error ? 'ring-1 ring-red-400' : ''" @input="$emit('update:modelValue', $event.target.value)"
       @blur="$emit('blur')" />
@@ -10,6 +10,7 @@
 
 <script setup>
 defineProps({
+  id: { type: String, default: undefined },
   modelValue: { type: String, default: '' },
   placeholder: { type: String, default: '' },
   type: { type: String, default: 'text' },

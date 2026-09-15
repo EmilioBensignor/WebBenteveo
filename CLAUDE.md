@@ -106,10 +106,11 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | `UiHeadingH1` / `UiHeadingH2` / `UiHeadingH3` | Tipografía de títulos |
 | `UiButtonPrimary` | Botón principal. Variantes: `glass` (la del diseño nuevo, usar con `size="glass"`), `solid`, `light`, `dark`, `outline` |
 | `DefaultCursor` | Cursor custom. Se expande a píldora con texto sobre elementos con `data-cursor-label` |
-| `UiCarouselStatic` | Carrusel con drag, flechas en desktop, props `slidesPerView` (por breakpoint) y `gap`. El wrapper interno tiene `px-4 md:px-0` para padding lateral en mobile |
+| `UiCarouselStatic` | Carrusel con drag, flechas en desktop, props `slidesPerView` (por breakpoint), `gap` y `buttonPosition`. El wrapper interno tiene `px-4 md:px-0` para padding lateral en mobile. **`buttonPosition` y `slidesPerView` se calibran juntos**: si las cards llenan el ancho exacto, la flecha cae sobre el contenido |
 | `UiCarouselAutoplay` | Carrusel con autoplay (prop `interval`), arranca al entrar al viewport, snap y drag. Slot `#dots` con `{ total, current, goTo, playing }` para navegación custom |
 | `UiAccordion` | Accordion animado con `grid-rows` transition. Prop `question`, contenido via slot |
-| `UiFormField` | Input genérico con `v-model`, `type`, `placeholder`, `error`, `autocomplete`. Muestra error debajo si se pasa |
+| `UiFormField` | Input genérico con `v-model`, `id`, `type`, `placeholder`, `error`, `autocomplete`. Muestra error debajo si se pasa |
+| `SharedMarcasTiles` | Marquee de tiles a color con reflejo. Lo usan `HomeEmpresas` y `TransformacionEmpresas` |
 
 ## Botón glass — NO TOCAR
 
@@ -155,7 +156,7 @@ Datos de contenido en `app/constants/`:
 | Ruta | Estado |
 |---|---|
 | `/` | **Lista y 1:1 con el Figma. Es la referencia del rediseño** |
-| `/transformacion-tecnologica` | Diseño viejo, pendiente de rehacer siguiendo la home |
+| `/transformacion-tecnologica` | Rehecha con el design system de la home |
 | `/agencia-creativa` | Diseño viejo, pendiente de rehacer siguiendo la home |
 | `/agencia-creativa-light` | Variante en tema light para test con cliente |
 | `/eventos` | Diseño viejo, pendiente de rehacer siguiendo la home |
@@ -285,3 +286,84 @@ pnpm dev       # desarrollo
 pnpm build     # build producción
 pnpm generate  # SSG
 ```
+
+
+## Landing /transformacion-tecnologica
+
+Rehecha siguiendo los patrones de la home: `DefaultSection bg="bg-negro"` con `relative z-10`, la escala de padding lateral compartida, botones glass, cards con imagen y número gigante cortado, y `text-hueso` + `font-light` para el texto sobre oscuro.
+
+Secciones en orden, en `app/components/transformacion/`. Contenido en `constants/transformacion.js`.
+
+| Sección | Qué es |
+|---|---|
+| `TransformacionHero` | `SharedHero` con los dos CTAs en glass |
+| `TransformacionEmpresas` | `SharedMarcasTiles` (los tiles a color de la home), "Ya se transformaron con nosotros" |
+| `TransformacionDolor` + `Calculadora` | Dos columnas: texto y lista de tareas a la izquierda, calculadora a la derecha. Reemplazó a `HorasPerdidas` |
+| `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
+| `TransformacionIndustrias` | Grid de rubros con foto de fondo |
+| `TransformacionResultados` | Métricas con número gigante y línea vertical, como `HomeEmpresas`. Reemplazó al uso de `SharedResultados` |
+| `TransformacionOpiniones` | Dos `UiCarouselStatic`: testimonios y videos |
+| `TransformacionMedios` + `MedioCard` | Carrusel de notas de prensa. **Contenido e imágenes son placeholder** |
+| `TransformacionProceso` | `SharedPasosTimeline` con la pastilla nueva |
+| `TransformacionFaqs` | 10 preguntas |
+| `HomeContacto` | El global, con el copy de cierre de esta página |
+
+### Calculadora de Dolor
+
+`Calculadora.vue`, separada de la sección. Portada de `benteveo_seccion_dolor_calculadora.html` en la lógica; el diseño se rehizo entero.
+
+**Son tres pasos, no un formulario.** Barra de progreso arriba, una pregunta por pantalla, `<Transition name="paso" mode="out-in">` entre ellas. El orden importa: primero personas, después horas, y recién al final el resultado. El sueldo no se pregunta (`SUELDO_PROMEDIO` era el input más incómodo y hundía el completado); hoy la cuenta es directa por `COSTO_HORA = 15000`.
+
+Fórmula: `horasMes = personas × horas × 4.3`, `costo = horasMes × COSTO_HORA`, `fte = max(1, round(horasMes / 160))` entero, nunca "3,8 personas".
+
+Rangos medidos contra lo que es creíble: personas 1 a 10, horas 1 a 25 con default 5 (1 hora por día). El slider de horas pregunta **cuántas de su semana se van en esas tareas**, no la jornada: con el copy anterior "8 horas" se leía como part-time. `referenciaHoras` traduce el valor a horas por día debajo del título.
+
+`useContador` anima horas y costo con rAF y ease-out en 700ms, respetando `prefers-reduced-motion`. Está declarado antes de su uso porque el `watch` no dispara en el primer render.
+
+El select de rubro es custom (botón + `<ul role="listbox">`), no `<select>` nativo: se abre **hacia arriba** (`bottom-full`) porque vive al pie de la tarjeta, lleva `data-lenis-prevent` y cierra con click afuera o Escape. Sin rubro no deja enviar, porque el mail que se promete es "las 3 tareas de tu rubro".
+
+**Altura fija para que no salte entre pasos**: `min-h-[35rem] md:min-h-[28rem] lg:min-h-[33rem]`, medido contra el paso 3 que es el más alto. Cada paso es `flex-1 flex flex-col justify-between`, **no `h-full`**: `<Transition>` no crea wrapper, el hijo es el flex item directo y `h-full` contra un padre con sólo `min-h` colapsa a cero.
+
+El error del email se limpia con un `watch` sobre el ref, no con `@update:model-value` en el `UiFormField` (ese evento ya lo consume el `v-model` y el handler lo pisaría).
+
+Envío simulado, sin endpoint, igual que `SharedFormContacto`.
+
+### Pastilla en PasosTimeline
+
+`SharedPasosTimeline` acepta `pill` opcional en cada item y la renderiza debajo del número. En las filas pares (`i % 2`) va `md:self-end` para acompañar el texto alineado a la derecha. La home y las otras páginas no la pasan, así que no cambian.
+
+### CardNumero
+
+Las cards apiladas y rotadas salieron de esta página, pero `rubro/Problemas` las seguía usando: el componente se movió a `app/components/rubro/CardNumero.vue` y el tag pasó a `RubroCardNumero`.
+
+### Resultados
+
+`TransformacionResultados` copia el formato de métricas de `HomeEmpresas`: número gigante amarillo con contador que arranca por `IntersectionObserver`, `linea-vertical` entre columnas, label debajo.
+
+Dos diferencias por los datos: los números van un escalón más chicos (`7xl → 7rem`, no `8xl → 8rem`) porque "+80%" tiene más caracteres que "+40", y el label va en `text-sm/base` porque son frases largas, no dos palabras.
+
+Las columnas llevan `md:items-start` + `md:self-start`: sin eso cada una se centra sola y los números quedan desalineados entre sí cuando los labels ocupan distinta cantidad de líneas.
+
+### Industrias
+
+Cards altas (`h-40 md:h-52 lg:h-64 xxl:h-72`) con la foto del rubro de fondo, tomada de `hero_*.webp` de `public/img/transformacion/rubros/` (las mismas que usa el hero de cada página de rubro, ya optimizadas).
+
+El overlay es `from-transparent from-55% to-black/70`, no el `from-black/25 to-black` de las cards de la home: ese está pensado para cards con texto largo encima y acá, con una sola línea abajo, oscurecía toda la foto. **No subir el brillo de la imagen**, el ajuste va en el overlay.
+
+### Beneficios
+
+Las cuatro en una fila desde `lg` (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`). `BeneficioCard` copia el formato de `HomeServicioCard` (imagen, número gigante cortado, título y texto con el mismo espaciado) pero es un `<article>` sin link, sin `data-cursor-label` y **sin el botón "+"**: no van a ningún lado.
+
+### Pendientes
+
+- **Flecha de Opiniones**: se superpone con la última card. El `button-position` está desalineado con el `slides-per-view`; hay que mirar cómo lo resuelve el repo `WebTEX` (`/Users/lio/Desktop/La/TEX/WebTEX`), que es la referencia buena.
+- **Sección Medios**: los 5 medios, títulos y links de `constants/transformacion.js` son inventados, y las imágenes de `public/img/transformacion/medios/` son copias de las de pasos.
+- **Imágenes de Beneficios** (`public/img/transformacion/beneficios/`): también copias, faltan las reales.
+- **Email de la calculadora**: sin endpoint. `COSTO_HORA = 15000` está sin validar con el cliente.
+- **CTAs a `#contacto`**: apuntan al form de la propia página, pero "Solicitar auditoría" y "Agendar una llamada" del hero no tienen destino.
+
+### Dev: prerender y caché
+
+`routeRules` aplica `prerender` y `swr` **sólo con `NODE_ENV === 'production'`**. En dev estaban congelando el HTML: se editaba un componente y el browser seguía recibiendo la versión vieja, con warnings de hydration mismatch que parecían bugs del markup y no lo eran.
+
+Si aparecen mismatches igual, el sospechoso es `.output` (un build viejo) o `.nuxt/cache`. Borrarlos y reiniciar.

@@ -2,23 +2,24 @@
   <DefaultSection bg="bg-negro"
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-14"
     inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16">
-    <div class="w-full flex flex-col items-center gap-3 md:gap-4 lg:gap-6 xxl:gap-8">
-      <UiHeadingH2 class="max-w-72 md:max-w-none text-center">
-        Empresas que confiaron en nosotros para proyectos importantes.
-      </UiHeadingH2>
-
-      <SharedMarcasTiles />
+    <div class="w-full flex flex-col items-center gap-3 md:gap-4 lg:gap-6 text-center">
+      <UiHeadingH2 class="max-w-72 md:max-w-none">Resultados reales</UiHeadingH2>
+      <p class="max-w-190 lg:max-w-230 text-hueso text-sm lg:text-base leading-[1.5] font-light">
+        Ayudamos a las empresas a resolver, potenciar y agilizar procesos mediante herramientas de IA robustas y
+        confiables adaptadas a sus negocios.
+      </p>
     </div>
 
-    <div ref="grupo" class="w-full flex flex-col items-center gap-5 md:flex-row md:justify-between md:gap-0">
-      <template v-for="(m, i) in metrics" :key="m.label">
-        <span v-if="i > 0" class="w-px h-52 hidden md:block shrink-0 linea-vertical" />
+    <div ref="grupo" class="w-full flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between md:gap-0">
+      <template v-for="(m, i) in transformacionMetrics" :key="m.label">
+        <span v-if="i > 0" class="w-px h-36 lg:h-44 xl:h-52 hidden md:block shrink-0 linea-vertical" />
 
-        <div class="w-full md:flex-1 flex flex-col items-center">
-          <span class="text-amarillo text-8xl md:text-7xl lg:text-[7rem] xxl:text-[8rem] font-bold leading-none tabular-nums">
+        <div class="w-full md:flex-1 flex flex-col items-center justify-start gap-2 md:self-start md:px-4 lg:px-6">
+          <span
+            class="text-amarillo text-6xl iph:text-7xl md:text-5xl lg:text-7xl xl:text-8xl xxl:text-[7rem] font-bold leading-none tabular-nums">
             {{ mostrados[i] }}
           </span>
-          <p class="text-center text-hueso text-base lg:text-2xl xxl:text-[2rem]">
+          <p class="max-w-72 md:max-w-none text-center text-hueso text-sm lg:text-base xxl:text-xl leading-[1.4] font-light">
             {{ m.label }}
           </p>
         </div>
@@ -28,16 +29,19 @@
 </template>
 
 <script setup>
-import { metrics } from '~/constants/home'
+import { transformacionMetrics } from '~/constants/home'
 
 const DURACION = 1600
 
 const grupo = ref(null)
-const partes = metrics.map((m) => {
+
+const partes = transformacionMetrics.map((m) => {
   const [, prefijo = '', digitos = '', sufijo = ''] = m.value.match(/^(\D*)(\d+)(\D*)$/) || []
   return { prefijo, objetivo: Number(digitos), sufijo, crudo: m.value }
 })
+
 const valores = ref(partes.map(() => 0))
+
 const mostrados = computed(() => partes.map((p, i) =>
   p.objetivo ? `${p.prefijo}${valores.value[i]}${p.sufijo}` : p.crudo))
 

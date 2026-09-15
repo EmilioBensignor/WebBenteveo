@@ -1,35 +1,18 @@
 <template>
-  <DefaultSection class="overflow-visible! px-4 md:px-7 lg:px-16 xxl:px-30">
-    <div class="w-full max-w-220 flex flex-col gap-6 lg:gap-8 pb-10">
-      <div class="flex flex-col items-center gap-3 lg:gap-4 sticky top-6 lg:top-10 text-center pb-6">
-        <UiHeadingH2 class="max-w-64 md:max-w-full">
-          <span class="text-blanco">Cuatro cosas que cambian en tu empresa</span>
-          <span class="text-amarillo"> cuando integras IA a tus procesos</span>
-        </UiHeadingH2>
-        <p class="max-w-64 sm:max-w-80 md:max-w-full lg:text-xl text-blanco font-medium">
-          Deja de apagar incendios y empieza a crecer
-        </p>
-      </div>
-
-      <article v-for="(b, i) in beneficios" :key="b.number"
-        class="overflow-hidden flex flex-col justify-between gap-6 lg:gap-10 sticky bg-negro border border-blanco/20 rounded-3xl shadow-[0_-12px_40px_rgba(0,0,0,0.6)] p-6 lg:p-10"
-        :style="`top: calc(13rem + ${i * 1.75}rem); rotate: ${i % 2 === 0 ? -2 : 2}deg`">
-        <span
-          class="absolute -top-7 lg:-top-9 -right-2 text-8xl lg:text-9xl font-bold text-blanco/10 leading-none pointer-events-none">{{
-            b.number }}</span>
-        <span class="size-14 lg:size-18 flex items-center justify-center bg-amarillo/10 rounded-full text-amarillo">
-          <Icon :name="b.icon" class="size-8! lg:size-10!" />
-        </span>
-        <div class="flex flex-col gap-3 lg:gap-4">
-          <UiHeadingH3 class="max-w-150 text-amarillo font-bold">
-            <span v-html="b.title" />
-          </UiHeadingH3>
-          <p class="max-w-150 text-sm lg:text-base text-blanco font-medium">{{ b.text }}</p>
-        </div>
-      </article>
+  <DefaultSection bg="bg-negro"
+    class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
+    inner="gap-8 lg:gap-12">
+    <div class="w-full flex flex-col items-center gap-3 md:gap-4 text-center">
+      <UiHeadingH2 class="max-w-72 md:max-w-none">
+        Cuatro cosas que cambian en tu empresa
+        <span class="text-amarillo">cuando integrás IA a tus procesos</span>
+      </UiHeadingH2>
+      <p class="text-hueso text-sm lg:text-base font-light">Dejá de apagar incendios y empezá a crecer.</p>
     </div>
 
-    <UiButtonPrimary>Quiero aplicarlo a mi empresa</UiButtonPrimary>
+    <div class="w-full max-w-362 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 lg:gap-6 xxl:gap-8">
+      <TransformacionBeneficioCard v-for="b in beneficios" :key="b.number" :beneficio="b" />
+    </div>
   </DefaultSection>
 </template>
 

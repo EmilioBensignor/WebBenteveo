@@ -1,29 +1,20 @@
 <template>
   <TransformacionHero />
-  <TransformacionEmpresas class="pb-6 lg:pb-12" />
-  <SharedResultados :metrics="transformacionMetrics">
-    <template #header>
-      <div class="flex flex-col items-center gap-3 md:gap-4 text-center">
-        <UiHeadingH2 class="text-amarillo">Resultados reales</UiHeadingH2>
-        <p class="max-w-72 sm:max-w-96 tab:max-w-120 md:max-w-146 lg:max-w-236 lg:text-xl text-blanco font-medium">
-          Ayudamos a las empresas a resolver, potenciar y agilizar procesos mediante herramientas de IA robustas y
-          confiables adaptadas a tus negocios
-        </p>
-      </div>
-    </template>
-  </SharedResultados>
-  <TransformacionHorasPerdidas />
+  <TransformacionEmpresas />
+  <TransformacionDolor />
   <TransformacionBeneficios />
   <TransformacionIndustrias />
+  <TransformacionResultados />
   <TransformacionOpiniones />
+  <TransformacionMedios />
   <TransformacionProceso />
   <TransformacionFaqs />
-  <HomeContacto title="¿Listo para el siguiente nivel?"
-    subtitle="Agenda una sesión de asesoramiento. <br/> Sin compromisos, solo pensar juntos." />
+  <HomeContacto eyebrow="¿Cuántas horas más vas a dejar pasar?"
+    title="Cada semana sin automatizar<br>son horas que no volvés a recuperar."
+    subtitle="En 30 minutos te decimos qué tareas de tu empresa conviene automatizar primero." />
 </template>
 
 <script setup>
-import { transformacionMetrics } from '~/constants/home'
 
 useSeoMeta({
   title: 'Transformación Tecnológica con IA',

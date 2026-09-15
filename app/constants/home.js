@@ -33,24 +33,6 @@ export const equipo = {
   to: '#contacto'
 }
 
-export const beneficios = [
-  {
-    icon: 'material-symbols:handshake-outline-rounded',
-    title: 'Un único brief',
-    text: 'Contás tu marca una vez. Todos trabajamos desde ahí.'
-  },
-  {
-    icon: 'material-symbols:graph-7',
-    title: 'Sin ruido entre áreas',
-    text: 'La campaña, el evento y el contenido IA hablan el mismo idioma de marca.'
-  },
-  {
-    icon: 'material-symbols:monitoring-rounded',
-    title: 'Resultados medibles',
-    text: 'Entregamos impacto que se puede mostrar.'
-  }
-]
-
 export const metrics = [
   { value: '+40', label: 'Marcas acompañadas' },
   { value: '+100', label: 'Proyectos realizados' },

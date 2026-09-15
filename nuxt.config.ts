@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ['@unhead/schema-org/vue', 'embla-carousel-vue', 'gsap', 'lenis']
+      include: ['@unhead/schema-org/vue', 'embla-carousel-vue', 'gsap', 'gsap/ScrollTrigger', 'lenis']
     }
   },
 
@@ -121,9 +121,13 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/**': { headers: securityHeaders },
-    '/': { prerender: true },
-    '/transformacion-tecnologica': { prerender: true },
-    '/transformacion-tecnologica/**': { swr: 86400 },
+    ...(process.env.NODE_ENV === 'production'
+      ? {
+          '/': { prerender: true },
+          '/transformacion-tecnologica': { prerender: true },
+          '/transformacion-tecnologica/**': { swr: 86400 }
+        }
+      : {}),
     '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
     '/_fonts/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
     '/_ipx/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },

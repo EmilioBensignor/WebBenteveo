@@ -62,6 +62,8 @@ onMounted(() => {
       lag.y = lastY = mouse.y
       el.style.opacity = '1'
     }
+    el.style.visibility = e.target.closest?.('[data-cursor-hide]') ? 'hidden' : ''
+
     const conEtiqueta = e.target.closest?.('[data-cursor-label]')
     const label = conEtiqueta?.dataset.cursorLabel || ''
     const conFlecha = label ? conEtiqueta.dataset.cursorArrow !== undefined : false

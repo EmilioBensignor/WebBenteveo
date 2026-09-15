@@ -33,6 +33,11 @@
         reached(i) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
       ]">
         <span class="text-6xl lg:text-7xl font-bold leading-none" :class="numberClass">0{{ i + 1 }}</span>
+        <span v-if="item.pill"
+          class="w-max flex items-center gap-2 bg-amarillo/10 border border-amarillo/40 rounded-full text-amarillo text-xs lg:text-sm font-medium py-1.5 px-4"
+          :class="i % 2 ? 'md:self-end' : ''">
+          {{ item.pill }}
+        </span>
         <h3 class="text-xl lg:text-2xl font-bold" :class="titleClass">{{ item.title }}</h3>
         <p v-if="item.text" class="max-w-100 text-sm lg:text-base font-medium" :class="textClass">{{ item.text }}</p>
       </div>

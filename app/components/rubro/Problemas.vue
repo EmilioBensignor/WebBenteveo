@@ -10,7 +10,7 @@
           lugar</span>
       </UiHeadingH2>
 
-      <TransformacionCardNumero v-for="(p, i) in problemas" :key="p.titulo" :index="i" :icon="p.icon"
+      <RubroCardNumero v-for="(p, i) in problemas" :key="p.titulo" :index="i" :icon="p.icon"
         :number="String(i + 1).padStart(2, '0')" :title="p.titulo" :text="p.texto" />
     </div>
 

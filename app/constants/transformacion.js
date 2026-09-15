@@ -1,40 +1,40 @@
 export const beneficios = [
   {
     number: '01',
-    icon: 'material-symbols:error-outline-rounded',
-    title: 'Identifica lo que está frenando tu negocio <span class="text-amarillo">antes de que se convierta en un problema</span>.',
-    text: 'Analizamos cómo trabajas hoy para encontrar los cuellos de botella que te cuestan tiempo y dinero.'
+    image: '/img/transformacion/beneficios/diagnostico.webp',
+    title: 'Ves dónde perdés tiempo y plata',
+    text: 'Un diagnóstico que te dice qué resolver primero.'
   },
   {
     number: '02',
-    icon: 'material-symbols:smart-toy-outline-rounded',
-    title: 'Cambia los procesos manuales <span class="text-amarillo">por una herramienta automatizada a tu medida.</span>',
-    text: 'Desarrollamos soluciones de IA que se encargan del trabajo pesado, adaptadas a tu operación específica.'
+    image: '/img/transformacion/beneficios/asistente.webp',
+    title: 'Lo repetitivo se hace solo',
+    text: 'Un asistente responde y ordena tus clientes, las 24 hs.'
   },
   {
     number: '03',
-    icon: 'material-symbols:pie-chart-outline',
-    title: 'Tus números dejan de ser un Excel y <span class="text-amarillo">se convierten en decisiones</span>.',
-    text: 'Convertimos tus datos en información clara para que puedas actuar rápido y con certeza.'
+    image: '/img/transformacion/beneficios/datos.webp',
+    title: 'Decidís con datos, no por intuición',
+    text: 'Toda tu información clara y actualizada en un solo lugar.'
   },
   {
     number: '04',
-    icon: 'material-symbols:handshake-outline-rounded',
-    title: 'Tu equipo se entrena e incorpora <span class="text-amarillo">las herramientas</span> en sus tareas diarias.',
-    text: 'Capacitamos a tu gente para que la tecnología no dependa de nosotros.'
+    image: '/img/transformacion/beneficios/equipo.webp',
+    title: 'Tu equipo, más liviano y autónomo',
+    text: 'Lo capacitamos hasta que no nos necesite.'
   }
 ]
 
 export const industrias = [
-  { icon: 'material-symbols:health-cross-outline-rounded', label: 'Salud', slug: 'salud' },
-  { icon: 'material-symbols:school-outline-rounded', label: 'Educación', slug: 'educacion' },
-  { icon: 'material-symbols:domain-rounded', label: 'Real Estate', slug: 'real-estate' },
-  { icon: 'material-symbols:wheat-outline-rounded', label: 'Agroindustria', slug: 'agroindustria' },
-  { icon: 'material-symbols:cardiology-outline-rounded', label: 'Fitness', slug: 'fitness' },
-  { icon: 'material-symbols:account-balance-outline-rounded', label: 'Fintech', slug: 'fintech' },
-  { icon: 'material-symbols:work-outline', label: 'Servicios profesionales', slug: 'servicios-profesionales' },
-  { icon: 'material-symbols:headset-mic-outline-rounded', label: 'Servicio al cliente', slug: 'servicio-al-cliente' },
-  { icon: 'material-symbols:storefront-outline-rounded', label: 'E-Commerce', slug: 'e-commerce' }
+  { icon: 'material-symbols:health-cross-outline-rounded', label: 'Salud', slug: 'salud', image: '/img/transformacion/rubros/hero_salud.webp' },
+  { icon: 'material-symbols:school-outline-rounded', label: 'Educación', slug: 'educacion', image: '/img/transformacion/rubros/hero_educacion.webp' },
+  { icon: 'material-symbols:domain-rounded', label: 'Real Estate', slug: 'real-estate', image: '/img/transformacion/rubros/hero_real_state.webp' },
+  { icon: 'material-symbols:wheat-outline-rounded', label: 'Agroindustria', slug: 'agroindustria', image: '/img/transformacion/rubros/hero_agroindustria.webp' },
+  { icon: 'material-symbols:cardiology-outline-rounded', label: 'Fitness', slug: 'fitness', image: '/img/transformacion/rubros/hero_fitness.webp' },
+  { icon: 'material-symbols:account-balance-outline-rounded', label: 'Fintech', slug: 'fintech', image: '/img/transformacion/rubros/hero_servicio_financieros.webp' },
+  { icon: 'material-symbols:work-outline', label: 'Servicios profesionales', slug: 'servicios-profesionales', image: '/img/transformacion/rubros/hero_servicio_profesionales.webp' },
+  { icon: 'material-symbols:headset-mic-outline-rounded', label: 'Servicio al cliente', slug: 'servicio-al-cliente', image: '/img/transformacion/rubros/hero_servicio_al_cliente.webp' },
+  { icon: 'material-symbols:storefront-outline-rounded', label: 'E-Commerce', slug: 'e-commerce', image: '/img/transformacion/rubros/hero_ecommerce.webp' }
 ]
 
 export const opiniones = [
@@ -63,21 +63,24 @@ export const opiniones = [
 export const proceso = [
   {
     number: '01',
+    pill: 'Gratis · 30 min',
     image: '/img/transformacion/paso_1_tareas.webp',
-    title: 'Identificamos las tareas donde se pierde tiempo y dinero.',
-    text: 'Analizamos cómo trabajas hoy e identificamos los procesos que más demoran tu crecimiento.'
+    title: 'Encontramos dónde se pierden tiempo y plata',
+    text: 'Charlamos sobre cómo trabaja tu equipo y detectamos las tareas que más te frenan.'
   },
   {
     number: '02',
+    pill: '4 a 6 semanas',
     image: '/img/transformacion/paso_2_desarrollo.webp',
-    title: 'Desarrollamos la herramienta que lo resuelve.',
-    text: 'Diseñamos una solución de IA adaptada a tu empresa.'
+    title: 'Construimos la herramienta que lo resuelve',
+    text: 'La diseñamos a medida y la conectamos con lo que ya usás, sin frenar la operación.'
   },
   {
     number: '03',
+    pill: 'Acompañamiento incluido',
     image: '/img/transformacion/paso_3_capacitacion.webp',
-    title: 'Entrenamos y capacitamos a tu equipo.',
-    text: 'Los acompañamos hasta que la herramienta sea parte natural de su trabajo.'
+    title: 'Tu equipo la usa solo',
+    text: 'Capacitamos a tu gente y la acompañamos hasta que la herramienta sea parte natural del trabajo.'
   }
 ]
 
@@ -88,30 +91,77 @@ export const faqs = [
   },
   {
     question: '¿Por dónde se empieza?',
-    answer: 'Por entender tu operación. Antes de proponer cualquier herramienta, nos sentamos con vos a diagnosticar qué está frenando el crecimiento, dónde se pierde tiempo y dinero, y qué tiene más impacto si se resuelve primero.'
+    answer: 'Por escucharte y entender cómo funciona hoy tu operación. Nos sentamos con vos para ordenar lo que está pasando, identificar el desafío prioritario y decidir juntos por dónde conviene empezar.'
   },
   {
     question: '¿Tengo que cambiar todo de una vez?',
-    answer: 'No. La mayoría de los procesos se transforman por etapas, empezando por donde el impacto es mayor. No hace falta parar la operación ni hacer una inversión enorme desde el día uno.'
+    answer: 'Avanzamos por etapas, empezando por el proceso donde podamos generar mayor impacto. La operación sigue funcionando durante la implementación y la inversión acompaña el alcance de cada etapa, sin exigir un gran desembolso desde el inicio.'
   },
   {
     question: '¿Necesito tener conocimientos técnicos para trabajar con ustedes?',
-    answer: 'Para nada. Nuestro trabajo es traducir los problemas del negocio en soluciones concretas. Vos nos contás cómo funciona tu empresa, nosotros nos encargamos del resto. Y cuando la herramienta está lista, capacitamos a tu equipo para que la use con autonomía.'
+    answer: 'Para nada. Hablamos el mismo idioma: vos nos contás qué pasa en tu negocio y nosotros nos ocupamos de traducir esas necesidades en una solución tecnológica concreta. Durante todo el proceso te explicamos con claridad qué proponemos y por qué.'
   },
   {
     question: '¿Qué herramientas o tecnologías usan?',
-    answer: 'No tenemos un catálogo. Cada solución se diseña desde cero según lo que necesita tu empresa: tu operación, tu equipo, tu presupuesto y lo que ya usás. La tecnología que elijamos es consecuencia de entender bien el problema, no al revés.'
+    answer: 'Según el desafío, una solución puede combinar automatizaciones, asistentes con inteligencia artificial, tableros de información o desarrollos específicos. No partimos de una herramienta predeterminada: elegimos la tecnología según lo que necesitás resolver, el presupuesto disponible y la facilidad con la que tu equipo pueda incorporarla.'
   },
   {
-    question: '¿Qué pasa después de que se implementa la solución?',
-    answer: 'Acompañamos la adopción para que el equipo incorpore los cambios de verdad. Una herramienta bien implementada pero mal adoptada no sirve de nada, eso también es parte de nuestro trabajo.'
+    question: '¿Qué pasa con los datos de mi empresa?',
+    answer: 'Quedan bajo tu control. Diseñamos cada solución para que la información de tu empresa se guarde en tu propia infraestructura y solo acceda quien vos definas. Además, tomamos como referencia el Reglamento de IA de la Unión Europea, la primera ley integral sobre inteligencia artificial del mundo.'
   },
   {
-    question: '¿Pueden integrarse las nuevas soluciones con los sistemas que ya uso?',
-    answer: 'Sí, en la mayoría de los casos. Parte del diagnóstico inicial es mapear qué tecnología ya tiene tu empresa para construir sobre lo que funciona, no reemplazarlo todo desde cero.'
+    question: 'Mi equipo ya usa ChatGPT, ¿es un riesgo?',
+    answer: 'Puede serlo. Cuando se usan herramientas gratuitas sin reglas claras, lo que se carga (datos de clientes, precios, contratos) puede quedar fuera de tu control. No hace falta prohibirlas, hace falta usarlas bien. Si querés saber en qué situación está tu empresa, hacé nuestro test gratis.'
   },
   {
     question: '¿Trabajan con empresas de cualquier tamaño?',
-    answer: 'Sí. Trabajamos con empresas de todos los tamaños. El punto de partida y la escala de la solución cambian según cada caso, pero el proceso es el mismo: entender tu operación, identificar dónde se pierde tiempo y dinero, y resolverlo. No hay un mínimo para empezar.'
+    answer: 'Trabajamos con empresas de distintas escalas y adaptamos el alcance de la solución a cada realidad. Lo que no cambia es nuestra forma de acompañar el proceso: cerca, disponibles y atentos a las personas que van a incorporar el cambio.'
+  },
+  {
+    question: '¿Qué pasa después de que se implementa la solución?',
+    answer: 'Acompañamos al equipo durante la adopción. Escuchamos sus dudas, trabajamos sobre las dificultades y resistencias que puedan aparecer, y ayudamos a incorporar los cambios en la operación cotidiana. Porque una solución que no se usa no transforma nada.'
+  },
+  {
+    question: '¿Pueden integrarse las nuevas soluciones con los sistemas que ya uso?',
+    answer: 'Muchas veces. Evaluamos cómo funcionan y se conectan tus sistemas actuales para definir el camino más conveniente: integrarlos, complementarlos o reemplazar sólo aquello que esté limitando la operación.'
+  }
+]
+
+export const dolorTareas = [
+  { icon: 'material-symbols:chat-outline-rounded', text: 'Responder las mismas consultas todo el día' },
+  { icon: 'material-symbols:swap-horiz-rounded', text: 'Pasar datos de un sistema a otro' },
+  { icon: 'material-symbols:receipt-long-outline-rounded', text: 'Armar presupuestos y reportes a mano' }
+]
+
+export const medios = [
+  {
+    image: '/img/transformacion/medios/medio-1.webp',
+    medio: 'Infobae',
+    title: 'Cómo una agencia argentina lleva la IA a las pymes que nunca la usaron',
+    to: '#'
+  },
+  {
+    image: '/img/transformacion/medios/medio-2.webp',
+    medio: 'La Nación',
+    title: 'Automatizar sin despedir: el caso de las empresas que rediseñaron sus procesos',
+    to: '#'
+  },
+  {
+    image: '/img/transformacion/medios/medio-3.webp',
+    medio: 'Ámbito Financiero',
+    title: 'IA aplicada al negocio: qué tareas conviene automatizar primero',
+    to: '#'
+  },
+  {
+    image: '/img/transformacion/medios/medio-4.webp',
+    medio: 'Cronista',
+    title: 'El diagnóstico previo, la etapa que la mayoría de las empresas se saltea',
+    to: '#'
+  },
+  {
+    image: '/img/transformacion/medios/medio-5.webp',
+    medio: 'Forbes Argentina',
+    title: 'Del Excel al tablero: cómo ordenar los datos antes de sumar inteligencia artificial',
+    to: '#'
   }
 ]

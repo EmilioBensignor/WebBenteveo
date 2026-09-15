@@ -1,5 +1,7 @@
 <template>
-  <DefaultSection class="px-4 md:px-7 lg:px-16 xxl:px-30" inner="gap-6 md:gap-8 lg:gap-12">
+  <DefaultSection bg="bg-negro"
+    class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
+    inner="gap-6 md:gap-8 lg:gap-12">
     <slot name="header" />
 
     <div ref="rootRef"
@@ -17,7 +19,7 @@
             {{ m.prefix }}{{ counts[i] }}{{ m.suffix }}
           </span>
         </div>
-        <p class="max-w-42 sm:max-w-62 text-center text-blanco text-base font-medium leading-snug">{{ m.label }}</p>
+        <p class="max-w-42 sm:max-w-62 text-center text-hueso text-sm lg:text-base leading-[1.4] font-light">{{ m.label }}</p>
       </div>
     </div>
   </DefaultSection>
