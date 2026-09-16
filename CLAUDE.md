@@ -104,7 +104,7 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | `DefaultSection` | Wrapper de sección: fondo full-width + contenido `max-w` centrado. Props: `bg`, `id`, `class` para gap/padding |
 | `SharedHero` | Hero base (video/imagen de fondo, overlay, título, CTAs). Los heroes por página lo envuelven |
 | `UiHeadingH1` / `UiHeadingH2` / `UiHeadingH3` | Tipografía de títulos |
-| `UiButtonPrimary` | Botón principal. Variantes: `glass` (la del diseño nuevo, usar con `size="glass"`), `solid`, `light`, `dark`, `outline` |
+| `UiButtonPrimary` | Botón principal. Variantes: `glass` (la del diseño nuevo, usar con `size="glass"`), `glass-dark` (mismo glass en negro, para fondos amarillos), `solid`, `light`, `dark`, `outline` |
 | `DefaultCursor` | Cursor custom. Se expande a píldora con texto sobre elementos con `data-cursor-label` |
 | `UiCarouselStatic` | Carrusel con drag, flechas en desktop, props `slidesPerView` (por breakpoint), `gap` y `buttonPosition`. El wrapper interno tiene `px-4 md:px-0` para padding lateral en mobile. **`buttonPosition` y `slidesPerView` se calibran juntos**: si las cards llenan el ancho exacto, la flecha cae sobre el contenido |
 | `UiCarouselAutoplay` | Carrusel con autoplay (prop `interval`), arranca al entrar al viewport, snap y drag. Slot `#dots` con `{ total, current, goTo, playing }` para navegación custom |
@@ -296,7 +296,7 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 
 | Sección | Qué es |
 |---|---|
-| `TransformacionHero` | `SharedHero` con los dos CTAs en glass |
+| `TransformacionHero` | Video a pantalla completa, `sticky top-0`: la sección siguiente sube tapándolo, como en la home. Cuando queda cubierto se oculta y pausa el video |
 | `TransformacionEmpresas` | `SharedMarcasTiles` (los tiles a color de la home), "Ya se transformaron con nosotros" |
 | `TransformacionDolor` + `Calculadora` | Dos columnas: texto y lista de tareas a la izquierda, calculadora a la derecha. Reemplazó a `HorasPerdidas` |
 | `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
@@ -304,7 +304,7 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 | `TransformacionResultados` | Métricas con número gigante y línea vertical, como `HomeEmpresas`. Reemplazó al uso de `SharedResultados` |
 | `TransformacionOpiniones` | Dos `UiCarouselStatic`: testimonios y videos |
 | `TransformacionMedios` + `MedioCard` | Carrusel de notas de prensa. **Contenido e imágenes son placeholder** |
-| `TransformacionProceso` | `SharedPasosTimeline` con la pastilla nueva |
+| `TransformacionProceso` | Pin desde `lg`: título amarillo centrado, las 3 cards glass suben escalonadas y después el botón |
 | `TransformacionFaqs` | 10 preguntas |
 | `HomeContacto` | El global, con el copy de cierre de esta página |
 

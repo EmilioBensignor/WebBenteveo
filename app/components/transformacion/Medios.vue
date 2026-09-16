@@ -3,7 +3,7 @@
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
     inner="gap-8 lg:gap-12">
     <UiHeadingH2 class="max-w-80 md:max-w-none text-center">
-      Lo que dicen los medios sobre <span class="text-amarillo">nuestro trabajo con IA</span>
+      Lo que dicen los medios sobre nuestro trabajo con IA
     </UiHeadingH2>
 
     <div ref="listaEl" class="w-full max-w-362 relative" data-cursor-hide @pointerleave="hovered = null">
