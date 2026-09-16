@@ -6,7 +6,7 @@
       Lo que dicen los medios sobre <span class="text-amarillo">nuestro trabajo con IA</span>
     </UiHeadingH2>
 
-    <div ref="listaEl" class="w-full max-w-362 relative overflow-hidden" data-cursor-hide @pointerleave="hovered = null">
+    <div ref="listaEl" class="w-full max-w-362 relative" data-cursor-hide @pointerleave="hovered = null">
       <div ref="fotoEl"
         class="hidden lg:block absolute top-0 left-0 z-20 size-56 xl:size-64 xxl:size-72 rounded-full overflow-hidden pointer-events-none opacity-0">
         <NuxtImg v-for="(m, i) in medios" :key="m.title" :src="m.image" alt=""

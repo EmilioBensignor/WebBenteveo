@@ -63,7 +63,7 @@ useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
     ease: 'none',
     scrollTrigger: {
       trigger: seccion,
-      start: 'top top',
+      start: 'top top+=112',
       end: () => `+=${recorrido()}`,
       pin: true,
       pinSpacing: true,

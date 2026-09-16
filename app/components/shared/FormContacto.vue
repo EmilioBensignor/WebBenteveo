@@ -1,6 +1,6 @@
 <template>
   <div v-if="status !== 'idle'"
-    :class="['w-full max-w-175 h-82 lg:h-104 flex flex-col justify-center items-center gap-4 text-center p-3 md:p-5 lg:p-8', TARJETA]">
+    :class="['w-full h-82 lg:h-104 flex flex-col justify-center items-center gap-4 text-center p-3 md:p-5 lg:p-8', TARJETA]">
     <template v-if="status === 'loading'">
       <span class="loader" />
       <p class="text-amarillo text-lg font-bold">Estamos enviando tu consulta</p>
@@ -14,7 +14,7 @@
   </div>
 
   <form v-else @submit.prevent="submit"
-    :class="['w-full max-w-150 flex flex-col justify-center items-center gap-2 md:gap-4 p-3 md:p-5 lg:p-8', TARJETA]">
+    :class="['w-full flex flex-col justify-center items-center gap-2 md:gap-4 p-3 md:p-5 lg:p-8', TARJETA]">
     <p class="w-full text-center text-hueso text-base lg:text-xl">Dejanos tus datos para ponernos en contacto</p>
 
     <UiFormField v-model="form.nombre" placeholder="Nombre" autocomplete="name" :error="errors.nombre"
