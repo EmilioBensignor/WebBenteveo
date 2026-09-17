@@ -8,7 +8,7 @@
           ¿Cuántas horas perdés por semana en cosas que
           <span class="text-amarillo">una herramienta podría hacer sola?</span>
         </UiHeadingH2>
-        <p class="text-hueso text-sm lg:text-base leading-[1.5] font-light">
+        <p class="text-hueso text-sm lg:text-base leading-normal font-light">
           Si tu equipo contesta consultas a mano, carga datos en Excel o arma presupuestos uno por uno, estás pagando
           sueldos por tareas que una herramienta haría sola.
         </p>

@@ -17,22 +17,27 @@
       <ul class="flex flex-col border-t border-blanco/15">
         <li v-for="(m, i) in medios" :key="m.title" class="border-b border-blanco/15">
           <NuxtLink :to="m.to"
-            class="group flex flex-col gap-2 md:flex-row md:items-center md:gap-6 py-6 md:py-8 lg:py-11 xxl:py-13 transition-colors duration-300"
+            class="group flex items-center gap-4 md:gap-6 py-6 md:py-8 lg:py-11 xxl:py-13 transition-colors duration-300"
             @pointerenter="hovered = i">
-            <div class="flex items-center justify-between gap-4 md:contents">
-              <span class="text-sm md:text-base lg:text-xl xxl:text-2xl tabular-nums leading-none transition-colors duration-300 shrink-0 md:order-1"
-                :class="activa(i) ? 'text-amarillo' : 'text-gris'">
-                {{ String(i + 1).padStart(2, '0') }}
-              </span>
-              <span class="text-xs uppercase tracking-wide transition-colors duration-300 shrink-0 md:order-3"
-                :class="activa(i) ? 'text-amarillo' : 'text-gris'">
-                {{ m.medio }}
-              </span>
+            <NuxtImg :src="m.image" :alt="m.medio"
+              class="size-16 md:size-20 lg:hidden shrink-0 rounded-full object-cover border border-blanco/15"
+              format="avif" sizes="64px md:80px" loading="lazy" />
+            <div class="flex-1 min-w-0 flex flex-col gap-2 md:flex-row md:items-center md:gap-6">
+              <div class="flex items-center justify-between gap-4 md:contents">
+                <span class="text-sm md:text-base lg:text-xl xxl:text-2xl tabular-nums leading-none transition-colors duration-300 shrink-0 md:order-1"
+                  :class="activa(i) ? 'text-amarillo' : 'text-gris'">
+                  {{ String(i + 1).padStart(2, '0') }}
+                </span>
+                <span class="text-xs uppercase tracking-wide transition-colors duration-300 shrink-0 md:order-3"
+                  :class="activa(i) ? 'text-amarillo' : 'text-gris'">
+                  {{ m.medio }}
+                </span>
+              </div>
+              <p class="flex-1 text-base lg:text-xl xxl:text-2xl font-light leading-[1.3] transition-colors duration-300 md:order-2"
+                :class="activa(i) ? 'text-hueso' : 'text-hueso lg:text-gris'">
+                {{ m.title }}
+              </p>
             </div>
-            <p class="flex-1 text-base lg:text-xl xxl:text-2xl font-light leading-[1.3] transition-colors duration-300 md:order-2"
-              :class="activa(i) ? 'text-hueso' : 'text-hueso lg:text-gris'">
-              {{ m.title }}
-            </p>
           </NuxtLink>
         </li>
       </ul>

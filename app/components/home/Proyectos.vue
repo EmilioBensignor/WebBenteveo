@@ -1,6 +1,6 @@
 <template>
   <DefaultSection id="proyectos" bg="bg-negro"
-    class="lg:h-dvh flex flex-col justify-center overflow-visible! relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 lg:pt-36 lg:pb-16"
+    class="md:h-dvh flex flex-col justify-center overflow-visible! relative z-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:pt-28 lg:pt-36 lg:pb-16"
     inner="lg:justify-center">
     <div ref="root"
       class="w-full max-w-362 flex flex-col gap-8 md:flex-row md:items-center md:justify-between md:gap-6 lg:gap-12">
@@ -37,7 +37,7 @@
 
                     <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
                       class="w-max gap-3 pl-6 pr-4">
-                      Conocer más de {{ proyecto.title }}
+                      Conocer más
                       <Icon name="material-symbols:arrow-forward-rounded" size="16" class=" shrink-0" />
                     </UiButtonPrimary>
                   </div>
@@ -55,8 +55,7 @@
 
       <div ref="pila" class="w-full md:flex-1 md:min-w-0 h-94 lg:h-127 mac:h-100 hidden md:block relative isolate">
         <div v-for="(proyecto, i) in proyectos" :key="proyecto.title"
-          class="size-full absolute inset-0 will-change-transform transition-opacity duration-500 lg:transition-none lg:opacity-100!"
-          :class="activo === i ? 'opacity-100' : 'opacity-0'" :style="{ zIndex: i + 1 }">
+          class="size-full absolute inset-0 will-change-transform" :style="{ zIndex: i + 1 }">
           <HomeProyectoCard :proyecto="proyecto" />
         </div>
       </div>
@@ -103,8 +102,9 @@ let scrollTo = null
 function irA(i) {
   activo.value = i
   scrollTo?.(i)
-  medirDot(i)
 }
+
+watch(activo, (i) => medirDot(i))
 
 function alRedimensionar() {
   medirDot()
@@ -118,7 +118,7 @@ onMounted(() => {
 onBeforeUnmount(() => window.removeEventListener('resize', alRedimensionar))
 
 useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
-  if (!pila.value || window.matchMedia('(max-width: 1079px)').matches) return
+  if (!pila.value || window.matchMedia('(max-width: 767px)').matches) return
 
   const capas = [...pila.value.children]
   if (capas.length < 2) return

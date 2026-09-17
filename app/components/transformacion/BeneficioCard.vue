@@ -7,7 +7,7 @@
       <div class="absolute inset-0 bg-linear-to-b from-black/25 to-black" />
 
       <span
-        class="relative text-amarillo text-[5.5rem] lg:text-[8rem] font-bold -mb-4 md:-mb-6 lg:-mb-10 -ml-2 md:-ml-3 lg:-ml-4">
+        class="relative text-amarillo text-[5.5rem] lg:text-[8rem] font-bold -mb-7 lg:-mb-10 -ml-2 md:-ml-3 lg:-ml-4">
         {{ beneficio.number }}
       </span>
     </div>

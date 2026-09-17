@@ -10,7 +10,7 @@
   <TransformacionProceso />
   <TransformacionFaqs />
   <HomeContacto eyebrow="¿Cuántas horas más vas a dejar pasar?"
-    title="Cada semana sin automatizar<br>son horas que no volvés a recuperar."
+    title="Cada semana sin automatizar son horas que no volvés a recuperar."
     subtitle="En 30 minutos te decimos qué tareas de tu empresa conviene automatizar primero." />
 </template>
 

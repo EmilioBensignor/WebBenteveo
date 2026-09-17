@@ -1,17 +1,17 @@
 <template>
   <div class="w-full flex flex-col bg-negro border border-blanco/33 rounded-2xl lg:rounded-3xl overflow-hidden">
-    <div class="flex items-center gap-2 border-b border-blanco/20 px-5 py-4 lg:px-8">
+    <div class="flex items-center gap-2 border-b border-blanco/20 px-4 iph:px-5 md:px-6 lg:px-8 py-4">
       <span v-for="n in 3" :key="n" class="h-1 flex-1 rounded-full overflow-hidden bg-blanco/18">
         <span class="block h-full bg-amarillo origin-left transition-transform duration-500 ease-out"
           :style="{ transform: `scaleX(${paso >= n ? 1 : 0})` }" />
       </span>
     </div>
 
-    <div class="min-h-[38rem] sm:min-h-[33rem] md:min-h-[28rem] lg:min-h-[33rem] flex flex-col px-5 py-6 lg:px-8 lg:py-8">
+    <div class="md:min-h-[28rem] lg:min-h-[33rem] flex flex-col px-4 iph:px-5 md:px-6 lg:px-8 py-6 lg:py-8">
       <Transition name="paso" mode="out-in">
-        <div v-if="paso === 1" key="1" class="flex-1 flex flex-col justify-between gap-8">
+        <div v-if="paso === 1" key="1" class="flex-1 flex flex-col justify-between gap-7 md:gap-8">
           <div class="flex flex-col gap-3">
-            <p class="text-hueso text-lg lg:text-2xl font-semibold leading-[1.3]">
+            <p class="text-hueso text-lg md:text-xl lg:text-2xl font-semibold leading-[1.3]">
               ¿Cuántas personas de tu equipo hacen tareas repetitivas?
             </p>
             <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
@@ -20,9 +20,9 @@
           </div>
 
           <div class="flex flex-col gap-5">
-            <p class="flex items-baseline gap-2 text-amarillo text-6xl lg:text-7xl font-bold leading-none tabular-nums">
+            <p class="flex items-baseline gap-2 text-amarillo text-5xl iph:text-6xl lg:text-7xl font-bold leading-none tabular-nums">
               {{ personas }}
-              <span class="text-hueso text-xl lg:text-2xl font-light">{{ personas === 1 ? 'persona' : 'personas' }}</span>
+              <span class="text-hueso text-lg iph:text-xl lg:text-2xl font-light">{{ personas === 1 ? 'persona' : 'personas' }}</span>
             </p>
             <label for="calc-personas" class="sr-only">Personas que hacen tareas repetitivas</label>
             <input id="calc-personas" v-model.number="personas" type="range" min="1" max="10" step="1" class="rango">
@@ -33,25 +33,25 @@
           </div>
         </div>
 
-        <div v-else-if="paso === 2" key="2" class="flex-1 flex flex-col justify-between gap-8">
+        <div v-else-if="paso === 2" key="2" class="flex-1 flex flex-col justify-between gap-7 md:gap-8">
           <div class="flex flex-col gap-3">
-            <p class="text-hueso text-lg lg:text-2xl font-semibold leading-[1.3]">
+            <p class="text-hueso text-lg md:text-xl lg:text-2xl font-semibold leading-[1.3]">
               De su semana laboral, ¿cuántas horas se le van en esas tareas?
             </p>
             <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">{{ referenciaHoras }}</p>
           </div>
 
           <div class="flex flex-col gap-5">
-            <p class="flex items-baseline gap-2 text-amarillo text-6xl lg:text-7xl font-bold leading-none tabular-nums">
+            <p class="flex items-baseline gap-2 text-amarillo text-5xl iph:text-6xl lg:text-7xl font-bold leading-none tabular-nums">
               {{ horas }}
-              <span class="text-hueso text-xl lg:text-2xl font-light">{{ horas === 1 ? 'hora' : 'horas' }}</span>
+              <span class="text-hueso text-lg iph:text-xl lg:text-2xl font-light">{{ horas === 1 ? 'hora' : 'horas' }}</span>
             </p>
             <label for="calc-horas" class="sr-only">Horas por semana que le dedica cada una</label>
             <input id="calc-horas" v-model.number="horas" type="range" min="1" max="25" step="1" class="rango">
           </div>
 
           <div class="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
-            <button type="button" class="w-max flex items-center gap-1 text-hueso text-sm lg:text-base font-light cursor-pointer transition-colors duration-200 lg:hover:text-amarillo"
+            <button type="button" class="w-max self-center sm:self-auto flex items-center gap-1 text-hueso text-sm lg:text-base font-light cursor-pointer transition-colors duration-200 lg:hover:text-amarillo"
               @click="paso = 1">
               <Icon name="material-symbols:arrow-back-rounded" size="20" class="shrink-0" />
               Volver
@@ -67,15 +67,15 @@
           <div class="flex flex-col gap-5">
             <div class="flex flex-col gap-1">
               <p class="text-hueso text-sm lg:text-base font-light">Tu equipo pierde</p>
-              <p class="flex flex-wrap items-baseline gap-x-2 text-amarillo text-[2.75rem] lg:text-5xl xl:text-6xl font-bold leading-none tabular-nums">
+              <p class="flex flex-wrap items-baseline gap-x-2 text-amarillo text-4xl iph:text-[2.75rem] md:text-5xl xl:text-6xl font-bold leading-none tabular-nums">
                 {{ numero.format(horasAnimadas) }}
-                <span class="text-hueso text-lg lg:text-2xl font-light">horas al mes</span>
+                <span class="text-hueso text-base iph:text-lg md:text-xl lg:text-2xl font-light">horas al mes</span>
               </p>
             </div>
 
             <div class="flex flex-col gap-1 bg-amarillo text-negro rounded-xl px-4 py-4 lg:px-5 lg:py-5">
               <p class="text-sm lg:text-base font-medium">A {{ costoHoraTexto }} la hora, eso te cuesta</p>
-              <p class="text-[1.75rem] sm:text-[2rem] lg:text-3xl xl:text-4xl font-bold leading-tight tabular-nums">
+              <p class="text-2xl iph:text-[1.75rem] sm:text-[2rem] lg:text-3xl xl:text-4xl font-bold leading-tight tabular-nums">
                 {{ moneda.format(costoAnimado) }}<span class="text-sm lg:text-lg font-medium"> por mes</span>
               </p>
               <p class="text-sm lg:text-base font-medium">
@@ -129,7 +129,7 @@
 
               <div class="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-3">
                 <button type="button"
-                  class="w-max flex items-center gap-1 text-hueso text-sm lg:text-base font-light cursor-pointer transition-colors duration-200 lg:hover:text-amarillo"
+                  class="w-max self-center sm:self-auto flex items-center gap-1 text-hueso text-sm lg:text-base font-light cursor-pointer transition-colors duration-200 lg:hover:text-amarillo"
                   @click="paso = 2">
                   <Icon name="material-symbols:arrow-back-rounded" size="20" class="shrink-0" />
                   Cambiar los números

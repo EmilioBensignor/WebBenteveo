@@ -8,6 +8,12 @@
     <div class="w-full flex flex-col gap-2 relative">
       <img :src="proyecto.logo" :alt="proyecto.title" class="w-28 h-10 lg:w-39 lg:h-15 object-contain object-left">
       <p class="text-hueso text-xs md:text-sm lg:text-base leading-[1.4] font-light">{{ proyecto.text }}</p>
+
+      <UiButtonPrimary :to="proyecto.to || '#'" variant="glass" size="glass"
+        class="w-max gap-3 hidden! md:inline-flex! lg:hidden! pl-6 pr-4 mt-2">
+        Conocer más
+        <Icon name="material-symbols:arrow-forward-rounded" size="16" class="shrink-0" />
+      </UiButtonPrimary>
     </div>
   </article>
 </template>

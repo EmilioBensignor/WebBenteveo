@@ -17,10 +17,10 @@
               loading="lazy" />
             <div class="absolute inset-0 bg-linear-to-b from-transparent from-55% to-black/70" />
 
-            <div class="flex items-center gap-2 lg:gap-3 relative">
+            <div class="flex flex-col md:flex-row md:items-center gap-2 lg:gap-3 relative">
               <Icon :name="ind.icon" class="size-6! lg:size-8! xxl:size-9! shrink-0 text-amarillo" />
               <p
-                class="text-hueso text-base lg:text-xl xxl:text-2xl leading-[1.2] transition-colors duration-300 lg:group-hover:text-amarillo">
+                class="text-hueso text-sm md:text-base lg:text-xl xxl:text-2xl leading-[1.2] transition-colors duration-300 lg:group-hover:text-amarillo">
                 {{ ind.label }}
               </p>
             </div>
