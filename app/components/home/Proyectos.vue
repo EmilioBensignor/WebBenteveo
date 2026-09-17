@@ -7,7 +7,7 @@
       <div
         class="w-full md:w-2/5 lg:w-74 xxl:w-md shrink-0 flex flex-col items-center md:items-start gap-6 md:gap-8 lg:gap-10">
         <UiHeadingH2 class="text-center md:text-left">
-          Proyectos reales.<br>Resultados concretos.
+          {{ title }}<br>{{ accent }}
         </UiHeadingH2>
 
         <div class="w-full relative">
@@ -47,8 +47,8 @@
           </ul>
         </div>
 
-        <UiButtonPrimary to="#" variant="glass" size="glass" class="pl-6 pr-4">
-          Ver todos los trabajos
+        <UiButtonPrimary :to="ctaTo" variant="glass" size="glass" class="pl-6 pr-4">
+          {{ cta }}
           <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6" />
         </UiButtonPrimary>
       </div>
@@ -66,6 +66,13 @@
 <script setup>
 import { proyectos } from '~/constants/home'
 import { useGsapContext } from '~/composables/useGsapContext'
+
+defineProps({
+  title: { type: String, default: 'Proyectos reales.' },
+  accent: { type: String, default: 'Resultados concretos.' },
+  cta: { type: String, default: 'Ver todos los trabajos' },
+  ctaTo: { type: String, default: '#' }
+})
 
 const root = useTemplateRef('root')
 const pila = useTemplateRef('pila')

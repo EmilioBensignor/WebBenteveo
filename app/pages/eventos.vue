@@ -1,10 +1,10 @@
 <template>
   <EventosHero />
-  <TransformacionEmpresas />
+  <TransformacionEmpresas title="Marcas que confiaron en nosotros para sus eventos" />
   <EventosProduccion />
   <EventosNecesidades />
   <HomeProyectos />
-  <HomeContacto title="Tenés un evento en mente y no sabés por dónde empezar."
+  <HomeContacto eyebrow="El siguiente paso" title="Tenés un evento en mente y no sabés por dónde empezar."
     subtitle="Contanos tu próximo desafío y lo convertimos en una experiencia con impacto."
     submit-label="Enviar mi consulta" />
 </template>

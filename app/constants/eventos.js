@@ -30,3 +30,15 @@ export const necesidades = [
     text: 'Métricas previas, datos durante el evento y reporte post para que puedas mostrar resultados concretos.'
   }
 ]
+
+export const heroEventos = {
+  video: 'https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/eventos/hero-eventos.mp4',
+  poster: '/img/posters/hero-eventos.jpg',
+  eyebrow: 'Lanzamientos, convenciones y activaciones de marca',
+  title: 'Experiencias que nacen desde la estrategia de marca'
+}
+
+export const showreelEventos = {
+  video: 'https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/eventos/show-reel-eventos.mp4',
+  poster: '/img/posters/show-reel-eventos.jpg'
+}
