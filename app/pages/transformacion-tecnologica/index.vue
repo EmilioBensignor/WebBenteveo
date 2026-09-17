@@ -8,6 +8,7 @@
   <TransformacionOpiniones />
   <TransformacionMedios />
   <TransformacionProceso />
+  <TransformacionSeguridad />
   <TransformacionFaqs />
   <HomeContacto eyebrow="¿Cuántas horas más vas a dejar pasar?"
     title="Cada semana sin automatizar son horas que no volvés a recuperar."

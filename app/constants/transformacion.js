@@ -106,14 +106,6 @@ export const faqs = [
     answer: 'Según el desafío, una solución puede combinar automatizaciones, asistentes con inteligencia artificial, tableros de información o desarrollos específicos. No partimos de una herramienta predeterminada: elegimos la tecnología según lo que necesitás resolver, el presupuesto disponible y la facilidad con la que tu equipo pueda incorporarla.'
   },
   {
-    question: '¿Qué pasa con los datos de mi empresa?',
-    answer: 'Quedan bajo tu control. Diseñamos cada solución para que la información de tu empresa se guarde en tu propia infraestructura y solo acceda quien vos definas. Además, tomamos como referencia el Reglamento de IA de la Unión Europea, la primera ley integral sobre inteligencia artificial del mundo.'
-  },
-  {
-    question: 'Mi equipo ya usa ChatGPT, ¿es un riesgo?',
-    answer: 'Puede serlo. Cuando se usan herramientas gratuitas sin reglas claras, lo que se carga (datos de clientes, precios, contratos) puede quedar fuera de tu control. No hace falta prohibirlas, hace falta usarlas bien. Si querés saber en qué situación está tu empresa, hacé nuestro test gratis.'
-  },
-  {
     question: '¿Trabajan con empresas de cualquier tamaño?',
     answer: 'Trabajamos con empresas de distintas escalas y adaptamos el alcance de la solución a cada realidad. Lo que no cambia es nuestra forma de acompañar el proceso: cerca, disponibles y atentos a las personas que van a incorporar el cambio.'
   },
@@ -163,5 +155,23 @@ export const medios = [
     medio: 'Forbes Argentina',
     title: 'Del Excel al tablero: cómo ordenar los datos antes de sumar inteligencia artificial',
     to: '#'
+  }
+]
+
+export const seguridadPilares = [
+  {
+    icon: 'material-symbols:gavel-rounded',
+    title: 'IA alineada con la regulación europea',
+    text: 'Desarrollamos soluciones teniendo como marco el Reglamento de Inteligencia Artificial de la Unión Europea (EU AI Act).'
+  },
+  {
+    icon: 'material-symbols:shield-lock-outline-rounded',
+    title: 'Datos bajo control del cliente',
+    text: 'La base de conocimiento se aloja exclusivamente en la infraestructura segura del cliente, reduciendo la exposición y evitando que información confidencial salga de su entorno.'
+  },
+  {
+    icon: 'material-symbols:visibility-outline-rounded',
+    title: 'Transparencia y cumplimiento',
+    text: 'Nuestra tecnología incorpora los principios de transparencia y divulgación establecidos en el Artículo 50 del EU AI Act.'
   }
 ]
