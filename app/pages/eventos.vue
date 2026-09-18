@@ -4,7 +4,7 @@
   <EventosProduccion />
   <EventosNecesidades />
   <HomeProyectos />
-  <HomeContacto eyebrow="El siguiente paso" title="Tenés un evento en mente y no sabés por dónde empezar."
+  <HomeContacto eyebrow="El siguiente paso" title="¿Tienes un evento en mente y no sabes por dónde empezar?"
     subtitle="Contanos tu próximo desafío y lo convertimos en una experiencia con impacto."
     submit-label="Enviar mi consulta" />
 </template>
