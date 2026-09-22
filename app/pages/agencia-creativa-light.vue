@@ -2,7 +2,6 @@
   <AgenciaHero />
   <AgenciaFrases />
   <AgenciaServicios />
-  <AgenciaPasos />
   <HomeProyectos title="Así se ve una buena estrategia" accent="cuando se pone en acción." cta="Ver todos los trabajos"
     cta-to="#" class="pb-6 md:pb-8 lg:pb-12 xxl:pb-16" />
   <HomeContacto eyebrow="El siguiente paso" title="Hablemos de tu marca."

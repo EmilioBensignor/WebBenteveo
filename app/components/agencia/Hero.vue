@@ -1,56 +1,83 @@
 <template>
-  <SharedHero video="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/hero-agencia-creativa.mp4" poster="/img/posters/hero-agencia-creativa.jpg"
-    title="Tu marca tiene algo para decir.<br/>Nosotros hacemos que el mundo la escuche."
-    content-class="max-w-154 md:max-w-full md:w-full gap-6 md:gap-8 lg:gap-12 xxl:gap-16" title-class="max-w-6xl"
-    actions-class="md:max-w-none! flex-wrap! sm:flex-nowrap! gap-2!">
-    <template #text>
-      <span class="block">Creamos <span class="text-amarillo">{{ typed }}<span
-            class="animate-pulse text-base">|</span></span></span>
-      <span class="block">que conectan con la gente y generan resultados concretos.</span>
-    </template>
-    <template #actions>
-      <UiButtonPrimary to="#contacto" class="w-56 md:w-50">
-        <Icon name="material-symbols:calendar-month-outline-rounded" size="1.5rem" />
-        Hablemos
-      </UiButtonPrimary>
-      <UiButtonPrimary to="#proyectos" variant="light" class="w-56 md:w-50">
-        Ver trabajos
-        <Icon name="material-symbols:arrow-forward-rounded" size="1.5rem" />
-      </UiButtonPrimary>
-    </template>
-  </SharedHero>
+  <section class="sobre-media w-full min-h-dvh relative isolate overflow-hidden bg-negro-puro">
+    <video :src="heroAgencia.video" :poster="heroAgencia.poster" class="size-full absolute inset-0 object-cover" autoplay
+      loop muted playsinline preload="metadata" />
+    <div class="absolute inset-0 bg-linear-to-r from-black/85 via-black/70 to-black/55" />
+    <SharedLuces class="opacity-40" />
+
+    <div
+      class="w-full min-h-dvh relative z-10 flex justify-center items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-28 md:py-32 lg:py-36 mac:py-28">
+      <div
+        class="w-full max-w-362 flex flex-col items-center lg:items-start gap-6 lg:gap-10 text-center lg:text-left">
+        <UiHeadingH1 class="text-balance">
+          <span class="text-blanco">{{ heroAgencia.title }}</span><br>
+          <span class="text-amarillo">{{ heroAgencia.accent }}</span>
+        </UiHeadingH1>
+
+        <p
+          class="w-full min-h-[3.2em] md:min-h-[1.4em] flex flex-wrap justify-center lg:justify-start items-baseline gap-x-2 text-hueso text-base md:text-xl lg:text-2xl font-light">
+          <span>Creamos</span>
+          <span class="text-amarillo font-medium">
+            {{ escrito }}<span class="text-sm lg:text-base animate-pulse" aria-hidden="true">|</span>
+          </span>
+        </p>
+
+        <div
+          class="w-full flex flex-col md:flex-row items-stretch md:items-center md:justify-center lg:justify-start gap-2 lg:gap-4">
+          <UiButtonPrimary to="#contacto" variant="glass" size="glass" class="gap-3 pl-6 pr-4">
+            Hablemos
+            <Icon name="material-symbols:calendar-month-outline-rounded" class="size-4 lg:size-6 shrink-0" />
+          </UiButtonPrimary>
+          <UiButtonPrimary to="#proyectos" variant="glass" size="glass" class="gap-3 pl-6 pr-4">
+            Ver trabajos
+            <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6 shrink-0" />
+          </UiButtonPrimary>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script setup>
-import { heroWords } from '~/constants/agencia'
+import { heroAgencia, heroFrases } from '~/constants/agencia'
 
-const HOLD = 2200
-const TYPE = 90
-const ERASE = 45
+const ESPERA = 2200
+const TIPEO = 70
+const BORRADO = 35
 
-const typed = ref('')
+const escrito = ref('')
 
-let wordIndex = 0
-let charIndex = 0
-let deleting = false
-let timer = null
+let indice = 0
+let caracter = 0
+let borrando = false
+let reloj = null
 
-const step = () => {
-  const word = heroWords[wordIndex]
-  charIndex += deleting ? -1 : 1
-  typed.value = word.slice(0, charIndex)
-  let delay = deleting ? ERASE : TYPE
-  if (deleting && charIndex === 0) {
-    deleting = false
-    wordIndex = (wordIndex + 1) % heroWords.length
-    delay = 400
-  } else if (!deleting && charIndex === word.length) {
-    deleting = true
-    delay = HOLD
+function paso() {
+  const frase = heroFrases[indice]
+  caracter += borrando ? -1 : 1
+  escrito.value = frase.slice(0, caracter)
+
+  let demora = borrando ? BORRADO : TIPEO
+
+  if (borrando && caracter === 0) {
+    borrando = false
+    indice = (indice + 1) % heroFrases.length
+    demora = 400
+  } else if (!borrando && caracter === frase.length) {
+    borrando = true
+    demora = ESPERA
   }
-  timer = setTimeout(step, delay)
+
+  reloj = setTimeout(paso, demora)
 }
 
-onMounted(() => { timer = setTimeout(step, 400) })
-onBeforeUnmount(() => clearTimeout(timer))
+onMounted(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    escrito.value = heroFrases[0]
+    return
+  }
+  reloj = setTimeout(paso, 500)
+})
+
+onBeforeUnmount(() => clearTimeout(reloj))
 </script>

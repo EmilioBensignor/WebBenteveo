@@ -1,5 +1,3 @@
-export const heroWords = ['contenidos', 'campañas', 'eventos']
-
 export const frases = [
   'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
   'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.',
@@ -39,20 +37,32 @@ export const servicios = [
   }
 ]
 
-export const pasos = [
+export const heroAgencia = {
+  video: 'https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/hero-agencia-creativa.mp4',
+  poster: '/img/posters/hero-agencia-creativa.jpg',
+  title: 'Tu marca tiene algo para decir.',
+  accent: 'Nosotros hacemos que el mundo la escuche.',
+  text: 'Creamos contenidos, campañas y eventos que conectan con la gente y generan resultados concretos.'
+}
+
+export const heroFrases = [
+  'contenidos que la gente mira',
+  'campañas que mueven la aguja',
+  'eventos que se recuerdan',
+  'marcas que se hacen escuchar'
+]
+
+export const frasesRespuestas = [
   {
-    image: '/img/agencia/pasos/paso_1_estrategia.webp',
-    title: 'Estrategia',
-    text: 'Entendemos tu marca, tu audiencia y lo que querés lograr. Ahí arrancamos.'
+    frase: 'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
+    respuesta: 'Armamos una estrategia con objetivos de negocio, no de vanidad. Cada pieza tiene un para qué.'
   },
   {
-    image: '/img/agencia/pasos/paso_2_creatividad.webp',
-    title: 'Creatividad',
-    text: 'Generamos el concepto, el copy, el diseño y la dirección de arte.'
+    frase: 'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.',
+    respuesta: 'Un solo equipo se hace cargo de todo: estrategia, creatividad y producción bajo la misma dirección.'
   },
   {
-    image: '/img/agencia/pasos/paso_3_produccion.webp',
-    title: 'Producción',
-    text: 'Filmamos, editamos, publicamos. Entregamos terminado, no a medias.'
+    frase: 'Sabemos que tenemos que comunicar mejor, pero no sabemos por dónde empezar.',
+    respuesta: 'Empezamos por entender tu negocio y tu audiencia. Del diagnóstico sale el plan, no al revés.'
   }
 ]

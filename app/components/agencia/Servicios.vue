@@ -3,7 +3,7 @@
 
     <div class="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
       <UiHeadingH2 class="text-blanco">Todo lo que tu marca necesita para crecer.</UiHeadingH2>
-      <p class="lg:text-xl text-blanco font-medium">Un solo equipo. Más velocidad, más control y mejores resultados.</p>
+      <p class="lg:text-xl text-blanco font-medium">Una estrategia, un solo equipo. Más velocidad, más control y mejores resultados.</p>
     </div>
 
     <div class="w-full max-w-300 flex flex-col lg:flex-row lg:items-stretch">
