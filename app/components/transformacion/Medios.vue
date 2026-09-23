@@ -8,10 +8,10 @@
 
     <div ref="listaEl" class="w-full max-w-362 relative" data-cursor-hide @pointerleave="hovered = null">
       <div ref="fotoEl"
-        class="hidden lg:block absolute top-0 left-0 z-20 size-56 xl:size-64 xxl:size-72 rounded-full overflow-hidden pointer-events-none opacity-0">
+        class="hidden lg:block absolute top-0 left-0 z-20 size-44 xl:size-52 xxl:size-56 rounded-full overflow-hidden pointer-events-none opacity-0">
         <NuxtImg v-for="(m, i) in medios" :key="m.title" :src="m.image" alt=""
           class="size-full absolute inset-0 object-cover transition-opacity duration-300"
-          :class="hovered === i ? 'opacity-100' : 'opacity-0'" format="avif" sizes="224px xl:256px xxl:288px" loading="lazy" />
+          :class="hovered === i ? 'opacity-100' : 'opacity-0'" format="avif" sizes="176px xl:208px xxl:224px" loading="lazy" />
       </div>
 
       <ul class="flex flex-col border-t border-blanco/15">

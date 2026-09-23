@@ -1,7 +1,7 @@
 <template>
   <header
     class="w-full flex justify-center fixed inset-x-0 top-4 md:top-6 lg:top-8 z-50 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30">
-    <div
+    <div ref="barra"
       class="w-full max-w-362 flex justify-between items-center gap-6 relative glass rounded-full mx-auto py-3 pl-5 pr-3 lg:py-4 lg:pl-8 lg:pr-4"
       :class="sinBlur && 'glass-solido'">
       <NuxtLink :to="ROUTE_NAMES.home" aria-label="Benteveo" class="shrink-0">
@@ -10,7 +10,8 @@
 
       <nav class="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
         <NuxtLink v-for="link in links" :key="link.label" :to="link.to"
-          class="rounded-full text-blanco hover:text-amarillo [&.router-link-active]:text-amarillo text-sm xl:text-base font-semibold whitespace-nowrap transition-colors duration-300 py-3 px-3 xl:px-6">
+          class="rounded-full text-blanco text-sm xl:text-base font-semibold whitespace-nowrap transition-colors duration-300 py-3 px-3 xl:px-6"
+          :class="sobreAmarillo ? 'hover:text-negro-puro [&.router-link-active]:text-negro-puro' : 'hover:text-amarillo [&.router-link-active]:text-amarillo'">
           {{ link.label }}
         </NuxtLink>
       </nav>
@@ -77,6 +78,17 @@ const links = [
 
 const open = ref(false)
 const sinBlur = ref(false)
+const barra = ref(null)
+const sobreAmarillo = ref(false)
+
+function detectarFondo() {
+  const tarjeta = document.querySelector('#contacto .bg-amarillo')
+  if (!tarjeta || !barra.value) return (sobreAmarillo.value = false)
+  const centro = barra.value.getBoundingClientRect()
+  const y = centro.top + centro.height / 2
+  const { top, bottom } = tarjeta.getBoundingClientRect()
+  sobreAmarillo.value = top <= y && bottom >= y
+}
 
 function detectarBlur() {
   const sonda = document.createElement('div')
@@ -97,15 +109,19 @@ function cerrarConEsc(evento) {
 
 onMounted(() => {
   detectarBlur()
+  detectarFondo()
   window.addEventListener('keydown', cerrarConEsc)
+  window.addEventListener('scroll', detectarFondo, { passive: true })
 })
 
 onBeforeUnmount(() => {
   window.removeEventListener('keydown', cerrarConEsc)
+  window.removeEventListener('scroll', detectarFondo)
 })
 
 watch(() => route.path, () => {
   open.value = false
+  nextTick(detectarFondo)
 })
 
 async function irAContacto() {

@@ -98,8 +98,8 @@ useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
       stagger: 0.03,
       scrollTrigger: {
         trigger: root.value.closest('section'),
-        start: 'top bottom',
-        end: () => `top top-=${window.innerHeight * 0.6}`,
+        start: 'top 45%',
+        end: () => `top top-=${window.innerHeight * 0.3}`,
         scrub: 1,
         invalidateOnRefresh: true
       }
@@ -110,7 +110,7 @@ useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
     scrollTrigger: {
       trigger: root.value,
       start: 'top top',
-      end: () => `+=${window.innerHeight * 4}`,
+      end: () => `+=${window.innerHeight * 2.6}`,
       pin: true,
       pinSpacing: true,
       scrub: 1,
@@ -121,15 +121,15 @@ useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
   tl.fromTo(cards.value,
     { y: () => window.innerHeight },
     { y: (i) => desfases[i], ease: 'sine.out', duration: 1.5, stagger: 0.25 },
-    0.5
+    0.1
   )
-    .to(titulo.value, { scale: 0.94, ease: 'none', duration: 1.8 }, 0.6)
+    .to(titulo.value, { scale: 0.9, autoAlpha: 0, ease: 'power1.in', duration: 0.9 }, 0.3)
     .fromTo(boton.value,
       { y: () => window.innerHeight * 0.4, autoAlpha: 0 },
       { y: 0, autoAlpha: 1, ease: 'sine.out', duration: 1.1 },
-      1.45
+      1.05
     )
-    .to({}, { duration: 0.25 })
+    .to({}, { duration: 0.05 })
 
   requestAnimationFrame(() => ScrollTrigger.refresh())
 })

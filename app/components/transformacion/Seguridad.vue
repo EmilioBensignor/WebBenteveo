@@ -1,7 +1,7 @@
 <template>
   <DefaultSection id="seguridad" bg="bg-negro"
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-12"
-    inner="grid! grid-cols-1 lg:grid-cols-2 items-center gap-8 lg:gap-12 xxl:gap-20">
+    inner="grid! grid-cols-1 lg:grid-cols-2 items-start gap-8 lg:gap-12 xxl:gap-20">
     <div class="min-w-0 flex flex-col gap-6 lg:gap-8">
       <div class="flex flex-col gap-3 md:gap-4">
         <UiHeadingH2>

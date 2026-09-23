@@ -5,7 +5,7 @@
     <div class="w-full flex flex-col items-center gap-3 md:gap-4 lg:gap-6 xxl:gap-8">
       <UiHeadingH2 class="max-w-72 md:max-w-none text-center">{{ title }}</UiHeadingH2>
 
-      <SharedMarcasTiles />
+      <SharedMarcas />
     </div>
   </DefaultSection>
 </template>

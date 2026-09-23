@@ -33,6 +33,10 @@ Definido en `app/assets/css/main.css` bajo `@theme`:
 
 **`hueso` vs `blanco`**: el Figma usa `#EAEAEA` para todo el texto sobre fondo oscuro. `blanco` (`#F8F8F8`) queda para bordes, fondos y el tema light. Texto nuevo sobre oscuro → `text-hueso`.
 
+**`<Icon>` y `size-*`**: el CSS de `@nuxt/icon` fija `.iconify` en `1em` fuera de las capas de Tailwind y le gana a `size-*`. Va con `!` (`size-6!`) o con la prop `size`. Sin eso el ícono mide 16px aunque diga `lg:size-6`.
+
+**`.animate-marquee`** también está fuera de las capas: su shorthand `animation` pisa cualquier utility `animation-*`. Dirección, duración y pausa van por `style` inline o con `!`.
+
 ### Breakpoints
 
 `--breakpoint-*: initial` borra la escala default de Tailwind antes de redefinir. Sin esa línea conviven las dos y `lg` significa dos cosas.
@@ -112,7 +116,8 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | `UiAccordion` | Accordion animado con `grid-rows` transition. Prop `question`, contenido via slot |
 | `UiFormField` | Input genérico con `v-model`, `id`, `type`, `placeholder`, `error`, `autocomplete`. Muestra error debajo si se pasa |
 | `SharedLuces` | Las 5 manchas amarillas difuminadas con `mix-blend-screen` que flotan con GSAP (se cortan con `prefers-reduced-motion`). Lo que va en el slot se compone adentro del mismo grupo antes del blend. Expone `root`. Lo usan `HomeHero` y `EventosHero` |
-| `SharedMarcasTiles` | Marquee de tiles a color con reflejo. Lo usan `HomeEmpresas` y `TransformacionEmpresas` (este último con prop `title`, también en /eventos) |
+| `SharedMarcasTiles` | Marquee de tiles a color con reflejo. Lo usa `HomeEmpresas` |
+| `SharedMarcas` | Marquee de los 24 logos blancos monocromo, sin tiles. Lo usa `TransformacionEmpresas` (prop `title`, también en /eventos) |
 
 ## Botón glass — NO TOCAR
 
@@ -159,7 +164,7 @@ Datos de contenido en `app/constants/`:
 |---|---|
 | `/` | **Lista y 1:1 con el Figma. Es la referencia del rediseño** |
 | `/transformacion-tecnologica` | Rehecha con el design system de la home |
-| `/agencia-creativa` | Diseño viejo, pendiente de rehacer siguiendo la home |
+| `/agencia-creativa` | Rehecha con el design system de la home |
 | `/agencia-creativa-light` | Variante en tema light para test con cliente |
 | `/eventos` | Rehecha con el design system de la home |
 
@@ -237,25 +242,36 @@ Verificado sin overflow horizontal en 320 / 402 / 480 / 768 / 1080 / 1280 / 1440
 
 ## Landing /agencia-creativa
 
-Secciones (en orden), todas en `app/components/agencia/`. Contenido en `constants/agencia.js`.
+Rehecha con los patrones de la home. Secciones en `app/components/agencia/`, contenido en `constants/agencia.js`. Verificada sin overflow en los 8 anchos de referencia.
 
-| Sección | Qué es | Cómo tocarlo |
-|---|---|---|
-| `AgenciaHero` | Reusa el `SharedHero` global. El subtítulo va por slot `#text` con typewriter que escribe/borra palabras en amarillo | Palabras: `heroWords` en `agencia.js`. Timings (`HOLD`/`TYPE`/`ERASE`) arriba del `<script>` |
-| `AgenciaFrases` | `UiCarouselAutoplay` con las frases; dots = líneas que se rellenan de amarillo sincronizadas al intervalo | Frases: `frases[]`. Velocidad: `INTERVAL` (5s) — se pasa al carrusel **y** a la animación de la línea |
-| `AgenciaServicios` | 5 cards. En `lg+` se expanden con hover (flex animado); en mobile/md es accordion con clic. Gradientes tomados de `rubro/Pasos` | Cards: `servicios[]` (icon/image/title/text). Imgs en `public/img/agencia/servicios/` |
-| `AgenciaPasos` + `AgenciaPasoCard` | `UiCarouselStatic` en mobile, 3 columnas desde `md`. La activa cicla sola cada 4s; el clic reinicia el timer | Pasos: `pasos[]`. Intervalo: `setInterval(..., 4000)` en `Pasos.vue` |
-| `HomeProyectos` | El de la home, ahora con props `title`/`accent`/`cta`/`ctaTo` (defaults = home, no lo rompe). Usa los `proyectos` de `constants/home.js` | Props en `agencia-creativa.vue`. El CTA apunta a `#` (no hay página de trabajos) |
-| `HomeContacto` | El global, con textos de esta página y `submit-label` propio | Props en `agencia-creativa.vue` |
+| Sección | Qué es |
+|---|---|
+| `AgenciaHero` | Video a pantalla completa `sticky top-0`, como `TransformacionHero`: la sección siguiente sube tapándolo. Se oculta al quedar cubierto con el mismo `cubierto` de `SharedHeroVideo`. Título en `heroAgencia`, typewriter con `heroFrases` y tiempos `ESPERA`/`TIPEO`/`BORRADO` |
+| `AgenciaFrases` | "¿Te suena alguna de estas frases?" como mazo de cartas con los `comentarios`. Ver "Mazo" abajo |
+| `AgenciaServicios` | 5 cards con foto que se expanden: hover desde `lg`, acordeón por click abajo. Ver "Servicios" abajo |
+| `HomeProyectos` | El de la home con props `title`/`accent`/`cta`/`ctaTo` |
+| `HomeContacto` | El global, con copy propio |
 
-**Decisiones tomadas:**
-- `shared/Hero.vue` global ganó un slot `#text` opcional (cae a la prop `text` si no se pasa) — así el typewriter vive en `AgenciaHero` sin duplicar el Hero.
-- `home/Proyectos.vue` se parametrizó en vez de clonarlo; la home sigue igual porque los defaults son sus valores.
-- Assets del Figma venían en ~75MB (PNG). Comprimidos a JPG en `public/img/agencia/` → 1.4MB total.
+### Mazo
 
-**Pendientes (placeholders):**
-- `heroWords` en `agencia.js` son de relleno (`campañas`, `piezas de comunicación`…).
-- La 3ª frase de `frases[]` es inventada — el Figma solo tenía 2.
+Se eligió entre 5 propuestas (globos flotando, chat, frases tachadas, cinta en marquee); las otras se borraron.
+
+- Cada carta nueva **cae desde arriba sobre la pila** (`ARRIBA`) en vez de aparecer al descartar la de arriba. Para que avance 1→2→3→4, las anteriores quedan debajo de la activa: `orden` arranca en `[0, 3, 2, 1]` y la siguiente sale siempre del fondo.
+- El fundido dura 0.15s y no toda la caída: con la carta semitransparente se leía el texto de la de abajo.
+- El autoplay (`INTERVALO`, 5s) es el mismo tween de la barra de progreso. Se pausa fuera de pantalla y se reinicia con las flechas, el click o el swipe (a la derecha retrocede, lo demás avanza).
+- **El z-index inicial va por clases (`CAPAS`), no por `:style`**: Vue reescribe todas las claves de un `:style` objeto en cada render, y cuando cambiaba el contador le pisaba el z-index a GSAP.
+- Cards `glass bg-negro/90!`: el glass claro se aclaraba a gris al apilarse y el autor dejaba de leerse.
+
+### Servicios
+
+Cards separadas con el formato de `HomeServicioCard`: borde `blanco/33`, foto con overlay y número gigante cortado por el borde, en contorno si está cerrada y amarillo si está abierta (como `EventosNecesidades`).
+
+- El overlay es `from-black/85 via-black/30 to-black/90` y no el de la home, porque acá el texto va arriba y el número abajo: las dos puntas necesitan oscuro.
+- Desde `lg` la abierta es `flex-[1.6]`, y recién en `xl` pasa a `flex-[2.2]`. Con 2.2 en 1080 las cerradas quedaban de 98px y los títulos no entraban.
+- El texto ocupa todo el ancho y aparece con `delay-500`, cuando la card ya casi terminó de abrirse, para que no se lo vea reacomodarse.
+- Abajo de `lg` es acordeón vertical: cerradas `h-16 md:h-20`, abierta `h-72`, y el número sólo se ve en la abierta.
+
+**Pendientes:**
 - CTA "Ver todos los trabajos" → `#`.
 
 ## Carrusel — patrón de slidesPerView
@@ -299,14 +315,15 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 | Sección | Qué es |
 |---|---|
 | `TransformacionHero` | Envuelve `SharedHeroVideo`. Video a pantalla completa, `sticky top-0`: la sección siguiente sube tapándolo, como en la home. Cuando queda cubierto se oculta y pausa el video |
-| `TransformacionEmpresas` | `SharedMarcasTiles` (los tiles a color de la home), "Ya se transformaron con nosotros" |
+| `TransformacionEmpresas` | `SharedMarcas` (logos blancos, la versión anterior a los tiles), "Ya se transformaron con nosotros" |
 | `TransformacionDolor` + `Calculadora` | Dos columnas: texto y lista de tareas a la izquierda, calculadora a la derecha. Reemplazó a `HorasPerdidas` |
 | `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
-| `TransformacionIndustrias` | Grid de rubros con foto de fondo |
+| `TransformacionIndustrias` | Carrusel Embla de rubros con foto de fondo y línea de progreso arrastrable |
 | `TransformacionResultados` | Métricas con número gigante y línea vertical, como `HomeEmpresas`. Reemplazó al uso de `SharedResultados` |
 | `TransformacionOpiniones` | Dos `UiCarouselStatic`: testimonios y videos |
 | `TransformacionMedios` + `MedioCard` | Carrusel de notas de prensa. **Contenido e imágenes son placeholder** |
-| `TransformacionProceso` | Pin desde `lg`: título amarillo centrado, las 3 cards glass suben escalonadas y después el botón |
+| `TransformacionProceso` | Pin desde `lg`: título amarillo centrado, las 3 cards glass suben escalonadas y después el botón. Ver "Proceso" abajo |
+| `TransformacionSeguridad` | Texto a la izquierda, acordeón de pilares a la derecha. Grilla con `items-start`: con `items-center` la columna izquierda se recentraba al abrir cada acordeón |
 | `TransformacionFaqs` | 10 preguntas |
 | `HomeContacto` | El global, con el copy de cierre de esta página |
 
@@ -348,9 +365,24 @@ Las columnas llevan `md:items-start` + `md:self-start`: sin eso cada una se cent
 
 ### Industrias
 
-Cards altas (`h-40 md:h-52 lg:h-64 xxl:h-72`) con la foto del rubro de fondo, tomada de `hero_*.webp` de `public/img/transformacion/rubros/` (las mismas que usa el hero de cada página de rubro, ya optimizadas).
+**Sin pin de GSAP**: antes la sección se pinneaba y la pista se movía en `x` con el scroll vertical, y trababa el scroll. Hoy es un solo carrusel en todos los tamaños, con `embla-carousel-vue` directo (no `UiCarouselLoop`): `align: 'start'`, `containScroll: 'trimSnaps'`, `dragFree: true` (inercia al soltar, sin enganchar a cada card) y `duration: 30`. Sin loop.
+
+La línea de abajo es la barra de scroll: ocupa todo el ancho, `h-1`, y el tramo amarillo mide lo visible (`rootNode.clientWidth / containerNode.scrollWidth`) y se mueve con `scrollProgress()`. Clickearla o arrastrarla (pointer capture) hace `scrollTo` al snap más cercano a esa posición.
+
+Cards altas (`h-40 md:h-52 lg:h-80 xxl:h-96`) con la foto del rubro de fondo, tomada de `hero_*.webp` de `public/img/transformacion/rubros/` (las mismas que usa el hero de cada página de rubro, ya optimizadas).
 
 El overlay es `from-transparent from-55% to-black/70`, no el `from-black/25 to-black` de las cards de la home: ese está pensado para cards con texto largo encima y acá, con una sola línea abajo, oscurecía toda la foto. **No subir el brillo de la imagen**, el ajuste va en el overlay.
+
+### Proceso
+
+Tiempos del pin (desde `lg`), ajustados a ojo:
+
+- El encendido letra por letra del título va aparte del pin: `start: 'top 45%'` (cuando la frase entra al viewport; con `top bottom` más de la mitad pasaba fuera de pantalla) hasta 30vh adentro del pin.
+- El pin dura `2.6 × innerHeight`. Las cards entran en `0.1`, la frase se va con `scale: 0.9` + `autoAlpha: 0` en `0.3` para que las cards no pasen por encima, el botón en `1.05`, y la pausa final es de `0.05` para que la sección se suelte apenas llega la última card.
+
+### Medios
+
+El círculo con la foto que sigue al cursor en hover mide `size-44 xl:size-52 xxl:size-56`. Se centra con su `offsetWidth`, así que cambiar el tamaño no lo descentra; los `sizes` de la imagen van a la par.
 
 ### Beneficios
 
@@ -401,7 +433,7 @@ El texto final usa `autoAlpha` (no sólo `opacity`) para que los botones invisib
 | Sección | Qué es |
 |---|---|
 | `EventosHero` | Ver "Hero" arriba |
-| `TransformacionEmpresas` | Marquee de tiles con `title` propio |
+| `TransformacionEmpresas` | Marquee de logos blancos (`SharedMarcas`) con `title` propio |
 | `EventosProduccion` | Dos columnas como `HomeEquipo`: texto + botón, y el showreel en card. En miniatura corre muted en loop (play/pause por `IntersectionObserver`); el click en la card abre un pop-up (`Teleport` a body, `z-70` sobre el header) con otro `<video>` desde el principio, con sonido y controles, y el botón glass de cerrar arriba a la derecha. Cierra con el botón, Escape o click afuera; mientras está abierto frena Lenis y el scroll, y pausa la miniatura. Al abrir y cerrar se dispara un `pointermove` sintético para que el cursor custom suelte la píldora "Ver showreel" sin esperar a que se mueva el mouse. H2 todo en `hueso`, sin tramo amarillo |
 | `EventosNecesidades` | Las 6 necesidades en grilla 1/2/3 columnas, filas con borde superior como las listas de `TransformacionDolor`. Reemplazó a los "pedidos" rotados con borde punteado |
 | `HomeProyectos` | El de la home, sin cambios |
