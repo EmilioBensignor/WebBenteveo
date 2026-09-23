@@ -15,6 +15,7 @@ Sitio web de Benteveo — agencia de IA y transformación tecnológica.
 - **Nunca** `lang="ts"` en script. Composables en `.js`, no `.ts`
 - Sin comentarios en el código
 - UI en español, código en inglés
+- Copy en tuteo (tú: "quieres", "cuéntanos", "déjanos"), nunca voseo ("querés", "contanos")
 
 ## Design system
 
@@ -96,7 +97,7 @@ app/components/
   agencia/      # Secciones de /agencia-creativa
   transformacion/ # Secciones de /transformacion-tecnologica
   eventos/      # Secciones de /eventos
-  rubro/        # Secciones de /rubros/[nombre]
+  rubro/        # Secciones de /transformacion-tecnologica/[nombre]
 ```
 
 Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa página. Si lo usan varias y tiene contenido de negocio → `shared/`. Si es una primitiva reusable sin contenido → `ui/`. Si es parte del layout → `default/`.
@@ -106,7 +107,6 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | Componente | Uso |
 |---|---|
 | `DefaultSection` | Wrapper de sección: fondo full-width + contenido `max-w` centrado. Props: `bg`, `id`, `class` para gap/padding |
-| `SharedHero` | Hero base (video/imagen de fondo, overlay, título, CTAs). Diseño viejo, lo usan agencia y rubros |
 | `SharedHeroVideo` | Hero del diseño nuevo: video a pantalla completa `sticky` con las pestañas glass abajo. Props `video`, `poster`, `eyebrow`, `sonido` (botón glass de mute arriba a la derecha). Título por slot default, botones por `#actions`. Lo envuelve `TransformacionHero` |
 | `UiHeadingH1` / `UiHeadingH2` / `UiHeadingH3` | Tipografía de títulos |
 | `UiButtonPrimary` | Botón principal. Variantes: `glass` (la del diseño nuevo, usar con `size="glass"`), `glass-dark` (mismo glass en negro, para fondos amarillos), `solid`, `light`, `dark`, `outline` |
@@ -116,8 +116,8 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | `UiAccordion` | Accordion animado con `grid-rows` transition. Prop `question`, contenido via slot |
 | `UiFormField` | Input genérico con `v-model`, `id`, `type`, `placeholder`, `error`, `autocomplete`. Muestra error debajo si se pasa |
 | `SharedLuces` | Las 5 manchas amarillas difuminadas con `mix-blend-screen` que flotan con GSAP (se cortan con `prefers-reduced-motion`). Lo que va en el slot se compone adentro del mismo grupo antes del blend. Expone `root`. Lo usan `HomeHero` y `EventosHero` |
-| `SharedMarcasTiles` | Marquee de tiles a color con reflejo. Lo usa `HomeEmpresas` |
-| `SharedMarcas` | Marquee de los 24 logos blancos monocromo, sin tiles. Lo usa `TransformacionEmpresas` (prop `title`, también en /eventos) |
+| `SharedEmpresas` | Sección "Empresas que confiaron": título (prop `title`) + `SharedMarcas` + slot. La usan home (con métricas en el slot), /transformacion-tecnologica y /eventos |
+| `SharedMarcas` | Marquee de los 24 logos blancos monocromo, sin tiles. Lo usa `SharedEmpresas` |
 
 ## Botón glass — NO TOCAR
 
@@ -195,7 +195,7 @@ Secciones en orden, todas en `app/components/home/`, contenido en `constants/hom
 
 **Línea divisoria**: utility `linea-vertical` / `linea-horizontal` — degradé amarillo que se desvanece a `#131313` en las puntas. **Excepción**: la del footer es blanca sólida (`bg-white`), así está en el Figma.
 
-**Logos de marcas**: los de `public/img/marcas/color/` son a color con fondo propio, para los tiles del marquee. Los `.webp` sueltos en `public/img/marcas/` son blancos monocromo y desaparecen sobre fondo claro.
+**Logos de marcas**: los `.webp` de `public/img/marcas/` son blancos monocromo y desaparecen sobre fondo claro. `public/img/marcas/color/` y `reflejo.svg` quedaron sin uso desde que se eliminó `SharedMarcasTiles`.
 
 ### Video del hero
 
@@ -258,7 +258,7 @@ Se eligió entre 5 propuestas (globos flotando, chat, frases tachadas, cinta en 
 
 - Cada carta nueva **cae desde arriba sobre la pila** (`ARRIBA`) en vez de aparecer al descartar la de arriba. Para que avance 1→2→3→4, las anteriores quedan debajo de la activa: `orden` arranca en `[0, 3, 2, 1]` y la siguiente sale siempre del fondo.
 - El fundido dura 0.15s y no toda la caída: con la carta semitransparente se leía el texto de la de abajo.
-- El autoplay (`INTERVALO`, 5s) es el mismo tween de la barra de progreso. Se pausa fuera de pantalla y se reinicia con las flechas, el click o el swipe (a la derecha retrocede, lo demás avanza).
+- El autoplay (`INTERVALO`, 3.5s) es el mismo tween de la barra de progreso. Se pausa fuera de pantalla y se reinicia con las flechas, el click o el swipe (a la derecha retrocede, lo demás avanza).
 - **El z-index inicial va por clases (`CAPAS`), no por `:style`**: Vue reescribe todas las claves de un `:style` objeto en cada render, y cuando cambiaba el contador le pisaba el z-index a GSAP.
 - Cards `glass bg-negro/90!`: el glass claro se aclaraba a gris al apilarse y el autor dejaba de leerse.
 
@@ -315,7 +315,7 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 | Sección | Qué es |
 |---|---|
 | `TransformacionHero` | Envuelve `SharedHeroVideo`. Video a pantalla completa, `sticky top-0`: la sección siguiente sube tapándolo, como en la home. Cuando queda cubierto se oculta y pausa el video |
-| `TransformacionEmpresas` | `SharedMarcas` (logos blancos, la versión anterior a los tiles), "Ya se transformaron con nosotros" |
+| `SharedEmpresas` | `SharedMarcas` (logos blancos), "Ya se transformaron con nosotros" |
 | `TransformacionDolor` + `Calculadora` | Dos columnas: texto y lista de tareas a la izquierda, calculadora a la derecha. Reemplazó a `HorasPerdidas` |
 | `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
 | `TransformacionIndustrias` | Carrusel Embla de rubros con foto de fondo y línea de progreso arrastrable |
@@ -350,10 +350,6 @@ Envío simulado, sin endpoint, igual que `SharedFormContacto`.
 ### Pastilla en PasosTimeline
 
 `SharedPasosTimeline` acepta `pill` opcional en cada item y la renderiza debajo del número. En las filas pares (`i % 2`) va `md:self-end` para acompañar el texto alineado a la derecha. La home y las otras páginas no la pasan, así que no cambian.
-
-### CardNumero
-
-Las cards apiladas y rotadas salieron de esta página, pero `rubro/Problemas` las seguía usando: el componente se movió a `app/components/rubro/CardNumero.vue` y el tag pasó a `RubroCardNumero`.
 
 ### Resultados
 
@@ -403,6 +399,44 @@ Las cuatro en una fila desde `lg` (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`).
 Si aparecen mismatches igual, el sospechoso es `.output` (un build viejo) o `.nuxt/cache`. Borrarlos y reiniciar.
 
 
+## Páginas de rubro /transformacion-tecnologica/[nombre]
+
+Rehechas con el design system de transformación. Secciones en `app/components/rubro/`, contenido por rubro en `constants/rubros.js` (la clave es el slug de la URL).
+
+| Sección | Qué es |
+|---|---|
+| `RubroHero` | Texto a la izquierda y tres círculos de fotos superpuestos a la derecha, con `SharedLuces` de fondo. Sólo usa `h1` y `subtitulo` del rubro (y `circulos` cuando exista): **nada del contenido de Problemas u otras secciones**. Botones en `RubroHeroAcciones`. Ver "Hero de rubro" abajo |
+| `RubroProblemas` | 4 cards que giran en 3D: frente con la pregunta ("Desafío"), dorso amarillo con la solución. Número gigante cortado como `HomeServicioCard`. Ver "Cards de Problemas" abajo |
+| `RubroPasos` | Pestañas numeradas + imagen del paso con flechas glass. Reemplazó al fondo amarillo |
+| `RubroAutomatizaciones` | Carrusel de cards con borde, separado de Pasos |
+| `TransformacionResultados` | Con prop `texto` para nombrar el rubro |
+| `TransformacionOpiniones` | La de transformación entera. Lleva `id="opiniones"` para el CTA del hero |
+| `TransformacionProceso` + `HomeContacto` | Los de transformación |
+
+`SharedHero` y `SharedResultados` (diseño viejo) se borraron: sólo los usaban los rubros.
+
+### Cards de Problemas
+
+Se eligió entre 5 propuestas (cards 2×2, pestañas, "Hoy vs. Con Benteveo", chat); las otras se borraron.
+
+- **El hover va en el `<li>`, que no gira, y no en la card que rota.** Si el hover está en el elemento que gira, a 90° la card se angosta, el puntero queda afuera y el giro se revierte: tiembla o no termina.
+- Hover sólo con `pointerType === 'mouse'`; el click sólo gira en dispositivos sin hover (o con teclado, `e.detail === 0`). Si el click también girara en desktop, la card quedaba dada vuelta al sacar el mouse.
+- Las dos caras van apiladas en la misma celda de grid (`[grid-area:1/1]`), no con `absolute`: la card toma el alto de la cara más larga y el texto nunca se corta.
+- Las caras llevan `pb-24 lg:pb-32` para reservar el lugar del número cortado.
+
+### Hero de rubro
+
+Se eligió entre varias rondas de propuestas; las demás se borraron.
+
+- **Tres círculos** (arriba a la derecha, al medio más grande y corrido a la izquierda, abajo) superpuestos a medias, **una imagen fija cada uno** (se probó rotar 3 por círculo y se descartó). Tamaños y posiciones en `POSICIONES`.
+- **Imágenes placeholder**: tres `hero_*.webp` (`PLACEHOLDERS`). Cuando estén las reales, cargarlas en `constants/rubros.js` como `circulos: [arriba, medio, abajo]`: el componente las toma antes que los placeholders.
+- El H1 es `UiHeadingH1`, la misma escala que el resto de las páginas.
+- Las fotos `hero_*.webp` vienen oscurecidas de origen: llevan `brightness-[1.6] contrast-[1.08]`.
+- Fondo: `SharedLuces` (las de la home) detrás de todo.
+- El texto va dentro del `max-w-362` con la escala de padding: coincide con el header en todos los anchos.
+- Entrada con GSAP: los círculos aparecen escalonados con zoom y el texto sube escalonado.
+- Detalles de movimiento: cada círculo flota en loop con su propio ritmo (`FLOTE`), sigue al mouse con parallax según `PROFUNDIDAD` (el de abajo, que va adelante, se mueve más) y la foto hace zoom en hover desde `md`. **Cada círculo son dos capas**: la externa lleva la posición y el parallax (`x`/`y` con `quickTo`), la interna la flotación. En una sola capa los dos tweens de `y` se pisaban. Todo se corta con `prefers-reduced-motion`.
+
 ## Landing /eventos
 
 Rehecha con los patrones de la home y transformación. Secciones en `app/components/eventos/`, contenido en `constants/eventos.js`.
@@ -433,7 +467,7 @@ El texto final usa `autoAlpha` (no sólo `opacity`) para que los botones invisib
 | Sección | Qué es |
 |---|---|
 | `EventosHero` | Ver "Hero" arriba |
-| `TransformacionEmpresas` | Marquee de logos blancos (`SharedMarcas`) con `title` propio |
+| `SharedEmpresas` | Marquee de logos blancos (`SharedMarcas`) con `title` propio |
 | `EventosProduccion` | Dos columnas como `HomeEquipo`: texto + botón, y el showreel en card. En miniatura corre muted en loop (play/pause por `IntersectionObserver`); el click en la card abre un pop-up (`Teleport` a body, `z-70` sobre el header) con otro `<video>` desde el principio, con sonido y controles, y el botón glass de cerrar arriba a la derecha. Cierra con el botón, Escape o click afuera; mientras está abierto frena Lenis y el scroll, y pausa la miniatura. Al abrir y cerrar se dispara un `pointermove` sintético para que el cursor custom suelte la píldora "Ver showreel" sin esperar a que se mueva el mouse. H2 todo en `hueso`, sin tramo amarillo |
 | `EventosNecesidades` | Las 6 necesidades en grilla 1/2/3 columnas, filas con borde superior como las listas de `TransformacionDolor`. Reemplazó a los "pedidos" rotados con borde punteado |
 | `HomeProyectos` | El de la home, sin cambios |

@@ -14,7 +14,7 @@
       </div>
 
       <div class="w-full md:flex-1 md:min-w-0 flex justify-center">
-        <SharedFormContacto :submit-label="submitLabel" />
+        <SharedFormContacto :submit-label="submitLabel" :form-title="formTitle" />
       </div>
     </div>
   </DefaultSection>
@@ -25,6 +25,7 @@ defineProps({
   eyebrow: { type: String, default: '' },
   title: { type: String, required: true },
   subtitle: { type: String, required: true },
-  submitLabel: { type: String, default: 'Agendar cita' }
+  submitLabel: { type: String, default: 'Agendar cita' },
+  formTitle: { type: String, default: undefined }
 })
 </script>

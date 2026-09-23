@@ -7,6 +7,8 @@
 
       <SharedMarcas />
     </div>
+
+    <slot />
   </DefaultSection>
 </template>
 

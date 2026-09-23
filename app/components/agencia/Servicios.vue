@@ -4,7 +4,7 @@
     inner="gap-8 lg:gap-12">
     <div class="flex flex-col items-center gap-3 lg:gap-4 text-center">
       <UiHeadingH2 class="text-balance">
-        Todo lo que tu marca necesita <span class="text-amarillo">para crecer.</span>
+        Todo lo que tu marca necesita para crecer.
       </UiHeadingH2>
       <p class="text-hueso text-sm lg:text-base font-light leading-[1.4] text-balance">
         Una estrategia, un solo equipo. Más velocidad, más control y mejores resultados.

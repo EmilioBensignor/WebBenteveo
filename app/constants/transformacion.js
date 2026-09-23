@@ -2,8 +2,8 @@ export const beneficios = [
   {
     number: '01',
     image: '/img/transformacion/beneficios/diagnostico.webp',
-    title: 'Ves dónde perdés tiempo y plata',
-    text: 'Un diagnóstico que te dice qué resolver primero.'
+    title: 'Descubre dónde pierdes tiempo y dinero',
+    text: 'Un diagnóstico que te indica qué resolver primero.'
   },
   {
     number: '02',
@@ -14,7 +14,7 @@ export const beneficios = [
   {
     number: '03',
     image: '/img/transformacion/beneficios/datos.webp',
-    title: 'Decidís con datos, no por intuición',
+    title: 'Decides con datos, no por intuición',
     text: 'Toda tu información clara y actualizada en un solo lugar.'
   },
   {
@@ -65,33 +65,33 @@ export const proceso = [
     number: '01',
     pill: 'Gratis · 30 min',
     image: '/img/transformacion/paso_1_tareas.webp',
-    title: 'Encontramos dónde se pierden tiempo y plata',
-    text: 'Charlamos sobre cómo trabaja tu equipo y detectamos las tareas que más te frenan.'
+    title: 'Detectamos dónde se pierden tiempo y dinero',
+    text: 'Conversamos sobre cómo trabaja tu equipo y detectamos las tareas que más frenan la operación.'
   },
   {
     number: '02',
     pill: '4 a 6 semanas',
     image: '/img/transformacion/paso_2_desarrollo.webp',
     title: 'Construimos la herramienta que lo resuelve',
-    text: 'La diseñamos a medida y la conectamos con lo que ya usás, sin frenar la operación.'
+    text: 'La diseñamos a medida y la conectamos con las herramientas que ya utilizas, sin interrumpir la operación.'
   },
   {
     number: '03',
     pill: 'Acompañamiento incluido',
     image: '/img/transformacion/paso_3_capacitacion.webp',
-    title: 'Tu equipo la usa solo',
-    text: 'Capacitamos a tu gente y la acompañamos hasta que la herramienta sea parte natural del trabajo.'
+    title: 'Tu equipo la utiliza de forma autónoma',
+    text: 'Capacitamos a tu equipo y lo acompañamos hasta que la herramienta se integre de forma natural al trabajo.'
   }
 ]
 
 export const faqs = [
   {
-    question: '¿Qué es la transformación tecnológica y por qué le importa a mi empresa?',
+    question: '¿Qué es la transformación tecnológica y por qué es importante para mi empresa?',
     answer: 'Es el proceso de incorporar tecnología para que tu empresa funcione mejor: más ordenada, más eficiente y con mejor información para tomar decisiones. No se trata de cambiar todo de una vez ni de entender cómo funciona la tecnología por dentro. Se trata de identificar dónde tu operación pierde tiempo y dinero, y resolverlo con las herramientas correctas.'
   },
   {
     question: '¿Por dónde se empieza?',
-    answer: 'Por escucharte y entender cómo funciona hoy tu operación. Nos sentamos con vos para ordenar lo que está pasando, identificar el desafío prioritario y decidir juntos por dónde conviene empezar.'
+    answer: 'Por escucharte y entender cómo funciona hoy tu operación. Trabajamos contigo para ordenar la situación actual, identificar el desafío prioritario y definir juntos por dónde conviene empezar.'
   },
   {
     question: '¿Tengo que cambiar todo de una vez?',
@@ -99,30 +99,30 @@ export const faqs = [
   },
   {
     question: '¿Necesito tener conocimientos técnicos para trabajar con ustedes?',
-    answer: 'Para nada. Hablamos el mismo idioma: vos nos contás qué pasa en tu negocio y nosotros nos ocupamos de traducir esas necesidades en una solución tecnológica concreta. Durante todo el proceso te explicamos con claridad qué proponemos y por qué.'
+    answer: 'Para nada. Hablamos el mismo idioma: nos cuentas qué sucede en tu negocio y nosotros nos ocupamos de traducir esas necesidades en una solución tecnológica concreta. Durante todo el proceso te explicamos con claridad qué proponemos y por qué.'
   },
   {
-    question: '¿Qué herramientas o tecnologías usan?',
-    answer: 'Según el desafío, una solución puede combinar automatizaciones, asistentes con inteligencia artificial, tableros de información o desarrollos específicos. No partimos de una herramienta predeterminada: elegimos la tecnología según lo que necesitás resolver, el presupuesto disponible y la facilidad con la que tu equipo pueda incorporarla.'
+    question: '¿Qué herramientas y tecnologías utilizan?',
+    answer: 'Según el desafío, una solución puede combinar automatizaciones, asistentes con inteligencia artificial, tableros de información o desarrollos específicos. No partimos de una herramienta predeterminada: elegimos la tecnología según lo que necesitas resolver, el presupuesto disponible y la facilidad con la que tu equipo pueda incorporarla.'
   },
   {
     question: '¿Trabajan con empresas de cualquier tamaño?',
     answer: 'Trabajamos con empresas de distintas escalas y adaptamos el alcance de la solución a cada realidad. Lo que no cambia es nuestra forma de acompañar el proceso: cerca, disponibles y atentos a las personas que van a incorporar el cambio.'
   },
   {
-    question: '¿Qué pasa después de que se implementa la solución?',
+    question: '¿Qué sucede después de implementar la solución?',
     answer: 'Acompañamos al equipo durante la adopción. Escuchamos sus dudas, trabajamos sobre las dificultades y resistencias que puedan aparecer, y ayudamos a incorporar los cambios en la operación cotidiana. Porque una solución que no se usa no transforma nada.'
   },
   {
-    question: '¿Pueden integrarse las nuevas soluciones con los sistemas que ya uso?',
-    answer: 'Muchas veces. Evaluamos cómo funcionan y se conectan tus sistemas actuales para definir el camino más conveniente: integrarlos, complementarlos o reemplazar sólo aquello que esté limitando la operación.'
+    question: '¿Pueden integrarse las nuevas soluciones con los sistemas que ya utilizo?',
+    answer: 'En muchos casos, sí. Evaluamos cómo funcionan y se conectan tus sistemas actuales para definir el camino más conveniente: integrarlos, complementarlos o reemplazar solo aquello que esté limitando la operación.'
   }
 ]
 
 export const dolorTareas = [
-  { icon: 'material-symbols:chat-outline-rounded', text: 'Responder las mismas consultas todo el día' },
+  { icon: 'material-symbols:chat-outline-rounded', text: 'Responder las mismas consultas durante todo el día' },
   { icon: 'material-symbols:swap-horiz-rounded', text: 'Pasar datos de un sistema a otro' },
-  { icon: 'material-symbols:receipt-long-outline-rounded', text: 'Armar presupuestos y reportes a mano' }
+  { icon: 'material-symbols:receipt-long-outline-rounded', text: 'Preparar presupuestos y reportes manualmente' }
 ]
 
 export const medios = [

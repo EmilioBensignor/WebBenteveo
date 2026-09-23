@@ -13,7 +13,7 @@
         </p>
 
         <UiButtonPrimary to="#contacto" variant="glass" size="glass" class="gap-3 pl-6 pr-4">
-          Contanos tu idea
+          Cuéntanos tu idea
           <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6 shrink-0" />
         </UiButtonPrimary>
       </div>

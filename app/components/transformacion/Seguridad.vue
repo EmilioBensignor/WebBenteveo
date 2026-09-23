@@ -5,11 +5,12 @@
     <div class="min-w-0 flex flex-col gap-6 lg:gap-8">
       <div class="flex flex-col gap-3 md:gap-4">
         <UiHeadingH2>
-          ¿Sabés a dónde van los datos de tu empresa cuando usas IA sin regulación?
+          ¿Sabes a dónde van los datos de tu empresa cuando utilizas IA sin una estrategia de seguridad?
         </UiHeadingH2>
         <p class="text-hueso text-sm lg:text-base leading-normal font-light">
-          Si tu equipo ya está usando ChatGPT o cualquier herramienta de IA, <span class="font-semibold text-amarillo">la información de tu compañía está
-          quedando expuesta todos los días.</span>
+          Si tu equipo ya utiliza ChatGPT u otras herramientas de IA, es importante saber
+          <span class="font-semibold text-amarillo">qué información de tu empresa se comparte y está quedando expuesta todos
+          los días.</span>
         </p>
         <p class="text-hueso text-sm lg:text-base leading-normal font-light">
           Desde Benteveo diseñamos cada solución protegiendo la confidencialidad, integridad y disponibilidad de los

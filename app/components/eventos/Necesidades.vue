@@ -3,7 +3,7 @@
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
     inner="gap-8 lg:gap-12 items-stretch!">
     <UiHeadingH2 class="max-w-80 md:max-w-none self-center text-center">
-      Todo lo que necesitás, <span class="text-amarillo">resuelto en un solo lugar</span>
+      Todo lo que necesitas, <span class="text-amarillo">resuelto en un solo lugar</span>
     </UiHeadingH2>
 
     <ul ref="lista" class="w-full flex flex-col">
@@ -54,7 +54,7 @@
     </ul>
 
     <div class="flex flex-col items-center gap-4">
-      <p class="text-hueso text-sm lg:text-base font-light">¿Ya tenés algo en mente?</p>
+      <p class="text-hueso text-sm lg:text-base font-light">¿Ya tienes algo en mente?</p>
       <UiButtonPrimary to="#contacto" variant="glass" size="glass" class="gap-3 pl-6 pr-4">
         Hablemos de tu evento
         <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6 shrink-0" />

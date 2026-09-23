@@ -16,7 +16,7 @@ export const rubros = {
         icon: 'material-symbols:receipt-long-rounded',
         titulo: '¿Facturar a las obras sociales te lleva días y los rechazos te sorprenden?',
         texto:
-          'Automatizamos la validación de autorizaciones y la preparación de la facturación a obras sociales y prepagas, con control previo de inconsistencias. Presentás antes y con menos rechazos.',
+          'Automatizamos la validación de autorizaciones y la preparación de la facturación a obras sociales y prepagas, con control previo de inconsistencias. Presentas antes y con menos rechazos.',
       },
       {
         icon: 'material-symbols:support-agent-rounded',
@@ -26,9 +26,9 @@ export const rubros = {
       },
       {
         icon: 'material-symbols:monitoring-rounded',
-        titulo: '¿Sabés qué profesional, horario o prestación sostiene tu centro?',
+        titulo: '¿Sabes qué profesional, horario o prestación sostiene tu centro?',
         texto:
-          'Diseñamos tableros con ocupación por profesional, ausentismo y prestaciones más solicitadas, actualizados solos. Decidís con datos, no con sensaciones.',
+          'Diseñamos tableros con ocupación por profesional, ausentismo y prestaciones más solicitadas, actualizados solos. Decides con datos, no con sensaciones.',
       },
     ],
     pasos: {
@@ -172,13 +172,13 @@ export const rubros = {
       },
       {
         icon: 'material-symbols:eye-tracking-outline-rounded',
-        titulo: '¿Te enterás del avance de obra cuando vas al terreno?',
+        titulo: '¿Te enteras del avance de obra cuando vas al terreno?',
         texto:
           'Diseñamos sistemas de seguimiento con reportes fotográficos, avance por etapa y alertas de desvío. Control total sin estar ahí todos los días.',
       },
       {
         icon: 'material-symbols:insert-chart-outline-rounded',
-        titulo: '¿Invertís en marketing inmobiliario sin saber qué canal trae compradores reales?',
+        titulo: '¿Inviertes en marketing inmobiliario sin saber qué canal trae compradores reales?',
         texto:
           'Conectamos los datos de campañas con el CRM para medir el costo real de cada lead calificado y optimizar la inversión donde realmente convierte.',
       },
@@ -232,17 +232,17 @@ export const rubros = {
         icon: 'material-symbols:receipt-long-outline-rounded',
         titulo: '¿Cartas de porte, remitos y liquidaciones viven en una caja de zapatos?',
         texto:
-          'Digitalizamos y conciliamos la documentación comercial: cada entrega cruzada con su liquidación y sus descuentos. Sabés exactamente qué te pagaron y qué falta cobrar.',
+          'Digitalizamos y conciliamos la documentación comercial: cada entrega cruzada con su liquidación y sus descuentos. Sabes exactamente qué te pagaron y qué falta cobrar.',
       },
       {
         icon: 'material-symbols:build-outline-rounded',
-        titulo: '¿Te enterás de que la sembradora necesitaba service cuando se rompió?',
+        titulo: '¿Te enteras de que la sembradora necesitaba service cuando se rompió?',
         texto:
-          'Armamos control de maquinaria por horas de uso, con alertas de mantenimiento preventivo por equipo. Las máquinas paran cuando vos lo decidís, no en plena campaña.',
+          'Armamos control de maquinaria por horas de uso, con alertas de mantenimiento preventivo por equipo. Las máquinas paran cuando tú lo decides, no en plena campaña.',
       },
       {
         icon: 'material-symbols:inventory-2-outline-rounded',
-        titulo: '¿Sabés cuánto grano tenés embolsado y cuánto entregaste a cada acopio?',
+        titulo: '¿Sabes cuánto grano tienes embolsado y cuánto entregaste a cada acopio?',
         texto:
           'Centralizamos existencias, entregas y saldos por comprador en un registro único y actualizado. Tu posición de granos, clara y en un solo lugar.',
       },
@@ -308,7 +308,7 @@ export const rubros = {
         icon: 'material-symbols:payments-outline-rounded',
         titulo: '¿Cuántos socios entrenan hoy con la cuota vencida?',
         texto:
-          'Automatizamos la cobranza: recordatorios, link de pago y estado de cuenta al día por socio. Cobrás sin incomodar y sin perseguir a nadie.',
+          'Automatizamos la cobranza: recordatorios, link de pago y estado de cuenta al día por socio. Cobras sin incomodar y sin perseguir a nadie.',
       },
       {
         icon: 'material-symbols:campaign-outline-rounded',
@@ -318,7 +318,7 @@ export const rubros = {
       },
       {
         icon: 'material-symbols:autorenew-rounded',
-        titulo: '¿Te enterás de que un plan venció recién cuando el socio dejó de venir?',
+        titulo: '¿Te enteras de que un plan venció recién cuando el socio dejó de venir?',
         texto:
           'Implementamos renovaciones automáticas con aviso previo y link de pago antes del vencimiento. El plan se renueva antes de cortarse.',
       },
@@ -378,7 +378,7 @@ export const rubros = {
         icon: 'material-symbols:request-quote-outline-rounded',
         titulo: '¿Cotizar un seguro implica entrar a cinco portales distintos?',
         texto:
-          'Implementamos un cotizador que consulta las compañías con las que trabajás y devuelve las opciones comparadas en una sola pantalla. Cotizás en minutos, no en horas.',
+          'Implementamos un cotizador que consulta las compañías con las que trabajas y devuelve las opciones comparadas en una sola pantalla. Cotizas en minutos, no en horas.',
       },
       {
         icon: 'material-symbols:badge-outline-rounded',
@@ -396,7 +396,7 @@ export const rubros = {
         icon: 'material-symbols:account-balance-outline-rounded',
         titulo: '¿Conciliar comisiones con cada compañía te lleva días todos los meses?',
         texto:
-          'Cruzamos automáticamente las pólizas emitidas contra las liquidaciones de cada compañía y marcamos las diferencias. Sabés exactamente qué te deben.',
+          'Cruzamos automáticamente las pólizas emitidas contra las liquidaciones de cada compañía y marcamos las diferencias. Sabes exactamente qué te deben.',
       },
     ],
     pasos: {
@@ -458,9 +458,9 @@ export const rubros = {
       },
       {
         icon: 'material-symbols:folder-shared-outline-rounded',
-        titulo: '¿Vivís persiguiendo a tus clientes para que te manden la documentación?',
+        titulo: '¿Vives persiguiendo a tus clientes para que te manden la documentación?',
         texto:
-          'Armamos un asistente que pide, recibe y ordena la documentación de cada cliente, con recordatorios automáticos. Vos recibís todo completo, sin perseguir a nadie.',
+          'Armamos un asistente que pide, recibe y ordena la documentación de cada cliente, con recordatorios automáticos. Tú recibes todo completo, sin perseguir a nadie.',
       },
       {
         icon: 'material-symbols:notifications-active-outline-rounded',
@@ -472,7 +472,7 @@ export const rubros = {
         icon: 'material-symbols:search-rounded',
         titulo: '¿La información de cada cliente vive repartida entre mails, WhatsApp y carpetas?',
         texto:
-          'Centralizamos historial, documentos y conversaciones por cliente, con búsqueda inteligente sobre todo el archivo. Encontrás cualquier dato en segundos, no en una tarde.',
+          'Centralizamos historial, documentos y conversaciones por cliente, con búsqueda inteligente sobre todo el archivo. Encuentras cualquier dato en segundos, no en una tarde.',
       },
     ],
     pasos: {
@@ -480,7 +480,7 @@ export const rubros = {
         'Un agente que lee tus comprobantes, los carga en un Excel y genera un informe de gastos automático. Sin cargar nada a mano.',
       items: [
         {
-          texto: 'Sacás la foto del comprobante',
+          texto: 'Sacas la foto del comprobante',
           imagen: '/img/transformacion/rubros/servicios-profesionales/1-sacas-la-foto-del-comprobante.webp',
         },
         {
@@ -521,13 +521,13 @@ export const rubros = {
   'servicio-al-cliente': {
     h1: 'Servicio al cliente',
     nombre: 'servicio al cliente',
-    subtitulo: 'Vendé más en todos tus canales sin que la operación te pase por encima.',
+    subtitulo: 'Vende más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/rubros/hero_servicio_al_cliente.webp',
   },
   'e-commerce': {
     h1: 'Retail y E-commerce',
     nombre: 'e-commerce',
-    subtitulo: 'Vendé más en todos tus canales sin que la operación te pase por encima.',
+    subtitulo: 'Vende más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/rubros/hero_ecommerce.webp',
     parrafo:
       'Trabajamos con <span class="text-amarillo">tiendas online</span>, <span class="text-amarillo">mayoristas</span>, <span class="text-amarillo">marcas propias</span> y <span class="text-amarillo">retailers</span> que venden en TiendaNube, Shopify o Mercado Libre. Si el catálogo, el stock y las consultas te comen el día, y cada canal es una planilla distinta, te ayudamos a que toda la operación funcione sincronizada y sin carga manual.',
@@ -542,13 +542,13 @@ export const rubros = {
         icon: 'material-symbols:sync-rounded',
         titulo: '¿Vendiste en Mercado Libre algo que ya no tenías en stock?',
         texto:
-          'Sincronizamos el stock entre todos tus canales de venta en tiempo real: tienda, marketplaces y local físico. Nunca más una venta que no podés entregar.',
+          'Sincronizamos el stock entre todos tus canales de venta en tiempo real: tienda, marketplaces y local físico. Nunca más una venta que no puedes entregar.',
       },
       {
         icon: 'material-symbols:sell-outline',
-        titulo: '¿Cambian los costos y actualizás los precios producto por producto?',
+        titulo: '¿Cambian los costos y actualizas los precios producto por producto?',
         texto:
-          'Implementamos reglas de precios automáticas: cargás el nuevo costo y el sistema recalcula y publica en todos los canales. Tus márgenes quedan protegidos sin tocar nada a mano.',
+          'Implementamos reglas de precios automáticas: cargas el nuevo costo y el sistema recalcula y publica en todos los canales. Tus márgenes quedan protegidos sin tocar nada a mano.',
       },
       {
         icon: 'material-symbols:shopping-cart-outline-rounded',
@@ -562,7 +562,7 @@ export const rubros = {
         'Un agente que lee tu catálogo en PDF y carga todos los productos en TiendaNube, Shopify, etc.',
       items: [
         {
-          texto: 'Subís el catálogo en PDF',
+          texto: 'Subes el catálogo en PDF',
           imagen: '/img/transformacion/rubros/ecommerce/1-subis-el-catalogo-en-pdf.webp',
         },
         {

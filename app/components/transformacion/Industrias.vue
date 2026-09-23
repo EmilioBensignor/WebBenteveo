@@ -3,7 +3,7 @@
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
     inner="gap-8 lg:gap-12">
     <UiHeadingH2 class="max-w-80 md:max-w-none text-center font-light">
-      Conocé algunas de las soluciones para tu industria
+      Conoce algunas de las soluciones para tu industria
     </UiHeadingH2>
 
     <div class="w-full">

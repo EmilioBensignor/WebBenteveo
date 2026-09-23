@@ -209,7 +209,7 @@ const enviado = ref(false)
 const abierto = ref(false)
 const selectRef = ref(null)
 
-const rubroLabel = computed(() => industrias.find((i) => i.slug === rubro.value)?.label ?? 'Elegí tu rubro')
+const rubroLabel = computed(() => industrias.find((i) => i.slug === rubro.value)?.label ?? 'Elige tu rubro')
 
 const elegirRubro = (slug) => {
   rubro.value = slug
@@ -238,11 +238,11 @@ watch([correo, rubro], () => { error.value = null })
 
 const enviar = () => {
   if (!rubro.value) {
-    error.value = 'Elegí tu rubro para que el envío sea útil.'
+    error.value = 'Elige tu rubro para que el envío sea útil.'
     return
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo.value)) {
-    error.value = 'Ingresá un email válido para recibirlas.'
+    error.value = 'Ingresa un email válido para recibirlas.'
     return
   }
   enviado.value = true

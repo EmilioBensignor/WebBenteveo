@@ -5,12 +5,12 @@
     <div class="min-w-0 flex flex-col gap-6 lg:gap-8">
       <div class="flex flex-col gap-3 md:gap-4">
         <UiHeadingH2>
-          ¿Cuántas horas perdés por semana en cosas que
+          ¿Cuántas horas pierde tu empresa cada semana en tareas que
           <span class="text-amarillo">una herramienta podría hacer sola?</span>
         </UiHeadingH2>
         <p class="text-hueso text-sm lg:text-base leading-normal font-light">
-          Si tu equipo contesta consultas a mano, carga datos en Excel o arma presupuestos uno por uno, estás pagando
-          sueldos por tareas que una herramienta haría sola.
+          Si tu equipo responde consultas manualmente, carga datos en Excel o prepara presupuestos uno por uno, estás
+          destinando tiempo y recursos a tareas que una herramienta podría hacer automáticamente.
         </p>
       </div>
 

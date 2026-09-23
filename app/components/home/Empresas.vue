@@ -1,15 +1,5 @@
 <template>
-  <DefaultSection bg="bg-negro"
-    class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-14"
-    inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16">
-    <div class="w-full flex flex-col items-center gap-3 md:gap-4 lg:gap-6 xxl:gap-8">
-      <UiHeadingH2 class="max-w-72 md:max-w-none text-center">
-        Empresas que confiaron en nosotros para proyectos importantes.
-      </UiHeadingH2>
-
-      <SharedMarcasTiles />
-    </div>
-
+  <SharedEmpresas title="Empresas que confiaron en nosotros para proyectos importantes.">
     <div ref="grupo" class="w-full flex flex-col items-center gap-5 md:flex-row md:justify-between md:gap-0">
       <template v-for="(m, i) in metrics" :key="m.label">
         <span v-if="i > 0" class="w-px h-52 hidden md:block shrink-0 linea-vertical" />
@@ -24,7 +14,7 @@
         </div>
       </template>
     </div>
-  </DefaultSection>
+  </SharedEmpresas>
 </template>
 
 <script setup>

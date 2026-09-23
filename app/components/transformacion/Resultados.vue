@@ -4,10 +4,7 @@
     inner="gap-6 md:gap-8 lg:gap-12 xxl:gap-16">
     <div class="w-full flex flex-col items-center gap-3 md:gap-4 lg:gap-6 text-center">
       <UiHeadingH2 class="max-w-72 md:max-w-none">Resultados reales</UiHeadingH2>
-      <p class="max-w-190 lg:max-w-230 text-hueso text-sm lg:text-base leading-[1.5] font-light">
-        Ayudamos a las empresas a resolver, potenciar y agilizar procesos mediante herramientas de IA robustas y
-        confiables adaptadas a sus negocios.
-      </p>
+      <p class="max-w-190 lg:max-w-230 text-hueso text-sm lg:text-base leading-[1.5] font-light">{{ texto }}</p>
     </div>
 
     <div ref="grupo" class="w-full flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between md:gap-0">
@@ -30,6 +27,13 @@
 
 <script setup>
 import { transformacionMetrics } from '~/constants/home'
+
+defineProps({
+  texto: {
+    type: String,
+    default: 'Ayudamos a las empresas a resolver, potenciar y agilizar procesos mediante herramientas de IA robustas y confiables adaptadas a sus negocios.'
+  }
+})
 
 const DURACION = 1600
 

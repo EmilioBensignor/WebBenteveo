@@ -1,5 +1,5 @@
 <template>
-  <DefaultSection bg="bg-negro"
+  <DefaultSection id="opiniones" bg="bg-negro"
     class="relative z-10 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
     inner="gap-8 lg:gap-12">
     <UiHeadingH2 class="max-w-80 md:max-w-none text-center px-4 md:px-0">

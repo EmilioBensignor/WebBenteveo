@@ -1,11 +1,11 @@
 <template>
   <EventosHero />
-  <TransformacionEmpresas title="Marcas que confiaron en nosotros para sus eventos" />
+  <SharedEmpresas title="Marcas que confiaron en nosotros para sus eventos" />
   <EventosProduccion />
   <EventosNecesidades />
   <HomeProyectos />
   <HomeContacto eyebrow="El siguiente paso" title="¿Tienes un evento en mente y no sabes por dónde empezar?"
-    subtitle="Contanos tu próximo desafío y lo convertimos en una experiencia con impacto."
+    subtitle="Cuéntanos tu próximo desafío y lo convertimos en una experiencia con impacto."
     submit-label="Enviar mi consulta" />
 </template>
 

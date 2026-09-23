@@ -5,9 +5,9 @@
     <div class="w-full flex flex-col items-center gap-3 md:gap-4 text-center">
       <UiHeadingH2>
         Cuatro cosas que cambian en tu empresa
-        cuando integrás IA a tus procesos
+        cuando integras IA a tus procesos
       </UiHeadingH2>
-      <p class="text-hueso text-sm lg:text-base font-light">Dejá de apagar incendios y empezá a crecer.</p>
+      <p class="text-hueso text-sm lg:text-base font-light">Deja de apagar incendios y empieza a crecer.</p>
     </div>
 
     <div ref="grilla" class="w-full max-w-362 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-4 lg:gap-6 xxl:gap-8">

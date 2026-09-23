@@ -29,7 +29,7 @@ export const equipo = {
   title: 'No coordinas tres proveedores.<br>Trabajas con un solo equipo.',
   destacado: 'Creatividad, tecnología y producción bajo un mismo criterio: el de tu negocio.',
   text: ' Miramos tu comunicación y tus procesos como partes del mismo problema, así el proyecto avanza sin perder tiempo entre etapas. Nos entregas el desafío completo y te devolvemos algo que funciona.',
-  cta: 'Contanos tu desafío',
+  cta: 'Cuéntanos tu desafío',
   to: '#contacto'
 }
 

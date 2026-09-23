@@ -51,7 +51,7 @@
 import { comentarios } from '~/constants/agencia'
 import { useGsapContext } from '~/composables/useGsapContext'
 
-const INTERVALO = 5
+const INTERVALO = 3.5
 const PASO = 16
 const GIROS = [-2.5, 2, -1.5, 3]
 const TOTAL = comentarios.length

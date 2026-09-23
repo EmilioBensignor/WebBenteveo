@@ -59,7 +59,7 @@ const cards = useTemplateRef('cards')
 const boton = useTemplateRef('boton')
 
 const desfases = [16, 40, 0]
-const lineasTitulo = ['No necesitás entender', 'de IA para comenzar']
+const lineasTitulo = ['No necesitas entender', 'de IA para comenzar']
 
 useGsapContext(root, (ctx, gsap, ScrollTrigger) => {
   if (!cards.value?.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return

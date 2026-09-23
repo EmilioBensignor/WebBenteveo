@@ -5,7 +5,7 @@
   <HomeEmpresas />
   <HomeProyectos />
   <HomeContacto eyebrow="El siguiente paso" title="¿Tienes un desafío?<br>Comencemos a resolverlo."
-    subtitle="Cuentanos tu problema y pensemos juntos como empezar a resolverlos." />
+    subtitle="Cuéntanos tu problema y pensemos juntos cómo empezar a resolverlos." />
 </template>
 
 <script setup>
