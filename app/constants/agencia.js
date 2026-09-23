@@ -1,7 +1,8 @@
-export const frases = [
-  'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
-  'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.',
-  'Sabemos que tenemos que comunicar mejor, pero no sabemos por dónde empezar.'
+export const comentarios = [
+  { texto: 'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.', autor: 'Marketing, consumo masivo' },
+  { texto: 'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.', autor: 'Gerencia, servicios' },
+  { texto: 'Sabemos que tenemos que comunicar mejor, pero no sabemos por dónde empezar.', autor: 'Dirección, pyme industrial' },
+  { texto: 'Hacemos un evento por año y a la semana nadie se acuerda.', autor: 'Comunicación, laboratorio' }
 ]
 
 export const servicios = [
@@ -50,19 +51,4 @@ export const heroFrases = [
   'campañas que mueven la aguja',
   'eventos que se recuerdan',
   'marcas que se hacen escuchar'
-]
-
-export const frasesRespuestas = [
-  {
-    frase: 'Publicamos contenido pero no genera nada. Likes, sí. Clientes, no.',
-    respuesta: 'Armamos una estrategia con objetivos de negocio, no de vanidad. Cada pieza tiene un para qué.'
-  },
-  {
-    frase: 'Cada proveedor hace una parte. Nadie tiene la visión completa de nuestra marca.',
-    respuesta: 'Un solo equipo se hace cargo de todo: estrategia, creatividad y producción bajo la misma dirección.'
-  },
-  {
-    frase: 'Sabemos que tenemos que comunicar mejor, pero no sabemos por dónde empezar.',
-    respuesta: 'Empezamos por entender tu negocio y tu audiencia. Del diagnóstico sale el plan, no al revés.'
-  }
 ]
