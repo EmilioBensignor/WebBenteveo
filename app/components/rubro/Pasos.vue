@@ -1,49 +1,43 @@
 <template>
   <DefaultSection bg="bg-negro"
-    class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-16"
-    inner="gap-8 lg:gap-12">
-    <div class="w-full flex flex-col items-center gap-3 md:gap-4 text-center">
-      <UiHeadingH2>Mira cómo funciona <span class="text-amarillo">en la práctica</span></UiHeadingH2>
-      <p class="max-w-190 lg:max-w-230 text-hueso text-sm lg:text-base leading-normal font-light"
-        v-html="pasos.subtitulo" />
+    class="relative z-10 overflow-visible! px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30">
+    <div class="hidden md:max-lg:flex w-full flex-col items-center gap-4 text-center pt-16">
+      <UiHeadingH2>Mira cómo funciona en la práctica</UiHeadingH2>
+      <p class="max-w-190 text-hueso text-sm leading-normal font-light" v-html="pasos.subtitulo" />
     </div>
 
-    <div class="w-full flex flex-col gap-4 lg:gap-6">
+    <div ref="recorrido" class="w-full" :style="{ height: `calc(100dvh + ${(pasos.items.length - 1) * TRAMO + PAUSA}vh)` }">
       <div
-        class="flex gap-2 lg:gap-4 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden -mx-4 sm:-mx-6 md:mx-0 px-4 sm:px-6 md:px-0 py-1">
-        <button v-for="(paso, i) in pasos.items" :key="paso.texto" ref="tabRefs" type="button"
-          class="min-w-56 md:min-w-0 md:flex-1 flex items-center gap-3 lg:gap-4 border rounded-2xl text-left transition-colors duration-300 cursor-pointer p-4 lg:p-5"
-          :class="active === i ? 'border-amarillo bg-amarillo/8' : 'border-blanco/20 md:hover:border-blanco/50'"
-          :aria-pressed="active === i" @click="active = i">
-          <span class="text-lg lg:text-2xl font-bold tabular-nums transition-colors duration-300"
-            :class="active === i ? 'text-amarillo' : 'text-hueso/40'">
-            {{ String(i + 1).padStart(2, '0') }}
-          </span>
-          <span class="text-sm lg:text-base leading-[1.3] transition-colors duration-300"
-            :class="active === i ? 'text-hueso' : 'text-hueso/60'">
-            {{ paso.texto }}
-          </span>
-        </button>
-      </div>
-
-      <div class="w-full relative">
-        <div class="w-full aspect-[1375/700] relative border border-blanco/33 rounded-2xl overflow-hidden bg-black">
-          <Transition enter-active-class="transition-opacity duration-300" enter-from-class="opacity-0"
-            leave-active-class="transition-opacity duration-300" leave-to-class="opacity-0">
-            <NuxtImg :key="pasos.items[active].imagen" :src="pasos.items[active].imagen"
-              :alt="pasos.items[active].texto" format="avif" sizes="xs:100vw sm:100vw md:100vw lg:100vw xl:100vw xxl:1448px"
-              class="size-full absolute inset-0 object-cover" />
-          </Transition>
+        class="w-full h-dvh flex flex-col lg:flex-row justify-center md:max-lg:justify-start items-center gap-6 lg:gap-12 sticky top-0 md:max-lg:top-28 md:max-lg:h-[calc(100dvh-7rem)] overflow-hidden pt-24 md:pt-28 md:max-lg:pt-4! lg:pt-33 pb-6">
+        <div class="w-full lg:w-auto lg:flex-1 lg:min-w-0 flex md:max-lg:hidden flex-col items-center lg:items-start gap-3 md:gap-4 text-center lg:text-left">
+          <UiHeadingH2>Mira cómo funciona en la práctica</UiHeadingH2>
+          <p class="max-w-190 lg:max-w-200 text-hueso text-sm lg:text-base leading-normal font-light"
+            v-html="pasos.subtitulo" />
         </div>
 
-        <button type="button" aria-label="Paso anterior" @click="prev"
-          class="size-10 lg:size-12 flex justify-center items-center absolute top-1/2 left-3 md:left-4 lg:-left-6 -translate-y-1/2 glass-boton rounded-full text-hueso cursor-pointer">
-          <Icon name="material-symbols:arrow-back-rounded" class="size-5! lg:size-6!" />
-        </button>
-        <button type="button" aria-label="Paso siguiente" @click="next"
-          class="size-10 lg:size-12 flex justify-center items-center absolute top-1/2 right-3 md:right-4 lg:-right-6 -translate-y-1/2 glass-boton rounded-full text-hueso cursor-pointer">
-          <Icon name="material-symbols:arrow-forward-rounded" class="size-5! lg:size-6!" />
-        </button>
+        <ol class="w-full md:max-lg:max-w-[max(24rem,calc((100dvh-16rem)*2))] lg:w-[min(calc((100dvh-17rem)*2),calc(100%-23rem))] lg:max-w-none lg:shrink-0 grid"
+          :style="{ paddingBottom: `${pasos.items.length - 1}rem` }">
+          <li v-for="(paso, i) in pasos.items" :key="paso.texto" class="w-full [grid-area:1/1] origin-top will-change-transform"
+            :style="estilos[i].card">
+            <article class="w-full flex flex-col border border-blanco/33 rounded-2xl overflow-hidden bg-negro">
+              <header class="flex items-center gap-3 md:gap-4 border-b border-blanco/15 px-4 md:px-6 py-3 md:py-4"
+                :style="estilos[i].header">
+                <span class="text-base lg:text-xl font-bold tabular-nums text-amarillo">
+                  {{ String(i + 1).padStart(2, '0') }}
+                </span>
+                <span class="w-px self-stretch bg-blanco/20" />
+                <h3 class="text-hueso text-sm md:text-base lg:text-xl leading-[1.3]">{{ paso.texto }}</h3>
+                <span class="hidden md:block shrink-0 ml-auto text-hueso/40 text-xs lg:text-sm tabular-nums whitespace-nowrap">
+                  {{ i + 1 }} / {{ pasos.items.length }}
+                </span>
+              </header>
+              <div class="w-full aspect-1375/690 relative bg-black">
+                <NuxtImg :src="paso.imagen" :alt="paso.texto" format="avif"
+                  sizes="xs:100vw sm:100vw md:100vw lg:100vw xxl:1200px" class="size-full absolute inset-0 object-cover" />
+              </div>
+            </article>
+          </li>
+        </ol>
       </div>
     </div>
   </DefaultSection>
@@ -54,13 +48,48 @@ const props = defineProps({
   pasos: { type: Object, required: true }
 })
 
-const active = ref(0)
-const tabRefs = ref([])
-const total = computed(() => props.pasos.items.length)
-const prev = () => { active.value = (active.value + total.value - 1) % total.value }
-const next = () => { active.value = (active.value + 1) % total.value }
+const TRAMO = 80
+const PAUSA = 20
 
-watch(active, (i) => {
-  tabRefs.value[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+const recorrido = ref(null)
+const entradas = ref(props.pasos.items.map((_, i) => (i === 0 ? 1 : 0)))
+
+const ease = (t) => 1 - (1 - t) ** 3
+
+const estilos = computed(() => entradas.value.map((t, i) => {
+  const encima = entradas.value.slice(i + 1).reduce((total, e) => total + e, 0)
+  return {
+    card: {
+      transform: `translateY(calc(${1 - ease(t)} * 100dvh + ${i}rem)) scale(${1 - encima * 0.04})`,
+      filter: `brightness(${1 - Math.min(encima, 1) * 0.35})`,
+    },
+    header: { opacity: 1 - Math.min(encima, 1) },
+  }
+}))
+
+let frame
+function medir() {
+  frame = null
+  const el = recorrido.value
+  if (!el) return
+  const distancia = el.offsetHeight - window.innerHeight
+  const avance = Math.min(Math.max(-el.getBoundingClientRect().top, 0), distancia)
+  const tramo = (distancia * TRAMO) / ((props.pasos.items.length - 1) * TRAMO + PAUSA)
+  entradas.value = props.pasos.items.map((_, i) => {
+    if (i === 0) return 1
+    return Math.min(Math.max((avance - (i - 1) * tramo) / tramo, 0), 1)
+  })
+}
+const pedir = () => { if (!frame) frame = requestAnimationFrame(medir) }
+
+onMounted(() => {
+  window.addEventListener('scroll', pedir, { passive: true })
+  window.addEventListener('resize', pedir)
+  medir()
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', pedir)
+  window.removeEventListener('resize', pedir)
+  if (frame) cancelAnimationFrame(frame)
 })
 </script>

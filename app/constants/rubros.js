@@ -4,7 +4,7 @@ export const rubros = {
     nombre: 'salud',
     subtitulo: 'Agenda llena, fichas al día, seguimiento automático.',
     imagenHero: '/img/transformacion/rubros/hero_salud.webp',
-    parrafo: 'Trabajamos con <span class="text-amarillo">clínicas</span>, <span class="text-amarillo">centros médicos</span>, <span class="text-amarillo">consultorios</span>, <span class="text-amarillo">laboratorios</span> y <span class="text-amarillo">centros de estética</span> y <span class="text-amarillo">kinesiología</span>. Si los turnos viven en el teléfono, las fichas en papel y el seguimiento depende de la memoria de recepción, te ayudamos a ordenar toda la operación en un solo sistema.',
+    parrafo: 'Trabajamos con <span class="text-amarillo font-medium">clínicas</span>, <span class="text-amarillo font-medium">centros médicos</span>, <span class="text-amarillo font-medium">consultorios</span>, <span class="text-amarillo font-medium">laboratorios</span>, <span class="text-amarillo font-medium">centros de estética</span> y <span class="text-amarillo font-medium">kinesiología</span>. Si los turnos viven en el teléfono, las fichas en papel y el seguimiento depende de la memoria de recepción, te ayudamos a ordenar toda la operación en un solo sistema.',
     problemas: [
       {
         icon: 'material-symbols:event-available-rounded',
@@ -80,7 +80,7 @@ export const rubros = {
     subtitulo: 'Que la tecnología potencie el aprendizaje, no lo complique.',
     imagenHero: '/img/transformacion/rubros/hero_educacion.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">institutos</span>, <span class="text-amarillo">academias</span>, <span class="text-amarillo">plataformas de cursos online</span> y <span class="text-amarillo">áreas de capacitación corporativa</span>. Si las consultas se responden tarde, el seguimiento de cada alumno recae en el docente y la administración se lleva horas de clase, <strong>te ayudamos a que todo eso corra en automático.</strong>',
+      'Trabajamos con <span class="text-amarillo font-medium">institutos</span>, <span class="text-amarillo font-medium">academias</span>, <span class="text-amarillo font-medium">plataformas de cursos online</span> y <span class="text-amarillo font-medium">áreas de capacitación corporativa</span>. Si las consultas se responden tarde, el seguimiento de cada alumno recae en el docente y la administración se lleva horas de clase, <strong>te ayudamos a que todo eso corra en automático.</strong>',
     problemas: [
       {
         icon: 'material-symbols:forum-outline-rounded',
@@ -156,7 +156,7 @@ export const rubros = {
     subtitulo: 'Proyectos complejos, ciclos largos. La tecnología los hace manejables.',
     imagenHero: '/img/transformacion/rubros/hero_real_state.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">desarrolladoras</span>, <span class="text-amarillo">inmobiliarias</span>, <span class="text-amarillo">constructoras</span>, <span class="text-amarillo">estudios de arquitectura</span> y <span class="text-amarillo">administradoras de propiedades</span>. Si los proyectos son largos, los interlocutores muchos y la gestión vive entre mails, planillas y llamadas, te ayudamos a tener visibilidad completa en un solo lugar.',
+      'Trabajamos con <span class="text-amarillo font-medium">desarrolladoras</span>, <span class="text-amarillo font-medium">inmobiliarias</span>, <span class="text-amarillo font-medium">constructoras</span>, <span class="text-amarillo font-medium">estudios de arquitectura</span> y <span class="text-amarillo font-medium">administradoras de propiedades</span>. Si los proyectos son largos, los interlocutores muchos y la gestión vive entre mails, planillas y llamadas, te ayudamos a tener visibilidad completa en un solo lugar.',
     problemas: [
       {
         icon: 'material-symbols:flowchart-outline-sharp',
@@ -220,7 +220,7 @@ export const rubros = {
     subtitulo: 'Producir ya es difícil. La gestión no debería serlo.',
     imagenHero: '/img/transformacion/rubros/hero_agroindustria.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">productores</span>, <span class="text-amarillo">acopios</span>, <span class="text-amarillo">contratistas</span> y <span class="text-amarillo">pymes agroindustriales</span>. Si los registros viven en cuadernos, la coordinación va por WhatsApp y armar un reporte para la certificadora lleva semanas, te ayudamos a digitalizar la operación completa: <strong>del lote a la oficina, todo en un solo lugar.</strong>',
+      'Trabajamos con <span class="text-amarillo font-medium">productores</span>, <span class="text-amarillo font-medium">acopios</span>, <span class="text-amarillo font-medium">contratistas</span> y <span class="text-amarillo font-medium">pymes agroindustriales</span>. Si los registros viven en cuadernos, la coordinación va por WhatsApp y armar un reporte para la certificadora lleva semanas, te ayudamos a digitalizar la operación completa: <strong>del lote a la oficina, todo en un solo lugar.</strong>',
     problemas: [
       {
         icon: 'material-symbols:assignment-outline-rounded',
@@ -296,7 +296,7 @@ export const rubros = {
     subtitulo: 'Que gestionar tu gimnasio sea tan ágil como entrenar.',
     imagenHero: '/img/transformacion/rubros/hero_fitness.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">gimnasios</span>, <span class="text-amarillo">boxes</span>, <span class="text-amarillo">estudios de yoga y pilates</span>, <span class="text-amarillo">clubes</span> y <span class="text-amarillo">complejos de canchas</span>. Si las reservas van por WhatsApp, las cuotas se persiguen una por una y los socios se van sin que nadie lo vea venir, <strong>te ayudamos a ordenar toda la gestión en un solo sistema</strong>.',
+      'Trabajamos con <span class="text-amarillo font-medium">gimnasios</span>, <span class="text-amarillo font-medium">boxes</span>, <span class="text-amarillo font-medium">estudios de yoga y pilates</span>, <span class="text-amarillo font-medium">clubes</span> y <span class="text-amarillo font-medium">complejos de canchas</span>. Si las reservas van por WhatsApp, las cuotas se persiguen una por una y los socios se van sin que nadie lo vea venir, <strong>te ayudamos a ordenar toda la gestión en un solo sistema</strong>.',
     problemas: [
       {
         icon: 'material-symbols:person-add-outline-rounded',
@@ -372,7 +372,7 @@ export const rubros = {
     subtitulo: 'Tu cartera crece. Tu carga administrativa, no.',
     imagenHero: '/img/transformacion/rubros/hero_servicio_financieros.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">productores y brokers de seguros</span>, <span class="text-amarillo">asesores financieros</span>, <span class="text-amarillo">mutuales</span> y <span class="text-amarillo">fintechs</span>. Si los leads llegan por todos lados, las cotizaciones son manuales y la cartera se atiende solo cuando algo vence, <strong>te ayudamos a que la operación completa quede ordenada, medible y en automático</strong>.',
+      'Trabajamos con <span class="text-amarillo font-medium">productores y brokers de seguros</span>, <span class="text-amarillo font-medium">asesores financieros</span>, <span class="text-amarillo font-medium">mutuales</span> y <span class="text-amarillo font-medium">fintechs</span>. Si los leads llegan por todos lados, las cotizaciones son manuales y la cartera se atiende solo cuando algo vence, <strong>te ayudamos a que la operación completa quede ordenada, medible y en automático</strong>.',
     problemas: [
       {
         icon: 'material-symbols:request-quote-outline-rounded',
@@ -448,7 +448,7 @@ export const rubros = {
     subtitulo: 'Tecnología que libera al profesional de lo operativo para que haga lo que mejor sabe hacer.',
     imagenHero: '/img/transformacion/rubros/hero_servicio_profesionales.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">estudios contables y jurídicos</span>, <span class="text-amarillo">consultoras</span>, <span class="text-amarillo">agencias</span> y <span class="text-amarillo">profesionales independientes</span>. Si tu equipo pierde horas cargando comprobantes, armando propuestas y persiguiendo pagos, te ayudamos a automatizar la operación para que el tiempo facturable vuelva a ser la prioridad.',
+      'Trabajamos con <span class="text-amarillo font-medium">estudios contables y jurídicos</span>, <span class="text-amarillo font-medium">consultoras</span>, <span class="text-amarillo font-medium">agencias</span> y <span class="text-amarillo font-medium">profesionales independientes</span>. Si tu equipo pierde horas cargando comprobantes, armando propuestas y persiguiendo pagos, te ayudamos a automatizar la operación para que el tiempo facturable vuelva a ser la prioridad.',
     problemas: [
       {
         icon: 'material-symbols:schedule-outline-rounded',
@@ -530,7 +530,7 @@ export const rubros = {
     subtitulo: 'Vende más en todos tus canales sin que la operación te pase por encima.',
     imagenHero: '/img/transformacion/rubros/hero_ecommerce.webp',
     parrafo:
-      'Trabajamos con <span class="text-amarillo">tiendas online</span>, <span class="text-amarillo">mayoristas</span>, <span class="text-amarillo">marcas propias</span> y <span class="text-amarillo">retailers</span> que venden en TiendaNube, Shopify o Mercado Libre. Si el catálogo, el stock y las consultas te comen el día, y cada canal es una planilla distinta, te ayudamos a que toda la operación funcione sincronizada y sin carga manual.',
+      'Trabajamos con <span class="text-amarillo font-medium">tiendas online</span>, <span class="text-amarillo font-medium">mayoristas</span>, <span class="text-amarillo font-medium">marcas propias</span> y <span class="text-amarillo font-medium">retailers</span> que venden en TiendaNube, Shopify o Mercado Libre. Si el catálogo, el stock y las consultas te comen el día, y cada canal es una planilla distinta, te ayudamos a que toda la operación funcione sincronizada y sin carga manual.',
     problemas: [
       {
         icon: 'material-symbols:local-shipping-outline-rounded',

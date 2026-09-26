@@ -2,33 +2,32 @@
   <DefaultSection bg="bg-negro"
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-12"
     inner="gap-8 lg:gap-12">
-    <div class="max-w-200 flex flex-col items-center gap-3 md:gap-4 mx-auto text-center">
+    <div class="flex flex-col items-center gap-3 md:gap-4 mx-auto text-center">
       <UiHeadingH2>
-        Todo lo que necesitas, <span class="text-amarillo">resuelto en un solo lugar</span>
+        Todo lo que necesitas, resuelto en un solo lugar
       </UiHeadingH2>
-      <p class="text-hueso text-sm lg:text-base leading-normal font-light" v-html="parrafo" />
+      <p class="max-w-6xl text-hueso text-sm lg:text-base leading-normal font-light" v-html="parrafo" />
     </div>
 
-    <ul ref="lista" class="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-      <li v-for="(p, i) in problemas" :key="p.titulo" class="perspective-[1800px]"
+    <ul ref="lista"
+      class="w-[calc(100%+2rem)] sm:w-[calc(100%+3rem)] md:w-[calc(100%+4rem)] lg:w-full flex lg:grid lg:grid-cols-4 gap-4 lg:gap-5 -mx-4 sm:-mx-6 md:-mx-8 lg:mx-0 -my-6 lg:my-0 px-4 sm:px-6 md:px-8 lg:px-0 py-6 lg:py-0 overflow-x-auto overflow-y-hidden lg:overflow-visible snap-x snap-mandatory scroll-px-4 sm:scroll-px-6 md:scroll-px-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <li v-for="(p, i) in problemas" :key="p.titulo" class="w-[82%] tab:w-[55%] md:w-[42%] lg:w-auto shrink-0 snap-start perspective-[1800px]"
         @pointerenter="hover(i, true, $event)" @pointerleave="hover(i, false, $event)">
         <button type="button" :aria-pressed="girada.has(i)" :aria-label="`${p.titulo} Ver cómo lo resolvemos`"
           class="size-full grid text-left cursor-pointer transform-3d transition-transform duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-0"
           :class="{ 'rotate-y-180': girada.has(i) }" @click="alternar(i, $event)">
           <span
-            class="min-h-72 md:min-h-80 lg:min-h-104 flex flex-col gap-6 relative [grid-area:1/1] border border-blanco/33 rounded-2xl overflow-hidden bg-linear-to-b from-white/8 to-transparent backface-hidden p-5 pb-24 lg:p-6 lg:pb-32"
+            class="min-h-64 lg:min-h-72 xl:min-h-88 flex flex-col gap-6 relative [grid-area:1/1] border border-blanco/33 rounded-2xl overflow-hidden bg-linear-to-b from-white/8 to-transparent backface-hidden p-5 pb-20 lg:p-6 lg:pb-24 xl:pb-28"
             aria-hidden="true">
             <span class="flex justify-between items-start gap-4">
-              <span class="size-12 lg:size-14 flex justify-center items-center glass rounded-full text-amarillo">
-                <Icon :name="p.icon" class="size-6! lg:size-7!" />
-              </span>
+              <Icon :name="p.icon" class="size-8! lg:size-10! text-amarillo" />
               <span class="text-gris text-xs uppercase tracking-[0.2em] pt-2">Desafío</span>
             </span>
 
             <span class="text-hueso text-base lg:text-xl leading-[1.3] text-balance">{{ p.titulo }}</span>
 
             <span
-              class="absolute bottom-0 left-0 text-amarillo text-[5.5rem] lg:text-[8rem] font-bold -mb-4 md:-mb-6 lg:-mb-10 -ml-2 md:-ml-3 lg:-ml-4">
+              class="absolute bottom-0 left-0 text-amarillo text-[5rem] lg:text-[5.5rem] xl:text-[7rem] font-bold -mb-4 lg:-mb-6 xl:-mb-8 -ml-2 md:-ml-3 lg:-ml-4">
               {{ String(i + 1).padStart(2, '0') }}
             </span>
 
@@ -39,18 +38,16 @@
           </span>
 
           <span
-            class="min-h-72 md:min-h-80 lg:min-h-104 flex flex-col gap-6 relative [grid-area:1/1] rounded-2xl overflow-hidden bg-amarillo shadow-amarilla text-negro backface-hidden rotate-y-180 p-5 pb-24 lg:p-6 lg:pb-32">
+            class="min-h-64 lg:min-h-72 xl:min-h-88 flex flex-col gap-6 relative [grid-area:1/1] rounded-2xl overflow-hidden bg-amarillo shadow-amarilla text-negro backface-hidden rotate-y-180 p-5 pb-20 lg:p-6 lg:pb-24 xl:pb-28">
             <span class="flex justify-between items-start gap-4">
-              <span class="size-12 lg:size-14 flex justify-center items-center rounded-full bg-negro text-amarillo">
-                <Icon :name="p.icon" class="size-6! lg:size-7!" />
-              </span>
+              <Icon :name="p.icon" class="size-8! lg:size-10! text-negro" />
               <span class="text-xs font-semibold uppercase tracking-[0.2em] pt-2">Solución</span>
             </span>
 
             <span class="text-sm lg:text-base leading-[1.45] font-medium">{{ p.texto }}</span>
 
             <span
-              class="absolute bottom-0 left-0 text-negro text-[5.5rem] lg:text-[8rem] font-bold -mb-4 md:-mb-6 lg:-mb-10 -ml-2 md:-ml-3 lg:-ml-4"
+              class="absolute bottom-0 left-0 text-negro text-[5rem] lg:text-[5.5rem] xl:text-[7rem] font-bold -mb-4 lg:-mb-6 xl:-mb-8 -ml-2 md:-ml-3 lg:-ml-4"
               aria-hidden="true">
               {{ String(i + 1).padStart(2, '0') }}
             </span>
@@ -60,9 +57,9 @@
     </ul>
 
     <div class="flex flex-col items-center gap-4 lg:gap-6 text-center">
-      <p class="max-w-160 text-hueso text-sm lg:text-base leading-normal font-light">
+      <p class="text-hueso text-sm lg:text-base leading-normal font-light">
         Cada empresa de {{ nombre }} es distinta:
-        <span class="font-semibold text-amarillo">nos sentamos contigo, entendemos tu operación y diseñamos la
+        <span class="font-semibold">nos sentamos contigo, entendemos tu operación y diseñamos la
           solución que necesitas.</span>
       </p>
       <UiButtonPrimary to="#contacto" variant="glass" size="glass" class="w-full sm:w-max shrink-0 gap-3 pl-6 pr-4">
