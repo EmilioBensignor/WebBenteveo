@@ -72,7 +72,7 @@ const links = [
   { label: 'Agencia', to: ROUTE_NAMES.agencia },
   { label: 'Transformación IA', to: ROUTE_NAMES.transformacion },
   { label: 'Eventos', to: ROUTE_NAMES.eventos },
-  { label: 'Nosotros', to: '#' },
+  { label: 'Nosotros', to: ROUTE_NAMES.nosotros },
   { label: 'Blog', to: '#' }
 ]
 

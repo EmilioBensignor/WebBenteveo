@@ -3,6 +3,7 @@ export const ROUTE_NAMES = {
   agencia: '/agencia-creativa',
   transformacion: '/transformacion-tecnologica',
   eventos: '/eventos',
+  nosotros: '/nosotros',
   seguridad: '/seguridad',
   rubro: (slug) => `/rubros/${slug}`
 }
