@@ -36,6 +36,8 @@ Definido en `app/assets/css/main.css` bajo `@theme`:
 
 **`<Icon>` y `size-*`**: el CSS de `@nuxt/icon` fija `.iconify` en `1em` fuera de las capas de Tailwind y le gana a `size-*`. Va con `!` (`size-6!`) o con la prop `size`. Sin eso el ícono mide 16px aunque diga `lg:size-6`.
 
+**`line-height` global**: `main.css` tiene `* { line-height: 1.25 }` fuera de las capas y le gana a cualquier `leading-*` y al `/lh` de `text-*`. Si el interlineado importa (números gigantes), va con `!` (`leading-[0.75]!`).
+
 **`.animate-marquee`** también está fuera de las capas: su shorthand `animation` pisa cualquier utility `animation-*`. Dirección, duración y pausa van por `style` inline o con `!`.
 
 ### Breakpoints
@@ -107,7 +109,7 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | Componente | Uso |
 |---|---|
 | `DefaultSection` | Wrapper de sección: fondo full-width + contenido `max-w` centrado. Props: `bg`, `id`, `class` para gap/padding |
-| `SharedHeroVideo` | Hero del diseño nuevo: video a pantalla completa `sticky` con las pestañas glass abajo. Props `video`, `poster`, `eyebrow`, `sonido` (botón glass de mute arriba a la derecha). Título por slot default, botones por `#actions`. Lo envuelve `TransformacionHero` |
+| `SharedHeroVideo` | Hero del diseño nuevo: video a pantalla completa `sticky` con las pestañas glass abajo. Props `video`, `poster`, `eyebrow`, `sonido` (botón glass de mute arriba a la derecha). Título por slot default, botones por `#actions`. Hoy no lo usa ninguna página: `TransformacionHero` dejó de envolverlo |
 | `UiHeadingH1` / `UiHeadingH2` / `UiHeadingH3` | Tipografía de títulos |
 | `UiButtonPrimary` | Botón principal. Variantes: `glass` (la del diseño nuevo, usar con `size="glass"`), `glass-dark` (mismo glass en negro, para fondos amarillos), `solid`, `light`, `dark`, `outline` |
 | `DefaultCursor` | Cursor custom. Se expande a píldora con texto sobre elementos con `data-cursor-label` |
@@ -156,6 +158,7 @@ Datos de contenido en `app/constants/`. **Sólo arrays que se recorren con `v-fo
 - `home.js` — `servicios`, `equipo`, `metrics`, `proyectos`
 - `transformacion.js` — `opiniones`, `proceso`, `faqs`, `metrics`, etc.
 - `agencia.js` — `heroWords` (typewriter), `frases`, `servicios`, `pasos`
+- `seguridad.js` — `preguntasSeguridad`, `nivelesRiesgo`, `principiosSeguridad`, `normativas`
 - `routes.js` — `ROUTE_NAMES` para rutas tipadas
 
 ## Páginas
@@ -169,6 +172,8 @@ Datos de contenido en `app/constants/`. **Sólo arrays que se recorren con `v-fo
 | `/eventos` | Rehecha con el design system de la home |
 | `/nosotros` | En armado: hero y equipo listos |
 | `/kit-4.0` | KIT 4.0: hero, cómo funciona, calculadora + bancos y pop-up de calificación |
+| `/cita-confirmada` | Post-agenda (noindex): hero con check, qué esperar (2 cards con número cortado) y 4 preguntas paso a paso. Día y hora salen de `?dia=&hora=` (`useFechaCita`); envío simulado |
+| `/seguridad` | Hero, test de exposición de 8 preguntas con resultado + form de descarga, principios en capas y normativas europeas |
 
 ## Home — referencia del rediseño
 
@@ -316,7 +321,7 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 
 | Sección | Qué es |
 |---|---|
-| `TransformacionHero` | Envuelve `SharedHeroVideo`. Video a pantalla completa, `sticky top-0`: la sección siguiente sube tapándolo, como en la home. Cuando queda cubierto se oculta y pausa el video |
+| `TransformacionHero` | Titular y botones arriba, el video como card debajo que al scrollear se expande a pantalla completa. Ver "Hero" abajo |
 | `SharedEmpresas` | `SharedMarcas` (logos blancos), "Ya se transformaron con nosotros" |
 | `TransformacionDolor` + `Calculadora` | Dos columnas: texto y lista de tareas a la izquierda, calculadora a la derecha. Reemplazó a `HorasPerdidas` |
 | `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
@@ -328,6 +333,16 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 | `TransformacionSeguridad` | Texto a la izquierda, acordeón de pilares a la derecha. Grilla con `items-start`: con `items-center` la columna izquierda se recentraba al abrir cada acordeón |
 | `TransformacionFaqs` | 10 preguntas |
 | `HomeContacto` | El global, con el copy de cierre de esta página |
+
+### Hero
+
+El video (`public/video/hero-transformacion.mp4`) trae texto propio ("RESOLVEMOS TUS DESAFÍOS", "EL CAMBIO COMIENZA…", "AHORA") centrado en la franja media-baja, y cierra con el logo sobre blanco. Por eso el hero no le pone overlay, título ni botones encima, y ya no usa `SharedHeroVideo`. Se eligió entre 5 propuestas; también se probó el "cine" (video de borde a borde con barra de texto abajo, todo en `100dvh`) y se descartó.
+
+- **`sticky top-0` + `recorrido`, como `EventosHero`, no pin**: con pin el video se iba para arriba junto con la página; con sticky la sección siguiente (`relative z-10 bg-negro`) sube tapándolo, como en el resto de las páginas. Por eso el componente tiene **dos raíces** (section + `recorrido`): envueltas en un div, el sticky queda atado a ese div y deja de tapar. Cuando queda cubierto se pone `invisible` y pausa el video.
+- **Desde `lg`**: `recorrido` mide `150vh` y el ScrollTrigger va con `start: 0` y `end` = alto de `recorrido`, sin `trigger`. El video arranca como card a escala ≤ 0.5 debajo del titular (la escala sale del espacio libre bajo el titular, así la card entra entera en 1080×720) y crece a `100vw/100dvh` mientras el titular se va con `autoAlpha`. Después queda quieto a pantalla completa (`.to({}, { duration: 0.6 })`) hasta que termina `recorrido` y lo empieza a tapar la sección siguiente. Con `1.1` se sentía de más.
+- El alto del titular se mide con `offsetTop + offsetHeight`, no con `getBoundingClientRect`: en un refresh con la página scrolleada el titular ya está corrido por el tween.
+- **Abajo de `lg`**: sin animación y `recorrido` en 0. Titular, botones y el video `aspect-video` entero, centrados en `min-h-dvh` (con `object-cover` a pantalla completa en vertical se cortaría la frase). Sigue siendo sticky, salvo con alto ≤ 560px, donde no entra en pantalla.
+- **Sin botón de sonido**: el video no tiene audio.
 
 ### Calculadora de Dolor
 
@@ -519,6 +534,26 @@ Verificado sin overflow horizontal en 320 / 402 / 480 / 600 / 768 / 1080 / 1280 
 - **Sectores**: 3 por fila desde `tab`, así en 600–767 no queda E-Commerce sola. Desde `md` pasan a filas.
 
 **Pendiente**: "Ver trabajos" apunta a `#`.
+
+## Página /seguridad
+
+Se llega desde `TransformacionSeguridad` ("Conoce más aquí", `ROUTE_NAMES.seguridad`). Secciones en `app/components/seguridad/`, listas en `constants/seguridad.js`. Cada sección se eligió entre 3 propuestas; las otras se borraron.
+
+| Sección | Qué es |
+|---|---|
+| `SeguridadHero` | Centrado sobre la grilla de puntos de `KitHero`, que se enciende en amarillo alrededor del cursor (máscara radial que sigue al `pointermove`, sólo mouse), pastilla "Entorno 100% anónimo" en glass amarillo (`bg-amarillo/10` + borde `amarillo/35`, no `glass`: con el borde blanco parecía un botón) y botón glass que baja a `#test-seguridad`. `sticky top-0` + `invisible` al quedar cubierto, como `KitHero` |
+| `SeguridadTest` | Una pregunta por pantalla: número gigante amarillo con `/8` chico al lado (en la base) y el tema debajo; opciones en filas con botón glass-boton. Barra de progreso en la línea superior. Avanza sola al elegir |
+| `SeguridadResultado` | Card de dos columnas (`[1fr_1.6fr]`, la grilla del test): medidor + nivel + texto a la izquierda, `SeguridadFormDiagnostico` a la derecha |
+| `SeguridadPrincipios` | Anillos concéntricos alrededor de "Tus datos" (SVG) a la izquierda, cada principio es una capa. Desde `lg` el H2 y la bajada van sobre la columna derecha, arriba de la lista-acordeón. **Abajo de `lg` no hay lista**: el acordeón con los anillos no entraba en un alto de pantalla. Va una sola card con el principio activo (sólo se renderiza el activo, con fundido `principio`, y el alto se adapta a cada texto: se probó apilar las 5 para que no salte y reservaba demasiado espacio vacío) y contador + flechas glass arriba; en mobile debajo de los anillos, que ocupan todo el ancho (`max-w-96`), en tablet al lado. "Tus datos" sólo desde `lg`: más chico se salía del círculo. El anillo activo se dibuja en amarillo como un timer (`stroke-dashoffset` animado por CSS, `INTERVALO` 6s, arranca en el número). Los números de los anillos van en columna arriba (se probó en diagonal y se descartó); para agrandarlos (r=9) los anillos van cada 21 unidades (`RADIOS`, el de afuera se pasa del viewBox con `overflow-visible`) y el círculo central baja a r=22 y al completarse (`animationend`) pasa al siguiente. Se pausa fuera de pantalla (`animation-play-state`). Click en un anillo o en un ítem salta a ese principio y reinicia el timer desde ahí (`vuelta` en la `key` del anillo), sin cortar el avance. Sin selección por hover: con el timer siempre corriendo, pasar el mouse por la lista lo reiniciaba |
+| `SeguridadNormativas` | H2 corto centrado + la frase como párrafo, y 4 cards glass con emblema UE de fondo (`SeguridadEstrellas`), número gigante cortado y pastilla glass "Aplicada" abajo a la derecha |
+
+**Test**: lógica en `useTestSeguridad` (puntaje por opción, `nivel` por `hasta` en `nivelesRiesgo`). **Las preguntas 2 a 8, los puntajes y los textos de los niveles los redactamos nosotros**: falta validarlos con el cliente.
+
+**Medidor sin porcentaje**: se descartó el "% de exposición" (un test de 8 preguntas no sostiene una cifra). Son 3 tramos de arco (`TRAMOS`, geometría en el componente) que se encienden hasta el nivel, **todos del color del nivel** (crítico: los 3 en rojo; moderado: 2 en amarillo), con glow en el del nivel. Al centro, ícono + nombre + bajada del nivel. Se remonta por `:key="indiceNivel"` para repetir la animación.
+
+**Form**: nombre, web con prefijo `https://`, correo corporativo y checkbox custom (input `sr-only` + caja amarilla al marcar). Botón amarillo sólido "Descargar diagnóstico y guía". Envío simulado, sin endpoint; "política de privacidad" apunta a `#`.
+
+**Normativas**: no hay logos oficiales; el emblema es `SeguridadEstrellas` (12 estrellas en SVG). El título "Normativa europea en cada proyecto" es propuesta nuestra.
 
 ## Página /kit-4.0
 
