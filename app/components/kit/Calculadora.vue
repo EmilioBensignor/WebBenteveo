@@ -10,7 +10,7 @@
             <label for="calc-kit" class="text-hueso text-sm lg:text-base font-light">Valor neto estimado del proyecto</label>
             <p class="text-hueso text-3xl iph:text-4xl lg:text-5xl font-bold leading-none tabular-nums">{{ formato(monto) }}</p>
           </div>
-          <SubsidioRango id="calc-kit" v-model="monto" />
+          <KitRango id="calc-kit" v-model="monto" />
           <div class="flex justify-between text-gris text-xs lg:text-sm tabular-nums">
             <span>{{ formato(MONTO_MIN) }}</span>
             <span>{{ formato(MONTO_MAX) }}</span>
@@ -51,7 +51,7 @@
             <Icon name="material-symbols:account-balance-outline-rounded" size="24" />
           </span>
           <UiHeadingH2>¿Necesitas financiar el monto restante?</UiHeadingH2>
-          <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
+          <p class="text-hueso text-sm lg:text-base font-light leading-normal">
             Para la parte que corresponde a tu empresa existen alternativas de financiación disponibles con determinados bancos.
           </p>
         </div>
@@ -68,7 +68,7 @@
 </template>
 
 <script setup>
-import { bancos } from '~/constants/subsidio'
+import { bancos } from '~/constants/kit'
 import { useCalculoKit, MONTO_MIN, MONTO_MAX } from '~/composables/useCalculoKit'
 
 const emit = defineEmits(['calificar'])

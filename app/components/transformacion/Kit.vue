@@ -1,5 +1,5 @@
 <template>
-  <DefaultSection id="subsidio" bg="bg-negro"
+  <DefaultSection id="kit" bg="bg-negro"
     class="relative z-10 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-12">
     <div
       class="w-full relative overflow-hidden rounded-2xl border border-white/33 bg-linear-to-tl from-amarillo/15 via-negro to-negro px-5 py-8 md:px-10 xl:px-16 xl:py-14 flex flex-col xl:flex-row xl:items-center gap-6 md:gap-8 xl:gap-12">

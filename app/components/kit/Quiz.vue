@@ -94,7 +94,7 @@
 </template>
 
 <script setup>
-import { preguntasKit } from '~/constants/subsidio'
+import { preguntasKit } from '~/constants/kit'
 import { scrollToEl } from '~/composables/useSmoothScroll'
 
 const abierto = defineModel({ type: Boolean, default: false })

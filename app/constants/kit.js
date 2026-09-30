@@ -35,6 +35,6 @@ export const preguntasKit = [
 ]
 
 export const bancos = [
-  { nombre: 'Santander', logo: '/img/subsidio/santander.svg', width: 238, height: 42 },
-  { nombre: 'Galicia', logo: '/img/subsidio/galicia.svg', width: 522, height: 134 }
+  { nombre: 'Santander', logo: '/img/kit/santander.svg', width: 238, height: 42 },
+  { nombre: 'Galicia', logo: '/img/kit/galicia.svg', width: 522, height: 134 }
 ]

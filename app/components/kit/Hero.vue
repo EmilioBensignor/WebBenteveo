@@ -9,11 +9,11 @@
     </template>
 
     <div class="w-full max-w-240 flex flex-col items-center gap-6 lg:gap-8 text-center mx-auto">
-      <SubsidioBandera class="w-12 lg:w-16 shadow-[0_8px_24px_rgba(0,0,0,0.4)]" />
+      <KitBandera class="w-12 lg:w-16 shadow-[0_8px_24px_rgba(0,0,0,0.4)]" />
       <h1 class="text-hueso text-5xl md:text-7xl lg:text-8xl xxl:text-[7.5rem] font-bold leading-[0.95] tracking-tight text-balance">
         ¿Qué es <span class="text-amarillo whitespace-nowrap">KIT 4.0</span>?
       </h1>
-      <p class="max-w-160 text-hueso text-base md:text-lg lg:text-xl font-light leading-[1.5] text-balance">
+      <p class="max-w-160 text-hueso text-base md:text-lg lg:text-xl font-light leading-normal text-balance">
         KIT 4.0 es un programa nacional que facilita a las PyMEs la incorporación de tecnología para mejorar y digitalizar sus procesos.
       </p>
       <UiButtonPrimary variant="glass" size="glass" class="w-full sm:w-max gap-2 mt-2" @click="emit('calificar')">

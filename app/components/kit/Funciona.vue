@@ -23,7 +23,7 @@
         </span>
         <div class="flex flex-col gap-2">
           <h3 class="text-hueso text-base lg:text-xl font-semibold">{{ paso.label }}</h3>
-          <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">{{ paso.text }}</p>
+          <p class="text-hueso text-sm lg:text-base font-light leading-normal">{{ paso.text }}</p>
         </div>
       </article>
     </div>
@@ -31,5 +31,5 @@
 </template>
 
 <script setup>
-import { pasosKit } from '~/constants/subsidio'
+import { pasosKit } from '~/constants/kit'
 </script>
