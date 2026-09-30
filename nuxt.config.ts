@@ -125,7 +125,9 @@ export default defineNuxtConfig({
       ? {
           '/': { prerender: true },
           '/transformacion-tecnologica': { prerender: true },
-          '/transformacion-tecnologica/**': { swr: 86400 }
+          // `/*` y no `/**`: `/**` también matchea el índice y lo convierte en ISR,
+          // que en Vercel sirve HTML cacheado de deploys viejos con CSS/JS que ya no existen
+          '/transformacion-tecnologica/*': { swr: 86400 }
         }
       : {}),
     '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },
