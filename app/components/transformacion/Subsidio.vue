@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <UiButtonPrimary :to="ROUTE_NAMES.subsidio" class="relative w-full sm:w-max shrink-0 gap-3 pl-6 pr-4">
+      <UiButtonPrimary :to="ROUTE_NAMES.kit" class="relative w-full sm:w-max shrink-0 gap-3 pl-6 pr-4">
         Quiero saber si mi empresa puede aplicar
         <Icon name="material-symbols:arrow-forward-rounded" class="size-4 lg:size-6 shrink-0" />
       </UiButtonPrimary>

@@ -5,6 +5,6 @@ export const ROUTE_NAMES = {
   eventos: '/eventos',
   nosotros: '/nosotros',
   seguridad: '/seguridad',
-  subsidio: '/subsidio',
+  kit: '/kit-4.0',
   rubro: (slug) => `/rubros/${slug}`
 }
