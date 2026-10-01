@@ -14,9 +14,10 @@
         </nav>
 
         <div class="flex items-center gap-4">
-          <NuxtLink v-for="red in redes" :key="red" to="#" :aria-label="red">
-            <img :src="`/img/redes/${red}.svg`" :alt="red" class="size-8" width="32" height="32" loading="lazy" decoding="async">
-          </NuxtLink>
+          <a v-for="red in redes" :key="red.nombre" :href="red.href" target="_blank" rel="noopener noreferrer"
+            :aria-label="red.nombre">
+            <img :src="`/img/redes/${red.nombre}.svg`" :alt="red.nombre" class="size-8" width="32" height="32" loading="lazy" decoding="async">
+          </a>
         </div>
       </div>
 
@@ -43,5 +44,10 @@ const links = [
   { label: 'Blog', to: '#' }
 ]
 
-const redes = ['instagram', 'facebook', 'youtube', 'linkedin']
+const redes = [
+  { nombre: 'facebook', href: 'https://www.facebook.com/BenteveoCoworkers/' },
+  { nombre: 'instagram', href: 'https://www.instagram.com/benteveo_coworkers/' },
+  { nombre: 'vimeo', href: 'https://vimeo.com/benteveo' },
+  { nombre: 'linkedin', href: 'https://www.linkedin.com/company/benteveo/posts/' }
+]
 </script>
