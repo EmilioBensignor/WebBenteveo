@@ -12,9 +12,9 @@
           </div>
 
           <ol ref="linea" class="w-full relative flex flex-col gap-7 tab:max-md:gap-6">
-            <span class="absolute left-1.25 top-2 bottom-2 w-px bg-blanco/15">
+            <li class="absolute left-1.25 top-2 bottom-2 w-px bg-blanco/15" aria-hidden="true">
               <span ref="relleno" class="absolute inset-0 origin-top bg-amarillo" />
-            </span>
+            </li>
             <li v-for="(p, i) in premios" :key="i" class="relative flex flex-col tab:max-md:flex-row tab:max-md:items-center gap-1.5 tab:max-md:gap-8 md:gap-2 pl-8 lg:pl-10">
               <span class="punto size-2.75 absolute left-0 top-1.5 tab:max-md:top-1/2 tab:max-md:-translate-y-1/2 md:top-3 lg:top-4.5 rounded-full border border-blanco/40 bg-negro" />
               <span class="text-hueso text-2xl tab:max-md:text-3xl md:text-4xl lg:text-5xl font-bold leading-none tabular-nums tab:max-md:w-20 shrink-0">{{ p.anio }}</span>

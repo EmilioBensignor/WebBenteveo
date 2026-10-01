@@ -4,13 +4,10 @@
     <SharedLuces ref="luces" class="z-0 opacity-30" />
 
     <ul ref="palabras" class="absolute inset-x-0 top-0 bottom-0 mac:top-[7%] z-1 pointer-events-none [@media(max-height:480px)]:hidden" aria-hidden="true">
-      <li v-for="(p, i) in PALABRAS" :key="p.texto" class="absolute -translate-1/2 whitespace-nowrap will-change-transform"
-        :class="[p.lado && 'hidden md:block', p.centro && 'max-lg:[@media(max-height:640px)]:hidden']"
-        :style="{ left: `${p.x}%`, top: `${p.y}%` }">
+      <li v-for="p in palabrasVista" :key="p.texto" class="absolute -translate-1/2 whitespace-nowrap will-change-transform"
+        :class="p.visibilidad" :style="p.posicion">
         <span class="block will-change-transform">
-          <span class="block text-hueso font-bold leading-none will-change-transform"
-            :class="[TAMANOS[p.capa], DESENFOQUE[p.capa]]"
-            :style="{ opacity: [0.18, 0.35, 0.8][p.capa] }">
+          <span class="block text-hueso font-bold leading-none will-change-transform" :class="p.estilo" :style="{ opacity: p.opacidad }">
             {{ p.texto }}
           </span>
         </span>
@@ -48,12 +45,25 @@ const TAMANOS = [
 
 const DESENFOQUE = ['blur-[2px]', '', 'blur-[1px]']
 
+const OPACIDAD = [0.18, 0.35, 0.8]
+
 const PALABRAS = [
   ['Ideas', 12, 24, 0], ['Estrategia', 34, 20, 1], ['Contenido', 60, 25, 0], ['Diseño', 85, 21, 2],
   ['Video', 22, 34, 2, false, true], ['Experiencias', 76, 33, 2, false, true],
   ['Producción', 11, 46, 1, true], ['Marca', 16, 58, 2, true], ['Redes', 89, 45, 1, true], ['Datos', 86, 58, 0, true],
   ['Performance', 19, 74, 1], ['Campañas', 34, 84, 0], ['Eventos', 56, 76, 2, false, true], ['Tecnología', 76, 85, 0]
 ].map(([texto, x, y, capa, lado = false, centro = false]) => ({ texto, x, y, capa, lado, centro }))
+
+const palabrasVista = computed(() => PALABRAS.map((p) => ({
+  texto: p.texto,
+  posicion: { left: `${p.x}%`, top: `${p.y}%` },
+  visibilidad: {
+    'hidden md:block': p.lado,
+    'max-lg:[@media(max-height:640px)]:hidden': p.centro
+  },
+  estilo: [TAMANOS[p.capa], DESENFOQUE[p.capa]],
+  opacidad: OPACIDAD[p.capa]
+})))
 
 let seguir = []
 

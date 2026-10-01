@@ -120,6 +120,9 @@ Dónde va un componente nuevo: si lo usa una sola página → carpeta de esa pá
 | `SharedLuces` | Las 5 manchas amarillas difuminadas con `mix-blend-screen` que flotan con GSAP (se cortan con `prefers-reduced-motion`). Lo que va en el slot se compone adentro del mismo grupo antes del blend. Expone `root`. Lo usan `HomeHero` y `EventosHero` |
 | `SharedEmpresas` | Sección "Empresas que confiaron": título (prop `title`) + `SharedMarcas` + slot. La usan home (con métricas en el slot), /transformacion-tecnologica y /eventos |
 | `SharedMarcas` | Marquee de los 24 logos blancos monocromo, sin tiles. Lo usa `SharedEmpresas` |
+| `SharedHeroPuntos` | Hero centrado sobre la grilla de puntos que se enciende alrededor del cursor, `sticky` + `invisible` al quedar cubierto. Prop `ancho`, slot `#background`. Lo usan `KitHero`, `SeguridadHero` y `app/error.vue` (la 404). La entrada de los hijos es CSS con `animation-delay` por `nth-child` (hasta 4 hijos), no GSAP: así el texto pinta sin esperar al JS y el LCP baja ~1s en mobile |
+
+**Sitemap**: los rubros salen de `constants/rubros.js` en `nuxt.config.ts`, filtrando los que no tienen `problemas` (páginas vacías). `'/transformacion-tecnologica/*/_payload.json'` lleva el mismo `swr` que los rubros: sin esa regla el payload daba 404 al navegar entre rubros.
 
 ## Botón glass — NO TOCAR
 
@@ -171,7 +174,7 @@ Datos de contenido en `app/constants/`. **Sólo arrays que se recorren con `v-fo
 | `/agencia-creativa-light` | Variante en tema light para test con cliente |
 | `/eventos` | Rehecha con el design system de la home |
 | `/nosotros` | En armado: hero y equipo listos |
-| `/kit-4.0` | KIT 4.0: hero, cómo funciona, calculadora + bancos y pop-up de calificación |
+| `/kit-4-0` | KIT 4.0: hero, cómo funciona, calculadora + bancos y pop-up de calificación |
 | `/cita-confirmada` | Post-agenda (noindex): hero con check, qué esperar (2 cards con número cortado) y 4 preguntas paso a paso. Día y hora salen de `?dia=&hora=` (`useFechaCita`); envío simulado |
 | `/seguridad` | Hero, test de exposición de 8 preguntas con resultado + form de descarga, principios en capas y normativas europeas |
 
@@ -200,7 +203,7 @@ Secciones en orden, todas en `app/components/home/`, contenido en `constants/hom
 
 **Números gigantes** (`01`, `02`, `03`): amarillos, pegados al borde inferior izquierdo y **cortados** por el borde de la card. Se logra con margin negativo (`-mb-4 md:-mb-6 lg:-mb-10 -ml-2 md:-ml-3 lg:-ml-4`), no con `leading`.
 
-**Línea divisoria**: utility `linea-vertical` / `linea-horizontal` — degradé amarillo que se desvanece a `#131313` en las puntas. **Excepción**: la del footer es blanca sólida (`bg-white`), así está en el Figma.
+**Línea divisoria**: utility `linea-vertical`: degradé amarillo que se desvanece a `#131313` en las puntas. **Excepción**: la del footer es blanca sólida (`bg-white`), así está en el Figma.
 
 **Logos de marcas**: los `.webp` de `public/img/marcas/` son blancos monocromo y desaparecen sobre fondo claro. `public/img/marcas/color/` y `reflejo.svg` quedaron sin uso desde que se eliminó `SharedMarcasTiles`.
 
@@ -327,7 +330,7 @@ Secciones en orden, en `app/components/transformacion/`. Contenido en `constants
 | `TransformacionBeneficios` + `BeneficioCard` | Las cuatro cosas, 4 en fila desde `lg`. Reemplazó a las cards apiladas rotadas |
 | `TransformacionIndustrias` | Carrusel Embla de rubros con foto de fondo y línea de progreso arrastrable |
 | `TransformacionResultados` | Métricas con número gigante y línea vertical, como `HomeEmpresas`. Reemplazó al uso de `SharedResultados` |
-| `TransformacionOpiniones` | Dos `UiCarouselStatic`: testimonios y videos |
+| `TransformacionOpiniones` | Dos `UiCarouselStatic`: testimonios y videos. Desde `lg` las flechas van afuera de las cards, en el padding lateral (`-2.875rem` en `lg`, `-3.5rem` desde `xl`): con `-1.25rem` la flecha de 40px pisaba la última card. En `md` quedan encima de la card que asoma, como en WebTEX |
 | `TransformacionMedios` + `MedioCard` | Carrusel de notas de prensa. **Contenido e imágenes son placeholder** |
 | `TransformacionProceso` | Pin desde `lg`: título amarillo centrado, las 3 cards glass suben escalonadas y después el botón. Ver "Proceso" abajo |
 | `TransformacionSeguridad` | Texto a la izquierda, acordeón de pilares a la derecha. Grilla con `items-start`: con `items-center` la columna izquierda se recentraba al abrir cada acordeón |
@@ -403,7 +406,6 @@ Las cuatro en una fila desde `lg` (`grid-cols-1 md:grid-cols-2 lg:grid-cols-4`).
 
 ### Pendientes
 
-- **Flecha de Opiniones**: se superpone con la última card. El `button-position` está desalineado con el `slides-per-view`; hay que mirar cómo lo resuelve el repo `WebTEX` (`/Users/lio/Desktop/La/TEX/WebTEX`), que es la referencia buena.
 - **Sección Medios**: los 5 medios, títulos y links de `constants/transformacion.js` son inventados, y las imágenes de `public/img/transformacion/medios/` son copias de las de pasos.
 - **Imágenes de Beneficios** (`public/img/transformacion/beneficios/`): también copias, faltan las reales.
 - **Email de la calculadora**: sin endpoint. `COSTO_HORA = 15000` está sin validar con el cliente.
@@ -466,7 +468,7 @@ Se eligió entre varias rondas de propuestas; las demás se borraron.
 - **Responsive**: dos columnas desde `md` (no `lg`); en 768 vertical, apilado, quedaba mucho vacío. Abajo de `md`, apilado con el grupo de círculos en `h-80 sm:h-96`, para que el hero entre en una pantalla de 320×800. Los tamaños de `lg` para arriba no cambian.
 - **Las posiciones de los círculos van en % del ancho del grupo**: si el grupo es ancho y los círculos chicos, se separan. Por eso en `mac:` (notebooks bajas, círculos más chicos) el grupo se angosta a `max-w-108`; sin eso, en 1280–1440 × ≤820 el de arriba no llegaba a pisar al del medio. En `lg` y `mac:` los dos chicos van más a la derecha (`right-[4%]` y `right-[8%]`) y `xl:` vuelve a los valores de base: se pisan ~45px (arriba) y ~73px (abajo).
 - El texto va dentro del `max-w-362` con la escala de padding: coincide con el header en todos los anchos.
-- Entrada con GSAP: los círculos aparecen escalonados con zoom y el texto sube escalonado.
+- Entrada en CSS (`@keyframes` en el `<style scoped>`), no GSAP: los círculos aparecen escalonados con zoom y el texto sube escalonado. Con GSAP el contenido se pintaba en el HTML del server, se ocultaba al hidratar y recién después se animaba (parpadeo). Los círculos arrancan en `opacity: 0.01` y no en 0: son el LCP, y Chrome no cuenta como pintado un elemento en opacidad 0 (con 0 el LCP subía de 3.2s a 4.2s en mobile).
 - Detalles de movimiento: cada círculo flota en loop con su propio ritmo (`FLOTE`), sigue al mouse con parallax según `PROFUNDIDAD` (el de abajo, que va adelante, se mueve más) y la foto hace zoom en hover desde `md`. **Cada círculo son dos capas**: la externa lleva la posición y el parallax (`x`/`y` con `quickTo`), la interna la flotación. En una sola capa los dos tweens de `y` se pisaban. Todo se corta con `prefers-reduced-motion`.
 
 ## Landing /eventos
@@ -555,9 +557,9 @@ Se llega desde `TransformacionSeguridad` ("Conoce más aquí", `ROUTE_NAMES.segu
 
 **Normativas**: no hay logos oficiales; el emblema es `SeguridadEstrellas` (12 estrellas en SVG). El título "Normativa europea en cada proyecto" es propuesta nuestra.
 
-## Página /kit-4.0
+## Página /kit-4-0
 
-Se llega desde `TransformacionKit` (`ROUTE_NAMES.kit`). La página es `pages/kit-4.0.vue` y sus secciones en `app/components/kit/`, listas en `constants/kit.js` (`pasosKit`, `preguntasKit`, `bancos`).
+Se llega desde `TransformacionKit` (`ROUTE_NAMES.kit`). La página es `pages/kit-4-0.vue` y sus secciones en `app/components/kit/`, listas en `constants/kit.js` (`pasosKit`, `preguntasKit`, `bancos`).
 
 | Sección | Qué es |
 |---|---|
@@ -569,7 +571,7 @@ Se llega desde `TransformacionKit` (`ROUTE_NAMES.kit`). La página es `pages/kit
 
 Cálculo en `useCalculoKit` (50% del monto, slider de ARS 4M a 50M, default 20M, montos animados). Logos de Santander y Galicia en `public/img/kit/`, bajados de Wikimedia: reemplazar por los oficiales si están.
 
-### Responsive de /kit-4.0
+### Responsive de /kit-4-0
 
 Verificado sin overflow horizontal en 320 / 402 / 480 / 600 / 768 / 1080 / 1280 / 1440 / 1920 y en 740×360, incluido el pop-up (scrollea adentro en pantallas bajas).
 

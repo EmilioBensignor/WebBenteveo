@@ -7,14 +7,14 @@
       </span>
     </div>
 
-    <div class="md:min-h-[28rem] lg:min-h-[33rem] flex flex-col px-4 iph:px-5 md:px-6 lg:px-8 py-6 lg:py-8">
+    <div class="md:min-h-112 lg:min-h-132 flex flex-col px-4 iph:px-5 md:px-6 lg:px-8 py-6 lg:py-8">
       <Transition name="paso" mode="out-in">
         <div v-if="paso === 1" key="1" class="flex-1 flex flex-col justify-between gap-7 md:gap-8">
           <div class="flex flex-col gap-3">
             <p class="text-hueso text-lg md:text-xl lg:text-2xl font-semibold leading-[1.3]">
               ¿Cuántas personas de tu equipo hacen tareas repetitivas?
             </p>
-            <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
+            <p class="text-hueso text-sm lg:text-base font-light leading-normal">
               Las que copian datos de un lado a otro, responden siempre lo mismo o arman reportes a mano.
             </p>
           </div>
@@ -38,7 +38,7 @@
             <p class="text-hueso text-lg md:text-xl lg:text-2xl font-semibold leading-[1.3]">
               De su semana laboral, ¿cuántas horas se le van en esas tareas?
             </p>
-            <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">{{ referenciaHoras }}</p>
+            <p class="text-hueso text-sm lg:text-base font-light leading-normal">{{ referenciaHoras }}</p>
           </div>
 
           <div class="flex flex-col gap-5">

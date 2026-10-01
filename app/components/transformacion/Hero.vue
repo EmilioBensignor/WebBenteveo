@@ -38,6 +38,10 @@ const reproductor = useTemplateRef('reproductor')
 const recorrido = useTemplateRef('recorrido')
 const cubierto = ref(false)
 
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/img/posters/hero-transformacion.jpg', fetchpriority: 'high' }]
+})
+
 function revisar() {
   if (!root.value || !recorrido.value) return
   const tapado = window.scrollY >= recorrido.value.offsetHeight + root.value.offsetHeight

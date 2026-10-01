@@ -4,7 +4,7 @@
     <SharedLuces class="z-0" />
 
     <div class="w-full max-w-362 grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 lg:gap-12 xxl:gap-20 relative z-1 mx-auto">
-      <div ref="texto" class="max-w-160 flex flex-col gap-5 lg:gap-8">
+      <div class="entrada max-w-160 flex flex-col gap-5 lg:gap-8">
         <div class="flex items-center gap-3">
           <span class="w-8 lg:w-12 h-px bg-amarillo" />
           <p class="text-hueso text-sm md:text-base lg:text-xl font-light">{{ rubro.h1 }}</p>
@@ -13,8 +13,8 @@
         <RubroHeroAcciones class="mt-2" />
       </div>
 
-      <div ref="grupo" class="w-full max-w-104 md:max-w-120 lg:max-w-none mac:max-w-108 aspect-[10/11] md:aspect-auto md:h-112 lg:h-144 xl:h-160 mac:h-128 relative mx-auto">
-        <div v-for="(src, i) in circulos" :key="i" class="absolute" :class="POSICIONES[i]">
+      <div ref="grupo" class="w-full max-w-104 md:max-w-120 lg:max-w-none mac:max-w-108 aspect-10/11 md:aspect-auto md:h-112 lg:h-144 xl:h-160 mac:h-128 relative mx-auto">
+        <div v-for="(src, i) in circulos" :key="i" class="circulo absolute" :class="POSICIONES[i]">
           <div
             class="size-full group rounded-full overflow-hidden border border-blanco/33 bg-negro shadow-[0_0_40px_0_rgba(252,183,22,0.18)]">
             <NuxtImg :src="src" alt="" format="avif" sizes="xs:260px md:320px lg:420px xl:480px"
@@ -52,7 +52,6 @@ const FLOTE = [
 ]
 
 const root = useTemplateRef('root')
-const texto = useTemplateRef('texto')
 const grupo = useTemplateRef('grupo')
 const cubierto = ref(false)
 const tope = ref(0)
@@ -104,10 +103,6 @@ useGsapContext(root, (ctx, gsap) => {
 
   const circulos = [...grupo.value.children]
 
-  gsap.timeline({ defaults: { ease: 'power3.out' } })
-    .from(circulos, { autoAlpha: 0, scale: 0.8, duration: 1.1, stagger: 0.15 }, 0)
-    .from(texto.value.children, { autoAlpha: 0, y: 30, duration: 0.9, stagger: 0.1 }, 0.2)
-
   circulos.forEach((c, i) => {
     gsap.to(c.firstElementChild, { ...FLOTE[i], ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 1.2 })
   })
@@ -118,3 +113,49 @@ useGsapContext(root, (ctx, gsap) => {
   ])
 })
 </script>
+
+<style scoped>
+@media (prefers-reduced-motion: no-preference) {
+  .circulo {
+    animation: aparece 1.1s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .circulo:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .circulo:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  .entrada > * {
+    animation: entrada 0.9s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  .entrada > :nth-child(1) {
+    animation-delay: 0.2s;
+  }
+
+  .entrada > :nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .entrada > :nth-child(3) {
+    animation-delay: 0.4s;
+  }
+}
+
+@keyframes aparece {
+  from {
+    opacity: 0.01;
+    scale: 0.8;
+  }
+}
+
+@keyframes entrada {
+  from {
+    opacity: 0;
+    translate: 0 30px;
+  }
+}
+</style>

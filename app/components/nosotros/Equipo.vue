@@ -12,8 +12,8 @@
         <div v-for="(persona, i) in tarjetas" :key="i"
           class="w-(--card) aspect-3/4 absolute left-0 top-0 rounded-2xl overflow-hidden border bg-negro [--card:6.5rem] sm:[--card:7.5rem] md:[--card:9.5rem] lg:[--card:10rem] xl:[--card:11.5rem] mac:[--card:9rem]">
           <div class="absolute inset-x-0 bottom-0 h-3/4 bg-[radial-gradient(ellipse_at_bottom,rgba(252,183,22,0.3)_0%,rgba(252,183,22,0)_70%)]" />
-          <img :src="persona.foto" alt="" width="600" height="800" loading="eager" draggable="false"
-            class="size-full absolute inset-0 object-cover object-top">
+          <NuxtImg :src="persona.foto" alt="" width="600" height="800" sizes="104px sm:120px md:152px lg:160px xl:184px"
+            loading="eager" draggable="false" class="size-full absolute inset-0 object-cover object-top" />
         </div>
       </div>
 

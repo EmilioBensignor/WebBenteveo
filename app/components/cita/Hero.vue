@@ -3,7 +3,7 @@
     class="min-h-dvh sticky! top-0 [@media(max-height:560px)]:relative! flex items-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 pt-32 pb-20">
     <template #background>
       <div class="absolute inset-0 puntos text-blanco/10 mask-[radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
-      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 lg:size-[36rem] rounded-full bg-amarillo/15 blur-3xl" />
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 size-96 lg:size-144 rounded-full bg-amarillo/15 blur-3xl" />
     </template>
 
     <div class="w-full max-w-200 flex flex-col items-center gap-6 lg:gap-8 text-center mx-auto">

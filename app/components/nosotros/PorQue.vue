@@ -2,8 +2,8 @@
   <section ref="root" class="w-full relative z-10 bg-negro">
     <div class="w-full min-h-176 md:min-h-160 lg:min-h-dvh relative overflow-hidden flex items-end px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30 py-12 md:py-16 lg:py-20 xxl:py-24 mac:py-14">
       <div class="absolute inset-x-0 top-0 bottom-60 md:bottom-0 overflow-hidden">
-        <img ref="img" src="/img/nosotros/por-que.webp" alt="Equipo de Benteveo trabajando" width="1500" height="1001" loading="lazy"
-          class="size-full absolute inset-0 object-cover grayscale scale-110">
+        <NuxtImg ref="img" src="/img/nosotros/por-que.webp" alt="Equipo de Benteveo trabajando" width="1500" height="1001"
+          sizes="100vw" loading="lazy" class="size-full absolute inset-0 object-cover grayscale scale-110" />
         <div class="absolute inset-0 bg-linear-to-t from-negro md:from-black via-black/70 to-black/30 lg:bg-linear-to-r lg:from-black/95 lg:via-black/70 lg:to-black/20" />
       </div>
 
@@ -60,7 +60,7 @@ const mostrados = useConteo(metricas, listaMetricas)
 useGsapContext(root, (ctx, gsap) => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-  gsap.fromTo(img.value, { yPercent: -5 }, {
+  gsap.fromTo(img.value.$el, { yPercent: -5 }, {
     yPercent: 5, ease: 'none',
     scrollTrigger: { trigger: root.value, start: 'top bottom', end: 'bottom top', scrub: true }
   })

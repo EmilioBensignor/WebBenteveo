@@ -5,7 +5,7 @@
       class="w-full max-w-362 flex justify-between items-center gap-6 relative glass rounded-full mx-auto py-3 pl-5 pr-3 lg:py-4 lg:pl-8 lg:pr-4"
       :class="sinBlur && 'glass-solido'">
       <NuxtLink :to="ROUTE_NAMES.home" aria-label="Benteveo" class="shrink-0">
-        <img src="/img/logo-benteveo.avif" alt="Benteveo" class="w-32 h-auto lg:w-40" width="1921" height="305">
+        <NuxtImg src="/img/logo-benteveo.avif" alt="Benteveo" class="w-32 h-auto lg:w-40" width="1921" height="305" sizes="128px lg:160px" />
       </NuxtLink>
 
       <nav class="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
@@ -55,7 +55,7 @@
         <div class="w-full flex flex-col items-center gap-6">
           <UiButtonPrimary to="#contacto" @click.prevent="irAContacto">Hablemos</UiButtonPrimary>
 
-          <img src="/img/logo-benteveo.avif" alt="Benteveo" class="w-48 h-auto" width="1921" height="305">
+          <NuxtImg src="/img/logo-benteveo.avif" alt="Benteveo" class="w-48 h-auto" width="1921" height="305" sizes="192px" />
         </div>
       </div>
     </Transition>

@@ -9,17 +9,17 @@
     <div class="w-full max-w-362 flex flex-col gap-6 lg:gap-8">
       <UiCarouselStatic :slides-per-view="{ base: 1.2, sm: 1.5, tab: 2.2, md: 2.3, lg: 2.6, xl: 3, xxl: 3 }"
         :gap="{ base: 8, md: 16, lg: 16, xl: 16, xxl: 16 }"
-        :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '1.25rem', md: '0rem', lg: '0rem', xl: '-1.25rem', xxl: '-1.25rem' }, right: { base: '1.25rem', md: '0rem', lg: '0rem', xl: '-1.25rem', xxl: '-1.25rem' } }">
+        :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '1.25rem', md: '0rem', lg: '-2.875rem', xl: '-3.5rem', xxl: '-3.5rem' }, right: { base: '1.25rem', md: '0rem', lg: '-2.875rem', xl: '-3.5rem', xxl: '-3.5rem' } }">
         <SharedOpinionCard v-for="op in opiniones" :key="op.autor + op.empresa" :op="op" />
       </UiCarouselStatic>
 
       <UiCarouselStatic :slides-per-view="{ base: 1.2, sm: 1.5, tab: 1.8, md: 1.8, lg: 2, xl: 2, xxl: 2 }"
         :gap="{ base: 8, md: 16, lg: 16, xl: 16, xxl: 16 }"
-        :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '1.25rem', md: '0rem', lg: '-1.25rem', xl: '-1.25rem', xxl: '-1.25rem' }, right: { base: '1.25rem', md: '0rem', lg: '-1.25rem', xl: '-1.25rem', xxl: '-1.25rem' } }">
+        :button-position="{ top: '50%', transform: 'translateY(-50%)', left: { base: '1.25rem', md: '0rem', lg: '-2.875rem', xl: '-3.5rem', xxl: '-3.5rem' }, right: { base: '1.25rem', md: '0rem', lg: '-2.875rem', xl: '-3.5rem', xxl: '-3.5rem' } }">
         <button v-for="n in 2" :key="n" class="group relative overflow-hidden rounded-2xl aspect-video"
           aria-label="Reproducir video">
           <NuxtImg src="/img/transformacion/video-thumb.png" alt="" class="size-full object-cover" format="avif"
-            sizes="288px lg:680px" />
+            sizes="288px lg:680px" loading="lazy" />
           <span class="flex items-center justify-center absolute inset-0">
             <span
               class="size-12 lg:size-16 flex items-center justify-center bg-amarillo rounded-full transition-transform duration-300 lg:group-hover:scale-110">

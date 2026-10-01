@@ -1,6 +1,6 @@
 <template>
   <div class="w-full grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] overflow-hidden border border-blanco/15 rounded-2xl lg:rounded-3xl">
-    <div class="flex flex-col items-center gap-4 text-center border-b lg:border-b-0 lg:border-r border-blanco/10 px-5 py-8 md:px-8 lg:px-10 lg:py-10">
+    <div class="flex flex-col justify-center items-center gap-5 text-center border-b lg:border-b-0 lg:border-r border-blanco/10 px-5 py-8 md:px-8 lg:px-10 lg:py-12">
       <div class="w-full max-w-68 lg:max-w-80 relative">
         <svg viewBox="0 0 200 110" class="w-full overflow-visible" aria-hidden="true">
           <path v-for="(d, i) in TRAMOS" :key="d" :d="d" fill="none" stroke="currentColor" stroke-width="12"
@@ -14,7 +14,7 @@
         </p>
       </div>
 
-      <p class="text-hueso/80 text-sm font-light leading-normal">{{ nivel.texto }}</p>
+      <p class="max-w-md text-hueso text-sm lg:text-base font-light leading-normal text-pretty">{{ nivel.texto }}</p>
 
       <button type="button"
         class="group flex items-center gap-1.5 glass-boton rounded-full text-hueso text-xs lg:text-sm cursor-pointer transition-colors duration-200 lg:hover:text-amarillo mt-1 pl-3 pr-4 py-2"
@@ -24,12 +24,12 @@
       </button>
     </div>
 
-    <div class="flex flex-col justify-center gap-5 lg:gap-6 bg-blanco/4 px-5 py-8 md:px-8 lg:px-12 lg:py-10">
-      <div class="flex flex-col gap-1.5">
-        <p class="text-hueso text-lg lg:text-2xl font-semibold leading-[1.25] text-balance">
+    <div class="flex flex-col justify-center gap-6 lg:gap-8 bg-blanco/4 px-5 py-8 md:px-8 lg:px-12 lg:py-12">
+      <div class="flex flex-col gap-3">
+        <h3 class="max-w-xl text-hueso text-xl md:text-2xl lg:text-[1.75rem] font-semibold leading-[1.2] text-balance">
           Consigue tu diagnóstico detallado y la guía de recomendaciones
-        </p>
-        <p class="text-hueso/70 text-sm lg:text-base font-light">para comenzar a proteger tus activos digitales hoy.</p>
+        </h3>
+        <p class="text-hueso/70 text-sm lg:text-base font-light">Para comenzar a proteger tus activos digitales hoy.</p>
       </div>
       <SeguridadFormDiagnostico />
     </div>

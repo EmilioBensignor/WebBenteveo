@@ -40,7 +40,7 @@
     </div>
 
     <div ref="marco" class="fixed z-2 bg-negro overflow-hidden pointer-events-none transition-opacity duration-300"
-      :class="visible ? 'opacity-100' : 'opacity-0'">
+      :class="[visible ? 'opacity-100' : 'opacity-0', !ubicado && 'invisible']">
       <video ref="video" src="https://q7epkagsjeo0w9l9.public.blob.vercel-storage.com/video/home/Benteveo-Agencia-Publicitaria.mp4" preload="metadata"
         class="w-dvw h-dvh absolute left-1/2 top-1/2 max-w-none -translate-x-1/2 -translate-y-1/2 object-cover" autoplay
         loop muted playsinline />
@@ -61,6 +61,7 @@ const video = useTemplateRef('video')
 const disparador = useTemplateRef('disparador')
 
 const visible = ref(true)
+const ubicado = ref(false)
 
 let observer = null
 
@@ -104,6 +105,7 @@ useGsapContext(root, (ctx, gsap) => {
 
   gsap.set(marco.value, inicio())
   gsap.set(video.value, medidaVideo())
+  ubicado.value = true
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 

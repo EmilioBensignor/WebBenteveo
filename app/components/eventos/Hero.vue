@@ -29,7 +29,7 @@
 
     <div ref="trazo" class="absolute inset-0 flex justify-center items-center pointer-events-none" aria-hidden="true">
       <span
-        class="text-white text-[18vw] font-bold leading-none tracking-[-0.05em] whitespace-nowrap select-none [filter:url(#contorno-eventos)]">
+        class="text-white text-[18vw] font-bold leading-none tracking-[-0.05em] whitespace-nowrap select-none filter-[url(#contorno-eventos)]">
         <span v-for="(letra, i) in palabra" :key="i" class="inline-block leading-none">{{ letra }}</span>
       </span>
     </div>
@@ -39,7 +39,7 @@
         class="inline-block relative text-transparent text-[18vw] font-bold leading-none tracking-[-0.05em] whitespace-nowrap select-none">
         <span v-for="(letra, i) in palabra" :key="i" class="inline-block leading-none" aria-hidden="true">{{ letra }}</span>
         <span ref="intro"
-          class="block absolute inset-x-0 top-[86%] text-center text-amarillo text-sm lg:text-xl font-light leading-[1.25] tracking-normal whitespace-normal pt-4 md:pt-6 lg:pt-8">
+          class="block absolute inset-x-0 top-[86%] text-center text-amarillo text-sm lg:text-xl font-light leading-tight tracking-normal whitespace-normal pt-4 md:pt-6 lg:pt-8">
           {{ heroEventos.eyebrow }}
         </span>
       </span>

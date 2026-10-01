@@ -34,22 +34,26 @@
       <p v-if="errores.correo" class="text-xs text-red-400 px-1">{{ errores.correo }}</p>
     </div>
 
-    <label class="group flex items-start gap-3 cursor-pointer text-hueso/70 text-xs lg:text-sm font-light leading-normal mt-1">
-      <input v-model="form.acepto" type="checkbox" class="peer sr-only" />
-      <span class="size-5 flex justify-center items-center shrink-0 border rounded-md transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-amarillo/50"
-        :class="form.acepto ? 'bg-amarillo border-amarillo text-negro' : errores.acepto ? 'border-red-400' : 'border-blanco/30 lg:group-hover:border-amarillo/70'">
-        <Icon name="material-symbols:check-rounded" size="16" class="transition-transform duration-200" :class="form.acepto ? 'scale-100' : 'scale-0'" />
-      </span>
-      <span class="pt-px">
-        Acepto la <a href="#" class="text-hueso underline underline-offset-2 decoration-amarillo/60 transition-colors duration-200 lg:hover:text-amarillo">política de privacidad</a>. Datos tratados según el RGPD, con absoluta confidencialidad.
-      </span>
-    </label>
-    <p v-if="errores.acepto" class="-mt-2 text-xs text-red-400 pl-8">{{ errores.acepto }}</p>
+    <div class="flex flex-col gap-4 lg:gap-6 mt-2">
+      <div class="flex flex-col gap-1">
+        <label class="group flex items-start gap-3 cursor-pointer text-hueso/70 text-xs lg:text-sm font-light leading-normal">
+          <input v-model="form.acepto" type="checkbox" class="peer sr-only" />
+          <span class="size-5 flex justify-center items-center shrink-0 border rounded-md transition-colors duration-200 peer-focus-visible:ring-2 peer-focus-visible:ring-amarillo/50"
+            :class="form.acepto ? 'bg-amarillo border-amarillo text-negro' : errores.acepto ? 'border-red-400' : 'border-blanco/30 lg:group-hover:border-amarillo/70'">
+            <Icon name="material-symbols:check-rounded" size="16" class="transition-transform duration-200" :class="form.acepto ? 'scale-100' : 'scale-0'" />
+          </span>
+          <span class="pt-px">
+            Acepto la <a href="#" class="text-hueso underline underline-offset-2 decoration-amarillo/60 transition-colors duration-200 lg:hover:text-amarillo">política de privacidad</a>. Datos tratados según el RGPD, con absoluta confidencialidad.
+          </span>
+        </label>
+        <p v-if="errores.acepto" class="text-xs text-red-400 pl-8">{{ errores.acepto }}</p>
+      </div>
 
-    <UiButtonPrimary type="submit" class="w-full gap-2 font-semibold mt-1">
-      <Icon name="material-symbols:download-rounded" size="20" class="shrink-0" />
-      Descargar diagnóstico y guía
-    </UiButtonPrimary>
+      <UiButtonPrimary type="submit" class="w-full md:w-auto md:self-end gap-2 font-semibold">
+        <Icon name="material-symbols:download-rounded" size="20" class="shrink-0" />
+        Descargar diagnóstico y guía
+      </UiButtonPrimary>
+    </div>
   </form>
 </template>
 

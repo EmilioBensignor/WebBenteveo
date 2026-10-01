@@ -1,4 +1,5 @@
 import tailwindcss from '@tailwindcss/vite'
+import { rubros } from './app/constants/rubros.js'
 
 const siteUrl = process.env.SITE_URL || 'https://benteveo.com'
 const isProductionDomain = siteUrl.replace(/\/+$/, '') === 'https://benteveo.com'
@@ -31,7 +32,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
     optimizeDeps: {
-      include: ['@unhead/schema-org/vue', 'embla-carousel-vue', 'gsap', 'gsap/ScrollTrigger', 'lenis']
+      include: ['@unhead/schema-org/vue', 'embla-carousel-vue', 'gsap', 'gsap/ScrollTrigger', 'gsap/SplitText', 'lenis']
     }
   },
 
@@ -53,7 +54,7 @@ export default defineNuxtConfig({
   site: {
     url: siteUrl,
     name: 'Benteveo',
-    description: 'Agencia de publicidad creativa. Innovación, estrategia y tecnología para tu empresa.',
+    description: 'Integramos creatividad, producción y transformación tecnológica mediante IA para resolver desafíos de marca y mejorar procesos de negocio.',
     defaultLocale: 'es'
   },
 
@@ -62,9 +63,11 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    exclude: ['/agencia-creativa-light'],
-    urls: ['salud', 'educacion', 'agroindustria', 'fitness', 'fintech']
-      .map(nombre => ({ loc: `/transformacion-tecnologica/${nombre}` }))
+    exclude: ['/agencia-creativa-light', '/cita-confirmada'],
+    // asumo: los rubros sin `problemas` (hoy servicio-al-cliente) son páginas vacías y no van al sitemap
+    urls: Object.entries(rubros)
+      .filter(([, rubro]) => rubro.problemas)
+      .map(([nombre]) => ({ loc: `/transformacion-tecnologica/${nombre}` }))
   },
 
   robots: {
@@ -127,7 +130,8 @@ export default defineNuxtConfig({
           '/transformacion-tecnologica': { prerender: true },
           // `/*` y no `/**`: `/**` también matchea el índice y lo convierte en ISR,
           // que en Vercel sirve HTML cacheado de deploys viejos con CSS/JS que ya no existen
-          '/transformacion-tecnologica/*': { swr: 86400 }
+          '/transformacion-tecnologica/*': { swr: 86400 },
+          '/transformacion-tecnologica/*/_payload.json': { swr: 86400 }
         }
       : {}),
     '/_nuxt/**': { headers: { 'cache-control': 'public, max-age=31536000, immutable' } },

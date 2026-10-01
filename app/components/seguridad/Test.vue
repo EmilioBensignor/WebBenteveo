@@ -21,7 +21,7 @@
         <div class="min-w-0 flex flex-col gap-5 md:gap-6 lg:gap-8 pb-4">
           <div class="flex flex-col gap-3">
             <h2 class="text-hueso text-xl md:text-3xl lg:text-[2.5rem] font-semibold leading-[1.15] text-pretty">{{ actual.pregunta }}</h2>
-            <p class="text-hueso/60 text-sm lg:text-base font-light leading-normal">{{ actual.ayuda }}</p>
+            <p class="text-hueso text-sm lg:text-base font-light leading-normal">{{ actual.ayuda }}</p>
           </div>
 
           <div class="flex flex-col">

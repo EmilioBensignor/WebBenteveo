@@ -12,7 +12,7 @@
           <NuxtLink v-for="ind in industrias" :key="ind.slug" :to="`/transformacion-tecnologica/${ind.slug}`"
             :data-cursor-label="`Ver soluciones para ${ind.label}`" data-cursor-arrow
             class="w-[70vw] sm:w-72 md:w-80 lg:w-100 xxl:w-120 h-40 md:h-52 lg:h-80 xxl:h-96 group shrink-0 flex flex-col justify-end relative border border-blanco/33 rounded-2xl overflow-hidden p-4 lg:p-5">
-            <NuxtImg :src="ind.image" :alt="ind.label" format="avif" sizes="400px lg:480px"
+            <NuxtImg :src="ind.image" alt="" format="avif" sizes="400px lg:480px"
               class="size-full absolute inset-0 object-cover transition-transform duration-700 ease-out lg:group-hover:scale-105"
               loading="lazy" />
             <div class="absolute inset-0 bg-linear-to-b from-transparent from-55% to-black/70" />

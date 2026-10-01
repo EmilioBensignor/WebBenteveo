@@ -40,7 +40,7 @@
         class="size-full flex flex-col justify-between absolute inset-0 glass bg-negro/90! rounded-3xl p-6 md:p-8 lg:p-10"
         :class="CAPAS[i]">
         <Icon name="material-symbols:format-quote-rounded" class="size-9! lg:size-12! text-amarillo -my-2 lg:-my-3 -ml-1.5 lg:-ml-2" />
-        <p class="text-hueso text-xl md:text-2xl lg:text-3xl font-light leading-[1.25] tracking-tight">{{ c.texto }}</p>
+        <p class="text-hueso text-xl md:text-2xl lg:text-3xl font-light leading-tight tracking-tight">{{ c.texto }}</p>
         <span class="text-gris text-xs lg:text-sm">{{ c.autor }}</span>
       </article>
     </div>

@@ -19,7 +19,7 @@
                 <h2 id="quiz-titulo" class="text-hueso text-xl lg:text-2xl font-semibold leading-[1.2]">
                   ¿Tu empresa puede acceder al Kit 4.0?
                 </h2>
-                <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
+                <p class="text-hueso text-sm lg:text-base font-light leading-normal">
                   Responde 3 preguntas y descubre si tu empresa podría acceder a beneficios para impulsar su transformación tecnológica.
                 </p>
               </div>
@@ -73,10 +73,10 @@
                 <h2 id="quiz-titulo" class="text-amarillo text-2xl lg:text-[1.75rem] font-bold leading-[1.2]">
                   ¡Tu empresa podría calificar!
                 </h2>
-                <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
+                <p class="text-hueso text-sm lg:text-base font-light leading-normal">
                   Por tus respuestas, podrías acceder a un programa de apoyo para impulsar la transformación tecnológica de tu empresa.
                 </p>
-                <p class="text-hueso text-sm lg:text-base font-light leading-[1.5]">
+                <p class="text-hueso text-sm lg:text-base font-light leading-normal">
                   Agenda una reunión de 20 minutos y evaluamos tu caso, las soluciones que podrías implementar y las condiciones del beneficio.
                 </p>
               </div>

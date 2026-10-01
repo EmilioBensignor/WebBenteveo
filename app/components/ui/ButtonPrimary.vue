@@ -28,6 +28,6 @@ const variants = {
   dark: 'bg-negro text-amarillo lg:hover:bg-negro/90',
   outline: 'border border-amarillo text-amarillo lg:hover:bg-amarillo lg:hover:text-negro',
   glass: 'glass-boton text-hueso [text-shadow:2px_2px_8px_rgba(0,0,0,0.08)] lg:hover:text-amarillo',
-  'glass-dark': 'glass-boton bg-negro/8! border-negro! shadow-none! backdrop-blur-xl! backdrop-saturate-100! duration-500! ease-out text-negro lg:hover:bg-negro! lg:hover:text-amarillo'
+  'glass-dark': 'glass-boton bg-negro! lg:hover:bg-amarillo! border-negro! text-hueso lg:hover:text-negro shadow-none! duration-500! ease-out before:[--color-amarillo:var(--color-negro)]'
 }
 </script>

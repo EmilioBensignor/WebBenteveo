@@ -2,8 +2,8 @@
   <footer
     class="w-full flex justify-center relative z-10 bg-negro py-12 md:py-16 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 xxl:px-30">
     <div class="w-full max-w-362 flex flex-col gap-6 mx-auto">
-      <img src="/img/logo-benteveo.avif" alt="Benteveo" class="w-32 h-auto self-center md:self-start"
-        width="1921" height="305">
+      <NuxtImg src="/img/logo-benteveo.avif" alt="Benteveo" class="w-32 h-auto self-center md:self-start"
+        width="1921" height="305" sizes="128px" loading="lazy" />
 
       <div class="flex flex-col items-center gap-6 md:flex-row md:justify-between">
         <nav class="flex flex-col items-center gap-4 tab:flex-row tab:gap-6">
