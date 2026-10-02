@@ -81,7 +81,7 @@
                 </p>
               </div>
 
-              <UiButtonPrimary variant="glass" size="glass" class="w-full sm:w-max gap-2" @click="irAAgendar">
+              <UiButtonPrimary to="https://scheduling.kommo.com/36981623" target="_blank" variant="glass" size="glass" class="w-full sm:w-max gap-2" @click="abierto = false">
                 <Icon name="material-symbols:calendar-month-outline-rounded" size="20" class="shrink-0" />
                 Quiero evaluar mi empresa
               </UiButtonPrimary>
@@ -95,7 +95,6 @@
 
 <script setup>
 import { preguntasKit } from '~/constants/kit'
-import { scrollToEl } from '~/composables/useSmoothScroll'
 
 const abierto = defineModel({ type: Boolean, default: false })
 
@@ -108,11 +107,6 @@ function responder(opcion) {
   respuestas.value[paso.value] = opcion
   clearTimeout(avance)
   avance = setTimeout(() => paso.value++, 280)
-}
-
-function irAAgendar() {
-  abierto.value = false
-  requestAnimationFrame(() => scrollToEl('contacto', -100))
 }
 
 function reiniciar() {

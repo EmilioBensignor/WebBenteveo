@@ -9,7 +9,7 @@
         ¿Cuánto está perdiendo tu empresa por quedarse afuera de la transformación?
       </UiHeadingH1>
       <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 lg:gap-4 pt-2 lg:pt-0">
-        <UiButtonPrimary class="gap-3 pl-6 pr-4">
+        <UiButtonPrimary to="https://scheduling.kommo.com/36981623" target="_blank" class="gap-3 pl-6 pr-4">
           Agendar una llamada
           <Icon name="material-symbols:calendar-month-outline-rounded" class="size-4 lg:size-6 shrink-0" />
         </UiButtonPrimary>

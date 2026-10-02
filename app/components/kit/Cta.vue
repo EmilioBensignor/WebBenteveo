@@ -13,7 +13,7 @@
         </p>
       </div>
 
-      <UiButtonPrimary to="#" variant="glass-dark" size="glass" class="w-full sm:w-max gap-2 lg:text-lg! lg:py-4! lg:px-8!">
+      <UiButtonPrimary to="https://scheduling.kommo.com/36981623" target="_blank" variant="glass-dark" size="glass" class="w-full sm:w-max gap-2 lg:text-lg! lg:py-4! lg:px-8!">
         <Icon name="material-symbols:calendar-month-outline-rounded" size="22" class="shrink-0" />
         Empezar a transformar mi empresa
       </UiButtonPrimary>
